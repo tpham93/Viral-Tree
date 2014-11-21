@@ -145,7 +145,8 @@ namespace ViralTree.World
 
             //TODO: from here on: everything for testing purposes yet:
             Joystick.Update();
-            AddEntity(EntityFactory.Create(EntitiyType.Player, Vec2f.One, new Object[]{new GInput(0)}));
+            List<uint> connectedGamepads = GInput.getConnectedGamepads();
+            AddEntity(EntityFactory.Create(EntitiyType.Player, Vec2f.One, new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
 
             //AddEntity(EntityFactory.CreateNewPlayer(PolygonFactory.getRegularPolygon(6, 50.0f), Vec2f.One));
  
