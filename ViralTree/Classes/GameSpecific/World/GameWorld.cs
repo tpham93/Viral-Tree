@@ -144,8 +144,8 @@ namespace ViralTree.World
             //this.contentManager = contentManager;
 
             //TODO: from here on: everything for testing purposes yet:
-
-            AddEntity(EntityFactory.Create(EntitiyType.Player, Vec2f.One));
+            Joystick.Update();
+            AddEntity(EntityFactory.Create(EntitiyType.Player, Vec2f.One, new Object[]{new GInput(0)}));
 
             //AddEntity(EntityFactory.CreateNewPlayer(PolygonFactory.getRegularPolygon(6, 50.0f), Vec2f.One));
  

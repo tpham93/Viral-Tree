@@ -34,6 +34,8 @@ namespace ViralTree.GameStates
 
         public override void Update()
         {
+            Joystick.Update();
+
             if (KInput.IsClicked(Keyboard.Key.Escape))
             {
                 parent.SetGameState(null);

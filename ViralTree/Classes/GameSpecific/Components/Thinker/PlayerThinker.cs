@@ -17,12 +17,6 @@ namespace ViralTree.Components
             this.controller = controller;
         }
 
-        public GInput Controller
-        {
-            //get { return controller; }
-            set { controller = value; }
-        }
-
         private PlayerInput GetInput()
         {
             PlayerInput input = new PlayerInput();
@@ -48,7 +42,11 @@ namespace ViralTree.Components
             }
             else
             {
-                movementVector = controller.leftPad();
+                const float THRESHOLD = 0.2f;
+                controller.update();
+                movementVector = controller.leftPad() / 100;
+                movementVector.X = Math.Abs(movementVector.X) > THRESHOLD ? movementVector.X : 0.0f;
+                movementVector.Y = Math.Abs(movementVector.Y) > THRESHOLD ? movementVector.Y : 0.0f;
                 attacking = controller.isClicked(GInput.EButton.A);
             }
 
