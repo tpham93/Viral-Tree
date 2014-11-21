@@ -48,6 +48,13 @@ namespace ViralTree.World
         }
 
 
+        private Components.ADrawer drawer;
+        public Components.ADrawer Drawer
+        {
+            get { return drawer; }
+            set { value.Owner = this; value.IsActive = true; drawer = value; }
+        }
+
         private Components.AActivator activator;
         public Components.AActivator Activator
         {
@@ -81,11 +88,12 @@ namespace ViralTree.World
             LeavesChunk = false;
         }
 
-        public Entity(ACollider collider, Vector2f position, AThinker thinker, ACollisionResponse response, AActivator activator, AActivatable activatable)
+        public Entity(ACollider collider, Vector2f position, AThinker thinker, ACollisionResponse response, AActivator activator, AActivatable activatable, ADrawer drawing)
             : this(collider, position)
         {
             this.Thinker = thinker;
             this.Response = response;
+            this.drawer = drawing;
             this.Activator = activator;
             this.Activatable = activatable;
         }
@@ -102,6 +110,10 @@ namespace ViralTree.World
             activatable = Components.EmptyActivatable.Instance;
         }
 
+        public void LoadContent(ContentManager contentManager)
+        {
+            drawer.LoadContent(contentManager);
+        }
 
         public void Update(GameTime gameTime, GameWorld world)
         {
@@ -112,7 +124,10 @@ namespace ViralTree.World
             if(response.IsActive)
                 response.Update(gameTime, world);
 
-            if(activator.IsActive)
+            if (drawer != null && drawer.IsActive)
+                drawer.Update(gameTime, world);
+
+            if (activator.IsActive)
                 activator.Update(gameTime, world);
 
             if(activatable.IsActive)
@@ -144,7 +159,10 @@ namespace ViralTree.World
         public void Draw(GameTime gameTime, RenderTarget target)
         {
             if (Drawable)
-                Collider.Draw(target);
+                if (drawer != null)
+                    drawer.Draw(target);
+                else
+                    Collider.Draw(target);
         }
 
     }
