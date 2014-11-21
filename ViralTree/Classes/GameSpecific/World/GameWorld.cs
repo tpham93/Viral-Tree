@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ViralTree.Tiled;
 
 namespace ViralTree.World
 {
@@ -105,8 +106,18 @@ namespace ViralTree.World
 
 
 
-        public GameWorld(int numChunksX, int numChunksY, int chunkSizeX, int chunkSizeY)
+        public GameWorld(String levelName)
         {
+            TiledReader reader = new TiledReader();
+            reader.Load("Content/other/level/" + levelName + ".tmx");
+
+            int numChunksX = (reader.numTilesX * reader.tileSizeX) / reader.spatialSizeX;
+            int numChunksY = (reader.numTilesY * reader.tileSizeY) / reader.spatialSizeY;
+
+            int chunkSizeX = reader.spatialSizeX;
+            int chunkSizeY = reader.spatialSizeY;
+
+
             chunkQueue = new Queue<EntityChunkLookup>();
 
             entities = new UniqueList<Entity>();
@@ -136,7 +147,7 @@ namespace ViralTree.World
 
             AddEntity(EntityFactory.CreateNewPlayer(PolygonFactory.getRegularPolygon(6, 50.0f), Vec2f.One));
  
-
+            /*
             for (int i = 0; i < 50; i++)
             {
                 Entity tmp = new Entity(PolygonFactory.getRegularPolygon(4, 75.0f), MathUtil.Rand.NextVec2f(75, WorldWidth - 75, 75, WorldHeight - 75));
@@ -146,6 +157,7 @@ namespace ViralTree.World
                 tmp.Activatable = new Components.TestActivatable(200.0f);
                 AddEntity(tmp);
             }
+            */
         }
 
 

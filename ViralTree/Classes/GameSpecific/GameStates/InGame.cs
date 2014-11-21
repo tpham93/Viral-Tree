@@ -22,12 +22,8 @@ namespace ViralTree.GameStates
 
         public override void Init(AGameState lastGameState)
         {
-            int numX = 20;
-            int numY = 20;
-            int sizeX = 256;
-            int sizeY = 256;
 
-            world = new GameWorld(numX, numY, sizeX, sizeY);
+            world = new GameWorld("testLevel");
             world.initCam(parent.window);
         }
 

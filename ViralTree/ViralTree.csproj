@@ -107,6 +107,7 @@
     <Compile Include="Classes\GameSpecific\GameStates\AGameState.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\InGame.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\MainMenu.cs" />
+    <Compile Include="Classes\GameSpecific\World\Objects\Spawner.cs" />
     <Compile Include="Classes\Settings.cs" />
     <Compile Include="Classes\GameSpecific\World\Objects\Camera.cs" />
     <Compile Include="Classes\GameSpecific\World\Chunk.cs" />
@@ -121,8 +122,14 @@
     <None Include="Content\other\arial.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Content\other\level\testLevel.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\other\level\tileSet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="csfml-audio-2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
