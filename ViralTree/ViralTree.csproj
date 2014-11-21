@@ -79,8 +79,11 @@
     <Compile Include="Classes\GameSpecific\Components\AComponent.cs" />
     <Compile Include="Classes\GameSpecific\Components\Activatables\TestActivatable.cs" />
     <Compile Include="Classes\GameSpecific\Components\Activators\BasicActivator.cs" />
+    <Compile Include="Classes\GameSpecific\Components\ADrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\AThinker.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\BasicPushResponse.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Drawer\PlayerDrawer.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerInput.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerThinker.cs" />
     <Compile Include="Classes\Core\Collections\UniqueList.cs" />
     <Compile Include="Classes\Core\Collision\Collidables\ACollider.cs" />
@@ -123,6 +126,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\gfx\Player\health.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\Player\mitochondrion.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\Player\nucleus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\Player\player.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="csfml-audio-2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -140,7 +155,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\gfx\" />
     <Folder Include="Content\sfx\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

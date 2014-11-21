@@ -27,7 +27,7 @@ namespace ViralTree.GameStates
             int sizeX = 256;
             int sizeY = 256;
 
-            world = new GameWorld(numX, numY, sizeX, sizeY);
+            world = new GameWorld(numX, numY, sizeX, sizeY, parent.content);
             world.initCam(parent.window);
         }
 

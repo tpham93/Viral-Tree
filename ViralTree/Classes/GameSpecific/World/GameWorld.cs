@@ -103,9 +103,10 @@ namespace ViralTree.World
             Cam = new Camera(this, entities[0], target);
         }
 
+        private ContentManager contentManager;
 
 
-        public GameWorld(int numChunksX, int numChunksY, int chunkSizeX, int chunkSizeY)
+        public GameWorld(int numChunksX, int numChunksY, int chunkSizeX, int chunkSizeY, ContentManager contentManager)
         {
             chunkQueue = new Queue<EntityChunkLookup>();
 
@@ -132,9 +133,13 @@ namespace ViralTree.World
                 for (int j = 0; j < chunks.GetLength(1); j++)
                     chunks[i, j] = new Chunk(i, j, this);
 
+            this.contentManager = contentManager;
+
             //TODO: from here on: everything for testing purposes yet:
 
-            AddEntity(EntityFactory.CreateNewPlayer(PolygonFactory.getRegularPolygon(6, 50.0f), Vec2f.One));
+            AddEntity(EntityFactory.Create(EntitiyType.Player, Vec2f.One, contentManager));
+
+            //AddEntity(EntityFactory.CreateNewPlayer(PolygonFactory.getRegularPolygon(6, 50.0f), Vec2f.One));
  
 
             for (int i = 0; i < 50; i++)
