@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A54A477A-8E9C-436F-847B-8758509095D2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViralTree</RootNamespace>
+    <AssemblyName>ViralTree</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="sfmlnet-audio-2">
+      <HintPath>..\..\..\..\..\..\..\Frameworks\SFML.Net-2.1\lib\sfmlnet-audio-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-graphics-2">
+      <HintPath>..\..\..\..\..\..\..\Frameworks\SFML.Net-2.1\lib\sfmlnet-graphics-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-window-2">
+      <HintPath>..\..\..\..\..\..\..\Frameworks\SFML.Net-2.1\lib\sfmlnet-window-2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\GameSpecific\Components\AActivatable.cs" />
+    <Compile Include="Classes\GameSpecific\Components\AActivator.cs" />
+    <Compile Include="Classes\GameSpecific\Components\ACollisionResponse.cs" />
+    <Compile Include="Classes\GameSpecific\Components\AComponent.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Activatables\TestActivatable.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Activators\BasicActivator.cs" />
+    <Compile Include="Classes\GameSpecific\Components\AThinker.cs" />
+    <Compile Include="Classes\GameSpecific\Components\CollisionResponses\BasicPushResponse.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerThinker.cs" />
+    <Compile Include="Classes\Core\Collections\UniqueList.cs" />
+    <Compile Include="Classes\Core\Collision\Collidables\ACollider.cs" />
+    <Compile Include="Classes\Core\Collision\Collidables\CircleCollider.cs" />
+    <Compile Include="Classes\Core\Collision\Collidables\ConcaveCollider.cs" />
+    <Compile Include="Classes\Core\Collision\Collidables\ConvexCollider.cs" />
+    <Compile Include="Classes\Core\Collision\IntersectionData.cs" />
+    <Compile Include="Classes\Core\Collision\PolygonFactory.cs" />
+    <Compile Include="Classes\Core\Tiled_TODO\TiledReader.cs" />
+    <Compile Include="Classes\Core\Utilities\ColorUtil.cs" />
+    <Compile Include="Classes\Core\Content\AssetKey.cs" />
+    <Compile Include="Classes\Core\Utilities\MathUtil.cs" />
+    <Compile Include="Classes\Core\Utilities\Matrix2D.cs" />
+    <Compile Include="Classes\Core\Content\ContentManager.cs" />
+    <Compile Include="Classes\Core\Utilities\MyRandom.cs" />
+    <Compile Include="Classes\Core\Utilities\Vec2f.cs" />
+    <Compile Include="Classes\Game.cs" />
+    <Compile Include="Classes\Core\AbstractGame.cs" />
+    <Compile Include="Classes\Core\Collections\MyList.cs" />
+    <Compile Include="Classes\Core\GameTime.cs" />
+    <Compile Include="Classes\Core\Input\GInput.cs" />
+    <Compile Include="Classes\Core\Input\KInput.cs" />
+    <Compile Include="Classes\Core\Input\MInput.cs" />
+    <Compile Include="Classes\GameSpecific\GameStates\AGameState.cs" />
+    <Compile Include="Classes\GameSpecific\GameStates\InGame.cs" />
+    <Compile Include="Classes\GameSpecific\GameStates\MainMenu.cs" />
+    <Compile Include="Classes\Debug\Logger\ILogger.cs" />
+    <Compile Include="Classes\Debug\Logger\Logger.cs" />
+    <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Classes\Debug\TestClass.cs" />
+    <Compile Include="Classes\GameSpecific\World\Objects\Camera.cs" />
+    <Compile Include="Classes\GameSpecific\World\Chunk.cs" />
+    <Compile Include="Classes\GameSpecific\World\Objects\Entity.cs" />
+    <Compile Include="Classes\GameSpecific\World\GameWorld.cs" />
+    <Compile Include="Classes\GameSpecific\World\Objects\EntityFactory.cs" />
+    <Compile Include="Classes\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Content\other\arial.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="csfml-audio-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-graphics-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-window-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libsndfile-1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="openal32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\gfx\" />
+    <Folder Include="Content\sfx\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
