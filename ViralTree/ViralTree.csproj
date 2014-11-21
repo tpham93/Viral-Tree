@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Core\Tiled\EntityAttribs.cs" />
     <Compile Include="Classes\GameSpecific\Components\AActivatable.cs" />
     <Compile Include="Classes\GameSpecific\Components\AActivator.cs" />
     <Compile Include="Classes\GameSpecific\Components\ACollisionResponse.cs" />
@@ -92,7 +93,7 @@
     <Compile Include="Classes\Core\Collision\Collidables\ConvexCollider.cs" />
     <Compile Include="Classes\Core\Collision\IntersectionData.cs" />
     <Compile Include="Classes\Core\Collision\PolygonFactory.cs" />
-    <Compile Include="Classes\Core\Tiled_TODO\TiledReader.cs" />
+    <Compile Include="Classes\Core\Tiled\TiledReader.cs" />
     <Compile Include="Classes\Core\Utilities\ColorUtil.cs" />
     <Compile Include="Classes\Core\Content\AssetKey.cs" />
     <Compile Include="Classes\Core\Utilities\MathUtil.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Classes\Core\Input\GInput.cs" />
     <Compile Include="Classes\Core\Input\KInput.cs" />
     <Compile Include="Classes\Core\Input\MInput.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\SpawnerThinker.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\AGameState.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\InGame.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\MainMenu.cs" />
@@ -124,8 +126,14 @@
     <None Include="Content\other\arial.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Content\other\level\testLevel.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\other\level\tileSet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\gfx\Player\health.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

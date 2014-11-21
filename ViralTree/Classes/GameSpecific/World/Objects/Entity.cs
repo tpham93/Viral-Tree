@@ -128,9 +128,9 @@ namespace ViralTree.World
             activatable = Components.EmptyActivatable.Instance;
         }
 
-        public void LoadContent(ContentManager contentManager)
+        public void LoadContent()
         {
-            drawer.LoadContent(contentManager);
+            drawer.LoadContent(Game.content);
         }
 
         public void Update(GameTime gameTime, GameWorld world)

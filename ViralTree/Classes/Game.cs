@@ -13,11 +13,15 @@ namespace ViralTree
 {
     public sealed class Game : AbstractGame, IDisposable
     {
-        private AGameState gameState;
+        public static ContentManager content;
 
+        private AGameState gameState;
+   
 
         public Game()
         {
+            content = new ContentManager();
+
             //init the keyboard with all keys:
             KInput.Init(null);
 

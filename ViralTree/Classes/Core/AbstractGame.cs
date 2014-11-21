@@ -16,8 +16,6 @@ namespace ViralTree.Template
         public RenderWindow window;
         public GameTime gameTime;
 
-        public ContentManager content;
-
         public double frameRate;
 
         protected int wheelDelta;
@@ -36,8 +34,6 @@ namespace ViralTree.Template
             Settings.ResizedEvent += ResizeHandler;
             Settings.FrameRateEvent += FrameRateHandler;
             Settings.StyleEvent += StyleHandler;
-
-            content = new ContentManager();
 
             gameTime = new GameTime();
         }

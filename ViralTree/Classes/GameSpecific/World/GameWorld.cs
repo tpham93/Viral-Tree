@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ViralTree.Tiled;
 
 namespace ViralTree.World
 {
@@ -103,11 +104,18 @@ namespace ViralTree.World
             Cam = new Camera(this, entities[0], target);
         }
 
-        private ContentManager contentManager;
 
-
-        public GameWorld(int numChunksX, int numChunksY, int chunkSizeX, int chunkSizeY, ContentManager contentManager)
+        public GameWorld(String levelName)
         {
+            TiledReader reader = new TiledReader();
+            reader.Load("Content/other/level/" + levelName + ".tmx");
+
+            int numChunksX = (reader.numTilesX * reader.tileSizeX) / reader.spatialSizeX;
+            int numChunksY = (reader.numTilesY * reader.tileSizeY) / reader.spatialSizeY;
+
+            int chunkSizeX = reader.spatialSizeX;
+            int chunkSizeY = reader.spatialSizeY;
+
             chunkQueue = new Queue<EntityChunkLookup>();
 
             entities = new UniqueList<Entity>();
@@ -133,15 +141,15 @@ namespace ViralTree.World
                 for (int j = 0; j < chunks.GetLength(1); j++)
                     chunks[i, j] = new Chunk(i, j, this);
 
-            this.contentManager = contentManager;
+            //this.contentManager = contentManager;
 
             //TODO: from here on: everything for testing purposes yet:
 
-            AddEntity(EntityFactory.Create(EntitiyType.Player, Vec2f.One, contentManager));
+            AddEntity(EntityFactory.Create(EntitiyType.Player, Vec2f.One));
 
             //AddEntity(EntityFactory.CreateNewPlayer(PolygonFactory.getRegularPolygon(6, 50.0f), Vec2f.One));
  
-
+            /*
             for (int i = 0; i < 50; i++)
             {
                 float entityLife = 10;
@@ -152,6 +160,7 @@ namespace ViralTree.World
                 tmp.Activatable = new Components.TestActivatable(200.0f);
                 AddEntity(tmp);
             }
+            */
         }
 
 
