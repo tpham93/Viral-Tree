@@ -1,10 +1,12 @@
-﻿using System;
+﻿using SFML.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using ViralTree.World;
 
 namespace ViralTree.Tiled
 {
@@ -19,6 +21,7 @@ namespace ViralTree.Tiled
         private const String TILED_SPATIAL_Y = "SpatialSizeY";
 
 
+
         public String tileSetName = null;
 
         public int numTilesX = 0;
@@ -30,7 +33,9 @@ namespace ViralTree.Tiled
         public int spatialSizeX = 0;
         public int spatialSizeY = 0;
 
+        private List<EntityAttribs> entitiAttribs = new List<EntityAttribs>();
 
+        private int currentEntitAttribIndex = -1;
 
         Stack<String> lastElement = new Stack<string>();
         int numLayers = 0;
@@ -111,6 +116,7 @@ namespace ViralTree.Tiled
                         else //everything else here
                         {
                             lastElement.Push(reader.Name);
+
                             print("pushed " + reader.Name);
 
                             // prüfen, ob der Knoten Attribute hat
@@ -134,7 +140,25 @@ namespace ViralTree.Tiled
                                             tileSizeY = int.Parse(reader.Value);
                                     }
 
-                                    print("elements: " + reader.Name + " = " + reader.Value);
+                                    else if (lastElement.Peek().Equals("object"))
+                                    {
+
+                                        if (reader.Name.Equals("type"))
+                                        {
+                                            if (reader.Value.Equals("Spawner"))
+                                                loadSpawner(reader);
+
+
+                                            else if (reader.Value.Equals("Collision"))
+                                                loadCollision();
+
+
+
+                                        }
+
+                                    }
+
+                                    // print("elements: " + reader.Name + " = " + reader.Value);
                                 }
                             }
                         }
@@ -162,6 +186,34 @@ namespace ViralTree.Tiled
             //return map;
 
             printAll();
+        }
+
+        private void loadCollision()
+        {
+
+        }
+
+        private void loadSpawner(XmlReader reader)
+        {
+
+            // print("elements: " + reader.Name + " = " + reader.Value);
+            FloatRect tmpRect = new FloatRect();
+
+            reader.MoveToNextAttribute();
+            tmpRect.Left = float.Parse(reader.Value);
+
+            //  print("elements: " + reader.Name + " = " + reader.Value);
+
+            reader.MoveToNextAttribute();
+            tmpRect.Top = float.Parse(reader.Value);
+
+            reader.MoveToNextAttribute();
+            tmpRect.Width = float.Parse(reader.Value);
+
+            reader.MoveToNextAttribute();
+            tmpRect.Height = float.Parse(reader.Value);
+
+            print("floatRect" + tmpRect);
         }
 
         [Conditional(Settings.Constants.DEBUG_CONDITIONAL_STRING)]
