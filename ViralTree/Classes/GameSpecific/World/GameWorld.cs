@@ -144,7 +144,8 @@ namespace ViralTree.World
 
             for (int i = 0; i < 50; i++)
             {
-                Entity tmp = new Entity(PolygonFactory.getRegularPolygon(4, 75.0f), MathUtil.Rand.NextVec2f(75, WorldWidth - 75, 75, WorldHeight - 75));
+                float entityLife = 10;
+                Entity tmp = new Entity(PolygonFactory.getRegularPolygon(4, 75.0f), MathUtil.Rand.NextVec2f(75, WorldWidth - 75, 75, WorldHeight - 75), entityLife);
                 tmp.InitEmptyComponents();
                 tmp.Response = new ViralTree.Components.BasicPushResponse(true);
                 //tmp.Response = Components.EmptyResponse.Instance;

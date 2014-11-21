@@ -19,6 +19,15 @@ namespace ViralTree.Components
 
         public PlayerDrawer()
         {
+            mitochondrions = new Vector2f[5];
+            float dist = 50;
+            for(int i = 0; i < mitochondrions.Length; ++i)
+            {
+                float angle = i / (float)Math.PI * 1.5f;
+                float x = (float)Math.Sin(angle);
+                float y = (float)Math.Cos(angle);
+                mitochondrions[i] = new Vector2f(x,y) * dist;
+            }
         }
 
         public override void LoadContent(ContentManager contentManager)
@@ -32,17 +41,34 @@ namespace ViralTree.Components
             nucleusSprite = new Sprite(nucleusTexture);
             healthSprite = new Sprite(healthTexture);
             mitochondrionSprite = new Sprite(mitochondrionTexture);
+
+            playerSprite.Origin = new Vector2f(playerSprite.TextureRect.Width, playerSprite.TextureRect.Height) / 2.0f;
+            nucleusSprite.Origin = new Vector2f(nucleusSprite.TextureRect.Width, nucleusSprite.TextureRect.Height) / 2.0f;
+            healthSprite.Origin = new Vector2f(healthSprite.TextureRect.Width, healthSprite.TextureRect.Height) / 2.0f;
+            mitochondrionSprite.Origin = new Vector2f(mitochondrionSprite.TextureRect.Width, mitochondrionSprite.TextureRect.Height) / 2.0f;
         }
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
             playerSprite.Position = Owner.Collider.Position;
             playerSprite.Rotation = Owner.Collider.Rotation;
+            nucleusSprite.Position = playerSprite.Position;
+            float life = Owner.CurrentLife / Owner.MaxLife;
+            healthSprite.Position = playerSprite.Position;
+            healthSprite.Scale = new Vector2f(life, life);
         }
 
         public override void Draw(RenderTarget target)
         {
             target.Draw(playerSprite);
+            target.Draw(nucleusSprite);
+            target.Draw(healthSprite);
+            
+            for(int i = 0; i < mitochondrions.Length; ++i)
+            {
+                mitochondrionSprite.Position = mitochondrions[i] + playerSprite.Position;
+                target.Draw(mitochondrionSprite);
+            }
         }
     }
 }

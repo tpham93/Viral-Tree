@@ -33,7 +33,8 @@ namespace ViralTree.World
 
         public static Entity CreateNewPlayer(ACollider collider, Vector2f position)
         {
-            return new Entity(collider, position, new Components.PlayerThinker(), new Components.BasicPushResponse(true), new Components.BasicActivator(), Components.EmptyActivatable.Instance, new Components.PlayerDrawer());
+            float startHealth = 100;
+            return new Entity(collider, position, startHealth, new Components.PlayerThinker(), new Components.BasicPushResponse(true), new Components.BasicActivator(), Components.EmptyActivatable.Instance, new Components.PlayerDrawer());
         }
     }
 }

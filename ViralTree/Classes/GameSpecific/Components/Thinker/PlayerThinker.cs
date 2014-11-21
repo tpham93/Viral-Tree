@@ -12,6 +12,17 @@ namespace ViralTree.Components
         private float speed = 5.0f;
         private GInput controller;
 
+        public PlayerThinker(GInput controller = null)
+        {
+            this.controller = controller;
+        }
+
+        public GInput Controller
+        {
+            //get { return controller; }
+            set { controller = value; }
+        }
+
         private PlayerInput GetInput()
         {
             PlayerInput input = new PlayerInput();
