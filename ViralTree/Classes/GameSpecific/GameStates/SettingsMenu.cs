@@ -9,7 +9,7 @@ using ViralTree.Classes.GameSpecific.Components.Drawables;
 
 namespace ViralTree.GameStates
 {
-    public sealed class Settings : AGameState
+    public sealed class SettingsMenu : AGameState
     {
         
         List<SelectButton> buttonList;
@@ -21,7 +21,7 @@ namespace ViralTree.GameStates
         int curButton = 0;
         int maxButton;
 
-        public Settings()
+        public SettingsMenu()
         {
 
         }

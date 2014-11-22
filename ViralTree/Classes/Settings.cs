@@ -60,6 +60,8 @@ namespace ViralTree
             }
         }
 
+        public static bool DrawFog = true;
+
 
         public static class Constants
         {
