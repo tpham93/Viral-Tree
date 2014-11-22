@@ -161,7 +161,99 @@ namespace ViralTree.Tiled
 
         private void LoadSpawner(XmlReader reader)
         {
+            FloatRect rect = new FloatRect();
+            EntityType type = EntityType.None;
+            double cooldown = 0;
+            double startTime = 0;
+            int numSpawns = 0;
 
+
+
+            EntityAttribs attribs = new EntityAttribs(EntityType.Spawner, null, Vec2f.Zero);
+
+            while (reader.MoveToNextAttribute())
+            {
+                if (reader.Name.Equals("x"))
+                    rect.Left = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("y"))
+                    rect.Top = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("width"))
+                    rect.Width = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("height"))
+                    rect.Height = float.Parse(reader.Value, Settings.cultureProvide);
+            }
+
+            attribs.pos = new Vector2f(rect.Left + rect.Width / 2, rect.Top + rect.Height / 2);
+            Vector2f[] vertices = {new Vector2f(rect.Left, rect.Top),
+                                  new Vector2f(rect.Left, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top)};
+
+            attribs.collider = new ConvexCollider(vertices, true);
+
+
+            while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("object")))
+            {
+                if (reader.Name.Equals("property"))
+                {
+
+                 //   printCurrent(reader);
+                        while (reader.MoveToNextAttribute())
+                        {
+                            //printCurrent(reader);
+
+                            if (reader.Value.Equals("cooldown")){
+                                reader.MoveToNextAttribute();
+                                cooldown = double.Parse(reader.Value, Settings.cultureProvide);
+                            }
+
+
+                            else if (reader.Value.Equals("entityType"))
+                            {
+                                reader.MoveToNextAttribute();
+                                type = (EntityType)Enum.Parse(typeof(EntityType), reader.Value, true);
+                            }
+
+
+                            else if (reader.Value.Equals("numSpawns"))
+                            {
+                                reader.MoveToNextAttribute();
+                                numSpawns = int.Parse(reader.Value);
+                            }
+
+
+                            else if (reader.Value.Equals("startTime"))
+                            {
+                                reader.MoveToNextAttribute();
+                                startTime = double.Parse(reader.Value, Settings.cultureProvide);
+                            }
+                             
+                        }
+                    
+                }
+            }
+
+            EntityAttribs spawnAttribs = EntityAttribs.CreateAttrib(type);
+
+            /*
+            print(rect);
+            print(cooldown);
+            print(type);
+            print(numSpawns);
+            print(startTime);
+            */
+
+            attribs.AddAttribute(rect);
+            attribs.AddAttribute(cooldown);
+            attribs.AddAttribute(type);
+            attribs.AddAttribute(numSpawns);
+            attribs.AddAttribute(startTime);
+            attribs.AddAttribute(spawnAttribs);
+
+            entityAttributs.Add(attribs);
         }
 
         private void LoadCollision(XmlReader reader)

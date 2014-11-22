@@ -21,6 +21,8 @@ namespace ViralTree.World
 
         #region Entities
 
+        private Queue<Entity> removeMe = new Queue<Entity>();
+
         private UniqueList<Entity> entities;
 
         public void AddEntity(Entity e)
@@ -37,12 +39,17 @@ namespace ViralTree.World
             chunks[id.X, id.Y].AddEntity(e);
         }
 
-        public void RemoveEntity(Entity e)
+        private void RemoveEntity(Entity e)
         {
             Debug.Assert(e.UniqueId != -1);
 
             entities.Remove(e);
             chunks[e.ChunkId.X, e.ChunkId.Y].RemoveEntity(e);
+        }
+
+        public void QueueRemovingEntity(Entity e)
+        {
+            removeMe.Enqueue(e);
         }
         
         #endregion
@@ -240,6 +247,11 @@ namespace ViralTree.World
                     chunks[e.ChunkId.X, e.ChunkId.Y].AddEntity(e);
                 }
                 
+            }
+
+            while (removeMe.Count > 0)
+            {
+                RemoveEntity(removeMe.Dequeue());
             }
 
             Cam.Update(gameTime, target);
