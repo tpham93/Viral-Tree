@@ -178,7 +178,7 @@ namespace ViralTree.World
         public void Draw(GameTime gameTime, RenderTarget target)
         {
             if (Drawable)
-            {
+            {   
                 if (drawer != null)
                     drawer.Draw(target);
                 else

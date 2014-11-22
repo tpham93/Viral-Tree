@@ -41,5 +41,17 @@ namespace ViralTree.Tiled
         {
             additionalAttribs.Add(obj);
         }
+
+        public static EntityAttribs CreateAttrib(EntityType type)
+        {
+            EntityAttribs result = null;
+
+            if (type == EntityType.Fungus)
+            {
+                result = new EntityAttribs(EntityType.Fungus, new CircleCollider(25), Vec2f.Zero);
+            }
+
+            return result;
+        }
     }
 }

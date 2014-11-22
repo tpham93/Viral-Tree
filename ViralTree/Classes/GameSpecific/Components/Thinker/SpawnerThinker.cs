@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViralTree.Components;
+using ViralTree.Tiled;
+using ViralTree.World;
 
 namespace ViralTree.Objects
 {
@@ -19,7 +21,11 @@ namespace ViralTree.Objects
 
         private FloatRect bounding;
 
-        public SpawnerThinker(FloatRect bounding, int totalSpawns, double cooldown, double startTime)
+        private EntityAttribs attribs;
+
+
+
+        public SpawnerThinker(FloatRect bounding, int totalSpawns, double cooldown, double startTime, EntityAttribs attribs)
         {
             this.bounding = bounding;
 
@@ -29,10 +35,14 @@ namespace ViralTree.Objects
             this.totalCooldown = cooldown;
 
             this.startTime = startTime;
+
+            this.attribs = attribs;
         }
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
+            Console.WriteLine(this);
+
             if (startTime > 0)
                 startTime -= gameTime.ElapsedTime.TotalSeconds;
 
@@ -47,7 +57,7 @@ namespace ViralTree.Objects
                     remainingSpawn--;
 
                     if (remainingSpawn <= 0)
-                        world.RemoveEntity(Owner);
+                        world.QueueRemovingEntity(Owner);
                 }
             }
         }
@@ -55,11 +65,16 @@ namespace ViralTree.Objects
         private void SpawnEntity(World.GameWorld world)
         {
             Vector2f pos = MathUtil.Rand.NextVec2f(bounding.Left, bounding.Left + bounding.Width, bounding.Top, bounding.Top + bounding.Height);
-           // world.AddEntity(World.EntityFactory)
+            Entity e = EntityFactory.Create(attribs.type, pos, attribs.collider, MathUtil.ToArray<object>(attribs.additionalAttribs));
+            e.LoadContent();
+            world.AddEntity(e);
         }
 
-        
 
+        public override string ToString()
+        {
+            return "remaining Spawns: " + remainingSpawn + ", currentCD: " + currentCooldown + ", startTime: " + startTime;
+        }
 
     }
 }

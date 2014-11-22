@@ -28,8 +28,6 @@ namespace ViralTree
             //init the keyboard with all keys:
             KInput.Init(null);
 
-            
-
             //init the mouse with this game (needed for relative coords):
             MInput.Init(this);
    
