@@ -142,9 +142,7 @@ namespace ViralTree.Tiled
             {
                 if (reader.Name.Equals("object"))
                 {
-
                     reader.MoveToNextAttribute();
-
 
                     if (reader.Value.Equals("Spawner"))
                         LoadSpawner(reader);
@@ -166,8 +164,6 @@ namespace ViralTree.Tiled
             double cooldown = 0;
             double startTime = 0;
             int numSpawns = 0;
-
-
 
             EntityAttribs attribs = new EntityAttribs(EntityType.Spawner, null, Vec2f.Zero);
 
@@ -280,7 +276,7 @@ namespace ViralTree.Tiled
                 }
             }
 
-            entityAttributs.Add(new EntityAttribs(EntityType.Collision, new ConvexCollider(MathUtil.ToArray<Vector2f>(vertices)), center));
+            entityAttributs.Add(new EntityAttribs(EntityType.Collision, new ConvexCollider(MathUtil.ToArray<Vector2f>(vertices), false), center));
         }
 
         private Vector2f LoadPoints(XmlReader reader, List<Vector2f> vertices, Vector2f start)

@@ -71,8 +71,8 @@ namespace ViralTree.World
 
             ///Add 1 just to be sure everythin on screen will be drawn:
             //everything on screen + 1 chunk
-            drawOffset = new Vector2i(Settings.WindowSize.X / (world.ChunkWidth * 2) + 1,
-                                      Settings.WindowSize.Y / (world.ChunkWidth * 2) + 1);
+            drawOffset = new Vector2i(Settings.WindowSize.X / (world.ChunkWidth * 2) + 50,
+                                      Settings.WindowSize.Y / (world.ChunkWidth * 2) + 50);
         }
 
 

@@ -34,8 +34,9 @@ namespace ViralTree.GameStates
 
             buttonList = new List<SelectButton>();
 
-            buttonList.Add(new SelectButton(" Select Lvl", "", new Vector2f(200, 100), 0));
-            buttonList.Add(new SelectButton("     Quit", "", new Vector2f(200, 200), 1));
+            buttonList.Add(new SelectButton(" Select Lvl", "", new Vector2f(200, 100), 0));    
+            buttonList.Add(new SelectButton("   Credits", "", new Vector2f(200, 200), 1));
+            buttonList.Add(new SelectButton("     Quit", "", new Vector2f(200, 300), 2));
 
             maxButton = buttonList.Count - 1;
 
@@ -49,7 +50,7 @@ namespace ViralTree.GameStates
 
         public override void ShutDown()
         {
-
+            
         }
 
         public override void Update()
@@ -79,9 +80,12 @@ namespace ViralTree.GameStates
             if (KInput.IsClicked(Keyboard.Key.Space))
             {
                 if (curButton == 0)
-                    parent.SetGameState(new LevelSelection());
-                
+                    parent.SetGameState(new LevelSelection());  
+
                 else if (curButton == 1)
+                    this.parent.SetGameState(new Credits());
+
+                else if (curButton == 2)
                     this.parent.SetGameState(null);
             }
                 

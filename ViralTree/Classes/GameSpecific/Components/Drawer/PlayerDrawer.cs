@@ -57,6 +57,8 @@ namespace ViralTree.Components
 
         public override void Draw(RenderTarget target)
         {
+
+          
             target.Draw(playerSprite);
             target.Draw(nucleusSprite);
             target.Draw(healthSprite);
@@ -66,6 +68,8 @@ namespace ViralTree.Components
                 mitochondrionSprite.Position = mitochondrions[i] + playerSprite.Position;
                 target.Draw(mitochondrionSprite);
             }
+
+            Owner.Collider.Draw(target);
         }
     }
 }
