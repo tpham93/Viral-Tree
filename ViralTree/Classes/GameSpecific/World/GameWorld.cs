@@ -389,5 +389,47 @@ namespace ViralTree.World
             return x >= 0 && x < NumChunksX && y >= 0 && y < NumChunksY;
         }
 
+        public Entity GetClosestEntityInRadius(Entity refEntity, Fraction desiredFraction, float radius)
+        {
+            float minDist = float.PositiveInfinity;
+            Entity closest = null;
+
+            Vector2i idOffset = new Vector2i((int)(radius / ChunkWidth) + 1, (int)(radius / ChunkHeight) + 1);
+
+          //  Console.WriteLine(idOffset);
+
+            for (int i = -idOffset.X; i < idOffset.X; i++)
+            {
+                for (int j = -idOffset.Y; j < idOffset.Y; j++)
+                {
+
+                    Vector2i trueId = new Vector2i(i, j) + refEntity.ChunkId;
+
+                    if (IsValidId(trueId))
+                    {
+                        for (int k = 0; k < chunks[trueId.X, trueId.Y].chunkEntities.Count; k++)
+                        {
+                            Entity tmp = chunks[trueId.X, trueId.Y].chunkEntities[k];
+
+                            if (tmp.Fraction == desiredFraction && refEntity != tmp)
+                            {
+                                float tmpDist = Vec2f.EuclidianDistanceSq(tmp.Collider.Position, refEntity.Collider.Position);
+
+                                if (tmpDist < minDist)
+                                {
+                                    minDist = tmpDist;
+                                    closest = tmp;
+                                }
+                            }
+                        }
+
+                    }
+              
+                }
+            }
+
+            return closest;
+        }
+
     }
 }

@@ -16,7 +16,7 @@ namespace ViralTree
         protected Vector2f direction = Vec2f.UnitX;
 
         protected float rotation = 0;
-        protected float scale;
+        protected float scale = 1.0f;
         protected float radius;
 
         protected ECollidable colType;

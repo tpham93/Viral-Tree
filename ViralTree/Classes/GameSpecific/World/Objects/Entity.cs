@@ -14,14 +14,18 @@ namespace ViralTree.World
     {
         Neutral,
         Cell,
-        Virus
+        CellProjectile,
+        Virus,
+        VirusProjectile
     }
 
     public enum CollidingFractions
     {
         All,
         Cell,
+        CellProjectile,
         Virus,
+        VirusProjectile,
         None
     }
 
@@ -49,7 +53,7 @@ namespace ViralTree.World
         public float CurrentLife
         {
             get { return currentLife; }
-            set { currentLife = value;}
+            set { currentLife = value; }
         }
 
         private float maxLife;
@@ -157,16 +161,16 @@ namespace ViralTree.World
         public void Update(GameTime gameTime, GameWorld world)
         {
 
-            if(thinker.IsActive)
+            if (thinker.IsActive)
                 thinker.Update(gameTime, world);
 
-            if(response.IsActive)
+            if (response.IsActive)
                 response.Update(gameTime, world);
 
             if (drawer != null && drawer.IsActive)
                 drawer.Update(gameTime, world);
 
-            if(activatable.IsActive)
+            if (activatable.IsActive)
                 activatable.Update(gameTime, world);
 
             if (isDead)
@@ -197,19 +201,53 @@ namespace ViralTree.World
         public void Draw(GameTime gameTime, RenderTarget target)
         {
             if (Drawable)
-            {   
+            {
                 if (drawer != null)
                     drawer.Draw(target);
                 else
                     Collider.Draw(target);
             }
-                
+
         }
 
-        public static bool CanCollide(Fraction fraction, CollidingFractions collidingFraction)
+        public static bool CanCollide(Fraction fraction, Fraction otherFraction, CollidingFractions collidingFraction, CollidingFractions otherCollidingFraction)
         {
-            return collidingFraction != CollidingFractions.None && (fraction == Fraction.Neutral || collidingFraction == CollidingFractions.All || (fraction == Fraction.Cell && collidingFraction == CollidingFractions.Cell) || (fraction == Fraction.Virus && collidingFraction == CollidingFractions.Virus));
-        }
+            if (collidingFraction == CollidingFractions.None || otherCollidingFraction == CollidingFractions.None)
+            {
+                return false;
+            }
+            if (collidingFraction == CollidingFractions.All || otherCollidingFraction == CollidingFractions.All || fraction == Fraction.Neutral || otherFraction == Fraction.Neutral)
+            {
+                return true;
+            }
 
+            switch (fraction)
+            {
+                case Fraction.Cell:
+                    return otherCollidingFraction == CollidingFractions.Cell || otherFraction == Fraction.Virus;
+                case Fraction.CellProjectile:
+                    return otherCollidingFraction == CollidingFractions.Virus;
+                case Fraction.Virus:
+                    return otherCollidingFraction == CollidingFractions.Virus || otherFraction == Fraction.Cell;
+                case Fraction.VirusProjectile:
+                    return otherCollidingFraction == CollidingFractions.Cell;
+                default:
+                    break;
+            }
+            
+            switch (otherFraction)
+            {
+                case Fraction.Cell:
+                    return collidingFraction == CollidingFractions.Cell || fraction == Fraction.Virus;
+                case Fraction.CellProjectile:
+                    return collidingFraction == CollidingFractions.Virus;
+                case Fraction.Virus:
+                    return collidingFraction == CollidingFractions.Virus || fraction == Fraction.Cell;
+                case Fraction.VirusProjectile:
+                    return collidingFraction == CollidingFractions.Cell;
+                default:
+                    return false;
+            }
+        }
     }
 }

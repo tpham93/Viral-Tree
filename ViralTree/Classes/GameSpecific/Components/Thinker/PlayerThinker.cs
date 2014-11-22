@@ -31,6 +31,7 @@ namespace ViralTree.Components
         {
             PlayerInput input = new PlayerInput();
             Vector2f movementVector = new Vector2f();
+            Vector2f direction = new Vector2f();
             bool attacking = false;
 
             if (controller == null)
@@ -50,23 +51,38 @@ namespace ViralTree.Components
                 attacking = MInput.LeftPressed();
 
                 Vector2f screenPos = Owner.Collider.Position - world.Cam.Position;
-                screenPos.X *= world.Cam.currentView.Size.X / Settings.WindowSize.X;
-                screenPos.Y *= world.Cam.currentView.Size.Y / Settings.WindowSize.Y;
+                screenPos.X *= Settings.WindowSize.X / world.Cam.currentView.Size.X;
+                screenPos.Y *= Settings.WindowSize.Y / world.Cam.currentView.Size.Y;
 
-                Owner.Collider.Direction = MInput.GetCurPos() - screenPos - new Vector2f(Settings.WindowSize.X / 2.0f, Settings.WindowSize.Y / 2.0f);
+                Console.WriteLine(screenPos);
+
+                direction = MInput.GetCurPos() - screenPos - new Vector2f(Settings.WindowSize.X / 2.0f, Settings.WindowSize.Y / 2.0f);
             }
             else
             {
-                const float THRESHOLD = 0.2f;
+                const float THRESHOLD = 0.4f;
                 controller.update();
-                movementVector = controller.leftPad() / 100;
-                movementVector.X = Math.Abs(movementVector.X) > THRESHOLD ? movementVector.X : 0.0f;
-                movementVector.Y = Math.Abs(movementVector.Y) > THRESHOLD ? movementVector.Y : 0.0f;
-                attacking = controller.isPressed(GInput.EButton.A);
+                Vector2f controllerMovement = controller.leftPad() / 100;
+
+                if (Math.Abs(controllerMovement.X) + Math.Abs(controllerMovement.Y) > THRESHOLD)
+                {
+                    movementVector.X = controllerMovement.X;
+                    movementVector.Y = controllerMovement.Y;
+                }
+
+                Vector2f controllerDirection = controller.rightPad() / 100;
+
+                if (Math.Abs(controllerDirection.X) + Math.Abs(controllerDirection.Y) > THRESHOLD)
+                {
+                    direction.X = controllerDirection.X;
+                    direction.Y = controllerDirection.Y;
+                    attacking = true;
+                }
             }
 
             input.Movement = movementVector;
             input.Attacking = attacking;
+            input.Direction = direction;
 
             return input;
         }
@@ -77,6 +93,7 @@ namespace ViralTree.Components
 
             PlayerInput input = GetInput(world);
             Owner.Collider.Move(speed * input.Movement);
+            Owner.Collider.Direction = input.Direction;
 
             if (KInput.IsPressed(SFML.Window.Keyboard.Key.Q))
                 Owner.Collider.Rotate(-0.1f);

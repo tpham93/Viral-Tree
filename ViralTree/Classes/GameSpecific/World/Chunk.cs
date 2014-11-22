@@ -116,7 +116,7 @@ namespace ViralTree.World
                 chunkEntities[i].Draw(gameTime, target);
 
 
-            DrawBoundings(target);
+           // DrawBoundings(target);
         }
 
         public void DrawSprites(GameTime gameTime, RenderTarget target)
