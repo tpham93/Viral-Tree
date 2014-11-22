@@ -18,6 +18,13 @@ namespace ViralTree.Components
         private ACollider colliderPrototype;
         private float ammo;
         private float damage;
+
+        public override float nextAttack()
+        {
+             return (float)(coolDown.TotalSeconds/maxCoolDown.TotalSeconds); 
+
+        }
+
         public ShooterWeapon(float spawnOffsetDistance, TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage)
         {
             this.spawnOffsetDistance = spawnOffsetDistance;
@@ -27,6 +34,8 @@ namespace ViralTree.Components
             this.ammo = ammo;
             this.damage = damage;
         }
+
+
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {

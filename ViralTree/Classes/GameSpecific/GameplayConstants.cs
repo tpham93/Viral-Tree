@@ -33,7 +33,7 @@ namespace ViralTree
         public const float VEINBALL_CHASE_RADIUS    = 512.0f;   //in use
         public const float VEINBALL_SHOOT_RADIUS    = 1024.0f;  //in use
         public const float VEINBALL_SHOOTER_DAMAGE  = 2.0f;     //in use
-        public const float VEINBALL_SHOOTER_FREQ    = 1000.0f;     //in use
+        public const float VEINBALL_SHOOTER_FREQ    = 3000.0f;     //in use
 
 
 

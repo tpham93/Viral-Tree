@@ -17,6 +17,11 @@ namespace ViralTree.Components
             set { owner = value; }
         }
 
+        public virtual float nextAttack()
+        {
+            return 1;
+        }
+
         public abstract void Update(GameTime gameTime, World.GameWorld world);
 
         public abstract void Attack(World.GameWorld world);

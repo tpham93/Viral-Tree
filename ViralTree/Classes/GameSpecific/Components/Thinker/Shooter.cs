@@ -22,12 +22,17 @@ namespace ViralTree.Components
 
         private AWeapon weapon;
 
+        public override float nextAttack()
+        {
+            return weapon.nextAttack();
+        }
+
         public Shooter(float runRadius, float speed, float shootRadius)
         {
             this.runRadius      = runRadius;
             this.speed          = speed;
             this.shootRadius    = shootRadius;
-            this.weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.VEINBALL_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.VEINBALL_SHOOTER_DAMAGE);
+            this.weapon         = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.VEINBALL_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.VEINBALL_SHOOTER_DAMAGE);
         }
 
         public override void Initialize()
@@ -51,7 +56,8 @@ namespace ViralTree.Components
 
         public override void Update(GameTime gameTime, GameWorld world)
         {
-            weapon.Update(gameTime, world);
+            if (MathUtil.Rand.NextDouble() < 0.5)
+                    weapon.Update(gameTime, world);
             //runnung away
             if(chaser == null)
                 chaser = world.GetClosestEntityInRadius(this.Owner, enemyFraction, runRadius);
@@ -95,10 +101,10 @@ namespace ViralTree.Components
                     //this.Owner.Collider.Move(moveDir);
                     Owner.Collider.Direction = shootDir;
                     
-                    if (MathUtil.Rand.NextDouble() < 0.001)
+                   // if (MathUtil.Rand.NextDouble() < 0.001)
                         weapon.Attack(world);
                 }
-
+                
 
             }
         }
