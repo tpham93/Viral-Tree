@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViralTree.Components;
-using ViralTree.Objects;
 using ViralTree.Tiled;
 
 namespace ViralTree.World
@@ -16,9 +15,7 @@ namespace ViralTree.World
         None,
         Player,
         Spawner,
-        Collision,
-        Fungus,
-    }
+Fungus,Projectile    }
 
     public static class EntityFactory
     {
@@ -47,8 +44,6 @@ namespace ViralTree.World
                 default:
                     break;
             }
-
-            entity.LoadContent();
 
             return entity;
         }

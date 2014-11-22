@@ -28,14 +28,11 @@ namespace ViralTree.Components
                 float y = (float)Math.Cos(angle);
                 mitochondrions[i] = new Vector2f(x,y) * dist;
             }
-        }
 
-        public override void LoadContent(ContentManager contentManager)
-        {
-            Texture playerTexture = contentManager.Load<Texture>("gfx/Player/player.png");
-            Texture nucleusTexture = contentManager.Load<Texture>("gfx/Player/nucleus.png");
-            Texture healthTexture = contentManager.Load<Texture>("gfx/Player/health.png");
-            mitochondrionTexture = contentManager.Load<Texture>("gfx/Player/mitochondrion.png");
+            Texture playerTexture = Game.content.Load<Texture>("gfx/Player/player.png");
+            Texture nucleusTexture = Game.content.Load<Texture>("gfx/Player/nucleus.png");
+            Texture healthTexture = Game.content.Load<Texture>("gfx/Player/health.png");
+            mitochondrionTexture = Game.content.Load<Texture>("gfx/Player/mitochondrion.png");
 
             playerSprite = new Sprite(playerTexture);
             nucleusSprite = new Sprite(nucleusTexture);

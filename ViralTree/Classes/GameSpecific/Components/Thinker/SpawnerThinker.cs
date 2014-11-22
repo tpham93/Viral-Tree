@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ViralTree.Components;
 using ViralTree.Tiled;
 using ViralTree.World;
 
-namespace ViralTree.Objects
+namespace ViralTree.Components
 {
     public class SpawnerThinker : AThinker
     {

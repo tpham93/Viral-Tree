@@ -24,7 +24,8 @@ namespace ViralTree
         {
             content = new ContentManager();
             
-           // window.SetVerticalSyncEnabled(true);
+            window.SetVerticalSyncEnabled(false);
+            window.SetFramerateLimit(0);
             //init the keyboard with all keys:
             KInput.Init(null);
 
