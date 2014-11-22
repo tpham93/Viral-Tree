@@ -5,9 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ViralTree.Components;
 
-namespace ViralTree.Objects
+namespace ViralTree.Components
 {
     public class SpawnerThinker : AThinker
     {

@@ -459,5 +459,16 @@ namespace ViralTree
             radius = tmpRadius;
         }
 
+
+        public override ACollider Copy()
+        {
+            Vector2f[] copiedVertices = new Vector2f[this.vertices.VertexCount];
+            for(uint i = 0; i < copiedVertices.Length; ++i)
+            {
+                copiedVertices[i] = this.vertices[i].Position - this.Position;
+            }
+
+            return new ConvexCollider(copiedVertices);
+        }
     }
 }

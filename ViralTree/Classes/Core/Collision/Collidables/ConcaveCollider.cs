@@ -12,6 +12,7 @@ namespace ViralTree
     {
 
         private List<ConvexCollider> subPolys;
+        private Vector2f center;
 
         private bool redundantPolys;
 
@@ -26,6 +27,7 @@ namespace ViralTree
         {
             subPolys = info;
 
+            this.center = center;
             this.position = center;
             VertexCount = vertexCount;
 
@@ -220,6 +222,16 @@ namespace ViralTree
             }
 
             radius = maxRadius;
+        }
+
+        public override ACollider Copy()
+        {
+            List<ConvexCollider> copiedSupPolys = new List<ConvexCollider>();
+            for (int i = 0; i < subPolys.Count; ++i )
+            {
+                copiedSupPolys.Add((ConvexCollider)subPolys[i].Copy());
+            }
+            return new ConcaveCollider(copiedSupPolys, center, VertexCount);
         }
     }
 }

@@ -45,8 +45,8 @@ namespace ViralTree.Template
                             Settings.Constants.WINDOW_TITLE,
                             Settings.WindowStyles);
 
-            window.SetVerticalSyncEnabled(false);
-            window.SetMouseCursorVisible(true);
+            //window.SetVerticalSyncEnabled(false);
+            //window.SetMouseCursorVisible(true);
             window.Closed += CloseHandler;
             window.MouseWheelMoved += MouseWheelHandler;
 
