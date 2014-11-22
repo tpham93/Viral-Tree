@@ -1,10 +1,12 @@
-﻿using SFML.Window;
+﻿using SFML.Graphics;
+using SFML.Window;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViralTree.Classes.GameSpecific.Components.Drawables;
+using ViralTree.World;
 
 namespace ViralTree.GameStates
 {
@@ -13,6 +15,32 @@ namespace ViralTree.GameStates
         List<SelectButton> buttonList;
 
         int curButton = 0;
+
+        Text title;
+
+        Text coopText;
+
+        Text scoutDesc;
+
+        Font font;
+
+        Sprite checkButton;
+        Sprite checkMark;
+
+        bool playCoop = false;
+
+        const int START_NUM = 0;
+        const int CHECK_BUTTON_NUM = 1;
+        const int MAX_BUTTON_NUM = 2;
+
+        Entity playerScout;
+        Entity playerTank;
+
+        private int scoutPlayerId = -1;
+        private int tankPlayerId = -1;
+
+        private Text scoutChoosenText;
+        private Text tankChoosenText;
 
         public CharacterSelection()
         {
@@ -24,12 +52,39 @@ namespace ViralTree.GameStates
             buttonList = new List<SelectButton>();
 
             SelectButton button = new SelectButton("Start", "", new Vector2f(Settings.WindowSize.X * 0.5f, Settings.WindowSize.Y * 0.5f), 0, ButtonType.Single);
-        //    button.Position += new Vector2f(button.GetSize().X * 0.5f, button.GetSize().Y * 0.5f);
+            button.Position -= new Vector2f(button.GetSize().X * 0.5f, -Settings.WindowSize.Y * 0.33f);
             buttonList.Add(button);
-          //  buttonList.Add(new SelectButton("Back", "", new Vector2f(0, 100), 1, ButtonType.Single));
+         
+            font = Game.content.Load<Font>("other/arial.ttf");
+
+            checkButton = new Sprite(Game.content.Load<Texture>("gfx/GUI/checkButton.png"));
+            checkButton.Position = new Vector2f(Settings.WindowSize.X * 0.5f - checkButton.Texture.Size.X * 0.5f, Settings.WindowSize.Y * 0.25f);
+            checkButton.Color = new Color(255, 255, 255, 127);
+
+            checkMark = new Sprite(Game.content.Load<Texture>("gfx/GUI/checkMark.png"));
+            checkMark.Position = checkButton.Position;
+
+            coopText = new Text("Coop", font);
+            coopText.Position = new Vector2f(checkButton.Position.X + coopText.GetLocalBounds().Width * 0.5f, checkButton.Position.Y + checkButton.Texture.Size.Y);
+
+            title = new Text("Choose your character!", font);
+            title.Position = new Vector2f(Settings.WindowSize.X * 0.5f - title.GetLocalBounds().Width * 0.5f, Settings.WindowSize.Y * 0.125f - title.GetLocalBounds().Height);
 
 
+            scoutChoosenText = new Text("", font);
+            tankChoosenText = new Text("", font);
 
+            object[] arr = {null};
+            playerScout = EntityFactory.Create(EntityType.Scout, new Vector2f(Settings.WindowSize.X * 0.175f, Settings.WindowSize.Y * 0.5f), new CircleCollider(64), arr);
+
+            scoutDesc = new Text("Scout", font);
+            scoutDesc.Position = new Vector2f(playerScout.Collider.Position.X - scoutDesc.GetLocalBounds().Width * 0.5f, playerScout.Collider.Position.Y + playerScout.Collider.Radius);
+
+            scoutChoosenText.Position = playerScout.Collider.Position;
+           // tankChoosenText.Position = playerTank.Collider.Position;
+
+
+            //tankChoosenText.Position = 
         }
 
         public override void ShutDown()
@@ -42,12 +97,38 @@ namespace ViralTree.GameStates
             if (KInput.IsClicked(Keyboard.Key.Down) || KInput.IsClicked(Keyboard.Key.S))
                 curButton++;
 
-            if (KInput.IsClicked(Keyboard.Key.Up) || KInput.IsClicked(Keyboard.Key.W))
+            else if (KInput.IsClicked(Keyboard.Key.Up) || KInput.IsClicked(Keyboard.Key.W))
                 curButton--;
 
+            if (KInput.IsClicked(Keyboard.Key.Left) || KInput.IsClicked(Keyboard.Key.A))
+            {
+                if (scoutPlayerId == -1)
+                {
+                    scoutPlayerId = 0;
+                    scoutChoosenText.DisplayedString = "1";
+                }
+            }
+
+            else if (KInput.IsClicked(Keyboard.Key.Right) || KInput.IsClicked(Keyboard.Key.D))
+            {
+                if(tankPlayerId == -1)
+                {
+                    tankPlayerId = 0;;
+                    tankChoosenText.DisplayedString = "1";
+                }
+
+
+            }
+
+      
+
+
+
+
             if (curButton < 0)
-                curButton = buttonList.Count - 1;
-            else if (curButton >= buttonList.Count)
+                curButton = MAX_BUTTON_NUM - 1;
+
+            else if (curButton >= MAX_BUTTON_NUM)
                 curButton = 0;
 
 
@@ -57,23 +138,64 @@ namespace ViralTree.GameStates
                 b.Update(curButton);
             }
 
+            ChooseOverCheckButton();
+
 
             if (KInput.IsClicked(Keyboard.Key.Space))
             {
-                if (curButton == 0)
+                if (curButton == START_NUM)
                     parent.SetGameState(new LevelSelection());
+
+                else if (curButton == CHECK_BUTTON_NUM)
+                {
+                    playCoop = !playCoop;
+                }
+                  
             }
 
             else if (KInput.IsClicked(Keyboard.Key.Escape))
                 parent.SetGameState(new MainMenu());
+
+            playerScout.Drawer.Update(parent.gameTime, null);
         }
 
         public override void Draw()
         {
-            parent.window.Clear();
+            parent.window.Clear(Color.Black);
 
             foreach(SelectButton b in buttonList)
                 b.Draw(parent.window);
+
+
+            parent.window.Draw(title);
+
+            parent.window.Draw(checkButton);
+
+            parent.window.Draw(coopText);
+
+            parent.window.Draw(scoutDesc);
+
+            parent.window.Draw(scoutChoosenText);
+
+            parent.window.Draw(tankChoosenText);
+
+            if (playCoop)
+                parent.window.Draw(checkMark);
+
+
+            playerScout.Draw(parent.gameTime, parent.window);
+        }
+
+        public void ChooseOverCheckButton()
+        {
+            if (curButton == CHECK_BUTTON_NUM)
+            {
+                checkButton.Color = Color.White;
+            }
+            else
+            {
+                checkButton.Color = new Color(255, 255, 255, 127);
+            }
         }
     }
 }
