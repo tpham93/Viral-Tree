@@ -15,28 +15,21 @@ namespace ViralTree.Tiled
     //TODO: everything. But its atm mostly game depentend
     public class TiledReader
     {
-        private const String TILED_MAP = "map";
-        private const String TILED_TILESET = "tileset";
-        private const String TILED_POLYGON = "points";
-        private const String TILED_PROPERTIES = "properties";
-        private const String TILED_SPATIAL_X = "SpatialSizeX";
-        private const String TILED_SPATIAL_Y = "SpatialSizeY";
+        public List<EntityAttribs> entityAttributs = new List<EntityAttribs>();
 
-
+      //  public List<> tileIds = new List<Vector2i>();
 
         public String tileSetName = null;
 
-        public int numTilesX = 0;
-        public int numTilesY = 0;
+        public int numTilesX    = 0;
+        public int numTilesY    = 0;
 
-        public int tileSizeX = 0;
-        public int tileSizeY = 0;
+        public int tileSizeX    = 0;
+        public int tileSizeY    = 0;
 
         public int spatialSizeX = 0;
         public int spatialSizeY = 0;
 
-
-        public List<EntityAttribs> entityAttributs = new List<EntityAttribs>();
 
 
         public TiledReader()
@@ -196,7 +189,7 @@ namespace ViralTree.Tiled
         {
             Vector2f center = new Vector2f();
 
-           // Console.WriteLine(start);
+       //     Console.WriteLine(start);
 
             print("foundPoints");
             char[] splits = { ' ' };
@@ -215,11 +208,11 @@ namespace ViralTree.Tiled
 
                 center += vertices[i];
 
-           //    Console.WriteLine(vertices[i]);
+            //   Console.WriteLine(vertices[i]);
             }
             center /= vertices.Count;
 
-         //   Console.WriteLine(center);
+        //    Console.WriteLine(center);
  
 
             return center;
@@ -230,7 +223,11 @@ namespace ViralTree.Tiled
             print("found a layer");
             while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("layer")))
             {
+                while (reader.MoveToNextAttribute())
+                {
+                  //  if(reader.Name.Equals("gid"))
 
+                }
             }
         }
 

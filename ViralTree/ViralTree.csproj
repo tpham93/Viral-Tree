@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Core\Tiled\EntityAttribs.cs" />
+    <Compile Include="Classes\Core\Utilities\Vector3i.cs" />
     <Compile Include="Classes\GameSpecific\Components\AActivatable.cs" />
     <Compile Include="Classes\GameSpecific\Components\AActivator.cs" />
     <Compile Include="Classes\GameSpecific\Components\ACollisionResponse.cs" />

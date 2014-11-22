@@ -109,6 +109,7 @@ namespace ViralTree.World
         {
             TiledReader reader = new TiledReader();
             reader.Load2("Content/other/level/" + levelName + ".tmx");
+            Game.content.Load<Texture>("other/level/"+reader.tileSetName);
 
             int numChunksX = (reader.numTilesX * reader.tileSizeX) / reader.spatialSizeX;
             int numChunksY = (reader.numTilesY * reader.tileSizeY) / reader.spatialSizeY;
