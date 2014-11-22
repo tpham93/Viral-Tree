@@ -232,9 +232,6 @@ namespace ViralTree
         public override void Draw(RenderTarget target, RenderStates states)
         {
             target.Draw(vertices, states);
-
-
-          
         }
 
 

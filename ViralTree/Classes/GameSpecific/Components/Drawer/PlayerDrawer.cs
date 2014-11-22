@@ -45,6 +45,12 @@ namespace ViralTree.Components
             mitochondrionSprite.Origin = new Vector2f(mitochondrionSprite.TextureRect.Width, mitochondrionSprite.TextureRect.Height) / 2.0f;
         }
 
+        public override void Initialize()
+        {
+            base.Initialize();
+            playerSprite.Position = Owner.Collider.Position;
+        }
+
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
             playerSprite.Position = Owner.Collider.Position;
@@ -57,8 +63,6 @@ namespace ViralTree.Components
 
         public override void Draw(RenderTarget target)
         {
-
-          
             target.Draw(playerSprite);
             target.Draw(nucleusSprite);
             target.Draw(healthSprite);
@@ -69,7 +73,7 @@ namespace ViralTree.Components
                 target.Draw(mitochondrionSprite);
             }
 
-         //   Owner.Collider.Draw(target);
+        //Owner.Collider.Draw(target);
         }
     }
 }

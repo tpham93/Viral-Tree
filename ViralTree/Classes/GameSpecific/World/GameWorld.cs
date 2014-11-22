@@ -151,7 +151,7 @@ namespace ViralTree.World
 
             Joystick.Update();
             List<uint> connectedGamepads = GInput.getConnectedGamepads();
-            AddEntity(EntityFactory.Create(EntityType.Player, new Vector2f(256, 256), new CircleCollider(64), new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
+            AddEntity(EntityFactory.Create(EntityType.Player, new Vector2f(256, 256), PolygonFactory.getRegularStar(4, 64), new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
 
 
             //////________________________________________ADD ENTITIES ____________________________
@@ -387,6 +387,32 @@ namespace ViralTree.World
         public bool IsValidId(int x, int y)
         {
             return x >= 0 && x < NumChunksX && y >= 0 && y < NumChunksY;
+        }
+
+        public Entity GetClosestEntityInRadius(Entity refEntity, Fraction desiredFraction, float radius)
+        {
+            float minDist = float.PositiveInfinity;
+            Entity closest = null;
+
+            Vector2i idOffset = new Vector2i((int)(radius / ChunkWidth), (int)(radius / ChunkHeight));
+
+            for (int i = -idOffset.X; i < idOffset.X; i++)
+            {
+                for (int j = -idOffset.Y; j < idOffset.Y; j++)
+                {
+
+                    for (int k = 0; k <  chunks[i, j].chunkEntities.Count; k++)
+			        {
+                        Entity tmp = chunks[i, j].chunkEntities[k];
+                        float tmpDist = Vec2f.EuclidianDistance(tmp.Collider.Position, refEntity.Collider.Position);
+
+                        
+			        }
+              
+                }
+            }
+
+            return closest;
         }
 
     }

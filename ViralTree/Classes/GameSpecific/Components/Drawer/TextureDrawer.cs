@@ -9,7 +9,7 @@ using SFML.Window;
 
 namespace ViralTree.Components
 {
-    class TextureDrawer : ADrawer
+    public class TextureDrawer : ADrawer
     {
         Sprite sprite;
         public TextureDrawer(String filePath)
@@ -21,6 +21,7 @@ namespace ViralTree.Components
 
         public override void Initialize()
         {
+            sprite.Position = Owner.Collider.Position;
         }
 
         public override void Update(GameTime gameTime, World.GameWorld world)
@@ -32,6 +33,8 @@ namespace ViralTree.Components
         public override void Draw(SFML.Graphics.RenderTarget target)
         {
             target.Draw(sprite);
+
+          //  Owner.Collider.Draw(target);
         }
     }
 }
