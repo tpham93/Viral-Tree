@@ -19,7 +19,7 @@ namespace ViralTree.Components
             pushResponse = new BasicPushResponse(pushable);
             pushResponse.isPushable = isPushing;
 
-            this.isPushable = isPushable;
+            this.isPushable = pushable;
             this.isPushing = isPushing;
 
             this.fraction = fraction;

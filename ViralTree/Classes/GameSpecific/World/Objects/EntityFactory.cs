@@ -71,7 +71,7 @@ namespace ViralTree.World
         private static Entity CreateAnorism(ACollider collider, Vector2f position, object[] additionalInfos)
         {
             collider.Scale = GameplayConstants.ANORISM_SCALE;
-            return new Entity(collider, position, GameplayConstants.ANORISM_LIFE, Fraction.Virus, CollidingFractions.All, new Follower(GameplayConstants.ANORISM_FOLLOW_RADIUS, GameplayConstants.ANORISM_SPEED), new TouchDamageResponse(Fraction.Virus, 0.5f, true, true), EmptyActivatable.Instance, new MultiTextureDrawer("gfx/anorism.png", "gfx/anorismShuriken.png"));
+            return new Entity(collider, position, GameplayConstants.ANORISM_LIFE, Fraction.Virus, CollidingFractions.All, new Follower(GameplayConstants.ANORISM_FOLLOW_RADIUS, GameplayConstants.ANORISM_SPEED), new TouchDamageResponse(Fraction.Virus, GameplayConstants.ANORISM_TOUCH_DAMAGE, true, true), EmptyActivatable.Instance, new MultiTextureDrawer("gfx/anorism.png", "gfx/anorismShuriken.png"));
         }
 
         private static Entity CreateFungus(ACollider collider, Vector2f position, object[] additionalInfos)

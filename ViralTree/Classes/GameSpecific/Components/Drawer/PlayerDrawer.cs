@@ -21,7 +21,7 @@ namespace ViralTree.Components
 
         public PlayerDrawer()
         {
-            mitochondrionsNum = 20;
+            mitochondrionsNum = 5.5f;
 
             Texture playerTexture = Game.content.Load<Texture>("gfx/Player/player.png");
             Texture nucleusTexture = Game.content.Load<Texture>("gfx/Player/nucleus.png");
@@ -63,9 +63,9 @@ namespace ViralTree.Components
             target.Draw(nucleusSprite);
             target.Draw(healthSprite);
 
-            for (int i = 0; i < mitochondrionsNum; ++i)
+            for (int i = 0; i < Math.Ceiling(mitochondrionsNum); ++i)
             {
-                float angle = MathUtil.ToDegree(((float)i / (mitochondrionsNum)) * MathUtil.PI * 2.0f + mitochondrionOffset);
+                float angle = MathUtil.ToDegree((i / (float)Math.Ceiling(mitochondrionsNum)) * MathUtil.PI * 2.0f + mitochondrionOffset);
                 mitochondrionSprite.Rotation = angle;
                 target.Draw(mitochondrionSprite);
             }

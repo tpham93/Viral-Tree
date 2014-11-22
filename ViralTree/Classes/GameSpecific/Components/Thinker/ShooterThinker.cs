@@ -10,7 +10,7 @@ using ViralTree.World;
 
 namespace ViralTree.Components
 {
-    class ShooterThinker : AThinker
+    class ShooterThinker : AWeapon
     {
         private float spawnOffsetDistance;
         private TimeSpan maxCoolDown;
@@ -28,7 +28,7 @@ namespace ViralTree.Components
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
-            if(coolDown > TimeSpan.Zero)
+            if (coolDown > TimeSpan.Zero)
             {
                 coolDown -= gameTime.ElapsedTime;
             }
@@ -37,12 +37,15 @@ namespace ViralTree.Components
         private void SpawnProjectile(World.GameWorld world)
         {
             Vector2f position = Owner.Collider.Position + spawnOffsetDistance * Owner.Collider.Direction;
-            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { Owner.Fraction, Owner.Fraction == Fraction.Cell ? CollidingFractions.CellProjectile : CollidingFractions.VirusProjectile, Owner.Collider.Direction, 2000.0f, "gfx/Projectiles/BasicProjectile.png" }));
+            Fraction projectileFraction = Owner.Fraction == Fraction.Cell ? Fraction.CellProjectile : Fraction.VirusProjectile;
+            CollidingFractions projectileCollidingFraction = Owner.Fraction == Fraction.Cell ? CollidingFractions.VirusProjectile : CollidingFractions.CellProjectile;
+
+            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, Owner.Collider.Direction, 2000.0f, "gfx/Projectiles/BasicProjectile.png" }));
         }
 
-        public void Attack(World.GameWorld world)
+        public override void Attack(World.GameWorld world)
         {
-            if(coolDown <= TimeSpan.Zero && ammo > 0)
+            if (coolDown <= TimeSpan.Zero && ammo > 0)
             {
                 --ammo;
                 SpawnProjectile(world);
