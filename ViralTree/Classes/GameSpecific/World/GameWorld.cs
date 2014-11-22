@@ -375,6 +375,7 @@ namespace ViralTree.World
         {
             Vector2i id = new Vector2i((int)(s.Position.X / this.ChunkWidth), (int)(s.Position.Y / this.ChunkHeight));
 
+            if(IsValidId(id))
             chunks[id.X, id.Y].sprites.Add(s);
         }
 
