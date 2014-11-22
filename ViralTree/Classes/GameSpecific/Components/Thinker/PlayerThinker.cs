@@ -51,10 +51,12 @@ namespace ViralTree.Components
                 attacking = MInput.LeftPressed();
 
                 Vector2f screenPos = Owner.Collider.Position - world.Cam.Position;
-                screenPos.X *= world.Cam.currentView.Size.X / Settings.WindowSize.X;
-                screenPos.Y *= world.Cam.currentView.Size.Y / Settings.WindowSize.Y;
+                screenPos.X *= Settings.WindowSize.X / world.Cam.currentView.Size.X;
+                screenPos.Y *= Settings.WindowSize.Y / world.Cam.currentView.Size.Y;
 
-                Owner.Collider.Direction = MInput.GetCurPos() - screenPos - new Vector2f(Settings.WindowSize.X / 2.0f, Settings.WindowSize.Y / 2.0f);
+                Console.WriteLine(screenPos);
+
+                direction = MInput.GetCurPos() - screenPos - new Vector2f(Settings.WindowSize.X / 2.0f, Settings.WindowSize.Y / 2.0f);
             }
             else
             {
