@@ -17,7 +17,7 @@ namespace ViralTree.GameStates
 
         Font font;
 
-        int posX;
+        int posX = 50;
         
         public Credits()
         {
@@ -28,7 +28,24 @@ namespace ViralTree.GameStates
         {
             font = new Font( Game.content.Load<Font>("other/arial.ttf"));
 
-            gametitel.Position = new Vector2f(posX, 1000);
+            gametitel = new Text();
+            //categories = new Text();
+            //content = new Text();
+
+            gametitel.Font  = font;
+            //categories.Font = font;
+            //content.Font    = font;
+
+            gametitel.CharacterSize = 50;
+            //categories.CharacterSize = 35;
+            //content.CharacterSize = 15;
+
+            gametitel.Position = new Vector2f(posX, 800);
+            gametitel.DisplayedString = "Some Game with a Tree in it";
+
+
+            
+
 
         }
 
@@ -43,7 +60,7 @@ namespace ViralTree.GameStates
             if (KInput.IsClicked(Keyboard.Key.Escape))
                 this.parent.SetGameState(null);
 
-            
+            gametitel.Position = new Vector2f(posX, gametitel.Position.Y - 1);
 
 
 
@@ -53,11 +70,16 @@ namespace ViralTree.GameStates
 
         public override void Draw()
         {
+            parent.window.Clear();
+
+
+
+            parent.window.Draw(gametitel);
             
 
             
             }
         }
     }
-}
+
 
