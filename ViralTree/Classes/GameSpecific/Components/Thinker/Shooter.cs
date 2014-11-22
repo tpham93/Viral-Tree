@@ -20,7 +20,7 @@ namespace ViralTree.Components
         Vector2f moveDir;
         Vector2f shootDir;
 
-        private float spawnOffsetDistance = 10f;
+        
         private TimeSpan maxCoolDown;
         private TimeSpan coolDown;
         private ACollider colliderPrototype;
@@ -33,7 +33,7 @@ namespace ViralTree.Components
             this.runRadius      = runRadius;
             this.speed          = speed;
             this.shootRadius    = shootRadius;
-            this.weapon         = new ShooterWeapon(30, TimeSpan.FromMilliseconds(250.0f), new CircleCollider(16), float.PositiveInfinity);
+            this.weapon         = new ShooterWeapon(30, TimeSpan.FromMilliseconds(2500.0f), new CircleCollider(16), float.PositiveInfinity);
         }
 
         public override void Initialize()
@@ -100,7 +100,9 @@ namespace ViralTree.Components
                     //moveDir = Vec2f.Normalized(moveDir, len) * speed * (float)gameTime.ElapsedTime.TotalSeconds;
                     //this.Owner.Collider.Move(moveDir);
                     Owner.Collider.Direction = shootDir;
-                    weapon.Attack(world);
+                    
+                    if (MathUtil.Rand.NextDouble() < 0.001)
+                        weapon.Attack(world);
                 }
 
 
