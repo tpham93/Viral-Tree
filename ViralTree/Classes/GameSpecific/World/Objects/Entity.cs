@@ -48,7 +48,7 @@ namespace ViralTree.World
         public Components.AThinker Thinker
         {
             get { return thinker; }
-            set { value.Owner = this; value.IsActive = true; thinker = value; }
+            set { value.Owner = this; value.IsActive = true; thinker = value; thinker.Initialize(); }
 
         }
 
@@ -57,7 +57,7 @@ namespace ViralTree.World
         public Components.ACollisionResponse Response
         {
             get { return response; }
-            set { value.Owner = this; value.IsActive = true; response = value; }
+            set { value.Owner = this; value.IsActive = true; response = value; response.Initialize(); }
 
         }
 
@@ -66,14 +66,14 @@ namespace ViralTree.World
         public Components.ADrawer Drawer
         {
             get { return drawer; }
-            set { if (value != null) { value.Owner = this; value.IsActive = true; drawer = value; } }
+            set { if (value != null) { value.Owner = this; value.IsActive = true; drawer = value; drawer.Initialize(); } }
         }
 
         private Components.AActivator activator;
         public Components.AActivator Activator
         {
             get { return activator; }
-            set { value.Owner = this; value.IsActive = true; activator = value; }
+            set { value.Owner = this; value.IsActive = true; activator = value; activator.Initialize(); }
         }
 
 
@@ -81,7 +81,7 @@ namespace ViralTree.World
         public Components.AActivatable Activatable
         {
             get { return activatable; }
-            set { value.Owner = this; value.IsActive = true; activatable = value; }
+            set { value.Owner = this; value.IsActive = true; activatable = value; activatable.Initialize(); }
         }
 
         #endregion

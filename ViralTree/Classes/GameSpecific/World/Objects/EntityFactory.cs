@@ -36,6 +36,10 @@ namespace ViralTree.World
                     entity = CreateBlocker(position, collider);
                     break;
 
+                case EntityType.Projectile:
+                    entity = CreateProjectile(collider, position, (Vector2f)additionalInfos[0], (float)additionalInfos[1], (String)additionalInfos[2]);
+                    break;
+
                 default:
                     break;
             }
@@ -54,7 +58,12 @@ namespace ViralTree.World
             return new Entity(new ConvexCollider(vertices, true), new Vector2f(bounding.Left, bounding.Top), float.PositiveInfinity, new SpawnerThinker(bounding, numSpawns, cooldown, firstStart), EmptyResponse.Instance, EmptyActivator.Instance, EmptyActivatable.Instance, null);
         }
 
-        public static Entity CreateNewPlayer(ACollider collider, Vector2f position, GInput input)
+        private static Entity CreateProjectile(ACollider collider, Vector2f position, Vector2f direction, float speed, String filepath)
+        {
+            return new Entity(new CircleCollider(16), position, float.PositiveInfinity, new ProjectileThinker(direction, speed), new BasicPushResponse(true), EmptyActivator.Instance, EmptyActivatable.Instance, new TextureDrawer(filepath));
+        }
+
+        private static Entity CreateNewPlayer(ACollider collider, Vector2f position, GInput input)
         {
             float startHealth = 100;
             return new Entity(collider, position, startHealth, new Components.PlayerThinker(input), new Components.BasicPushResponse(true), new Components.BasicActivator(), Components.EmptyActivatable.Instance, new Components.PlayerDrawer());

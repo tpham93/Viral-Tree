@@ -21,6 +21,7 @@ namespace ViralTree.Components
         {
             this.spawnOffsetDistance = spawnOffsetDistance;
             this.coolDown = coolDown;
+            this.maxCoolDown = coolDown;
             this.colliderPrototype = colliderPrototype;
             this.ammo = ammo;
         }
@@ -36,12 +37,12 @@ namespace ViralTree.Components
         private void SpawnProjectile(World.GameWorld world)
         {
             Vector2f position = Owner.Collider.Position + spawnOffsetDistance * Owner.Collider.Direction;
-            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), null));
+            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { Owner.Collider.Direction, 2000.0f, "gfx/Projectiles/BasicProjectile.png" }));
         }
 
         public void Attack(World.GameWorld world)
         {
-            if(coolDown < TimeSpan.Zero && ammo > 0)
+            if(coolDown <= TimeSpan.Zero && ammo > 0)
             {
                 --ammo;
                 SpawnProjectile(world);

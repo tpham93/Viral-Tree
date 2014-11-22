@@ -10,10 +10,19 @@ namespace ViralTree.Components
     public sealed class PlayerThinker : AThinker
     {
         private GInput controller;
+        private ShooterThinker weapon;
 
         public PlayerThinker(GInput controller = null)
         {
             this.controller = controller;
+            weapon = new ShooterThinker(30, TimeSpan.FromMilliseconds(500.0f), new CircleCollider(16), float.PositiveInfinity);
+        }
+
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            weapon.Owner = this.Owner;
         }
 
         private PlayerInput GetInput()
@@ -37,7 +46,7 @@ namespace ViralTree.Components
                     ++movementVector.X;
 
                 if (KInput.IsPressed(SFML.Window.Keyboard.Key.Space))
-                    attacking = false;
+                    attacking = true;
             }
             else
             {
@@ -60,7 +69,6 @@ namespace ViralTree.Components
             float speed = 400 * (float)gameTime.ElapsedTime.TotalSeconds;
 
             PlayerInput input = GetInput();
-
             Owner.Collider.Move(speed * input.Movement);
 
             if (KInput.IsPressed(SFML.Window.Keyboard.Key.Q))
@@ -72,6 +80,10 @@ namespace ViralTree.Components
             if (KInput.IsClicked(SFML.Window.Keyboard.Key.Space))
                 Owner.Activator.Activate(gameTime, world);
 
+            weapon.Update(gameTime, world);
+
+            if (input.Attacking)
+                weapon.Attack(world);
 
             /*
             Vector2f mousePos = MInput.GetMousePos(new Vector2f(world.Cam.Position.X - Settings.WindowSize.X * 0.5f, world.Cam.Position.Y - Settings.WindowSize.Y * 0.5f));
