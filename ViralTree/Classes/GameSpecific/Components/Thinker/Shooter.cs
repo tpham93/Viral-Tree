@@ -20,12 +20,6 @@ namespace ViralTree.Components
         Vector2f moveDir;
         Vector2f shootDir;
 
-        
-        private TimeSpan maxCoolDown;
-        private TimeSpan coolDown;
-        private ACollider colliderPrototype;
-        private float ammo;
-
         private AWeapon weapon;
 
         public Shooter(float runRadius, float speed, float shootRadius)
@@ -33,7 +27,7 @@ namespace ViralTree.Components
             this.runRadius      = runRadius;
             this.speed          = speed;
             this.shootRadius    = shootRadius;
-            this.weapon         = new ShooterWeapon(30, TimeSpan.FromMilliseconds(2500.0f), new CircleCollider(16), float.PositiveInfinity);
+            this.weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.VEINBALL_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.VEINBALL_SHOOTER_DAMAGE);
         }
 
         public override void Initialize()
@@ -82,7 +76,7 @@ namespace ViralTree.Components
             }
 
             //shooting
-            if (target == null)
+            if (target == null || target.UniqueId == -1)
                 target = world.GetClosestEntityInRadius(this.Owner, enemyFraction, runRadius);
 
             else
