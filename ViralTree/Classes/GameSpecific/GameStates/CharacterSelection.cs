@@ -24,7 +24,8 @@ namespace ViralTree.GameStates
 
         Font font;
 
-        Sprite checkButton;
+        Sprite checkButton1;
+        Sprite checkButton2;
         Sprite checkMark;
 
         bool playCoop = false;
@@ -51,21 +52,23 @@ namespace ViralTree.GameStates
         {
             buttonList = new List<SelectButton>();
 
-            SelectButton button = new SelectButton("Start", "", new Vector2f(Settings.WindowSize.X * 0.5f, Settings.WindowSize.Y * 0.5f), 0, ButtonType.Single);
-            button.Position -= new Vector2f(button.GetSize().X * 0.5f, -Settings.WindowSize.Y * 0.33f);
-            buttonList.Add(button);
-         
             font = Game.content.Load<Font>("other/arial.ttf");
 
-            checkButton = new Sprite(Game.content.Load<Texture>("gfx/GUI/checkButton.png"));
-            checkButton.Position = new Vector2f(Settings.WindowSize.X * 0.5f - checkButton.Texture.Size.X * 0.5f, Settings.WindowSize.Y * 0.25f);
-            checkButton.Color = new Color(255, 255, 255, 127);
+            SelectButton startButton = new SelectButton("Start", "", new Vector2f(Settings.WindowSize.X * 0.5f, Settings.WindowSize.Y * 0.5f), 0, ButtonType.Single);
+            startButton.Position -= new Vector2f(startButton.GetSize().X * 0.5f, -Settings.WindowSize.Y * 0.33f);
+            buttonList.Add(startButton);
+         
+            
+
+            checkButton1 = new Sprite(Game.content.Load<Texture>("gfx/GUI/checkButton.png"));
+            checkButton1.Position = new Vector2f(Settings.WindowSize.X * 0.5f - checkButton1.Texture.Size.X * 0.5f, Settings.WindowSize.Y * 0.25f);
+            checkButton1.Color = new Color(255, 255, 255, 127);
 
             checkMark = new Sprite(Game.content.Load<Texture>("gfx/GUI/checkMark.png"));
-            checkMark.Position = checkButton.Position;
+            checkMark.Position = checkButton1.Position;
 
             coopText = new Text("Coop", font);
-            coopText.Position = new Vector2f(checkButton.Position.X + coopText.GetLocalBounds().Width * 0.5f, checkButton.Position.Y + checkButton.Texture.Size.Y);
+            coopText.Position = new Vector2f(checkButton1.Position.X + coopText.GetLocalBounds().Width * 0.5f, checkButton1.Position.Y + checkButton1.Texture.Size.Y);
 
             title = new Text("Choose your character!", font);
             title.Position = new Vector2f(Settings.WindowSize.X * 0.5f - title.GetLocalBounds().Width * 0.5f, Settings.WindowSize.Y * 0.125f - title.GetLocalBounds().Height);
@@ -169,7 +172,7 @@ namespace ViralTree.GameStates
 
             parent.window.Draw(title);
 
-            parent.window.Draw(checkButton);
+            parent.window.Draw(checkButton1);
 
             parent.window.Draw(coopText);
 
@@ -190,11 +193,11 @@ namespace ViralTree.GameStates
         {
             if (curButton == CHECK_BUTTON_NUM)
             {
-                checkButton.Color = Color.White;
+                checkButton1.Color = Color.White;
             }
             else
             {
-                checkButton.Color = new Color(255, 255, 255, 127);
+                checkButton1.Color = new Color(255, 255, 255, 127);
             }
         }
     }
