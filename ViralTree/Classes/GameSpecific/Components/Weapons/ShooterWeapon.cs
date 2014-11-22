@@ -13,36 +13,22 @@ namespace ViralTree.Components
     class ShooterWeapon : AWeapon
     {
         private float spawnOffsetDistance;
-        private TimeSpan maxCoolDown;
-        private TimeSpan coolDown;
         private ACollider colliderPrototype;
-        private float ammo;
         private float damage;
+        private float speed;
+        public ShooterWeapon(float spawnOffsetDistance, TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage, float speed)
+            :base(coolDown, ammo)
+        {
+            this.spawnOffsetDistance = spawnOffsetDistance;
+            this.colliderPrototype = colliderPrototype;
+            this.damage = damage;
+            this.speed = speed;
+        }
 
         public override float nextAttack()
         {
-             return (float)(coolDown.TotalSeconds/maxCoolDown.TotalSeconds); 
+             return (float)(CoolDown.TotalSeconds/MaxCoolDown.TotalSeconds); 
 
-        }
-
-        public ShooterWeapon(float spawnOffsetDistance, TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage)
-        {
-            this.spawnOffsetDistance = spawnOffsetDistance;
-            this.coolDown = coolDown;
-            this.maxCoolDown = coolDown;
-            this.colliderPrototype = colliderPrototype;
-            this.ammo = ammo;
-            this.damage = damage;
-        }
-
-
-
-        public override void Update(GameTime gameTime, World.GameWorld world)
-        {
-            if (coolDown > TimeSpan.Zero)
-            {
-                coolDown -= gameTime.ElapsedTime;
-            }
         }
 
         private void SpawnProjectile(World.GameWorld world)
@@ -51,16 +37,22 @@ namespace ViralTree.Components
             Fraction projectileFraction = Owner.Fraction == Fraction.Cell ? Fraction.CellProjectile : Fraction.VirusProjectile;
             CollidingFractions projectileCollidingFraction = Owner.Fraction == Fraction.Cell ? CollidingFractions.VirusProjectile : CollidingFractions.CellProjectile;
 
-            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, Owner.Collider.Direction, 2000.0f, damage, "gfx/Projectiles/BasicProjectile.png" }));
+            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, Owner.Collider.Direction, speed, damage, "gfx/Projectiles/BasicProjectile.png" }));
+        }
+
+        public override void Update(GameTime gameTime, GameWorld world)
+        {
+            base.Update(gameTime, world);
+            Console.WriteLine(MaxCoolDown);
         }
 
         public override void Attack(World.GameWorld world)
         {
-            if (coolDown <= TimeSpan.Zero && ammo > 0)
+            if (CoolDown <= TimeSpan.Zero && Ammo > 0)
             {
-                --ammo;
+                --Ammo;
                 SpawnProjectile(world);
-                coolDown = maxCoolDown;
+                CoolDown = MaxCoolDown;
             }
         }
     }

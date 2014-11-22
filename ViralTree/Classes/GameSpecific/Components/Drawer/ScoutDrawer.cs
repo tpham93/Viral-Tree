@@ -59,9 +59,16 @@ namespace ViralTree.Components
 
         public override void Draw(RenderTarget target)
         {
+            float directionAngle =  MathUtil.ToDegree(Vec2f.RotationFrom(Owner.Collider.Direction));
+
+            playerSprite.Rotation =  directionAngle;
+            nucleusSprite.Rotation = directionAngle;
+            healthSprite.Rotation = directionAngle;
+
             target.Draw(playerSprite);
             target.Draw(nucleusSprite);
             target.Draw(healthSprite);
+
 
             for (int i = 0; i < Math.Ceiling(mitochondrionsNum); ++i)
             {

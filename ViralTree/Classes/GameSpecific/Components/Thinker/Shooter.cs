@@ -32,7 +32,7 @@ namespace ViralTree.Components
             this.runRadius      = runRadius;
             this.speed          = speed;
             this.shootRadius    = shootRadius;
-            this.weapon         = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.VEINBALL_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.VEINBALL_SHOOTER_DAMAGE);
+            this.weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.VEINBALL_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.VEINBALL_SHOOTER_DAMAGE, GameplayConstants.VEINBALL_SHOOTER_SPEED);
         }
 
         public override void Initialize()

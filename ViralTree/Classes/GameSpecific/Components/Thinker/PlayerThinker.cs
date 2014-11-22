@@ -13,11 +13,13 @@ namespace ViralTree.Components
     {
         private GInput controller;
         private AWeapon weapon;
+        private AWeapon specialWeapon;
 
         public PlayerThinker(GInput controller = null)
         {
             this.controller = controller;
-            weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.PLAYER_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.PLAYER_SHOOTER_DAMAGE);
+            weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.PLAYER_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.PLAYER_SHOOTER_DAMAGE, GameplayConstants.PLAYER_SHOOTER_SPEED);
+            specialWeapon = new ScoutSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
         }
 
         public override void Initialize()
@@ -25,6 +27,7 @@ namespace ViralTree.Components
             base.Initialize();
 
             weapon.Owner = this.Owner;
+            specialWeapon.Owner = this.Owner;
         }
 
         private PlayerInput GetInput(GameWorld world)
@@ -33,6 +36,7 @@ namespace ViralTree.Components
             Vector2f movementVector = new Vector2f();
             Vector2f direction = new Vector2f();
             bool attacking = false;
+            bool special = false;
 
             if (controller == null)
             {
@@ -49,6 +53,7 @@ namespace ViralTree.Components
                     ++movementVector.X;
 
                 attacking = MInput.LeftPressed();
+                special = MInput.RightClicked();
 
                 Vector2f screenPos = Owner.Collider.Position - world.Cam.Position;
                 screenPos.X *= Settings.WindowSize.X / world.Cam.currentView.Size.X;
@@ -76,13 +81,16 @@ namespace ViralTree.Components
                 {
                     direction.X = controllerDirection.X;
                     direction.Y = controllerDirection.Y;
-                    attacking = true;
                 }
+
+                attacking = controller.isPressed(GInput.EButton.RB);
+                special = controller.isPressed(GInput.EButton.LB);
             }
 
             input.Movement = movementVector;
             input.Attacking = attacking;
             input.Direction = direction;
+            input.Special = special;
 
             return input;
         }
@@ -104,9 +112,12 @@ namespace ViralTree.Components
 
 
             weapon.Update(gameTime, world);
+            specialWeapon.Update(gameTime, world);
 
             if (input.Attacking)
                 weapon.Attack(world);
+            if (input.Special)
+                specialWeapon.Attack(world);
 
             /*
             Vector2f mousePos = MInput.GetMousePos(new Vector2f(world.Cam.Position.X - Settings.WindowSize.X * 0.5f, world.Cam.Position.Y - Settings.WindowSize.Y * 0.5f));
