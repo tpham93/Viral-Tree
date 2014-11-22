@@ -17,9 +17,8 @@ namespace ViralTree.Components
         }
 
 
-        public override void OnCollision(World.Entity collidedEntity, IntersectionData data, World.GameWorld world, bool firstCalled)
+        public override void OnCollision(World.Entity collidedEntity, IntersectionData data, World.GameWorld world, bool firstCalled, GameTime gameTime)
         {
-           
 
             if (collidedEntity.Response.isPushing)
             {
@@ -29,7 +28,6 @@ namespace ViralTree.Components
                     {
                         data.Seperate(this.Owner.Collider, firstCalled ? 0.5f : -0.5f);
                     }
-
 
                     else
                     {

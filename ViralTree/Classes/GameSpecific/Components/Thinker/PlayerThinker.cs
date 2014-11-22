@@ -54,7 +54,7 @@ namespace ViralTree.Components
                 screenPos.X *= Settings.WindowSize.X / world.Cam.currentView.Size.X;
                 screenPos.Y *= Settings.WindowSize.Y / world.Cam.currentView.Size.Y;
 
-                Console.WriteLine(screenPos);
+              //  Console.WriteLine(screenPos);
 
                 direction = MInput.GetCurPos() - screenPos - new Vector2f(Settings.WindowSize.X / 2.0f, Settings.WindowSize.Y / 2.0f);
             }

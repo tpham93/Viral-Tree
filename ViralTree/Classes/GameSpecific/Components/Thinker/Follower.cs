@@ -36,11 +36,11 @@ namespace ViralTree.Components
             else
             {
 
-                Console.WriteLine(follower.UniqueId);
+                //Console.WriteLine(follower.UniqueId);
                 Vector2f dir = follower.Collider.Position - this.Owner.Collider.Position;
                 float len = Vec2f.Length(dir);
 
-                if (len > followRadius)
+                if (len > followRadius || follower.UniqueId == -1)
                     follower = null;
 
                 else

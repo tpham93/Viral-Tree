@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ProjectileResponse.cs" />
+    <Compile Include="Classes\GameSpecific\Components\CollisionResponses\TouchDamageResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\MultiTextureDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Follower.cs" />
     <Compile Include="Classes\GameSpecific\GameplayConstants.cs" />
