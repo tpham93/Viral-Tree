@@ -17,7 +17,7 @@ namespace ViralTree.Components
 
         public override void OnCollision(Entity collidedEntity, IntersectionData data, GameWorld world, bool firstCalled)
         {
-            if(Entity.CanCollide(this.Owner.Fraction, collidedEntity.CollidingFraction))
+            if (Entity.CanCollide(Owner.Fraction, collidedEntity.Fraction, collidedEntity.CollidingFraction) || Entity.CanCollide(collidedEntity.Fraction, Owner.Fraction, Owner.CollidingFraction))
             {
                 collidedEntity.CurrentLife -= this.damage;
                 this.Owner.CurrentLife = 0;
