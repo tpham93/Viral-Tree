@@ -8,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace ViralTree.Classes.GameSpecific.Components.Drawables
 {
+    public enum ButtonType
+        {
+            Single,
+            Double
+        }
+
     public class SelectButton
     {
+        
+
         bool selected = false;
 
         Font font;
@@ -22,23 +30,26 @@ namespace ViralTree.Classes.GameSpecific.Components.Drawables
 
         Text text;
 
+        ButtonType type;
+
         int offset = 5;
         int ID;
 
         string name;
         string level;
 
-        public SelectButton(string name, string level, Vector2f pos, int ID)
+        public SelectButton(string name, string level, Vector2f pos, int ID, ButtonType type)
         {
             this.name  = name;
             this.level = level;
             this.pos   = pos;
             this.ID    = ID;
+            this.type  = type;
         }
 
         public void Init()
         {
-            boxTexture = Game.content.Load<Texture>("gfx/textbox.png");
+            boxTexture = Game.content.Load<Texture>("gfx/singletextbox.png");
 
             font = new Font( Game.content.Load<Font>("other/arial.ttf"));
 

@@ -163,7 +163,10 @@
     <Content Include="Content\gfx\Projectiles\BasicProjectile.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\gfx\textbox.png">
+    <Content Include="Content\gfx\settingsscreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\singletextbox.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\veinball.png">
