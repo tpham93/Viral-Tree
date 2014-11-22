@@ -45,6 +45,8 @@ namespace ViralTree.Classes.GameSpecific.Components.Drawables
             this.pos   = pos;
             this.ID    = ID;
             this.type  = type;
+
+            Init();
         }
 
         public void Init()
@@ -87,6 +89,17 @@ namespace ViralTree.Classes.GameSpecific.Components.Drawables
         public string getLevel()         
         {
             return level;
+        }
+
+        public Vector2f GetSize()
+        {
+            return new Vector2f(boxTexture.Size.X, boxTexture.Size.Y);
+        }
+
+        public Vector2f Position
+        {
+            get {return boxSprite.Position;}
+            set {boxSprite.Position = new Vector2f(pos.X + offset, pos.Y + offset);; text.Position = boxSprite.Position;}
         }
 
     }

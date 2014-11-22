@@ -25,9 +25,6 @@ namespace ViralTree.GameStates
         public InGame(string levelName)
         {
             this.levelName = levelName;
-
-
-            states.BlendMode = BlendMode.Add;
         }
 
         public override void Init(AGameState lastGameState)
@@ -37,6 +34,8 @@ namespace ViralTree.GameStates
             noiseTexture.Repeated = true;
           
             states.Shader.SetParameter("worldSize", new Vector2f(Settings.WindowSize.X, Settings.WindowSize.Y));
+            states.BlendMode = BlendMode.Add;
+
             world = new GameWorld(levelName);
             
             worldTarget = new RenderTexture((uint)Settings.WindowSize.X, (uint)Settings.WindowSize.Y);
@@ -81,10 +80,15 @@ namespace ViralTree.GameStates
 
             world.Draw(parent.gameTime, worldTarget);
 
-            states.Shader.SetParameter("noise", noiseTexture);
-            states.Shader.SetParameter("offset", world.Cam.Position);
-            states.Shader.SetParameter("scale", (float)world.Cam.currentView.Size.X / (float)Settings.WindowSize.X);
-            states.Shader.SetParameter("playerPos", world.GetEntity(0).Collider.Position);
+
+            if (Settings.DrawFog && world.GetEntity(0) != null)
+            {
+                states.Shader.SetParameter("noise", noiseTexture);
+                states.Shader.SetParameter("offset", world.Cam.Position);
+                states.Shader.SetParameter("scale", (float)world.Cam.currentView.Size.X / (float)Settings.WindowSize.X);
+                states.Shader.SetParameter("playerPos", world.GetEntity(0).Collider.Position);
+            }
+
 
          //   worldTarget.Draw(new Sprite(fogTexture.Texture), states);
 

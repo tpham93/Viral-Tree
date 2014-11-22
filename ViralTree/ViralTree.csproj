@@ -80,6 +80,7 @@
     <Compile Include="Classes\GameSpecific\Components\Thinker\Shooter.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Follower.cs" />
     <Compile Include="Classes\GameSpecific\GameplayConstants.cs" />
+    <Compile Include="Classes\GameSpecific\GameStates\CharacterSelection.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\SettingsMenu.cs" />
     <Compile Include="Classes\GameSpecific\World\Objects\EntityAttribs.cs" />
     <Compile Include="Classes\Core\Utilities\Vector3i.cs" />
