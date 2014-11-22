@@ -93,7 +93,7 @@ namespace ViralTree.World
 
         private static Entity CreateProjectile(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            return new Entity(new CircleCollider(16), position, float.PositiveInfinity, (Fraction)additionalInfos[0], (CollidingFractions)additionalInfos[1], new ProjectileThinker((Vector2f)additionalInfos[2], (float)additionalInfos[3]), new ProjectileResponse(10), EmptyActivatable.Instance, new TextureDrawer((String)additionalInfos[4]));
+            return new Entity(new CircleCollider(16), position, float.PositiveInfinity, (Fraction)additionalInfos[0], (CollidingFractions)additionalInfos[1], new ProjectileThinker((Vector2f)additionalInfos[2], (float)additionalInfos[3]), new ProjectileResponse((float)additionalInfos[4]), EmptyActivatable.Instance, new TextureDrawer((String)additionalInfos[5]));
         }
 
         private static Entity CreateSpawner(ACollider collider, Vector2f pos, object[] additionalInfos)

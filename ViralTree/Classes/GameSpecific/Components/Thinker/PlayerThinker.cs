@@ -17,7 +17,7 @@ namespace ViralTree.Components
         public PlayerThinker(GInput controller = null)
         {
             this.controller = controller;
-            weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(250.0f), new CircleCollider(16), float.PositiveInfinity);
+            weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.PLAYER_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.PLAYER_SHOOTER_DAMAGE);
         }
 
         public override void Initialize()
