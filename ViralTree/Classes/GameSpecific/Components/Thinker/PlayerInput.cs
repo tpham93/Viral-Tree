@@ -8,13 +8,17 @@ using SFML.Window;
 namespace ViralTree.Components
 {
     class PlayerInput
-    {   
+    {
         public Vector2f Movement
         {
             get { return movement; }
             set { movement = value; }
         }
-
+        public Vector2f Direction
+        {
+            get { return direction; }
+            set { direction = value; }
+        }
         public bool Attacking
         {
             get { return attacking; }
@@ -22,6 +26,7 @@ namespace ViralTree.Components
         }
 
         private Vector2f movement;
+        private Vector2f direction;
         private bool attacking;
     }
 }
