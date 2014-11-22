@@ -179,7 +179,7 @@ namespace ViralTree
             radius *= scaleFactor;
         }
 
-        //___________________DRAWING METHODS_______________
+        //___________________ING METHODS_______________
 
         public override void Draw(RenderTarget target)
         {
@@ -196,14 +196,14 @@ namespace ViralTree
             }
             */
 
-            /*
+            //boundingCircle
             CircleShape radiusShape = new CircleShape(radius);
             radiusShape.Origin = new Vector2f(radius, radius);
             radiusShape.Position = position;
             radiusShape.FillColor = new Color(255, 0, 0, 55);
 
             target.Draw(radiusShape);
-            */
+            
 
             //position:
 
@@ -218,13 +218,13 @@ namespace ViralTree
 
             ///bounding Rectanle:
 
-           /*
+           
             RectangleShape rectShape = new RectangleShape(new Vector2f(boundingRect.Width, boundingRect.Height));
             rectShape.Position = new Vector2f(boundingRect.Left, boundingRect.Top);
             rectShape.FillColor = new Color(255, 255, 255, 125);
 
             target.Draw(rectShape);
-          */
+          
         }
 
         public override void Draw(RenderTarget target, RenderStates states)
@@ -250,7 +250,7 @@ namespace ViralTree
                 return (other as ConcaveCollider).SatConvex(this, true);
 
 
-            return new IntersectionData();
+            return new IntersectionData(false);
         }
 
         //TODO: optimaze, make more readable:
@@ -288,7 +288,7 @@ namespace ViralTree
                         float bMax = Vec2f.Dot(other.Position + normals[i] * other.Radius, normals[i]);
 
                         if (aMin > bMax || bMin > aMax)
-                            return new IntersectionData();
+                            return new IntersectionData(false);
 
                         float help = aMax == bMax ? Math.Max(aMin - aMax, bMin - bMax) : aMax > bMax ? aMin - bMax : bMin - aMax;
 
@@ -315,7 +315,7 @@ namespace ViralTree
                 float bMax_ = Vec2f.Dot(other.Position + tmpDir * other.Radius, tmpDir);
 
                 if (aMin_ > bMax_ || bMin_ > aMax_)
-                    return new IntersectionData();
+                    return new IntersectionData(false);
 
                 float help_ = aMax_ == bMax_ ? Math.Max(aMin_ - aMax_, bMin_ - bMax_) : aMax_ > bMax_ ? aMin_ - bMax_ : bMin_ - aMax_;
 
@@ -338,7 +338,7 @@ namespace ViralTree
             }
 
             else
-                return new IntersectionData();
+                return new IntersectionData(false);
         }
 
         public IntersectionData SatConvex(ConvexCollider other)
@@ -362,7 +362,7 @@ namespace ViralTree
                     other.findMinMax(ref bMin, ref bMax, ref normals[i]);
 
                     if (aMin > bMax || bMin > aMax)
-                        return new IntersectionData();
+                        return new IntersectionData(false);
 
                     float help = aMax == bMax ? Math.Max(aMin - aMax, bMin - bMax) : aMax > bMax ? aMin - bMax : bMin - aMax;
 
@@ -391,7 +391,7 @@ namespace ViralTree
                     other.findMinMax(ref bMin, ref bMax, ref other.normals[i]);
 
                     if (aMin > bMax || bMin > aMax)
-                        return new IntersectionData();
+                        return new IntersectionData(false);
 
                     float help = aMax == bMax ? Math.Max(aMin - aMax, bMin - bMax) : aMax > bMax ? aMin - bMax : bMin - aMax;
 
@@ -412,7 +412,7 @@ namespace ViralTree
             }
 
             else
-                return new IntersectionData();
+                return new IntersectionData(false);
         }
 
 

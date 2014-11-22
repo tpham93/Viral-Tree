@@ -49,13 +49,16 @@ namespace ViralTree.World
         /// <param name="gameTime"></param>
         public void Update(GameTime gameTime)
         {
+            
             for (int i = 0; i < chunkEntities.Count; i++)
             {
+               
+                
+
                 //update one specific Entity
                 chunkEntities[i].Update(gameTime, world);
 
                 //notifies the gameworld with which chunks this entity could intersect
-                if(chunkEntities[i].Response.isPushable)
                     CheckEntityBoundingsFor(chunkEntities[i]);
 
                 //notify that this entity could have left:
@@ -86,20 +89,21 @@ namespace ViralTree.World
 
            // Console.WriteLine(e.Collider.BoundingRectangle);
 
+            if(world.IsValidId(chunkUpperLeft))
             world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkUpperLeft));
 
-            if (!MathUtil.IsEqual(chunkUpperLeft, chunkUpperRight))
+            if (!MathUtil.IsEqual(chunkUpperLeft, chunkUpperRight) && world.IsValidId(chunkUpperRight))
                 world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkUpperRight));
             
             
             if (!MathUtil.IsEqual(chunkUpperLeft, chunkLowerLeft) &&
-                !MathUtil.IsEqual(chunkUpperRight, chunkLowerLeft))
+                !MathUtil.IsEqual(chunkUpperRight, chunkLowerLeft) && world.IsValidId(chunkLowerLeft))
                 
                 world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkLowerLeft));
 
             if (!MathUtil.IsEqual(chunkUpperLeft, chunkLowerRight) &&
                 !MathUtil.IsEqual(chunkUpperRight, chunkLowerRight) &&
-                !MathUtil.IsEqual(chunkLowerLeft, chunkLowerRight))
+                !MathUtil.IsEqual(chunkLowerLeft, chunkLowerRight) && world.IsValidId(chunkLowerRight))
  
                 world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkLowerRight));
         }
@@ -110,6 +114,9 @@ namespace ViralTree.World
         {
             for (int i = 0; i < chunkEntities.Count; i++)
                 chunkEntities[i].Draw(gameTime, target);
+
+
+            DrawBoundings(target);
         }
 
         public void DrawSprites(GameTime gameTime, RenderTarget target)

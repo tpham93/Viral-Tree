@@ -21,7 +21,7 @@ namespace ViralTree
         /// </summary>
         public bool Intersects
         {
-            get { return peneValues != null; }
+            get { return peneValues.Count > 0; }
         }
 
         /// <summary>
@@ -33,6 +33,13 @@ namespace ViralTree
         /// Is the direction the intersection can be resolved with when multiplied with the penetrationValue.
         /// </summary>
         public List<Vector2f> separationDirections;
+
+
+        public IntersectionData(bool collide)
+        {
+            this.peneValues = new List<float>();
+            this.separationDirections = new List<Vector2f>();
+        }
 
 
         /// <summary>
@@ -63,7 +70,7 @@ namespace ViralTree
         }
 
         /// <summary>
-        /// Separates a and b with aMount and bAmount
+        /// Separates a with amout aAmount
         /// </summary>
         public void Seperate(ACollider a, float aAmount)
         {

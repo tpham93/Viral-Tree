@@ -16,8 +16,11 @@ namespace ViralTree.Components
             isPushing = true;
         }
 
+
         public override void OnCollision(World.Entity collidedEntity, IntersectionData data, World.GameWorld world, bool firstCalled)
         {
+           
+
             if (collidedEntity.Response.isPushing)
             {
                 if (Owner.Response.isPushable)
