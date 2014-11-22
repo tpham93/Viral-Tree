@@ -24,9 +24,15 @@ namespace ViralTree.Components
             get { return attacking; }
             set { attacking = value; }
         }
+        public bool Special
+        {
+            get { return special; }
+            set { special = value; }
+        }
 
         private Vector2f movement;
         private Vector2f direction;
         private bool attacking;
+        private bool special;
     }
 }
