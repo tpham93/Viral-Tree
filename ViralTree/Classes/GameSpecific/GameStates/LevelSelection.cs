@@ -78,7 +78,7 @@ namespace ViralTree.GameStates
             if (KInput.IsClicked(Keyboard.Key.Space))
             {
                 parent.SetGameState(new InGame(buttonList[curLevel].getLevel()));
-                }
+            }
                 
         }
 

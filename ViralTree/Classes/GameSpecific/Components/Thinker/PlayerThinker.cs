@@ -15,7 +15,7 @@ namespace ViralTree.Components
         public PlayerThinker(GInput controller = null)
         {
             this.controller = controller;
-            weapon = new ShooterThinker(30, TimeSpan.FromMilliseconds(500.0f), new CircleCollider(16), float.PositiveInfinity);
+            weapon = new ShooterThinker(30, TimeSpan.FromMilliseconds(250.0f), new CircleCollider(16), float.PositiveInfinity);
         }
 
         public override void Initialize()
@@ -55,7 +55,7 @@ namespace ViralTree.Components
                 movementVector = controller.leftPad() / 100;
                 movementVector.X = Math.Abs(movementVector.X) > THRESHOLD ? movementVector.X : 0.0f;
                 movementVector.Y = Math.Abs(movementVector.Y) > THRESHOLD ? movementVector.Y : 0.0f;
-                attacking = controller.isClicked(GInput.EButton.A);
+                attacking = controller.isPressed(GInput.EButton.A);
             }
 
             input.Movement = movementVector;
@@ -77,8 +77,7 @@ namespace ViralTree.Components
             else if (KInput.IsPressed(SFML.Window.Keyboard.Key.E))
                 Owner.Collider.Rotate(0.1f);
 
-            if (KInput.IsClicked(SFML.Window.Keyboard.Key.Space))
-                Owner.Activator.Activate(gameTime, world);
+         
 
             weapon.Update(gameTime, world);
 

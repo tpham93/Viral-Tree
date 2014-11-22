@@ -73,14 +73,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Core\Tiled\EntityAttribs.cs" />
+    <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ProjectileResponse.cs" />
+    <Compile Include="Classes\GameSpecific\World\Objects\EntityAttribs.cs" />
     <Compile Include="Classes\Core\Utilities\Vector3i.cs" />
     <Compile Include="Classes\GameSpecific\Components\AActivatable.cs" />
-    <Compile Include="Classes\GameSpecific\Components\AActivator.cs" />
     <Compile Include="Classes\GameSpecific\Components\ACollisionResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\AComponent.cs" />
     <Compile Include="Classes\GameSpecific\Components\Activatables\TestActivatable.cs" />
-    <Compile Include="Classes\GameSpecific\Components\Activators\BasicActivator.cs" />
     <Compile Include="Classes\GameSpecific\Components\ADrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\AThinker.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\BasicPushResponse.cs" />
@@ -141,6 +140,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\gfx\fungus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\gfx\awesome_tree.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

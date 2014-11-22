@@ -113,7 +113,7 @@ namespace ViralTree.World
 
             if (Vec2f.Length(direction) > allowedDist)
             {
-                currentView.Move(direction / 25.0f);
+                currentView.Move((direction * 2.5f) * (float)gameTime.ElapsedTime.TotalSeconds);
 
                 chunkIdCam = new Vector2i((int)(currentView.Center.X / world.ChunkWidth), (int)(currentView.Center.Y / world.ChunkHeight));
                 return true;

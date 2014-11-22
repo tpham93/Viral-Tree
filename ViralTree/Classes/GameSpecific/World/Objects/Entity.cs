@@ -10,6 +10,21 @@ using System.Threading.Tasks;
 
 namespace ViralTree.World
 {
+    public enum Fraction
+    {
+        Neutral,
+        Cell,
+        Virus
+    }
+
+    public enum CollidingFractions
+    {
+        All,
+        Cell,
+        Virus,
+        None
+    }
+
     public class Entity : IUnique
     {
         #region Member
@@ -34,7 +49,7 @@ namespace ViralTree.World
         public float CurrentLife
         {
             get { return currentLife; }
-            set { currentLife = value; }
+            set { currentLife = value;}
         }
 
         private float maxLife;
@@ -42,6 +57,10 @@ namespace ViralTree.World
         {
             get { return maxLife; }
             set { maxLife = value; }
+        }
+        public bool isDead
+        {
+            get { return currentLife <= 0; }
         }
 
         private Components.AThinker thinker;
@@ -69,14 +88,6 @@ namespace ViralTree.World
             set { if (value != null) { value.Owner = this; value.IsActive = true; drawer = value; drawer.Initialize(); } }
         }
 
-        private Components.AActivator activator;
-        public Components.AActivator Activator
-        {
-            get { return activator; }
-            set { value.Owner = this; value.IsActive = true; activator = value; activator.Initialize(); }
-        }
-
-
         private Components.AActivatable activatable;
         public Components.AActivatable Activatable
         {
@@ -84,10 +95,24 @@ namespace ViralTree.World
             set { value.Owner = this; value.IsActive = true; activatable = value; activatable.Initialize(); }
         }
 
+        private Fraction fraction;
+        public Fraction Fraction
+        {
+            get { return fraction; }
+            set { fraction = value; }
+        }
+
+        private CollidingFractions collidingFraction;
+        public CollidingFractions CollidingFraction
+        {
+            get { return collidingFraction; }
+            set { collidingFraction = value; }
+        }
+
         #endregion
 
 
-        public Entity(ACollider collider, Vector2f position, float life)
+        public Entity(ACollider collider, Vector2f position, float life, Fraction fraction, CollidingFractions collidingFraction)
         {
             this.Collider = collider;
 
@@ -96,6 +121,10 @@ namespace ViralTree.World
             this.CurrentLife = life;
 
             this.MaxLife = life;
+
+            this.Fraction = fraction;
+
+            this.CollidingFraction = collidingFraction;
 
             UniqueId = -1;
 
@@ -106,13 +135,12 @@ namespace ViralTree.World
             LeavesChunk = false;
         }
 
-        public Entity(ACollider collider, Vector2f position, float life, AThinker thinker, ACollisionResponse response, AActivator activator, AActivatable activatable, ADrawer drawing)
-            : this(collider, position, life)
+        public Entity(ACollider collider, Vector2f position, float life, Fraction fraction, CollidingFractions collidingFractions, AThinker thinker, ACollisionResponse response, AActivatable activatable, ADrawer drawing)
+            : this(collider, position, life, fraction, collidingFractions)
         {
             this.Thinker = thinker;
             this.Response = response;
             this.Drawer = drawing;
-            this.Activator = activator;
             this.Activatable = activatable;
         }
 
@@ -122,8 +150,6 @@ namespace ViralTree.World
             thinker = Components.EmptyThinker.Instance;
 
             response = Components.EmptyResponse.Instance;
-
-            activator = Components.EmptyActivator.Instance;
 
             activatable = Components.EmptyActivatable.Instance;
         }
@@ -140,12 +166,11 @@ namespace ViralTree.World
             if (drawer != null && drawer.IsActive)
                 drawer.Update(gameTime, world);
 
-            if (activator.IsActive)
-                activator.Update(gameTime, world);
-
             if(activatable.IsActive)
                 activatable.Update(gameTime, world);
-            
+
+            if (isDead)
+                world.QueueRemovingEntity(this);
         }
 
         /// <summary>
@@ -172,13 +197,18 @@ namespace ViralTree.World
         public void Draw(GameTime gameTime, RenderTarget target)
         {
             if (Drawable)
-            {
+            {   
                 if (drawer != null)
                     drawer.Draw(target);
                 else
                     Collider.Draw(target);
             }
                 
+        }
+
+        public static bool CanCollide(Fraction fraction, CollidingFractions collidingFraction)
+        {
+            return collidingFraction != CollidingFractions.None && (fraction == Fraction.Neutral || collidingFraction == CollidingFractions.All || (fraction == Fraction.Cell && collidingFraction == CollidingFractions.Cell) || (fraction == Fraction.Virus && collidingFraction == CollidingFractions.Virus));
         }
 
     }
