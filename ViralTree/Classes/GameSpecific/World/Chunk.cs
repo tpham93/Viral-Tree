@@ -77,23 +77,23 @@ namespace ViralTree.World
                                                     (int)((e.Collider.BoundingRectangle.Top + e.Collider.BoundingRectangle.Height) / world.ChunkHeight));
 
 
-            Console.WriteLine(e.Collider.BoundingRectangle);
+          //  Console.WriteLine(e.Collider.BoundingRectangle);
 
             world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkUpperLeft));
 
-         //   if (!MathUtil.IsEqual(chunkUpperLeft, chunkUpperRight))
+            if (!MathUtil.IsEqual(chunkUpperLeft, chunkUpperRight))
                 world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkUpperRight));
             
-            /*
-            if (!MathUtil.IsEqual(chunkUpperLeft, chunkLowerLeft) &&
+            
+            if(!MathUtil.IsEqual(chunkUpperLeft, chunkLowerLeft) &&
                 !MathUtil.IsEqual(chunkUpperRight, chunkLowerLeft))
-                */
+                
                 world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkLowerLeft));
-/*
+
             if (!MathUtil.IsEqual(chunkUpperLeft, chunkLowerRight) &&
                 !MathUtil.IsEqual(chunkUpperRight, chunkLowerRight) &&
                 !MathUtil.IsEqual(chunkLowerLeft, chunkLowerRight))
- * */
+
                 world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkLowerRight));
         }
 
