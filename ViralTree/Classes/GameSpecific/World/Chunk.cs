@@ -27,7 +27,7 @@ namespace ViralTree.World
 
         public List<Sprite> sprites;
 
-        public Sprite groundSprite;
+      //  public Sprite groundSprite;
 
         #endregion
 

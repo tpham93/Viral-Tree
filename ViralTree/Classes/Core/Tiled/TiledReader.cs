@@ -125,12 +125,12 @@ namespace ViralTree.Tiled
                 // printCurrent(reader);
             }
 
-            printAll();
+//            printAll();
         }
 
         private void LoadObjectGroup(XmlReader reader)
         {
-            print("found a objectgroup");
+        //    print("found a objectgroup");
 
             //objectgroup name:
             while (reader.MoveToNextAttribute())
@@ -156,7 +156,7 @@ namespace ViralTree.Tiled
 
             }
 
-            print("abort");
+           // print("abort");
         }
 
         private void LoadSpawner(XmlReader reader)
