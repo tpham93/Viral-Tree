@@ -22,5 +22,10 @@ namespace ViralTree.Components
         }
 
         public abstract void Update(GameTime gameTime, GameWorld world);
+
+        public virtual void Initialize()
+        {
+
+        }
     }
 }

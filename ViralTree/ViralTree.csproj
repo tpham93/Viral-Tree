@@ -73,6 +73,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ProjectileResponse.cs" />
+    <Compile Include="Classes\GameSpecific\GameStates\Settings.cs" />
     <Compile Include="Classes\GameSpecific\World\Objects\EntityAttribs.cs" />
     <Compile Include="Classes\Core\Utilities\Vector3i.cs" />
     <Compile Include="Classes\GameSpecific\Components\AActivatable.cs" />
@@ -154,8 +156,13 @@
     <Content Include="Content\gfx\menuscreen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\gfx\Projectiles\BasicProjectile.png" />
+    <Content Include="Content\gfx\Projectiles\BasicProjectile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\gfx\textbox.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\veinball.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\other\level\tileSet.png">

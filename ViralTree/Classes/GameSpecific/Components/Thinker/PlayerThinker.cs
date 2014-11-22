@@ -5,18 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ViralTree.World;
+
 namespace ViralTree.Components
 {
     public sealed class PlayerThinker : AThinker
     {
         private GInput controller;
+        private ShooterThinker weapon;
 
         public PlayerThinker(GInput controller = null)
         {
             this.controller = controller;
+            weapon = new ShooterThinker(30, TimeSpan.FromMilliseconds(250.0f), new CircleCollider(16), float.PositiveInfinity);
         }
 
-        private PlayerInput GetInput()
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            weapon.Owner = this.Owner;
+        }
+
+        private PlayerInput GetInput(GameWorld world)
         {
             PlayerInput input = new PlayerInput();
             Vector2f movementVector = new Vector2f();
@@ -36,8 +47,13 @@ namespace ViralTree.Components
                 else if (KInput.IsPressed(SFML.Window.Keyboard.Key.D))
                     ++movementVector.X;
 
-                if (KInput.IsPressed(SFML.Window.Keyboard.Key.Space))
-                    attacking = false;
+                attacking = MInput.LeftPressed();
+
+                Vector2f screenPos = Owner.Collider.Position - world.Cam.Position;
+                screenPos.X *= world.Cam.currentView.Size.X / Settings.WindowSize.X;
+                screenPos.Y *= world.Cam.currentView.Size.Y / Settings.WindowSize.Y;
+
+                Owner.Collider.Direction = MInput.GetCurPos() - screenPos - new Vector2f(Settings.WindowSize.X / 2.0f, Settings.WindowSize.Y / 2.0f);
             }
             else
             {
@@ -46,7 +62,7 @@ namespace ViralTree.Components
                 movementVector = controller.leftPad() / 100;
                 movementVector.X = Math.Abs(movementVector.X) > THRESHOLD ? movementVector.X : 0.0f;
                 movementVector.Y = Math.Abs(movementVector.Y) > THRESHOLD ? movementVector.Y : 0.0f;
-                attacking = controller.isClicked(GInput.EButton.A);
+                attacking = controller.isPressed(GInput.EButton.A);
             }
 
             input.Movement = movementVector;
@@ -55,12 +71,11 @@ namespace ViralTree.Components
             return input;
         }
 
-        public override void Update(GameTime gameTime, World.GameWorld world)
+        public override void Update(GameTime gameTime, GameWorld world)
         {
             float speed = 400 * (float)gameTime.ElapsedTime.TotalSeconds;
 
-            PlayerInput input = GetInput();
-
+            PlayerInput input = GetInput(world);
             Owner.Collider.Move(speed * input.Movement);
 
             if (KInput.IsPressed(SFML.Window.Keyboard.Key.Q))
@@ -69,8 +84,12 @@ namespace ViralTree.Components
             else if (KInput.IsPressed(SFML.Window.Keyboard.Key.E))
                 Owner.Collider.Rotate(0.1f);
 
-         
 
+
+            weapon.Update(gameTime, world);
+
+            if (input.Attacking)
+                weapon.Attack(world);
 
             /*
             Vector2f mousePos = MInput.GetMousePos(new Vector2f(world.Cam.Position.X - Settings.WindowSize.X * 0.5f, world.Cam.Position.Y - Settings.WindowSize.Y * 0.5f));

@@ -232,7 +232,8 @@ namespace ViralTree.World
                     }
                
                 }
-            }
+
+            } 
 
             
 
@@ -259,7 +260,7 @@ namespace ViralTree.World
             {
                 RemoveEntity(removeMe.Dequeue());
             }
-
+            
             Cam.Update(gameTime, target);
         }
 

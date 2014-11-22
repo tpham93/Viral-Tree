@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using SFML.Window;
+using ViralTree.World;
 
 namespace ViralTree.Components
 {
@@ -12,13 +13,13 @@ namespace ViralTree.Components
     {
         Vector2f direction;
         float speed;
-        ProjectileThinker(Vector2f direction, float speed )
+        public ProjectileThinker(Vector2f direction, float speed )
         {
             this.direction = direction;
             this.speed = speed;
         }
 
-        public override void Update(GameTime gameTime, World.GameWorld world)
+        public override void Update(GameTime gameTime, GameWorld world)
         {
             Owner.Collider.Position += direction * speed * (float)gameTime.ElapsedTime.TotalSeconds;
         }

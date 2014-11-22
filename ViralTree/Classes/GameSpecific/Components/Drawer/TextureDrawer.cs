@@ -19,8 +19,13 @@ namespace ViralTree.Components
             sprite.Origin = new Vector2f(sprite.TextureRect.Width / 2, sprite.TextureRect.Height/2);
         }
 
+        public override void Initialize()
+        {
+        }
+
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
+            this.sprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
             sprite.Position = Owner.Collider.Position;
         }
 
