@@ -18,7 +18,8 @@ namespace ViralTree.Components
         private ACollider colliderPrototype;
         private float ammo;
         private float damage;
-        public ShooterWeapon(float spawnOffsetDistance, TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage)
+        private float speed;
+        public ShooterWeapon(float spawnOffsetDistance, TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage, float speed)
         {
             this.spawnOffsetDistance = spawnOffsetDistance;
             this.coolDown = coolDown;
@@ -26,6 +27,7 @@ namespace ViralTree.Components
             this.colliderPrototype = colliderPrototype;
             this.ammo = ammo;
             this.damage = damage;
+            this.speed = speed;
         }
 
         public override void Update(GameTime gameTime, World.GameWorld world)
@@ -42,7 +44,7 @@ namespace ViralTree.Components
             Fraction projectileFraction = Owner.Fraction == Fraction.Cell ? Fraction.CellProjectile : Fraction.VirusProjectile;
             CollidingFractions projectileCollidingFraction = Owner.Fraction == Fraction.Cell ? CollidingFractions.VirusProjectile : CollidingFractions.CellProjectile;
 
-            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, Owner.Collider.Direction, 2000.0f, damage, "gfx/Projectiles/BasicProjectile.png" }));
+            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, Owner.Collider.Direction, speed, damage, "gfx/Projectiles/BasicProjectile.png" }));
         }
 
         public override void Attack(World.GameWorld world)
