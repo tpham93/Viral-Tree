@@ -14,7 +14,8 @@ namespace ViralTree.World
     public enum EntityType
     {
         None,
-        Player,
+        Scout,
+        Tank,
         Spawner,
         Collision,
         Fungus,
@@ -33,8 +34,12 @@ namespace ViralTree.World
 
             switch (type)
             {
-                case EntityType.Player:
+                case EntityType.Scout:
                     entity = CreateNewPlayer(collider, position, additionalInfos);
+                    break;
+
+                case EntityType.Tank:
+                    //TODO:
                     break;
 
                 case EntityType.Spawner:

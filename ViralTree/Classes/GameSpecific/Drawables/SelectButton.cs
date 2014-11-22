@@ -99,7 +99,11 @@ namespace ViralTree.Classes.GameSpecific.Components.Drawables
         public Vector2f Position
         {
             get {return boxSprite.Position;}
-            set {boxSprite.Position = new Vector2f(pos.X + offset, pos.Y + offset);; text.Position = boxSprite.Position;}
+            set
+            {
+                text.Position = new Vector2f(value.X + offset, value.Y + offset);
+                boxSprite.Position = value;
+            }
         }
 
     }

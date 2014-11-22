@@ -20,7 +20,7 @@ namespace ViralTree.Components
         {
             this.decreasedShootFreq = decreasedShootFreq;
             this.CoolDown = TimeSpan.Zero;
-            this.duration = duration;
+            this.duration = TimeSpan.Zero;
             this.maxDuration = duration;
             this.scoutWeapon = scoutWeapon;
         }

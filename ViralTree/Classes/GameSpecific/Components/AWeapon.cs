@@ -18,6 +18,10 @@ namespace ViralTree.Components
         }
 
         private TimeSpan maxCoolDown;
+        public virtual float nextAttack()
+        {
+            return 1;
+        }
 
         public TimeSpan MaxCoolDown
         {

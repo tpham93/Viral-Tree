@@ -7,9 +7,18 @@ using System.Threading.Tasks;
 
 namespace ViralTree.Components
 {
+
+
     public abstract class AThinker : AComponent
     {
+        public virtual float nextAttack()
+        {
+            return 1;
+        }
+
         public abstract override void Update(GameTime gameTime, GameWorld world);
+
+
     }
 
     public sealed class EmptyThinker : AThinker
@@ -21,6 +30,8 @@ namespace ViralTree.Components
             get { if (instance == null) instance = new EmptyThinker(); return instance; }
             private set { instance = value; }
         }
+
+        
 
         private EmptyThinker()
         {

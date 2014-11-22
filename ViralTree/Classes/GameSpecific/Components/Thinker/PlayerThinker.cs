@@ -27,6 +27,7 @@ namespace ViralTree.Components
             base.Initialize();
 
             weapon.Owner = this.Owner;
+            specialWeapon.Owner = this.Owner;
         }
 
         private PlayerInput GetInput(GameWorld world)

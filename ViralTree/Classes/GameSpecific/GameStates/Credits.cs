@@ -29,7 +29,7 @@ namespace ViralTree.GameStates
         int bigOffset = 300;
 
         float time = 0;
-        float speed = 0.01f;
+        float speed = 0.02f;
 
         int posX = 50;
         

@@ -25,6 +25,12 @@ namespace ViralTree.Components
             this.speed = speed;
         }
 
+        public override float nextAttack()
+        {
+             return (float)(CoolDown.TotalSeconds/MaxCoolDown.TotalSeconds); 
+
+        }
+
         private void SpawnProjectile(World.GameWorld world)
         {
             Vector2f position = Owner.Collider.Position + spawnOffsetDistance * Owner.Collider.Direction;
@@ -32,6 +38,12 @@ namespace ViralTree.Components
             CollidingFractions projectileCollidingFraction = Owner.Fraction == Fraction.Cell ? CollidingFractions.VirusProjectile : CollidingFractions.CellProjectile;
 
             world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, Owner.Collider.Direction, speed, damage, "gfx/Projectiles/BasicProjectile.png" }));
+        }
+
+        public override void Update(GameTime gameTime, GameWorld world)
+        {
+            base.Update(gameTime, world);
+            Console.WriteLine(MaxCoolDown);
         }
 
         public override void Attack(World.GameWorld world)

@@ -81,7 +81,7 @@ namespace ViralTree.GameStates
             if (KInput.IsClicked(Keyboard.Key.Space))
             {
                 if (curButton == 0)
-                    parent.SetGameState(new LevelSelection());  
+                    parent.SetGameState(new CharacterSelection());  
 
                 else if (curButton == 1)
                     this.parent.SetGameState(new Credits());

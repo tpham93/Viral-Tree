@@ -2875,11 +2875,8 @@
   <object type="Collision" x="870.667" y="304">
    <polygon points="0,0 0,256 128,256 128,0"/>
   </object>
-  <object type="Collision" x="509.333" y="517.333">
+  <object type="Collision" x="597.333" y="517.333">
    <polygon points="0,0 0,256 128,256 128,0"/>
-  </object>
-  <object type="Collision" x="0" y="640">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
   </object>
  </objectgroup>
  <objectgroup name="Entities">
@@ -2891,7 +2888,7 @@
     <property name="startTime" value="0"/>
    </properties>
   </object>
-  <object type="Spawner" x="2280.58" y="381.364" width="354" height="310">
+  <object type="Spawner" x="2280.58" y="381.364" width="354" height="309">
    <properties>
     <property name="cooldown" value="5"/>
     <property name="entityType" value="veinball"/>
@@ -2899,5 +2896,6 @@
     <property name="startTime" value="0"/>
    </properties>
   </object>
+  <object type="Playerspawner" x="3168" y="2936" width="512" height="360"/>
  </objectgroup>
 </map>

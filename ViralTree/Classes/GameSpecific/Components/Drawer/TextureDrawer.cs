@@ -28,6 +28,11 @@ namespace ViralTree.Components
         {
             this.sprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
             sprite.Position = Owner.Collider.Position;
+
+            byte red = (byte)((Owner.Thinker.nextAttack()) * 255);
+            //Console.WriteLine(red);
+
+            sprite.Color = new Color(255, red, red,255);
         }
 
         public override void Draw(SFML.Graphics.RenderTarget target)
