@@ -53,7 +53,7 @@ namespace ViralTree.Tiled
 
             if (type == EntityType.Veinball)
             {
-                result = new EntityAttribs(EntityType.Veinball, new CircleCollider(100), Vec2f.Zero);
+                result = new EntityAttribs(EntityType.Veinball, new CircleCollider(48), Vec2f.Zero);
             }
 
             return result;

@@ -36,7 +36,7 @@ namespace ViralTree.GameStates
 
             buttonList.Add(new SelectButton(" Select Lvl", "", new Vector2f(200, 100), 0));    
             buttonList.Add(new SelectButton("   Credits", "", new Vector2f(200, 200), 1));
-            buttonList.Add(new SelectButton("   Settings", "", new Vector2f(200, 200), 2));
+            buttonList.Add(new SelectButton("   Settings", "", new Vector2f(200, 300), 2));
             buttonList.Add(new SelectButton("     Quit", "", new Vector2f(200, 400), 3));
 
             maxButton = buttonList.Count - 1;
@@ -86,7 +86,7 @@ namespace ViralTree.GameStates
                 else if (curButton == 1)
                     this.parent.SetGameState(new Credits());
 
-                else if (curButton == 2)
+                else if (curButton == 3)
                     this.parent.SetGameState(null);
             }
                 
