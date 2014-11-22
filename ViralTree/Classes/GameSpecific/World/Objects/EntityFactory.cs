@@ -83,7 +83,7 @@ namespace ViralTree.World
         private static Entity CreateVeinball(ACollider collider, Vector2f position, object[] additionalInfos)
         {
             collider.Scale = GameplayConstants.VEINBALL_SCALE;
-            return new Entity(collider, position, GameplayConstants.VEINBALL_LIFE, Fraction.Virus, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/veinball.png"));
+            return new Entity(collider, position, GameplayConstants.VEINBALL_LIFE, Fraction.Virus, CollidingFractions.All, new Shooter(GameplayConstants.VEINBALL_CHASE_RADIUS, GameplayConstants.VEINBALL_SPEED, GameplayConstants.VEINBALL_SHOOT_RADIUS), new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/veinball.png"));
         }
 
         private static Entity CreateBlocker(ACollider collider, Vector2f position, object[] additionalInfos)

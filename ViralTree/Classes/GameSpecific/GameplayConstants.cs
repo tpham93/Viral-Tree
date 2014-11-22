@@ -24,8 +24,10 @@ namespace ViralTree
         //____________________________VEINBALL__________________________
 
         public const float VEINBALL_LIFE            = 100.0f;   //in use
-        public const float VEINBALL_SPEED           = 55.0f;    //not in use
+        public const float VEINBALL_SPEED           = 180.0f;   //in use
         public const float VEINBALL_SCALE           = 1.0f;     //in use
+        public const float VEINBALL_CHASE_RADIUS    = 512.0f;   //in use
+        public const float VEINBALL_SHOOT_RADIUS    = 1024.0f;  //in use
 
         //____________________________FUNGUS__________________________
 
