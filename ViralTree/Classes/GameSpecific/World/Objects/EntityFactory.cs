@@ -53,7 +53,7 @@ namespace ViralTree.World
 
         private static Entity CreateFungus(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            return new Entity(collider, position, 100.0f, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance , new TextureDrawer("gfx/fungus.png"));
+            return new Entity(collider, position, 100.0f, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance , new TextureDrawer("gfx/ball.png"));
         }
 
         private static Entity CreateBlocker(ACollider collider, Vector2f position, object[] additionalInfos)
