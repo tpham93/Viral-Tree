@@ -80,7 +80,7 @@ namespace ViralTree.Components
             {
 
                 //Console.WriteLine(chaser.UniqueId);
-                shootDir = -(target.Collider.Position - this.Owner.Collider.Position);
+                shootDir = (target.Collider.Position - this.Owner.Collider.Position);
                 float len = Vec2f.Length(moveDir);
 
                 if (len > shootRadius)
