@@ -51,6 +51,11 @@ namespace ViralTree.Tiled
                 result = new EntityAttribs(EntityType.Fungus, PolygonFactory.getRegularPolygon(5, 52), Vec2f.Zero);
             }
 
+            if (type == EntityType.Veinball)
+            {
+                result = new EntityAttribs(EntityType.Veinball, new CircleCollider(100), Vec2f.Zero);
+            }
+
             return result;
         }
     }

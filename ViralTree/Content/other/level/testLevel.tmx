@@ -2888,5 +2888,13 @@
     <property name="startTime" value="0"/>
    </properties>
   </object>
+  <object type="Spawner" x="2280.58" y="381.364" width="354" height="310">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="10"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

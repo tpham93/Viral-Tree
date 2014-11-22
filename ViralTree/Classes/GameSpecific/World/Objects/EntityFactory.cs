@@ -17,6 +17,7 @@ namespace ViralTree.World
         Spawner,
         Collision,
         Fungus,
+        Veinball,
         Projectile    
     }
 
@@ -44,6 +45,10 @@ namespace ViralTree.World
                     entity = CreateFungus(collider, position, additionalInfos);
                     break;
 
+                case EntityType.Veinball:
+                    entity = CreateVeinball(collider, position, additionalInfos);
+                    break;
+
                 case EntityType.Projectile:
                     entity = CreateProjectile(collider, position, additionalInfos);
                     break;
@@ -58,6 +63,11 @@ namespace ViralTree.World
         private static Entity CreateFungus(ACollider collider, Vector2f position, object[] additionalInfos)
         {
             return new Entity(collider, position, 100.0f, Fraction.Virus, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance , new TextureDrawer("gfx/fungus.png"));
+        }
+
+        private static Entity CreateVeinball(ACollider collider, Vector2f position, object[] additionalInfos)
+        {
+            return new Entity(collider, position, 100.0f, Fraction.Virus, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/veinball.png"));
         }
 
         private static Entity CreateBlocker(ACollider collider, Vector2f position, object[] additionalInfos)
