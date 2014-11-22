@@ -24,7 +24,7 @@ namespace ViralTree.World
             switch (type)
             {
                 case EntitiyType.Player:
-                    entity = CreateNewPlayer(new CircleCollider(64), position);
+                    entity = CreateNewPlayer(new CircleCollider(64), position, (GInput)additionalInfos[0]);
                     break;
 
                 case EntitiyType.Spawner:
@@ -43,12 +43,13 @@ namespace ViralTree.World
         private static Entity CreateSpawner(FloatRect bounding, EntitiyType type, double firstStart, double cooldown, int numSpawns)
         {
             Vector2f[] vertices = { new Vector2f(bounding.Left, bounding.Top), new Vector2f(bounding.Left, bounding.Top + bounding.Height), new Vector2f(bounding.Left + bounding.Width, bounding.Top + bounding.Height), new Vector2f(bounding.Left + bounding.Width, bounding.Top) };
-            return new Entity(new ConvexCollider(vertices, true), new Vector2f(bounding.Left, bounding.Top), new SpawnerThinker(bounding, numSpawns, cooldown, firstStart), EmptyResponse.Instance, EmptyActivator.Instance, EmptyActivatable.Instance, null);
+            return new Entity(new ConvexCollider(vertices, true), new Vector2f(bounding.Left, bounding.Top), float.PositiveInfinity, new SpawnerThinker(bounding, numSpawns, cooldown, firstStart), EmptyResponse.Instance, EmptyActivator.Instance, EmptyActivatable.Instance, null);
         }
 
-        public static Entity CreateNewPlayer(ACollider collider, Vector2f position)
+        public static Entity CreateNewPlayer(ACollider collider, Vector2f position, GInput input)
         {
-            return new Entity(collider, position, new Components.PlayerThinker(), new Components.BasicPushResponse(true), new Components.BasicActivator(), Components.EmptyActivatable.Instance, new Components.PlayerDrawer());
+            float startHealth = 100;
+            return new Entity(collider, position, startHealth, new Components.PlayerThinker(input), new Components.BasicPushResponse(true), new Components.BasicActivator(), Components.EmptyActivatable.Instance, new Components.PlayerDrawer());
         }
     }
 }

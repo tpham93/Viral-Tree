@@ -144,15 +144,17 @@ namespace ViralTree.World
             //this.contentManager = contentManager;
 
             //TODO: from here on: everything for testing purposes yet:
-
-            AddEntity(EntityFactory.Create(EntitiyType.Player, Vec2f.One));
+            Joystick.Update();
+            List<uint> connectedGamepads = GInput.getConnectedGamepads();
+            AddEntity(EntityFactory.Create(EntitiyType.Player, Vec2f.One, new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
 
             //AddEntity(EntityFactory.CreateNewPlayer(PolygonFactory.getRegularPolygon(6, 50.0f), Vec2f.One));
  
             /*
             for (int i = 0; i < 50; i++)
             {
-                Entity tmp = new Entity(PolygonFactory.getRegularPolygon(4, 75.0f), MathUtil.Rand.NextVec2f(75, WorldWidth - 75, 75, WorldHeight - 75));
+                float entityLife = 10;
+                Entity tmp = new Entity(PolygonFactory.getRegularPolygon(4, 75.0f), MathUtil.Rand.NextVec2f(75, WorldWidth - 75, 75, WorldHeight - 75), entityLife);
                 tmp.InitEmptyComponents();
                 tmp.Response = new ViralTree.Components.BasicPushResponse(true);
                 //tmp.Response = Components.EmptyResponse.Instance;

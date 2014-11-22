@@ -16,6 +16,19 @@ namespace ViralTree
         private bool[] prevButtons;
 
         uint index;
+        
+        public static List<uint> getConnectedGamepads()
+        {
+            List<uint> connectedGamepads = new List<uint>();
+            for(uint i = 0; i < Joystick.Count; ++i)
+            {
+                if(Joystick.IsConnected(i))
+                {
+                    connectedGamepads.Add(i);
+                }
+            }
+            return connectedGamepads;
+        }
 
         public GInput(uint index)
         {

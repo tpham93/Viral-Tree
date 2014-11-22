@@ -30,12 +30,26 @@ namespace ViralTree.World
         public bool LeavesChunk { get; set; }
 
 
+        private float currentLife;
+        public float CurrentLife
+        {
+            get { return currentLife; }
+            set { currentLife = value; }
+        }
+
+        private float maxLife;
+        public float MaxLife
+        {
+            get { return maxLife; }
+            set { maxLife = value; }
+        }
+
         private Components.AThinker thinker;
         public Components.AThinker Thinker
         {
             get { return thinker; }
             set { value.Owner = this; value.IsActive = true; thinker = value; }
-           
+
         }
 
 
@@ -73,11 +87,15 @@ namespace ViralTree.World
         #endregion
 
 
-        public Entity(ACollider collider, Vector2f position)
+        public Entity(ACollider collider, Vector2f position, float life)
         {
             this.Collider = collider;
 
             this.Collider.Position = position;
+
+            this.CurrentLife = life;
+
+            this.MaxLife = life;
 
             UniqueId = -1;
 
@@ -88,12 +106,12 @@ namespace ViralTree.World
             LeavesChunk = false;
         }
 
-        public Entity(ACollider collider, Vector2f position, AThinker thinker, ACollisionResponse response, AActivator activator, AActivatable activatable, ADrawer drawing)
-            : this(collider, position)
+        public Entity(ACollider collider, Vector2f position, float life, AThinker thinker, ACollisionResponse response, AActivator activator, AActivatable activatable, ADrawer drawing)
+            : this(collider, position, life)
         {
             this.Thinker = thinker;
             this.Response = response;
-            this.drawer = drawing;
+            this.Drawer = drawing;
             this.Activator = activator;
             this.Activatable = activatable;
         }
