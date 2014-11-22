@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.Window;
 
 namespace ViralTree.Components
 {
@@ -14,6 +15,8 @@ namespace ViralTree.Components
 
         /// <summary> Indicates whether this Response even cause pushes.</summary>
         public bool isPushing;
+
+     
 
         public abstract void OnCollision(Entity collidedEntity, IntersectionData data, GameWorld world, bool firstCalled);
 
@@ -34,6 +37,7 @@ namespace ViralTree.Components
         {
             isPushable = false;
             isPushing = false;
+         
         }
 
 

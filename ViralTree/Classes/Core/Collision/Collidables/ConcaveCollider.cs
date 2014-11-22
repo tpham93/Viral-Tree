@@ -50,16 +50,14 @@ namespace ViralTree
                 return SatConcave(other as ConcaveCollider);
 
             else
-                return new IntersectionData();
+                return new IntersectionData(false);
         }
 
         public IntersectionData SatCircle(CircleCollider other, bool swapDir)
         {
             if (this.IntersectsBounding(other))
             {
-                IntersectionData totalData = new IntersectionData();
-                totalData.peneValues = new List<float>();
-                totalData.separationDirections = new List<Vector2f>();
+                IntersectionData totalData = new IntersectionData(false);
 
                 for (int i = 0; i < subPolys.Count; i++)
                 {
@@ -82,7 +80,7 @@ namespace ViralTree
                 return totalData;
             }
             else
-                return new IntersectionData();
+                return new IntersectionData(false);
         }
 
         public IntersectionData SatConcave(ConcaveCollider other)
@@ -90,9 +88,8 @@ namespace ViralTree
             if (this.IntersectsBounding(other))
             {
 
-                IntersectionData totalData = new IntersectionData();
-                totalData.peneValues = new List<float>();
-                totalData.separationDirections = new List<Vector2f>();
+                IntersectionData totalData = new IntersectionData(false);
+
 
 
                 for (int i = 0; i < this.subPolys.Count; i++)
@@ -112,7 +109,7 @@ namespace ViralTree
                 return totalData;
             }
             else
-                return new IntersectionData();
+                return new IntersectionData(false);
 
         }
 
@@ -122,9 +119,7 @@ namespace ViralTree
             if (this.IntersectsBounding(other))
             {
                 //create PolyColData where to store the intersection information.
-                IntersectionData totalData = new IntersectionData();
-                totalData.peneValues = new List<float>();
-                totalData.separationDirections = new List<Vector2f>();
+                IntersectionData totalData = new IntersectionData(false);
 
                 //go throw all ConvexPoly's this ConcavePoly is made of:
                 for (int i = 0; i < subPolys.Count; i++)
@@ -149,7 +144,7 @@ namespace ViralTree
 
             }
             else
-                return new IntersectionData();
+                return new IntersectionData(false);
         }
 
 

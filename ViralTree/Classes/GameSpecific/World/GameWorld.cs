@@ -151,7 +151,7 @@ namespace ViralTree.World
 
             Joystick.Update();
             List<uint> connectedGamepads = GInput.getConnectedGamepads();
-            AddEntity(EntityFactory.Create(EntityType.Player, Vec2f.One, new CircleCollider(64), new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
+            AddEntity(EntityFactory.Create(EntityType.Player, new Vector2f(256, 256), new CircleCollider(64), new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
 
 
             //////________________________________________ADD ENTITIES ____________________________
@@ -209,6 +209,9 @@ namespace ViralTree.World
 
                 Entity tmpEntity = entities.GetByUniqueId(tmpLookup.entityId);
 
+                IntersectionData totalStaticData = new IntersectionData(false);
+    
+              
                 for (int i = 0; i < chunks[tmpLookup.chunkId.X,tmpLookup.chunkId.Y].chunkEntities.Count; i++)
                 {
                     Entity tmpOtherEntity = chunks[tmpLookup.chunkId.X, tmpLookup.chunkId.Y].chunkEntities[i];
@@ -223,12 +226,15 @@ namespace ViralTree.World
                         if (tmpData.Intersects)
                         {
                             tmpEntity.Response.OnCollision(tmpOtherEntity, tmpData, this, true);
+
                             tmpOtherEntity.Response.OnCollision(tmpEntity, tmpData, this, false);
                         }
                     }
                
                 }
-            } 
+            }
+
+            
 
             //handle leaving Entities:
             //as long as there are chunks that have leaving entities:
@@ -371,6 +377,16 @@ namespace ViralTree.World
             chunks[id.X, id.Y].sprites.Add(s);
         }
 
+
+        public bool IsValidId(Vector2i id)
+        {
+            return IsValidId(id.X, id.Y);
+        }
+
+        public bool IsValidId(int x, int y)
+        {
+            return x >= 0 && x < NumChunksX && y >= 0 && y < NumChunksY;
+        }
 
     }
 }

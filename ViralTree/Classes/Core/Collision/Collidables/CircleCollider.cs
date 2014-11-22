@@ -38,7 +38,7 @@ namespace ViralTree
                 return (other as ConcaveCollider).SatCircle(this, true);
 
             else
-                return new IntersectionData();
+                return new IntersectionData(false);
         }
 
         public IntersectionData SatCircle(CircleCollider other)
@@ -55,7 +55,7 @@ namespace ViralTree
                 return new IntersectionData(r - dist, Vec2f.Normalized(direction, dist));
 
             else
-                return new IntersectionData();
+                return new IntersectionData(false);
         }
 
         public IntersectionData SatConvex(ConvexCollider other)
@@ -96,11 +96,12 @@ namespace ViralTree
 
         public override void Draw(RenderTarget target)
         {
+            /*
             shape.Position = Position;
             shape.Rotation = MathUtil.ToDegree(rotation);
             shape.Radius = radius;
             target.Draw(shape);
-            /*
+           */
             CircleShape posiShape = new CircleShape(5.0f);
             posiShape.Origin = new Vector2f(5.0f, 5.0f);
             posiShape.FillColor = new Color(0, 255, 0, 255);
@@ -109,14 +110,20 @@ namespace ViralTree
             CircleShape centerShape = new CircleShape(5.0f);
             centerShape.Origin = new Vector2f(5.0f, 5.0f);
             centerShape.FillColor = new Color(255, 0, 0, 255);
-            centerShape.Position = center;
+            centerShape.Position = Position;
 
            
             target.Draw(posiShape);
 
             target.Draw(centerShape);
-             * 
-             */
+
+            RectangleShape rectShape = new RectangleShape(new Vector2f(boundingRect.Width, boundingRect.Height));
+            rectShape.Position = new Vector2f(boundingRect.Left, boundingRect.Top);
+            rectShape.FillColor = new Color(255, 255, 255, 125);
+
+            target.Draw(rectShape);
+             
+             
         }
 
         public override void Draw(RenderTarget target, RenderStates states)
