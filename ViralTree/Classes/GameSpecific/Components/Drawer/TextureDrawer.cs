@@ -21,11 +21,11 @@ namespace ViralTree.Components
 
         public override void Initialize()
         {
-            this.sprite.Scale = new Vector2f(Owner.Collider.BoundingRectangle.Width / this.sprite.TextureRect.Width, Owner.Collider.BoundingRectangle.Width / this.sprite.TextureRect.Width);
         }
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
+            this.sprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
             sprite.Position = Owner.Collider.Position;
         }
 

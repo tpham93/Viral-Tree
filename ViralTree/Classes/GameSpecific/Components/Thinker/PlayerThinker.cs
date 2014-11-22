@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ViralTree.World;
+
 namespace ViralTree.Components
 {
     public sealed class PlayerThinker : AThinker
@@ -25,7 +27,7 @@ namespace ViralTree.Components
             weapon.Owner = this.Owner;
         }
 
-        private PlayerInput GetInput()
+        private PlayerInput GetInput(GameWorld world)
         {
             PlayerInput input = new PlayerInput();
             Vector2f movementVector = new Vector2f();
@@ -45,8 +47,13 @@ namespace ViralTree.Components
                 else if (KInput.IsPressed(SFML.Window.Keyboard.Key.D))
                     ++movementVector.X;
 
-                if (KInput.IsPressed(SFML.Window.Keyboard.Key.Space))
-                    attacking = true;
+                attacking = MInput.LeftPressed();
+
+                Vector2f screenPos = Owner.Collider.Position - world.Cam.Position;
+                screenPos.X *= world.Cam.currentView.Size.X / Settings.WindowSize.X;
+                screenPos.Y *= world.Cam.currentView.Size.Y / Settings.WindowSize.Y;
+
+                Owner.Collider.Direction = MInput.GetCurPos() - screenPos - new Vector2f(Settings.WindowSize.X / 2.0f, Settings.WindowSize.Y / 2.0f);
             }
             else
             {
@@ -64,11 +71,11 @@ namespace ViralTree.Components
             return input;
         }
 
-        public override void Update(GameTime gameTime, World.GameWorld world)
+        public override void Update(GameTime gameTime, GameWorld world)
         {
             float speed = 400 * (float)gameTime.ElapsedTime.TotalSeconds;
 
-            PlayerInput input = GetInput();
+            PlayerInput input = GetInput(world);
             Owner.Collider.Move(speed * input.Movement);
 
             if (KInput.IsPressed(SFML.Window.Keyboard.Key.Q))
@@ -77,7 +84,7 @@ namespace ViralTree.Components
             else if (KInput.IsPressed(SFML.Window.Keyboard.Key.E))
                 Owner.Collider.Rotate(0.1f);
 
-         
+
 
             weapon.Update(gameTime, world);
 
