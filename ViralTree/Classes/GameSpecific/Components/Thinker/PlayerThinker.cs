@@ -54,10 +54,6 @@ namespace ViralTree.Components
                 screenPos.Y *= world.Cam.currentView.Size.Y / Settings.WindowSize.Y;
 
                 Owner.Collider.Direction = MInput.GetCurPos() - screenPos - new Vector2f(Settings.WindowSize.X / 2.0f, Settings.WindowSize.Y / 2.0f);
-
-
-
-                Console.WriteLine(Owner.Collider.Direction);
             }
             else
             {
