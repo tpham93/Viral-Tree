@@ -10,25 +10,30 @@ using ViralTree.Objects;
 
 namespace ViralTree.World
 {
-    public enum EntitiyType
+    public enum EntityType
     {
         Player,
-        Spawner
+        Spawner,
+        Collision
     }
 
     public static class EntityFactory
     {
-        public static Entity Create(EntitiyType type, Vector2f position, object[] additionalInfos = null)
+        public static Entity Create(EntityType type, Vector2f position, ACollider collider, object[] additionalInfos = null)
         {
             Entity entity = null;
             switch (type)
             {
-                case EntitiyType.Player:
-                    entity = CreateNewPlayer(new CircleCollider(64), position, (GInput)additionalInfos[0]);
+                case EntityType.Player:
+                    entity = CreateNewPlayer(collider, position, (GInput)additionalInfos[0]);
                     break;
 
-                case EntitiyType.Spawner:
-                    entity = CreateSpawner((FloatRect)additionalInfos[0], (EntitiyType)additionalInfos[1], (double)additionalInfos[2], (double)additionalInfos[3], (int)additionalInfos[4]);
+                case EntityType.Spawner:
+                    entity = CreateSpawner((FloatRect)additionalInfos[0], (EntityType)additionalInfos[1], (double)additionalInfos[2], (double)additionalInfos[3], (int)additionalInfos[4]);
+                    break;
+
+                case EntityType.Collision:
+                    entity = CreateBlocker(position, collider);
                     break;
 
                 default:
@@ -40,7 +45,12 @@ namespace ViralTree.World
             return entity;
         }
 
-        private static Entity CreateSpawner(FloatRect bounding, EntitiyType type, double firstStart, double cooldown, int numSpawns)
+        private static Entity CreateBlocker(Vector2f position, ACollider collider)
+        {
+            return new Entity(collider, position, float.PositiveInfinity, EmptyThinker.Instance, new BasicPushResponse(false), EmptyActivator.Instance, EmptyActivatable.Instance, null);
+        }
+
+        private static Entity CreateSpawner(FloatRect bounding, EntityType type, double firstStart, double cooldown, int numSpawns)
         {
             Vector2f[] vertices = { new Vector2f(bounding.Left, bounding.Top), new Vector2f(bounding.Left, bounding.Top + bounding.Height), new Vector2f(bounding.Left + bounding.Width, bounding.Top + bounding.Height), new Vector2f(bounding.Left + bounding.Width, bounding.Top) };
             return new Entity(new ConvexCollider(vertices, true), new Vector2f(bounding.Left, bounding.Top), float.PositiveInfinity, new SpawnerThinker(bounding, numSpawns, cooldown, firstStart), EmptyResponse.Instance, EmptyActivator.Instance, EmptyActivatable.Instance, null);

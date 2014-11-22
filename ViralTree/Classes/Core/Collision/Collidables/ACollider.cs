@@ -100,8 +100,8 @@ namespace ViralTree
             boundingRect.Left = position.X -  radius;
             boundingRect.Top = position.Y - radius;
 
-            boundingRect.Width = position.X + radius * 2;
-            boundingRect.Height = position.Y + radius * 2;
+            boundingRect.Width = radius*2;
+            boundingRect.Height = radius*2;
         }
 
         public void MoveBoundingRectangle()
