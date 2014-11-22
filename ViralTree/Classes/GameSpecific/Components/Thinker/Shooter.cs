@@ -26,29 +26,38 @@ namespace ViralTree.Components
         private ACollider colliderPrototype;
         private float ammo;
 
+        private AWeapon weapon;
+
         public Shooter(float runRadius, float speed, float shootRadius)
         {
             this.runRadius      = runRadius;
             this.speed          = speed;
             this.shootRadius    = shootRadius;
+            this.weapon         = new ShooterThinker(30, TimeSpan.FromMilliseconds(250.0f), new CircleCollider(16), float.PositiveInfinity);
         }
 
         public override void Initialize()
         {
             enemyFraction = this.Owner.Fraction == Fraction.Virus ? Fraction.Cell : Fraction.Virus;
+             
+            weapon.Owner = this.Owner;
         }
 
-        private void SpawnProjectile(World.GameWorld world, Vector2f dir)
+        /*private void SpawnProjectile(World.GameWorld world, Vector2f dir)
         {
             if (target != null)
             {
                 Vector2f position = Owner.Collider.Position + Owner.Collider.Direction *  spawnOffsetDistance;
-                world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, Owner.Collider.Copy(), new object[] { Owner.Fraction, Owner.Fraction == Fraction.Cell ? CollidingFractions.CellProjectile : CollidingFractions.VirusProjectile, dir, 10.0f, "gfx/Projectiles/BasicProjectile.png" }));
+                Fraction projectileFraction = Owner.Fraction == Fraction.Cell ? Fraction.CellProjectile : Fraction.VirusProjectile;
+                CollidingFractions projectileCollidingFraction = Owner.Fraction == Fraction.Cell ? CollidingFractions.VirusProjectile : CollidingFractions.CellProjectile;
+
+                world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, Owner.Collider.Copy(), new object[] { projectileFraction, projectileCollidingFraction, dir, 10.0f, "gfx/Projectiles/BasicProjectile.png" }));
             }
-        }
+        }*/
 
         public override void Update(GameTime gameTime, GameWorld world)
-        {        
+        {
+            weapon.Update(gameTime, world);
             //runnung away
             if(chaser == null)
                 chaser = world.GetClosestEntityInRadius(this.Owner, enemyFraction, runRadius);
@@ -90,7 +99,8 @@ namespace ViralTree.Components
                 {
                     //moveDir = Vec2f.Normalized(moveDir, len) * speed * (float)gameTime.ElapsedTime.TotalSeconds;
                     //this.Owner.Collider.Move(moveDir);
-                    SpawnProjectile(world, shootDir);
+                    Owner.Collider.Direction = shootDir;
+                    weapon.Attack(world);
                 }
 
 
