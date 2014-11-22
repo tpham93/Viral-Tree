@@ -70,17 +70,20 @@ namespace ViralTree.World
 
         private static Entity CreateAnorism(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            return new Entity(collider, position, 100.0f, Fraction.Virus, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new MultiTextureDrawer("gfx/anorism.png", "gfx/anorismShuriken.png"));
+            collider.Scale = GameplayConstants.ANORISM_SCALE;
+            return new Entity(collider, position, GameplayConstants.ANORISM_LIFE, Fraction.Virus, CollidingFractions.All, new Follower(GameplayConstants.ANORISM_FOLLOW_RADIUS, GameplayConstants.ANORISM_SPEED), new BasicPushResponse(true), EmptyActivatable.Instance, new MultiTextureDrawer("gfx/anorism.png", "gfx/anorismShuriken.png"));
         }
 
         private static Entity CreateFungus(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            return new Entity(collider, position, 100.0f, Fraction.Virus, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance , new TextureDrawer("gfx/fungus.png"));
+            collider.Scale = GameplayConstants.FUNGUS_SCALE;
+            return new Entity(collider, position, GameplayConstants.FUNGUS_LIFE, Fraction.Virus, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/fungus.png"));
         }
 
         private static Entity CreateVeinball(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            return new Entity(collider, position, 100.0f, Fraction.Virus, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/veinball.png"));
+            collider.Scale = GameplayConstants.VEINBALL_SCALE;
+            return new Entity(collider, position, GameplayConstants.VEINBALL_LIFE, Fraction.Virus, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/veinball.png"));
         }
 
         private static Entity CreateBlocker(ACollider collider, Vector2f position, object[] additionalInfos)
@@ -102,8 +105,8 @@ namespace ViralTree.World
 
         private static Entity CreateNewPlayer(ACollider collider, Vector2f position, object[] additionalObjects)
         {
-            float startHealth = 100;
-            return new Entity(collider, position, startHealth, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker((GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.PlayerDrawer());
+            collider.Scale = GameplayConstants.PLAYER_SCALE;
+            return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker((GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.PlayerDrawer());
         }
     }
 }
