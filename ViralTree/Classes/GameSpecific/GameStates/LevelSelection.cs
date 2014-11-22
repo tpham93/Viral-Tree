@@ -38,10 +38,6 @@ namespace ViralTree.GameStates
 
             maxLevel = buttonList.Count - 1;
 
-            foreach (SelectButton b in buttonList)
-            {
-                b.Init();
-            }
 
         }
 
