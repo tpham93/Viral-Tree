@@ -151,7 +151,11 @@ namespace ViralTree.World
 
             Joystick.Update();
             List<uint> connectedGamepads = GInput.getConnectedGamepads();
-            AddEntity(EntityFactory.Create(EntityType.Scout, new Vector2f(256, 256), new CircleCollider(64), new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
+
+
+            ACollider tankCollider = PolygonFactory.getRegularPolygon(5, 55);
+            ACollider scoutCollider = new CircleCollider(64);
+            AddEntity(EntityFactory.Create(EntityType.Tank, new Vector2f(256, 256), tankCollider, new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
 
 
             //////________________________________________ADD ENTITIES ____________________________

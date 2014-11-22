@@ -35,11 +35,11 @@ namespace ViralTree.World
             switch (type)
             {
                 case EntityType.Scout:
-                    entity = CreateNewPlayer(collider, position, additionalInfos);
+                    entity = CreateNewScout(collider, position, additionalInfos);
                     break;
 
                 case EntityType.Tank:
-                    //TODO:
+                    entity = CreateNewTank(collider, position, additionalInfos);
                     break;
 
                 case EntityType.Spawner:
@@ -93,7 +93,11 @@ namespace ViralTree.World
 
         private static Entity CreateBlocker(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            return new Entity(collider, position, float.PositiveInfinity, Fraction.Neutral, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(false), EmptyActivatable.Instance, null);
+            Entity result = new Entity(collider, position, float.PositiveInfinity, Fraction.Neutral, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(false), EmptyActivatable.Instance, null);
+
+            result.Collider.SetColor(new Color(10, 10, 10, 255));
+
+            return result;
         }
 
         private static Entity CreateProjectile(ACollider collider, Vector2f position, object[] additionalInfos)
@@ -108,10 +112,16 @@ namespace ViralTree.World
             return e;
         }
 
-        private static Entity CreateNewPlayer(ACollider collider, Vector2f position, object[] additionalObjects)
+        private static Entity CreateNewScout(ACollider collider, Vector2f position, object[] additionalObjects)
         {
             collider.Scale = GameplayConstants.PLAYER_SCALE;
-            return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker((GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.PlayerDrawer());
+            return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker((GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.ScoutDrawer());
+        }
+
+        private static Entity CreateNewTank(ACollider collider, Vector2f position, object[] additionalObjects)
+        {
+            collider.Scale = GameplayConstants.PLAYER_SCALE;
+            return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker((GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.TankDrawer());
         }
     }
 }

@@ -6,6 +6,8 @@ uniform vec2 worldSize;
 uniform vec2 playerPos;
 uniform float scale;
 
+const float radius = 1.5;
+
 void main(void){
 
 	vec2 pos = vec2(gl_TexCoord[0]);
@@ -21,7 +23,7 @@ void main(void){
 
 	vec2 dir = (playerPos - offset) / vec2(500 * scale, 375 * scale);
 
-	float d = distance(vec2(0.5, 0.5), pos - vec2(dir.x, -dir.y)) * scale / 0.75;
+	float d = distance(vec2(0.5, 0.5), pos - vec2(dir.x, -dir.y)) * scale / radius;
 
 	//float p = d ;
 

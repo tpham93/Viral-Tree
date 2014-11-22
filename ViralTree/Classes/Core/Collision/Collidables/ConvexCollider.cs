@@ -469,5 +469,17 @@ namespace ViralTree
 
             return new ConvexCollider(copiedVertices);
         }
+
+        public override void SetColor(Color color)
+        {
+            for (uint i = 0; i < this.vertices.VertexCount; i++)
+            {
+                Vertex tmp = this.vertices[i];
+
+                tmp.Color = color;
+
+                this.vertices[i] = tmp;
+            }
+        }
     }
 }

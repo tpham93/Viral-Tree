@@ -137,9 +137,16 @@ namespace ViralTree
             target.Draw(shape);
         }
 
+    
+
         public override ACollider Copy()
         {
             return new CircleCollider(this.radius);
+        }
+
+        public override void SetColor(Color color)
+        {
+            this.shape.FillColor = color;
         }
     }
 }

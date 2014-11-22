@@ -8,7 +8,7 @@ using SFML.Window;
 
 namespace ViralTree.Components
 {
-    class PlayerDrawer : ADrawer
+    class ScoutDrawer : ADrawer
     {
         private Sprite playerSprite;
         private Sprite nucleusSprite;
@@ -19,14 +19,14 @@ namespace ViralTree.Components
 
         private float mitochondrionOffset;
 
-        public PlayerDrawer()
+        public ScoutDrawer()
         {
             mitochondrionsNum = 5.5f;
 
-            Texture playerTexture = Game.content.Load<Texture>("gfx/Player/player.png");
-            Texture nucleusTexture = Game.content.Load<Texture>("gfx/Player/nucleus.png");
-            Texture healthTexture = Game.content.Load<Texture>("gfx/Player/health.png");
-            mitochondrionTexture = Game.content.Load<Texture>("gfx/Player/mitochondrion.png");
+            Texture playerTexture = Game.content.Load<Texture>("gfx/Player/Scout/player.png");
+            Texture nucleusTexture = Game.content.Load<Texture>("gfx/Player/Scout/nucleus.png");
+            Texture healthTexture = Game.content.Load<Texture>("gfx/Player/Scout/health.png");
+            mitochondrionTexture = Game.content.Load<Texture>("gfx/Player/Scout/mitochondrion.png");
 
             playerSprite = new Sprite(playerTexture);
             nucleusSprite = new Sprite(nucleusTexture);

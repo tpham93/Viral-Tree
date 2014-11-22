@@ -77,6 +77,7 @@
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ProjectileResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\TouchDamageResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\MultiTextureDrawer.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Drawer\TankDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Shooter.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Follower.cs" />
     <Compile Include="Classes\GameSpecific\GameplayConstants.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="Classes\GameSpecific\Components\Thinker\ProjectileThinker.cs" />
     <Compile Include="Classes\GameSpecific\Components\Weapons\ShooterWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Drawables\SelectButton.cs" />
-    <Compile Include="Classes\GameSpecific\Components\Drawer\PlayerDrawer.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Drawer\ScoutDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerInput.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerThinker.cs" />
     <Compile Include="Classes\Core\Collections\UniqueList.cs" />
@@ -178,6 +179,15 @@
     <Content Include="Content\gfx\noise.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\gfx\Player\Tank\tankBody.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\Player\Tank\tankLife.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\Player\Tank\tankSpecial.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\gfx\Projectiles\BasicProjectile.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -193,16 +203,16 @@
     <Content Include="Content\other\level\tileSet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\gfx\Player\health.png">
+    <Content Include="Content\gfx\Player\Scout\health.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\gfx\Player\mitochondrion.png">
+    <Content Include="Content\gfx\Player\Scout\mitochondrion.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\gfx\Player\nucleus.png">
+    <Content Include="Content\gfx\Player\Scout\nucleus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\gfx\Player\player.png">
+    <Content Include="Content\gfx\Player\Scout\player.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="csfml-audio-2.dll">

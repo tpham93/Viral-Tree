@@ -228,5 +228,13 @@ namespace ViralTree
             }
             return new ConcaveCollider(copiedSupPolys, center, VertexCount);
         }
+
+        public override void SetColor(Color color)
+        {
+            for (int i = 0; i < this.subPolys.Count; i++)
+            {
+                subPolys.ElementAt(i).SetColor(color);
+            }
+        }
     }
 }
