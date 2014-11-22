@@ -77,6 +77,7 @@ namespace ViralTree.World
                                                     (int)((e.Collider.BoundingRectangle.Top + e.Collider.BoundingRectangle.Height) / world.ChunkHeight));
 
 
+            if(e.UniqueId)
             Console.WriteLine(e.Collider.BoundingRectangle);
 
             world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkUpperLeft));

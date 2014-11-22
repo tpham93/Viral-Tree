@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="52" height="52" tilewidth="128" tileheight="128">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="128" tileheight="128">
  <properties>
-  <property name="SpatialSizeX" value="512"/>
-  <property name="SpatialSizeY" value="512"/>
+  <property name="SpatialSizeX" value="256"/>
+  <property name="SpatialSizeY" value="256"/>
  </properties>
  <tileset firstgid="1" name="tileSet" tilewidth="128" tileheight="128">
   <image source="tileSet.png" width="1280" height="1280"/>
  </tileset>
- <layer name="Kachelebene 1" width="52" height="52">
+ <layer name="Kachelebene 1" width="50" height="50">
   <data>
    <tile gid="3"/>
    <tile gid="3"/>
@@ -60,116 +60,8 @@
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -266,11 +158,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -319,11 +208,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -422,11 +308,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -475,11 +358,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -578,11 +458,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -631,10 +508,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -683,10 +558,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -735,11 +608,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -838,11 +708,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -891,11 +758,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -994,12 +858,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1098,11 +958,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1151,11 +1008,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1254,11 +1108,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1307,10 +1158,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1359,10 +1208,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1411,11 +1258,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1514,11 +1358,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1567,11 +1408,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1670,11 +1508,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1723,11 +1558,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1826,11 +1658,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1879,11 +1708,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1982,12 +1808,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2086,11 +1908,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2139,11 +1958,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2242,11 +2058,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2295,10 +2108,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2347,10 +2158,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2399,11 +2208,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2502,11 +2308,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2555,11 +2358,8 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2658,10 +2458,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
@@ -2716,158 +2512,310 @@
   </data>
  </layer>
  <objectgroup name="Walls">
-  <object type="Collision" x="0" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+  <object type="Collision" x="1281.33" y="726">
+   <polygon points="0,0 -125.333,16 -98.6667,152 45.3333,90.6667"/>
+  </object>
+  <object type="Spawner" x="384" y="358" width="218" height="220">
+   <properties>
+    <property name="monsterType" value="player"/>
+    <property name="numSpawns" value="1"/>
+    <property name="spawnCooldown" value="0"/>
+    <property name="spawnStartTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Collision" x="256" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
   <object type="Collision" x="512" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="768" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
   <object type="Collision" x="1024" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
-  <object type="Collision" x="1536" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+  <object type="Collision" x="1280" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="1792" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="2304" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
   <object type="Collision" x="2048" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="3584" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
   <object type="Collision" x="2560" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="1536" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
   <object type="Collision" x="3072" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
-  <object type="Collision" x="4096" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+  <object type="Collision" x="3584" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
-  <object type="Collision" x="5632" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+  <object type="Collision" x="3328" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="3840" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="2816" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="4352" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="4864" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
   <object type="Collision" x="4608" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
   <object type="Collision" x="5120" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
-  <object type="Collision" x="0" y="6272">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
+  <object type="Collision" x="4096" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
-  <object type="Collision" x="0" y="3712">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="0" y="3200">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="0" y="5760">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="0" y="2176">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="0" y="2688">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="0" y="1152">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="0" y="1664">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="0" y="5248">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="0" y="4224">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="0" y="4736">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="3712">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="1152">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="1664">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="2176">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="4736">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="2688">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="6272">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="4224">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="5760">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="640">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="5248">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="6528" y="3200">
-   <polygon points="0,0 128,0 128,-512 0,-512"/>
-  </object>
-  <object type="Collision" x="4096" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="1024" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="512" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="1536" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="5632" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="3072" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="0" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="2560" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="2048" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="3584" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="5120" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="4608" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
-  </object>
-  <object type="Collision" x="6144" y="6656">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+  <object type="Collision" x="5888" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
   <object type="Collision" x="6144" y="128">
-   <polygon points="0,0 512,0 512,-128 0,-128"/>
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
-  <object type="Collision" x="6528" y="6528">
-   <polygon points="0,0 128,0 128,-256 0,-256"/>
+  <object type="Collision" x="6400" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
   </object>
-  <object type="Collision" x="0" y="6528">
-   <polygon points="0,0 128,0 128,-256 0,-256"/>
+  <object type="Collision" x="5632" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="5376" y="128">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="2560" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="6400" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="5120" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="4096" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="2816" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="3840" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="1536" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="768" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="4608" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="3072" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="2304" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="1792" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="3584" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="5632" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="1024" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="2048" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="512" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="5888" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="3328" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="5376" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="256" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="6144" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="4864" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="4352" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="1280" y="6400">
+   <polyline points="0,0 -256,0.0625 -256,-127.938 0,-127.938 0,0.0625"/>
+  </object>
+  <object type="Collision" x="6400" y="384">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="640">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="896">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="1152">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="1408">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="1920">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="1664">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="2432">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="2688">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="2176">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="3968">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="3712">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="3200">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="3456">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="2944">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="4736">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="4224">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="5248">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="4480">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="5504">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="4992">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="6272">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="5760">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="6400" y="6016">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="384">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="6016">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="3200">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="3456">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="896">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="2432">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="1920">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="4224">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="2688">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="5504">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="5248">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="5760">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="3712">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="6272">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="4992">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="1408">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="2944">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="640">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="4736">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="2176">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="1664">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="1152">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="3968">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
+  </object>
+  <object type="Collision" x="128" y="4480">
+   <polyline points="0,0 -127.818,0.0909091 -127.818,-255.909 0.181818,-255.909 0.181818,0.0909091"/>
   </object>
  </objectgroup>
  <objectgroup name="Stuff"/>

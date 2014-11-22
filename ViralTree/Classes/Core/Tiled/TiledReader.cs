@@ -196,7 +196,7 @@ namespace ViralTree.Tiled
         {
             Vector2f center = new Vector2f();
 
-            Console.WriteLine(start);
+           // Console.WriteLine(start);
 
             print("foundPoints");
             char[] splits = { ' ' };
@@ -215,11 +215,11 @@ namespace ViralTree.Tiled
 
                 center += vertices[i];
 
-               Console.WriteLine(vertices[i]);
+           //    Console.WriteLine(vertices[i]);
             }
             center /= vertices.Count;
 
-            Console.WriteLine(center);
+         //   Console.WriteLine(center);
  
 
             return center;
