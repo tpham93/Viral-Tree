@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViralTree.Components;
+using ViralTree.Drawer;
 using ViralTree.Tiled;
 
 namespace ViralTree.World
@@ -18,7 +19,8 @@ namespace ViralTree.World
         Collision,
         Fungus,
         Veinball,
-        Projectile    
+        Anorism,
+        Projectile,    
     }
 
     public static class EntityFactory
@@ -26,6 +28,8 @@ namespace ViralTree.World
         public static Entity Create(EntityType type, Vector2f position, ACollider collider, object[] additionalInfos = null)
         {
             Entity entity = null;
+
+            collider.Position = position;
 
             switch (type)
             {
@@ -49,6 +53,10 @@ namespace ViralTree.World
                     entity = CreateVeinball(collider, position, additionalInfos);
                     break;
 
+                case EntityType.Anorism:
+                    entity = CreateAnorism(collider, position, additionalInfos);
+                    break;
+
                 case EntityType.Projectile:
                     entity = CreateProjectile(collider, position, additionalInfos);
                     break;
@@ -58,6 +66,11 @@ namespace ViralTree.World
             }
 
             return entity;
+        }
+
+        private static Entity CreateAnorism(ACollider collider, Vector2f position, object[] additionalInfos)
+        {
+            return new Entity(collider, position, 100.0f, Fraction.Virus, CollidingFractions.All, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new MultiTextureDrawer("gfx/anorism.png", "gfx/anorismShuriken.png"));
         }
 
         private static Entity CreateFungus(ACollider collider, Vector2f position, object[] additionalInfos)

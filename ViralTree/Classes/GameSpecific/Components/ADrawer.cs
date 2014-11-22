@@ -11,6 +11,7 @@ namespace ViralTree.Components
     public abstract class ADrawer : AComponent
     {
         public abstract void Draw(RenderTarget target);
+
     }
 
     public class EmptyDraw : ADrawer
