@@ -110,5 +110,7 @@ namespace ViralTree
             boundingRect.Top = position.Y - radius;
         }
 
+        public abstract ACollider Copy();
+
     }
 }

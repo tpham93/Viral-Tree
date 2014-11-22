@@ -84,6 +84,9 @@
     <Compile Include="Classes\GameSpecific\Components\ADrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\AThinker.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\BasicPushResponse.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Drawer\TextureDrawer.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\ProjectileThinker.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\ShooterThinker.cs" />
     <Compile Include="Classes\GameSpecific\Drawables\SelectButton.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\PlayerDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerInput.cs" />
@@ -144,6 +147,7 @@
     <Content Include="Content\gfx\menuscreen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\gfx\Projectiles\BasicProjectile.png" />
     <Content Include="Content\gfx\textbox.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -23,13 +23,17 @@ namespace ViralTree
         public Game()
         {
             content = new ContentManager();
-
+            
+            window.SetVerticalSyncEnabled(false);
+            window.SetFramerateLimit(0);
             //init the keyboard with all keys:
             KInput.Init(null);
 
+            
+
             //init the mouse with this game (needed for relative coords):
             MInput.Init(this);
-
+   
             //create the gamestate to start with:
             gameState = new MainMenu();
             gameState.setParent(this);

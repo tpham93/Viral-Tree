@@ -10,7 +10,6 @@ namespace ViralTree.Components
 {
     public abstract class ADrawer : AComponent
     {
-        public abstract void LoadContent(ContentManager contentmanager);
         public abstract void Draw(RenderTarget target);
     }
 
@@ -19,11 +18,6 @@ namespace ViralTree.Components
         public EmptyDraw()
         {
 
-        }
-
-        public override void LoadContent(ContentManager contentmanager)
-        {
-            //throw new NotImplementedException();
         }
 
         public override void Draw(RenderTarget target)

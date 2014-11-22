@@ -24,7 +24,11 @@ namespace ViralTree.World
 
         //all entities that are in this chunk
         public MyList<Entity> chunkEntities;
-       
+
+        public List<Sprite> sprites;
+
+      //  public Sprite groundSprite;
+
         #endregion
 
         public Chunk(int idX, int idY, GameWorld world)
@@ -32,6 +36,8 @@ namespace ViralTree.World
             this.Id = new Vector2i(idX, idY);
 
             chunkEntities = new MyList<Entity>();
+
+            sprites = new List<Sprite>();
 
             this.world = world;
         }
@@ -100,11 +106,24 @@ namespace ViralTree.World
 
 
 
-        public void Draw(GameTime gameTime, RenderTarget target)
+        public void DrawEntities(GameTime gameTime, RenderTarget target)
         {
             for (int i = 0; i < chunkEntities.Count; i++)
                 chunkEntities[i].Draw(gameTime, target);
         }
+
+        public void DrawSprites(GameTime gameTime, RenderTarget target)
+        {
+
+
+            foreach (Sprite s in sprites)
+                target.Draw(s);
+        }
+
+
+
+
+          
 
 
         //TODO: maybe notify e for entering a new chunk

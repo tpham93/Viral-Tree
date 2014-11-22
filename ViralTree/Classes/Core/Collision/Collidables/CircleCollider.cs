@@ -129,5 +129,9 @@ namespace ViralTree
             target.Draw(shape);
         }
 
+        public override ACollider Copy()
+        {
+            return new CircleCollider(this.radius);
+        }
     }
 }

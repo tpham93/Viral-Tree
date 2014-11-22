@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViralTree.Components;
-using ViralTree.Objects;
 
 namespace ViralTree.World
 {
@@ -14,7 +13,8 @@ namespace ViralTree.World
     {
         Player,
         Spawner,
-        Collision
+        Collision,
+        Projectile
     }
 
     public static class EntityFactory
@@ -39,8 +39,6 @@ namespace ViralTree.World
                 default:
                     break;
             }
-
-            entity.LoadContent();
 
             return entity;
         }
