@@ -151,7 +151,7 @@ namespace ViralTree.World
 
             Joystick.Update();
             List<uint> connectedGamepads = GInput.getConnectedGamepads();
-            AddEntity(EntityFactory.Create(EntityType.Player, new Vector2f(256, 256), PolygonFactory.getRegularStar(4, 64), new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
+            AddEntity(EntityFactory.Create(EntityType.Player, new Vector2f(256, 256), new CircleCollider(64), new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
 
 
             //////________________________________________ADD ENTITIES ____________________________
@@ -394,20 +394,36 @@ namespace ViralTree.World
             float minDist = float.PositiveInfinity;
             Entity closest = null;
 
-            Vector2i idOffset = new Vector2i((int)(radius / ChunkWidth), (int)(radius / ChunkHeight));
+            Vector2i idOffset = new Vector2i((int)(radius / ChunkWidth) + 1, (int)(radius / ChunkHeight) + 1);
+
+          //  Console.WriteLine(idOffset);
 
             for (int i = -idOffset.X; i < idOffset.X; i++)
             {
                 for (int j = -idOffset.Y; j < idOffset.Y; j++)
                 {
 
-                    for (int k = 0; k <  chunks[i, j].chunkEntities.Count; k++)
-			        {
-                        Entity tmp = chunks[i, j].chunkEntities[k];
-                        float tmpDist = Vec2f.EuclidianDistance(tmp.Collider.Position, refEntity.Collider.Position);
+                    Vector2i trueId = new Vector2i(i, j) + refEntity.ChunkId;
 
-                        
-			        }
+                    if (IsValidId(trueId))
+                    {
+                        for (int k = 0; k < chunks[trueId.X, trueId.Y].chunkEntities.Count; k++)
+                        {
+                            Entity tmp = chunks[trueId.X, trueId.Y].chunkEntities[k];
+
+                            if (tmp.Fraction == desiredFraction && refEntity != tmp)
+                            {
+                                float tmpDist = Vec2f.EuclidianDistanceSq(tmp.Collider.Position, refEntity.Collider.Position);
+
+                                if (tmpDist < minDist)
+                                {
+                                    minDist = tmpDist;
+                                    closest = tmp;
+                                }
+                            }
+                        }
+
+                    }
               
                 }
             }
