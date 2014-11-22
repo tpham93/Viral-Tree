@@ -33,7 +33,7 @@ namespace ViralTree.Components
             this.runRadius      = runRadius;
             this.speed          = speed;
             this.shootRadius    = shootRadius;
-            this.weapon         = new ShooterThinker(30, TimeSpan.FromMilliseconds(250.0f), new CircleCollider(16), float.PositiveInfinity);
+            this.weapon         = new ShooterWeapon(30, TimeSpan.FromMilliseconds(250.0f), new CircleCollider(16), float.PositiveInfinity);
         }
 
         public override void Initialize()

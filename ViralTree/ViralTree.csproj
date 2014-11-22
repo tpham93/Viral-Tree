@@ -92,7 +92,7 @@
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\BasicPushResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\TextureDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\ProjectileThinker.cs" />
-    <Compile Include="Classes\GameSpecific\Components\Thinker\ShooterThinker.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Weapons\ShooterWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Drawables\SelectButton.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\PlayerDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerInput.cs" />
@@ -209,7 +209,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\GameSpecific\Components\Weapons\" />
     <Folder Include="Content\sfx\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

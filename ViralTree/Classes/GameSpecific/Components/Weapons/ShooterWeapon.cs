@@ -10,14 +10,14 @@ using ViralTree.World;
 
 namespace ViralTree.Components
 {
-    class ShooterThinker : AWeapon
+    class ShooterWeapon : AWeapon
     {
         private float spawnOffsetDistance;
         private TimeSpan maxCoolDown;
         private TimeSpan coolDown;
         private ACollider colliderPrototype;
         private float ammo;
-        public ShooterThinker(float spawnOffsetDistance, TimeSpan coolDown, ACollider colliderPrototype, float ammo)
+        public ShooterWeapon(float spawnOffsetDistance, TimeSpan coolDown, ACollider colliderPrototype, float ammo)
         {
             this.spawnOffsetDistance = spawnOffsetDistance;
             this.coolDown = coolDown;
