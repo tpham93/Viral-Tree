@@ -12,10 +12,24 @@ namespace ViralTree.GameStates
     public sealed class Credits : AGameState
     {
         Text gametitel;
-        Text categories;
-        Text content;
+        Text categoryStuffNotWorking;
+        Text categoryOtherStuffNotWorking;
+        Text categoryStuffThatWorks;
+        Text contentStuffNotWorking;
+        Text contentOtherStuffNotWorking;
+        Text contentStuffThatWorks;
 
         Font font;
+
+        uint titelSize = 50;
+        uint categorySize = 35;
+        uint contentSize = 25;
+
+        int smallOffset = 100;
+        int bigOffset = 300;
+
+        float time = 0;
+        float speed = 0.01f;
 
         int posX = 50;
         
@@ -28,20 +42,49 @@ namespace ViralTree.GameStates
         {
             font = new Font( Game.content.Load<Font>("other/arial.ttf"));
 
-            gametitel = new Text();
-            //categories = new Text();
-            //content = new Text();
+            gametitel                           = new Text();
+            categoryStuffNotWorking             = new Text();
+            categoryOtherStuffNotWorking        = new Text();
+            categoryStuffThatWorks              = new Text();
+            contentStuffNotWorking              = new Text();
+            contentOtherStuffNotWorking         = new Text();
+            contentStuffThatWorks               = new Text();
 
-            gametitel.Font  = font;
-            //categories.Font = font;
-            //content.Font    = font;
+            gametitel.Font                      = font;
+            categoryStuffNotWorking.Font        = font;
+            categoryOtherStuffNotWorking.Font   = font;
+            categoryStuffThatWorks.Font         = font;
+            contentStuffNotWorking.Font         = font;
+            contentOtherStuffNotWorking.Font    = font;
+            contentStuffThatWorks.Font          = font;
 
-            gametitel.CharacterSize = 50;
-            //categories.CharacterSize = 35;
-            //content.CharacterSize = 15;
 
-            gametitel.Position = new Vector2f(posX, 800);
-            gametitel.DisplayedString = "Some Game with a Tree in it";
+            gametitel.CharacterSize                         = titelSize;
+            categoryStuffNotWorking.CharacterSize           = categorySize;
+            categoryOtherStuffNotWorking.CharacterSize      = categorySize;
+            categoryStuffThatWorks.CharacterSize            = categorySize;        
+            contentStuffNotWorking.CharacterSize            = contentSize;
+            contentOtherStuffNotWorking.CharacterSize       = contentSize;
+            contentStuffThatWorks.CharacterSize             = contentSize;
+
+            gametitel.Position = new Vector2f(posX, 650);
+
+            gametitel.DisplayedString                       = "Some Game with a Tree in it";
+            
+            categoryStuffNotWorking.DisplayedString             = "Stuff that doesn't work";
+           
+            contentStuffNotWorking.DisplayedString                  = " Tuan";
+
+            categoryOtherStuffNotWorking.DisplayedString        = "Other stuff that doesn't work";
+
+            contentOtherStuffNotWorking.DisplayedString             = "Kai";
+
+            categoryStuffThatWorks.DisplayedString              = "Stuff that works perfectly well";
+
+            contentStuffThatWorks.DisplayedString                   = "Jarek";
+            
+
+            
 
 
             
@@ -57,13 +100,21 @@ namespace ViralTree.GameStates
 
         public override void Update()
         {
+            time -= (float)parent.gameTime.ElapsedTime.TotalSeconds * speed;
+
             if (KInput.IsClicked(Keyboard.Key.Escape))
-                this.parent.SetGameState(null);
+                this.parent.SetGameState(new MainMenu());
 
-            gametitel.Position = new Vector2f(posX, gametitel.Position.Y - 1);
+            gametitel.Position = new Vector2f(posX, gametitel.Position.Y - speed );
 
+            categoryStuffNotWorking.Position            = gametitel.Position + new Vector2f(0, bigOffset);
+            contentStuffNotWorking.Position             = categoryStuffNotWorking.Position + new Vector2f(0, smallOffset);
 
+            categoryOtherStuffNotWorking.Position       = contentStuffNotWorking.Position + new Vector2f(0, bigOffset);
+            contentOtherStuffNotWorking.Position        = categoryOtherStuffNotWorking.Position + new Vector2f(0, smallOffset);
 
+            categoryStuffThatWorks.Position             = contentOtherStuffNotWorking.Position + new Vector2f(0, bigOffset);
+            contentStuffThatWorks.Position              = categoryStuffThatWorks.Position + new Vector2f(0, smallOffset);
             
                 
         }
@@ -75,6 +126,12 @@ namespace ViralTree.GameStates
 
 
             parent.window.Draw(gametitel);
+            parent.window.Draw(categoryStuffNotWorking);
+            parent.window.Draw(contentStuffNotWorking);
+            parent.window.Draw(categoryOtherStuffNotWorking);
+            parent.window.Draw(contentOtherStuffNotWorking);
+            parent.window.Draw(categoryStuffThatWorks);
+            parent.window.Draw(contentStuffThatWorks);
             
 
             
