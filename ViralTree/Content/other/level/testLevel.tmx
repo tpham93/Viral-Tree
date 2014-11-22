@@ -2876,7 +2876,7 @@
     <property name="cooldown" value="5"/>
     <property name="entityType" value="fungus"/>
     <property name="numSpawns" value="10"/>
-    <property name="startTime" value="10"/>
+    <property name="startTime" value="0"/>
    </properties>
   </object>
  </objectgroup>

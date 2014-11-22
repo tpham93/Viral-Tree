@@ -48,7 +48,7 @@ namespace ViralTree.Tiled
 
             if (type == EntityType.Fungus)
             {
-                result = new EntityAttribs(EntityType.Fungus, new CircleCollider(25), Vec2f.Zero);
+                result = new EntityAttribs(EntityType.Fungus, new CircleCollider(52), Vec2f.Zero);
             }
 
             return result;

@@ -40,7 +40,7 @@ namespace ViralTree.Components
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
-            Console.WriteLine(this);
+         //   Console.WriteLine(this);
 
             if (startTime > 0)
                 startTime -= gameTime.ElapsedTime.TotalSeconds;
@@ -64,8 +64,7 @@ namespace ViralTree.Components
         private void SpawnEntity(World.GameWorld world)
         {
             Vector2f pos = MathUtil.Rand.NextVec2f(bounding.Left, bounding.Left + bounding.Width, bounding.Top, bounding.Top + bounding.Height);
-            Entity e = EntityFactory.Create(attribs.type, pos, attribs.collider, MathUtil.ToArray<object>(attribs.additionalAttribs));
-            e.LoadContent();
+            Entity e = EntityFactory.Create(attribs.type, pos, attribs.collider.Copy(), MathUtil.ToArray<object>(attribs.additionalAttribs));
             world.AddEntity(e);
         }
 

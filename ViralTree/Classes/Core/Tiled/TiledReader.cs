@@ -203,7 +203,7 @@ namespace ViralTree.Tiled
                  //   printCurrent(reader);
                         while (reader.MoveToNextAttribute())
                         {
-                            printCurrent(reader);
+                            //printCurrent(reader);
 
                             if (reader.Value.Equals("cooldown")){
                                 reader.MoveToNextAttribute();

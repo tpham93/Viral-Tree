@@ -69,8 +69,7 @@ namespace ViralTree.Components
             else if (KInput.IsPressed(SFML.Window.Keyboard.Key.E))
                 Owner.Collider.Rotate(0.1f);
 
-            if (KInput.IsClicked(SFML.Window.Keyboard.Key.Space))
-                Owner.Activator.Activate(gameTime, world);
+         
 
 
             /*

@@ -69,14 +69,6 @@ namespace ViralTree.World
             set { if (value != null) { value.Owner = this; value.IsActive = true; drawer = value; } }
         }
 
-        private Components.AActivator activator;
-        public Components.AActivator Activator
-        {
-            get { return activator; }
-            set { value.Owner = this; value.IsActive = true; activator = value; }
-        }
-
-
         private Components.AActivatable activatable;
         public Components.AActivatable Activatable
         {
@@ -106,13 +98,12 @@ namespace ViralTree.World
             LeavesChunk = false;
         }
 
-        public Entity(ACollider collider, Vector2f position, float life, AThinker thinker, ACollisionResponse response, AActivator activator, AActivatable activatable, ADrawer drawing)
+        public Entity(ACollider collider, Vector2f position, float life, AThinker thinker, ACollisionResponse response, AActivatable activatable, ADrawer drawing)
             : this(collider, position, life)
         {
             this.Thinker = thinker;
             this.Response = response;
             this.Drawer = drawing;
-            this.Activator = activator;
             this.Activatable = activatable;
         }
 
@@ -122,8 +113,6 @@ namespace ViralTree.World
             thinker = Components.EmptyThinker.Instance;
 
             response = Components.EmptyResponse.Instance;
-
-            activator = Components.EmptyActivator.Instance;
 
             activatable = Components.EmptyActivatable.Instance;
         }
@@ -139,9 +128,6 @@ namespace ViralTree.World
 
             if (drawer != null && drawer.IsActive)
                 drawer.Update(gameTime, world);
-
-            if (activator.IsActive)
-                activator.Update(gameTime, world);
 
             if(activatable.IsActive)
                 activatable.Update(gameTime, world);
