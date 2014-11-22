@@ -16,6 +16,8 @@ namespace ViralTree
         public static ContentManager content;
 
         private AGameState gameState;
+
+        
    
 
         public Game()
@@ -29,9 +31,11 @@ namespace ViralTree
             MInput.Init(this);
 
             //create the gamestate to start with:
-            gameState = new InGame();
+            gameState = new MainMenu();
             gameState.setParent(this);
             gameState.Init(null);
+
+            
         }
 
 

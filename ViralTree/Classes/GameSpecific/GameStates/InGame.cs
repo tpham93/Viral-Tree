@@ -13,17 +13,17 @@ namespace ViralTree.GameStates
     {
 
         private GameWorld world;
+        private string levelName;
 
-
-        public InGame()
+        public InGame(string levelName)
         {
-
+            this.levelName = levelName;
         }
 
         public override void Init(AGameState lastGameState)
         {
 
-            world = new GameWorld("testLevel");
+            world = new GameWorld(levelName);
             world.initCam(parent.window);
         }
 

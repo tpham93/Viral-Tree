@@ -9,35 +9,34 @@ using ViralTree.Classes.GameSpecific.Components.Drawables;
 
 namespace ViralTree.GameStates
 {
-    public sealed class MainMenu : AGameState
+    public sealed class LevelSelection : AGameState
     {
-        
         List<SelectButton> buttonList;
 
-        Texture backgroundTexture;
+        Texture treeTexture;
 
-        Sprite backgroundSprite;
+        Sprite treeSprite;
 
-        int curButton = 0;
-        int maxButton;
+        int curLevel = 0;
+        int maxLevel;
 
-        public MainMenu()
+        public LevelSelection()
         {
 
         }
 
         public override void Init(AGameState lastGameState)
         {
-            backgroundTexture = Game.content.Load<Texture>("gfx/menuscreen.png");
+            treeTexture = Game.content.Load<Texture>("gfx/awesome_tree.png");
 
-            backgroundSprite = new Sprite(backgroundTexture, new IntRect(0, 0, (int)backgroundTexture.Size.X, (int)backgroundTexture.Size.Y));
+            treeSprite = new Sprite(treeTexture, new IntRect(0, 0, (int)treeTexture.Size.X, (int)treeTexture.Size.Y));
 
             buttonList = new List<SelectButton>();
 
-            buttonList.Add(new SelectButton(" Select Lvl", "", new Vector2f(200, 100), 0));
-            buttonList.Add(new SelectButton("     Quit", "", new Vector2f(200, 200), 1));
+            buttonList.Add(new SelectButton(" Testlevel", "testLevel", new Vector2f(100, 100), 0));
+            buttonList.Add(new SelectButton("      Aca", "testLevelAca", new Vector2f(300, 500), 1));
 
-            maxButton = buttonList.Count - 1;
+            maxLevel = buttonList.Count - 1;
 
             foreach (SelectButton b in buttonList)
             {
@@ -55,35 +54,31 @@ namespace ViralTree.GameStates
         public override void Update()
         {
             if (KInput.IsClicked(Keyboard.Key.Escape))
-                this.parent.SetGameState(null);
+                this.parent.SetGameState(new MainMenu());
 
             if (KInput.IsClicked(Keyboard.Key.Right))
-                curButton++;
+                curLevel++;
 
             if (KInput.IsClicked(Keyboard.Key.Left))
-                curButton--;
+                curLevel--;
 
-            if (curButton < 0)
-                curButton = maxButton;
-            else if (curButton > maxButton)
-                curButton = 0;
+            if (curLevel < 0)
+                curLevel = maxLevel;
+            else if (curLevel > maxLevel)
+                curLevel = 0;
 
 
 
             foreach (SelectButton b in buttonList)
             {
-                b.Update(curButton);
+                b.Update(curLevel);
             }
 
 
             if (KInput.IsClicked(Keyboard.Key.Space))
             {
-                if (curButton == 0)
-                    parent.SetGameState(new LevelSelection());
-                
-                else if (curButton == 1)
-                    this.parent.SetGameState(null);
-            }
+                parent.SetGameState(new InGame(buttonList[curLevel].getLevel()));
+                }
                 
         }
 
@@ -91,7 +86,7 @@ namespace ViralTree.GameStates
         {
             
 
-            parent.window.Draw(backgroundSprite);
+            parent.window.Draw(treeSprite);
 
 
             foreach (SelectButton b in buttonList)
@@ -101,4 +96,3 @@ namespace ViralTree.GameStates
         }
     }
 }
-
