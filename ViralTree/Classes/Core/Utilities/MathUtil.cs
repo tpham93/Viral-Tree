@@ -158,5 +158,15 @@ namespace ViralTree
             }
         }
 
+        public static T[] ToArray<T>(List<T> objs)
+        {
+            T[] result = new T[objs.Count];
+
+            for (int i = 0; i < objs.Count; i++)
+                result[i] = objs[i];
+
+            return result;
+        }
+
     }
 }

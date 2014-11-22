@@ -22,6 +22,8 @@ namespace ViralTree
 
         public static StylesChanged StyleEvent;
 
+        public static IFormatProvider cultureProvide = System.Globalization.CultureInfo.CreateSpecificCulture("en-us");
+
 
         private static Vector2i windowSize = new Vector2i(800, 600);
         public static Vector2i WindowSize

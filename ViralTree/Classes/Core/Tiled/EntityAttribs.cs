@@ -4,18 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ViralTree.World;
 
 namespace ViralTree.Tiled
 {
     public class EntityAttribs
     {
+        public EntityType type;
         public Vector2f pos;
-        ACollider collider;
-        List<object> additionalAttribs = new List<object>();
+        public ACollider collider;
+        public List<object> additionalAttribs = new List<object>();
 
-        public EntityAttribs(ACollider collider, Vector2f pos)
+        public EntityAttribs(EntityType type, ACollider collider, Vector2f pos)
         {
+            this.type = type;
             this.pos = pos;
+            this.collider = collider;
         }
 
         public object[] GetAttribs()

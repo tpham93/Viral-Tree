@@ -1,7 +1,9 @@
 ﻿using SFML.Graphics;
+using SFML.Window;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,188 +35,15 @@ namespace ViralTree.Tiled
         public int spatialSizeX = 0;
         public int spatialSizeY = 0;
 
-        private List<EntityAttribs> entitiAttribs = new List<EntityAttribs>();
 
-        private int currentEntitAttribIndex = -1;
+        public List<EntityAttribs> entityAttributs = new List<EntityAttribs>();
 
-        Stack<String> lastElement = new Stack<string>();
-        int numLayers = 0;
 
         public TiledReader()
         {
 
         }
 
-        public void Clear()
-        {
-
-        }
-
-        public void Load(String path)
-        {
-            XmlReader reader = XmlReader.Create(path);
-
-            while (reader.Read())
-            {
-                switch (reader.NodeType)
-                {
-                    #region Stuff not needed:
-                    case XmlNodeType.XmlDeclaration:
-                        break;
-
-                    case XmlNodeType.CDATA:
-                        break;
-
-                    case XmlNodeType.Whitespace:
-                        break;
-
-                    case XmlNodeType.Comment:
-                        break;
-                    #endregion
-
-                    case XmlNodeType.Element:
-                        #region EmptyElement
-
-                        if (reader.IsEmptyElement)
-                        {
-                            if (reader.HasAttributes)
-                            {
-                                while (reader.MoveToNextAttribute())
-                                {
-
-                                    if (lastElement.Peek().Equals(TILED_PROPERTIES))
-                                    {
-
-                                        if (reader.Value.Equals(TILED_SPATIAL_X))
-                                        {
-                                            reader.MoveToNextAttribute();
-                                            spatialSizeX = int.Parse(reader.Value);
-                                        }
-
-                                        else if (reader.Value.Equals(TILED_SPATIAL_Y))
-                                        {
-                                            reader.MoveToNextAttribute();
-                                            spatialSizeY = int.Parse(reader.Value);
-                                        }
-
-                                    }
-
-                                    else if (lastElement.Peek().Equals(TILED_TILESET))
-                                    {
-                                        if (reader.Name.Equals("source") && tileSetName == null)
-                                            tileSetName = reader.Value;
-                                    }
-
-                                    print(reader.Name + " = " + reader.Value);
-                                }
-                            }
-
-                        }
-                        #endregion
-
-                        #region NotEmptyElement
-                        else //everything else here
-                        {
-                            lastElement.Push(reader.Name);
-
-                            print("pushed " + reader.Name);
-
-                            // prüfen, ob der Knoten Attribute hat
-                            if (reader.HasAttributes)
-                            {
-                                // Durch die Attribute navigieren
-                                while (reader.MoveToNextAttribute())
-                                {
-                                    if (lastElement.Peek().Equals(TILED_MAP))
-                                    {
-                                        if (reader.Name.Equals("width"))
-                                            numTilesX = int.Parse(reader.Value);
-
-                                        else if (reader.Name.Equals("height"))
-                                            numTilesY = int.Parse(reader.Value);
-
-                                        else if (reader.Name.Equals("tilewidth"))
-                                            tileSizeX = int.Parse(reader.Value);
-
-                                        else if (reader.Name.Equals("tileheight"))
-                                            tileSizeY = int.Parse(reader.Value);
-                                    }
-
-                                    else if (lastElement.Peek().Equals("object"))
-                                    {
-
-                                        if (reader.Name.Equals("type"))
-                                        {
-                                            if (reader.Value.Equals("Spawner"))
-                                                loadSpawner(reader);
-
-
-                                            else if (reader.Value.Equals("Collision"))
-                                                loadCollision();
-
-
-
-                                        }
-
-                                    }
-
-                                    // print("elements: " + reader.Name + " = " + reader.Value);
-                                }
-                            }
-                        }
-                        #endregion
-                        break;
-
-
-                    case XmlNodeType.EndElement:
-                        lastElement.Pop();
-                        print("popped " + reader.Name);
-                        break;
-
-                    case XmlNodeType.Text:
-
-                        //  layers[numLayers] = reader.Value;
-
-                        break;
-
-
-                }
-            }
-            // map.tileIds = map.convertTilesToIntArray();
-
-            // map.printAllData();
-            //return map;
-
-            printAll();
-        }
-
-        private void loadCollision()
-        {
-
-        }
-
-        private void loadSpawner(XmlReader reader)
-        {
-
-            // print("elements: " + reader.Name + " = " + reader.Value);
-            FloatRect tmpRect = new FloatRect();
-
-            reader.MoveToNextAttribute();
-            tmpRect.Left = float.Parse(reader.Value);
-
-            //  print("elements: " + reader.Name + " = " + reader.Value);
-
-            reader.MoveToNextAttribute();
-            tmpRect.Top = float.Parse(reader.Value);
-
-            reader.MoveToNextAttribute();
-            tmpRect.Width = float.Parse(reader.Value);
-
-            reader.MoveToNextAttribute();
-            tmpRect.Height = float.Parse(reader.Value);
-
-            print("floatRect" + tmpRect);
-        }
 
         [Conditional(Settings.Constants.DEBUG_CONDITIONAL_STRING)]
         public void printAll()
@@ -233,11 +62,224 @@ namespace ViralTree.Tiled
         }
 
         [Conditional(Settings.Constants.DEBUG_CONDITIONAL_STRING)]
-        public void print(String s)
+        public void print(Object s)
         {
+            Console.WriteLine();
             Console.WriteLine(s);
 
         }
+
+        public void Load2(String name)
+        {
+            XmlReader reader = XmlReader.Create(name);
+
+            while (reader.Read())
+            {
+                if (reader.Name.Equals("map"))
+                    break;
+
+            }
+
+            LoadMap(reader);
+
+        }
+
+        public void LoadMap(XmlReader reader)
+        {
+            //print(reader.Name);
+
+            while (reader.MoveToNextAttribute())
+            {
+                if (reader.Name.Equals("width"))
+                    numTilesX = int.Parse(reader.Value);
+
+                else if (reader.Name.Equals("height"))
+                    numTilesY = int.Parse(reader.Value);
+
+                else if (reader.Name.Equals("tilewidth"))
+                    tileSizeX = int.Parse(reader.Value);
+
+                else if (reader.Name.Equals("tileheight"))
+                    tileSizeY = int.Parse(reader.Value);
+            }
+
+            while (reader.Read())
+            {
+                if (reader.NodeType != XmlNodeType.EndElement)
+                {
+                    // print(reader.Name);
+                    if (reader.Name.Equals("properties"))
+                        LoadMapProps(reader);
+
+                    else if (reader.Name.Equals("tileset"))
+                        LoadTileSet(reader);
+
+                    else if (reader.Name.Equals("layer"))
+                        LoadTileLayer(reader);
+
+                    else if (reader.Name.Equals("objectgroup"))
+                        LoadObjectGroup(reader);
+
+
+                }
+
+                // printCurrent(reader);
+            }
+
+            printAll();
+        }
+
+        private void LoadObjectGroup(XmlReader reader)
+        {
+            print("found a objectgroup");
+
+            //objectgroup name:
+            while (reader.MoveToNextAttribute())
+            {
+                //printCurrent(reader);
+            }
+
+            while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("objectgroup")))
+            {
+                if (reader.Name.Equals("object"))
+                {
+
+                    reader.MoveToNextAttribute();
+
+
+                    if (reader.Value.Equals("Spawner"))
+                        LoadSpawner(reader);
+
+                    else if (reader.Value.Equals("Collision"))
+                        LoadCollision(reader);
+                }
+
+
+            }
+
+            print("abort");
+        }
+
+        private void LoadSpawner(XmlReader reader)
+        {
+
+        }
+
+        private void LoadCollision(XmlReader reader)
+        {
+            Vector2f start = new Vector2f(0, 0);
+            List<Vector2f> vertices = new List<Vector2f>();
+            Vector2f center = new Vector2f(0, 0);
+
+            while (reader.MoveToNextAttribute())
+            {
+                if (reader.Name.Equals("x"))
+                    start.X = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("y"))
+                    start.Y = float.Parse(reader.Value, Settings.cultureProvide);
+            }
+
+            while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("object")))
+            {
+                if (reader.Name.Equals("polygon"))
+                {
+                    reader.MoveToNextAttribute();
+                    center = LoadPoints(reader, vertices, start);
+                }
+            }
+
+            entityAttributs.Add(new EntityAttribs(EntityType.Collision, new ConvexCollider(MathUtil.ToArray<Vector2f>(vertices)), center));
+        }
+
+        private Vector2f LoadPoints(XmlReader reader, List<Vector2f> vertices, Vector2f start)
+        {
+            Vector2f center = new Vector2f();
+
+            Console.WriteLine(start);
+
+            print("foundPoints");
+            char[] splits = { ' ' };
+            char[] subSplit = { ',' };
+            String[] vectors = reader.Value.Split(splits, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < vectors.Length; i++)
+            {
+                String[] components = vectors[i].Split(subSplit);
+
+                float tmpX = float.Parse(components[0], Settings.cultureProvide);
+                float tmpY = float.Parse(components[1], Settings.cultureProvide);
+
+                Vector2f tmpVertex = new Vector2f(tmpX, tmpY);
+                vertices.Add(start + tmpVertex);
+
+                center += vertices[i];
+
+               Console.WriteLine(vertices[i]);
+            }
+            center /= vertices.Count;
+
+            Console.WriteLine(center);
+ 
+
+            return center;
+        }
+
+        private void LoadTileLayer(XmlReader reader)
+        {
+            print("found a layer");
+            while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("layer")))
+            {
+
+            }
+        }
+
+        private void LoadTileSet(XmlReader reader)
+        {
+            print("found a tileSet");
+            while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("tileset")))
+            {
+                if (reader.Name.Equals("image"))
+                {
+                    while (reader.MoveToNextAttribute())
+                    {
+                        if (reader.Name.Equals("source"))
+                            this.tileSetName = reader.Value;
+                    }
+                }
+
+
+            }
+        }
+
+        private void LoadMapProps(XmlReader reader)
+        {
+            print("found map props");
+            while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("properties")))
+            {
+                while (reader.MoveToNextAttribute())
+                {
+                    if (reader.Value.Equals("SpatialSizeX"))
+                    {
+                        reader.MoveToNextAttribute();
+                        spatialSizeX = int.Parse(reader.Value);
+                    }
+
+                    else if (reader.Value.Equals("SpatialSizeY"))
+                    {
+                        reader.MoveToNextAttribute();
+                        spatialSizeY = int.Parse(reader.Value);
+                    }
+                }
+            }
+
+        }
+
+        private void printCurrent(XmlReader reader)
+        {
+            print(reader.Name + " = " + reader.Value);
+        }
+
 
 
     }

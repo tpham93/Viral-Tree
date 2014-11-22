@@ -66,7 +66,7 @@ namespace ViralTree.World
         public Components.ADrawer Drawer
         {
             get { return drawer; }
-            set { value.Owner = this; value.IsActive = true; drawer = value; }
+            set { if (value != null) { value.Owner = this; value.IsActive = true; drawer = value; } }
         }
 
         private Components.AActivator activator;
@@ -130,7 +130,8 @@ namespace ViralTree.World
 
         public void LoadContent()
         {
-            drawer.LoadContent(Game.content);
+            if(drawer != null)
+                drawer.LoadContent(Game.content);
         }
 
         public void Update(GameTime gameTime, GameWorld world)
@@ -177,10 +178,13 @@ namespace ViralTree.World
         public void Draw(GameTime gameTime, RenderTarget target)
         {
             if (Drawable)
+            {
                 if (drawer != null)
                     drawer.Draw(target);
                 else
                     Collider.Draw(target);
+            }
+                
         }
 
     }
