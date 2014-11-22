@@ -37,7 +37,7 @@ namespace ViralTree.Components
         private void SpawnProjectile(World.GameWorld world)
         {
             Vector2f position = Owner.Collider.Position + spawnOffsetDistance * Owner.Collider.Direction;
-            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { Owner.Fraction, Owner.Fraction == Fraction.Cell ? CollidingFractions.Virus : CollidingFractions.Cell, Owner.Collider.Direction, 2000.0f, "gfx/Projectiles/BasicProjectile.png" }));
+            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { Owner.Fraction, Owner.Fraction == Fraction.Cell ? CollidingFractions.CellProjectile : CollidingFractions.VirusProjectile, Owner.Collider.Direction, 2000.0f, "gfx/Projectiles/BasicProjectile.png" }));
         }
 
         public void Attack(World.GameWorld world)
