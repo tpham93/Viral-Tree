@@ -96,12 +96,13 @@ namespace ViralTree
 
         public override void Draw(RenderTarget target)
         {
-            /*
+            
             shape.Position = Position;
             shape.Rotation = MathUtil.ToDegree(rotation);
             shape.Radius = radius;
             target.Draw(shape);
-           */
+           
+            /*
             CircleShape posiShape = new CircleShape(5.0f);
             posiShape.Origin = new Vector2f(5.0f, 5.0f);
             posiShape.FillColor = new Color(0, 255, 0, 255);
@@ -122,7 +123,7 @@ namespace ViralTree
             rectShape.FillColor = new Color(255, 255, 255, 125);
 
             target.Draw(rectShape);
-             
+            */ 
              
         }
 

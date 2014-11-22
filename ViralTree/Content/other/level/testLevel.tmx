@@ -2875,8 +2875,11 @@
   <object type="Collision" x="870.667" y="304">
    <polygon points="0,0 0,256 128,256 128,0"/>
   </object>
-  <object type="Collision" x="597.333" y="517.333">
+  <object type="Collision" x="509.333" y="517.333">
    <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="0" y="640">
+   <polygon points="0,0 128,0 128,-512 0,-512"/>
   </object>
  </objectgroup>
  <objectgroup name="Entities">

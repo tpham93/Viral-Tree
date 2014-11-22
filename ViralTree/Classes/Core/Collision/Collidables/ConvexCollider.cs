@@ -197,6 +197,7 @@ namespace ViralTree
             */
 
             //boundingCircle
+            /*
             CircleShape radiusShape = new CircleShape(radius);
             radiusShape.Origin = new Vector2f(radius, radius);
             radiusShape.Position = position;
@@ -204,7 +205,7 @@ namespace ViralTree
 
             target.Draw(radiusShape);
             
-
+            */
             //position:
 
             /*
@@ -218,12 +219,13 @@ namespace ViralTree
 
             ///bounding Rectanle:
 
-           
+           /*
             RectangleShape rectShape = new RectangleShape(new Vector2f(boundingRect.Width, boundingRect.Height));
             rectShape.Position = new Vector2f(boundingRect.Left, boundingRect.Top);
             rectShape.FillColor = new Color(255, 255, 255, 125);
 
             target.Draw(rectShape);
+            */
           
         }
 

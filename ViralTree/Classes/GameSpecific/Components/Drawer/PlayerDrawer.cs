@@ -69,7 +69,7 @@ namespace ViralTree.Components
                 target.Draw(mitochondrionSprite);
             }
 
-            Owner.Collider.Draw(target);
+         //   Owner.Collider.Draw(target);
         }
     }
 }
