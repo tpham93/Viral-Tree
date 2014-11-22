@@ -33,8 +33,8 @@ namespace ViralTree.GameStates
 
             buttonList = new List<SelectButton>();
 
-            buttonList.Add(new SelectButton(" Testlevel", "testLevel", new Vector2f(100, 100), 0));
-            buttonList.Add(new SelectButton("      Aca", "testLevelAca", new Vector2f(300, 500), 1));
+            buttonList.Add(new SelectButton(" Testlevel", "testLevel", new Vector2f(100, 100), 0, ButtonType.Single));
+            buttonList.Add(new SelectButton("      Aca", "testLevelAca", new Vector2f(300, 500), 1, ButtonType.Single));
 
             maxLevel = buttonList.Count - 1;
 
