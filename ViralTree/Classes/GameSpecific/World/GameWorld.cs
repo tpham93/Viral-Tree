@@ -225,9 +225,9 @@ namespace ViralTree.World
 
                         if (tmpData.Intersects)
                         {
-                            tmpEntity.Response.OnCollision(tmpOtherEntity, tmpData, this, true);
+                            tmpEntity.Response.OnCollision(tmpOtherEntity, tmpData, this, true, gameTime);
 
-                            tmpOtherEntity.Response.OnCollision(tmpEntity, tmpData, this, false);
+                            tmpOtherEntity.Response.OnCollision(tmpEntity, tmpData, this, false, gameTime);
                         }
                     }
                
@@ -395,7 +395,7 @@ namespace ViralTree.World
             float minDist = float.PositiveInfinity;
             Entity closest = null;
 
-            Vector2i idOffset = new Vector2i((int)(radius / ChunkWidth) + 1, (int)(radius / ChunkHeight) + 1);
+            Vector2i idOffset = new Vector2i((int)(radius / ChunkWidth) + 2, (int)(radius / ChunkHeight) + 2);
 
           //  Console.WriteLine(idOffset);
 
@@ -403,7 +403,6 @@ namespace ViralTree.World
             {
                 for (int j = -idOffset.Y; j < idOffset.Y; j++)
                 {
-
                     Vector2i trueId = new Vector2i(i, j) + refEntity.ChunkId;
 
                     if (IsValidId(trueId))

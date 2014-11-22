@@ -18,7 +18,7 @@ namespace ViralTree.Components
 
      
 
-        public abstract void OnCollision(Entity collidedEntity, IntersectionData data, GameWorld world, bool firstCalled);
+        public abstract void OnCollision(Entity collidedEntity, IntersectionData data, GameWorld world, bool firstCalled, GameTime gameTime);
 
         public abstract override void Update(GameTime gameTime, GameWorld world);
     }
@@ -41,7 +41,7 @@ namespace ViralTree.Components
         }
 
 
-        public override void OnCollision(Entity collidedEntity, IntersectionData data, GameWorld world, bool firstCalled)
+        public override void OnCollision(Entity collidedEntity, IntersectionData data, GameWorld world, bool firstCalled, GameTime gameTime)
         {
 
         }
