@@ -12,7 +12,7 @@ namespace ViralTree.Components
     public sealed class PlayerThinker : AThinker
     {
         private GInput controller;
-        private ShooterThinker weapon;
+        private AWeapon weapon;
 
         public PlayerThinker(GInput controller = null)
         {
@@ -89,7 +89,7 @@ namespace ViralTree.Components
 
         public override void Update(GameTime gameTime, GameWorld world)
         {
-            float speed = 400 * (float)gameTime.ElapsedTime.TotalSeconds;
+            float speed = GameplayConstants.PLAYER_MAX_SPEED * (float)gameTime.ElapsedTime.TotalSeconds;
 
             PlayerInput input = GetInput(world);
             Owner.Collider.Move(speed * input.Movement);

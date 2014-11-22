@@ -216,7 +216,7 @@ namespace ViralTree.World
                 {
                     Entity tmpOtherEntity = chunks[tmpLookup.chunkId.X, tmpLookup.chunkId.Y].chunkEntities[i];
 
-                    if (tmpOtherEntity == tmpEntity)
+                    if (tmpOtherEntity == tmpEntity)// && !Entity.CanCollide(tmpEntity.Fraction,tmpOtherEntity.Fraction, tmpEntity.CollidingFraction, tmpOtherEntity.CollidingFraction))
                         continue;
 
                     else

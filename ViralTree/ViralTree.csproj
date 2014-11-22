@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\GameSpecific\Components\AWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ProjectileResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\TouchDamageResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\MultiTextureDrawer.cs" />
@@ -208,6 +209,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Classes\GameSpecific\Components\Weapons\" />
     <Folder Include="Content\sfx\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

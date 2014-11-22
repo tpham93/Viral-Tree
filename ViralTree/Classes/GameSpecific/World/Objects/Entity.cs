@@ -224,13 +224,13 @@ namespace ViralTree.World
             switch (fraction)
             {
                 case Fraction.Cell:
-                    return otherCollidingFraction == CollidingFractions.Cell || otherFraction == Fraction.Virus;
+                    return otherCollidingFraction == CollidingFractions.Cell || otherFraction == Fraction.Virus || otherFraction == Fraction.VirusProjectile;
                 case Fraction.CellProjectile:
-                    return otherCollidingFraction == CollidingFractions.Virus;
-                case Fraction.Virus:
-                    return otherCollidingFraction == CollidingFractions.Virus || otherFraction == Fraction.Cell;
-                case Fraction.VirusProjectile:
                     return otherCollidingFraction == CollidingFractions.Cell;
+                case Fraction.Virus:
+                    return otherCollidingFraction == CollidingFractions.Virus || otherFraction == Fraction.Cell || otherFraction == Fraction.CellProjectile;
+                case Fraction.VirusProjectile:
+                    return otherCollidingFraction == CollidingFractions.Virus;
                 default:
                     break;
             }
@@ -238,16 +238,17 @@ namespace ViralTree.World
             switch (otherFraction)
             {
                 case Fraction.Cell:
-                    return collidingFraction == CollidingFractions.Cell || fraction == Fraction.Virus;
+                    return otherCollidingFraction == CollidingFractions.Cell || otherFraction == Fraction.Virus || otherFraction == Fraction.VirusProjectile;
                 case Fraction.CellProjectile:
-                    return collidingFraction == CollidingFractions.Virus;
+                    return otherCollidingFraction == CollidingFractions.Cell;
                 case Fraction.Virus:
-                    return collidingFraction == CollidingFractions.Virus || fraction == Fraction.Cell;
+                    return otherCollidingFraction == CollidingFractions.Virus || otherFraction == Fraction.Cell || otherFraction == Fraction.CellProjectile;
                 case Fraction.VirusProjectile:
-                    return collidingFraction == CollidingFractions.Cell;
+                    return otherCollidingFraction == CollidingFractions.Virus;
                 default:
-                    return false;
+                    break;
             }
+            return false;
         }
     }
 }
