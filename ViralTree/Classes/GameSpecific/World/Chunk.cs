@@ -49,7 +49,8 @@ namespace ViralTree.World
                 chunkEntities[i].Update(gameTime, world);
 
                 //notifies the gameworld with which chunks this entity could intersect
-                CheckEntityBoundingsFor(chunkEntities[i]);
+                if(chunkEntities[i].Response.isPushable)
+                    CheckEntityBoundingsFor(chunkEntities[i]);
 
                 //notify that this entity could have left:
                 chunkEntities[i].TestForLeavingChunk(world);
@@ -77,23 +78,23 @@ namespace ViralTree.World
                                                     (int)((e.Collider.BoundingRectangle.Top + e.Collider.BoundingRectangle.Height) / world.ChunkHeight));
 
 
-            Console.WriteLine(e.Collider.BoundingRectangle);
+           // Console.WriteLine(e.Collider.BoundingRectangle);
 
             world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkUpperLeft));
 
-         //   if (!MathUtil.IsEqual(chunkUpperLeft, chunkUpperRight))
+            if (!MathUtil.IsEqual(chunkUpperLeft, chunkUpperRight))
                 world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkUpperRight));
             
-            /*
+            
             if (!MathUtil.IsEqual(chunkUpperLeft, chunkLowerLeft) &&
                 !MathUtil.IsEqual(chunkUpperRight, chunkLowerLeft))
-                */
+                
                 world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkLowerLeft));
-/*
+
             if (!MathUtil.IsEqual(chunkUpperLeft, chunkLowerRight) &&
                 !MathUtil.IsEqual(chunkUpperRight, chunkLowerRight) &&
                 !MathUtil.IsEqual(chunkLowerLeft, chunkLowerRight))
- * */
+ 
                 world.collidableEntities.Enqueue(new EntityChunkLookup(e.UniqueId, chunkLowerRight));
         }
 
