@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using ViralTree.Utilities;
 using ViralTree.World;
 
 namespace ViralTree.Tiled
@@ -17,9 +18,11 @@ namespace ViralTree.Tiled
     {
         public List<EntityAttribs> entityAttributs = new List<EntityAttribs>();
 
-      //  public List<> tileIds = new List<Vector2i>();
-
+        public List<Vector3i> tileIds = new List<Vector3i>();
         public String tileSetName = null;
+
+        public int tileSetSizeX = 0;
+        public int tileSetSizeY = 0;
 
         public int numTilesX    = 0;
         public int numTilesY    = 0;
@@ -44,6 +47,9 @@ namespace ViralTree.Tiled
             Console.WriteLine("TileSizeX = " + tileSizeX);
             Console.WriteLine("TileSizeY = " + tileSizeY);
 
+            Console.WriteLine("TileSetSizeX = " + tileSetSizeX);
+            Console.WriteLine("TileSetSizeY = " + tileSetSizeY);
+
             Console.WriteLine("NumTilesX = " + numTilesX);
             Console.WriteLine("NumTilesY = " + numTilesY);
 
@@ -62,7 +68,7 @@ namespace ViralTree.Tiled
 
         }
 
-        public void Load2(String name)
+        public void Load(String name)
         {
             XmlReader reader = XmlReader.Create(name);
 
@@ -191,7 +197,7 @@ namespace ViralTree.Tiled
 
        //     Console.WriteLine(start);
 
-            print("foundPoints");
+//            print("foundPoints");
             char[] splits = { ' ' };
             char[] subSplit = { ',' };
             String[] vectors = reader.Value.Split(splits, StringSplitOptions.RemoveEmptyEntries);
@@ -220,12 +226,22 @@ namespace ViralTree.Tiled
 
         private void LoadTileLayer(XmlReader reader)
         {
-            print("found a layer");
+          //  print("found a layer");
+            int tileCount = 0;
             while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("layer")))
             {
                 while (reader.MoveToNextAttribute())
                 {
-                  //  if(reader.Name.Equals("gid"))
+                    if (reader.Name.Equals("gid"))
+                    {
+                        int id = int.Parse(reader.Value) - 1;
+                        
+                        int x = tileCount % numTilesX;
+                        int y = tileCount / numTilesX;
+
+                        tileIds.Add(new Vector3i(x, y, id));
+                        tileCount++;
+                    }
 
                 }
             }
@@ -233,7 +249,7 @@ namespace ViralTree.Tiled
 
         private void LoadTileSet(XmlReader reader)
         {
-            print("found a tileSet");
+          //  print("found a tileSet");
             while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("tileset")))
             {
                 if (reader.Name.Equals("image"))
@@ -242,6 +258,12 @@ namespace ViralTree.Tiled
                     {
                         if (reader.Name.Equals("source"))
                             this.tileSetName = reader.Value;
+
+                        else if (reader.Name.Equals("width"))
+                            this.tileSetSizeX = int.Parse(reader.Value);
+
+                        else if (reader.Name.Equals("height"))
+                            this.tileSetSizeY = int.Parse(reader.Value);
                     }
                 }
 
@@ -251,7 +273,7 @@ namespace ViralTree.Tiled
 
         private void LoadMapProps(XmlReader reader)
         {
-            print("found map props");
+          //  print("found map props");
             while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("properties")))
             {
                 while (reader.MoveToNextAttribute())

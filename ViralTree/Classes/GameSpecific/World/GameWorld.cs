@@ -108,8 +108,8 @@ namespace ViralTree.World
         public GameWorld(String levelName)
         {
             TiledReader reader = new TiledReader();
-            reader.Load2("Content/other/level/" + levelName + ".tmx");
-            Game.content.Load<Texture>("other/level/"+reader.tileSetName);
+            reader.Load("Content/other/level/" + levelName + ".tmx");
+            Texture tileSetTexture = Game.content.Load<Texture>("other/level/"+reader.tileSetName);
 
             int numChunksX = (reader.numTilesX * reader.tileSizeX) / reader.spatialSizeX;
             int numChunksY = (reader.numTilesY * reader.tileSizeY) / reader.spatialSizeY;
@@ -142,19 +142,36 @@ namespace ViralTree.World
                 for (int j = 0; j < chunks.GetLength(1); j++)
                     chunks[i, j] = new Chunk(i, j, this);
 
-            //this.contentManager = contentManager;
-
-            //TODO: from here on: everything for testing purposes yet:
             Joystick.Update();
             List<uint> connectedGamepads = GInput.getConnectedGamepads();
             AddEntity(EntityFactory.Create(EntityType.Player, Vec2f.One, new CircleCollider(64), new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
 
+
+            //////________________________________________ADD ENTITIES ____________________________
             for (int i = 0; i < reader.entityAttributs.Count; i++)
             {
                 EntityAttribs tmpAttrib = reader.entityAttributs[i];
-
                 AddEntity(EntityFactory.Create(tmpAttrib.type, tmpAttrib.pos, tmpAttrib.collider, MathUtil.ToArray<object>(tmpAttrib.additionalAttribs)));
             }
+      
+
+            //////________________________________________ADD SPRITES ____________________________
+            int numTilesXOnTileSet =  reader.tileSetSizeX / reader.tileSizeX;
+            int numTilesYOnTileSet =  reader.tileSetSizeY / reader.tileSizeY;
+
+            //tileSetTexture.Smooth = true;
+            for (int i = 0; i < reader.tileIds.Count; i++)
+            {
+                Vector2i sourceRectId = new Vector2i(reader.tileIds[i].z % numTilesXOnTileSet, reader.tileIds[i].z / numTilesYOnTileSet);
+                Sprite tmp = new Sprite(tileSetTexture);
+                //tmp.Scale = new Vector2f(2.0f, 2.0f);
+                tmp.Position = new Vector2f((reader.tileIds[i].x * reader.tileSizeX), (reader.tileIds[i].y * reader.tileSizeY));
+                tmp.TextureRect = new IntRect(sourceRectId.X * reader.tileSizeX, sourceRectId.Y * reader.tileSizeY, reader.tileSizeX, reader.tileSizeY);
+              //  Console.WriteLine(tmp.Position);
+             //   Console.WriteLine(tmp.TextureRect);
+                AddSprite(tmp);
+            }
+
         }
 
 
@@ -279,23 +296,36 @@ namespace ViralTree.World
         public void Draw(GameTime gameTime, RenderTarget target)
         {
             //draw everything on screen:
-            for (int i = -Cam.drawOffset.X; i <= Cam.drawOffset.X; i++)
+
+            //first pass: draw everything beyond the entities, then on second pass, draw entities
+            for (int k = 0; k < 2; k++)
             {
-                for (int j = -Cam.drawOffset.Y; j <= Cam.drawOffset.Y; j++)
+
+                for (int i = -Cam.drawOffset.X; i <= Cam.drawOffset.X; i++)
                 {
-                    int tmpX = Cam.chunkIdCam.X + i;
-                    int tmpY = Cam.chunkIdCam.Y + j;
+                    for (int j = -Cam.drawOffset.Y; j <= Cam.drawOffset.Y; j++)
+                    {
+                        int tmpX = Cam.chunkIdCam.X + i;
+                        int tmpY = Cam.chunkIdCam.Y + j;
 
-                    if (tmpX < 0 || tmpX >= NumChunksX || tmpY < 0 || tmpY >= NumChunksY)
-                        continue;
+                        if (tmpX < 0 || tmpX >= NumChunksX || tmpY < 0 || tmpY >= NumChunksY)
+                            continue;
 
-                    else
-                        chunks[tmpX, tmpY].Draw(gameTime, target);
+                        else
+                        {
+                            if (k == 0)
+                                chunks[tmpX, tmpY].DrawSprites(gameTime, target);
+                            else
+                                chunks[tmpX, tmpY].DrawEntities(gameTime, target);
+                        }
+
+
+                    }
                 }
             }
 
             //TODO: currently for debug purposes:
-            DrawBoundingsOfChunks(gameTime, target);
+        //    DrawBoundingsOfChunks(gameTime, target);
 
         }
 
@@ -320,6 +350,13 @@ namespace ViralTree.World
                         chunks[tmpX, tmpY].DrawBoundings(target);
                 }
             }
+        }
+
+        private void AddSprite(Sprite s)
+        {
+            Vector2i id = new Vector2i((int)(s.Position.X / this.ChunkWidth), (int)(s.Position.Y / this.ChunkHeight));
+
+            chunks[id.X, id.Y].sprites.Add(s);
         }
 
 
