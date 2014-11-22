@@ -15,21 +15,13 @@ namespace ViralTree.Components
         private Sprite healthSprite;
         private Texture mitochondrionTexture;
         private Sprite mitochondrionSprite;
-        private Vector2f[] mitochondrions;
+        private float mitochondrionsNum;
 
-        private float mitichondrionDistance;
+        private float mitochondrionOffset;
 
         public PlayerDrawer()
         {
-            mitochondrions = new Vector2f[5];
-            mitichondrionDistance = 50;
-            for (int i = 0; i < mitochondrions.Length; ++i)
-            {
-                float angle = i / (float)Math.PI * 1.5f;
-                float x = (float)Math.Sin(angle);
-                float y = (float)Math.Cos(angle);
-                mitochondrions[i] = new Vector2f(x, y) * mitichondrionDistance;
-            }
+            mitochondrionsNum = 20;
 
             Texture playerTexture = Game.content.Load<Texture>("gfx/Player/player.png");
             Texture nucleusTexture = Game.content.Load<Texture>("gfx/Player/nucleus.png");
@@ -61,14 +53,8 @@ namespace ViralTree.Components
             float life = Owner.CurrentLife / Owner.MaxLife;
             healthSprite.Position = playerSprite.Position;
             healthSprite.Scale = new Vector2f(life, life);
-
-            for (int i = 0; i < mitochondrions.Length; ++i)
-            {
-                float angle = ((float)i / (mitochondrions.Length)) * MathUtil.PI * 2.0f + (float)gameTime.TotalTime.TotalSeconds * 0.1f * (float)Math.PI;
-                float x = (float)Math.Sin(angle);
-                float y = (float)Math.Cos(angle);
-                mitochondrions[i] = new Vector2f(x, y) * mitichondrionDistance;
-            }
+            mitochondrionSprite.Position = playerSprite.Position;
+            mitochondrionOffset = (float)gameTime.TotalTime.TotalSeconds * 0.1f * (float)Math.PI;
         }
 
         public override void Draw(RenderTarget target)
@@ -77,9 +63,10 @@ namespace ViralTree.Components
             target.Draw(nucleusSprite);
             target.Draw(healthSprite);
 
-            for (int i = 0; i < mitochondrions.Length; ++i)
+            for (int i = 0; i < mitochondrionsNum; ++i)
             {
-                mitochondrionSprite.Position = mitochondrions[i] + playerSprite.Position;
+                float angle = MathUtil.ToDegree(((float)i / (mitochondrionsNum)) * MathUtil.PI * 2.0f + mitochondrionOffset);
+                mitochondrionSprite.Rotation = angle;
                 target.Draw(mitochondrionSprite);
             }
         }
