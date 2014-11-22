@@ -430,5 +430,10 @@ namespace ViralTree.World
             return closest;
         }
 
+        public Entity GetEntity(int uniqueId)
+        {
+            return entities.GetByUniqueId(uniqueId);
+        }
+
     }
 }

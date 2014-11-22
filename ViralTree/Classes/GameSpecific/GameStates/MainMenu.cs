@@ -87,7 +87,7 @@ namespace ViralTree.GameStates
                     this.parent.SetGameState(new Credits());
 
                 else if (curButton == 2)
-                    this.parent.SetGameState(new Settings());
+                    this.parent.SetGameState(new SettingsMenu());
 
                 else if (curButton == 3)
                     this.parent.SetGameState(null);
