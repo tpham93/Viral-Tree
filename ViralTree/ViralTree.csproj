@@ -73,9 +73,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\GameSpecific\Components\AWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ProjectileResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\TouchDamageResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\MultiTextureDrawer.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\Shooter.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Follower.cs" />
     <Compile Include="Classes\GameSpecific\GameplayConstants.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\SettingsMenu.cs" />
@@ -90,7 +92,7 @@
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\BasicPushResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\TextureDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\ProjectileThinker.cs" />
-    <Compile Include="Classes\GameSpecific\Components\Thinker\ShooterThinker.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Weapons\ShooterWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Drawables\SelectButton.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\PlayerDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerInput.cs" />
@@ -138,6 +140,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\other\fog.frag">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\other\level\lv1.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\other\level\testLevel.tmx">

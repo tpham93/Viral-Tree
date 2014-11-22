@@ -216,7 +216,7 @@ namespace ViralTree.World
                 {
                     Entity tmpOtherEntity = chunks[tmpLookup.chunkId.X, tmpLookup.chunkId.Y].chunkEntities[i];
 
-                    if (tmpOtherEntity == tmpEntity)
+                    if (tmpOtherEntity == tmpEntity)// && !Entity.CanCollide(tmpEntity.Fraction,tmpOtherEntity.Fraction, tmpEntity.CollidingFraction, tmpOtherEntity.CollidingFraction))
                         continue;
 
                     else
@@ -375,6 +375,7 @@ namespace ViralTree.World
         {
             Vector2i id = new Vector2i((int)(s.Position.X / this.ChunkWidth), (int)(s.Position.Y / this.ChunkHeight));
 
+            if(IsValidId(id))
             chunks[id.X, id.Y].sprites.Add(s);
         }
 
