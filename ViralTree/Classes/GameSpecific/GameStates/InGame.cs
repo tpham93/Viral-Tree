@@ -22,9 +22,15 @@ namespace ViralTree.GameStates
 
         private Texture noiseTexture;
 
-        public InGame(string levelName)
+        PlayerInfo info1;
+        PlayerInfo info2;
+
+        public InGame(string levelName, PlayerInfo info1, PlayerInfo info2)
         {
             this.levelName = levelName;
+
+            this.info1 = info1;
+            this.info2 = info2;
         }
 
         public override void Init(AGameState lastGameState)
@@ -39,7 +45,12 @@ namespace ViralTree.GameStates
             worldTarget.SetView(parent.window.GetView());
 
 
-            world = new GameWorld(levelName, worldTarget);
+
+
+            world = new GameWorld(levelName, info1.GetPlayer(), info2.GetPlayer(), worldTarget);
+
+       
+
             
          
       //      fogTexture = new RenderTexture((uint)Settings.WindowSize.X, (uint)Settings.WindowSize.Y);

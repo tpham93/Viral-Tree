@@ -110,7 +110,7 @@ namespace ViralTree.World
 
 
 
-        public GameWorld(String levelName, RenderTarget target)
+        public GameWorld(String levelName, Entity playerOne, Entity playerTwo, RenderTarget target)
         {
             TiledReader reader = new TiledReader();
             reader.Load("Content/other/level/" + levelName + ".tmx");
@@ -147,17 +147,6 @@ namespace ViralTree.World
                 for (int j = 0; j < chunks.GetLength(1); j++)
                     chunks[i, j] = new Chunk(i, j, this);
 
-            Joystick.Update();
-            List<uint> connectedGamepads = GInput.getConnectedGamepads();
-
-
-            ACollider tankCollider = PolygonFactory.GetEllipse(10, 53, 42);
-            ACollider scoutCollider = new CircleCollider(64);
-
-            //Console.WriteLine(reader.spawnPos);
-            Entity scout = AddEntity(EntityFactory.Create(EntityType.Scout, reader.spawnPos, scoutCollider, new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
-            Entity tank = AddEntity(EntityFactory.Create(EntityType.Tank, reader.spawnPos, tankCollider, new Object[] { (connectedGamepads.Count > 1 ? new GInput(connectedGamepads[1]) : null) }));
-
 
             //////________________________________________ADD ENTITIES ____________________________
             for (int i = 0; i < reader.entityAttributs.Count; i++)
@@ -185,7 +174,26 @@ namespace ViralTree.World
             }
 
 
-            Cam = new Camera(this, target, scout, tank);
+            Cam = new Camera(this, target);
+
+            if (playerOne != null)
+            {
+                playerOne.Collider.Position = reader.spawnPos;
+                Cam.followingEntities.Add(playerOne);
+                AddEntity(playerOne);
+            }
+
+            if (playerTwo != null)
+            {
+                playerTwo.Collider.Position = reader.spawnPos;
+                Cam.followingEntities.Add(playerTwo);
+                AddEntity(playerTwo);
+            }
+
+
+        
+
+
         }
 
 

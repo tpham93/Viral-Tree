@@ -21,13 +21,11 @@ namespace ViralTree.GameStates
         Scout,
         Tank,
         none
-
     }
 
     public class CharacterSelection : AGameState
     {
         List<SelectButton> buttonList;
-
 
         GInput pad1;
         GInput pad2;
@@ -197,10 +195,6 @@ namespace ViralTree.GameStates
                     {
                         p2Controls = PlayerControls.Gamepad1;
                         playCoop = true;
-
-                        if (p1Character == PlayerCharacters.Scout)
-                            p2Character = PlayerCharacters.Tank;
-                        else p2Character = PlayerCharacters.Scout;
                     }                 
                 }
                 else if (p1Controls == PlayerControls.Keyboard || (pad1 != null && p1Controls == PlayerControls.Gamepad1))
@@ -209,10 +203,6 @@ namespace ViralTree.GameStates
                     {
                         p2Controls = PlayerControls.Gamepad2;
                         playCoop = true;
-
-                        if (p1Character == PlayerCharacters.Scout)
-                            p2Character = PlayerCharacters.Tank;
-                        else p2Character = PlayerCharacters.Scout;
                     }
                 }
                
@@ -281,13 +271,13 @@ namespace ViralTree.GameStates
             if (player1LoggedIn == true)
             {
                 if (KInput.IsClicked(Keyboard.Key.Space))
-                    parent.SetGameState(new LevelSelection());
+                    parent.SetGameState(new LevelSelection(pad1, pad2, p1Character, p2Character, p1Controls, p2Controls));
 
                 else if (pad1 != null && pad1.isClicked(GInput.EButton.Start))
-                    parent.SetGameState(new LevelSelection());
+                    parent.SetGameState(new LevelSelection(pad1, pad2, p1Character, p2Character, p1Controls, p2Controls));
 
                 else if (pad2 != null && pad2.isClicked(GInput.EButton.Start))
-                    parent.SetGameState(new LevelSelection());
+                    parent.SetGameState(new LevelSelection(pad1, pad2, p1Character, p2Character, p1Controls, p2Controls));
 
             }
             

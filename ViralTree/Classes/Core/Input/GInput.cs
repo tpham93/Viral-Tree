@@ -16,6 +16,7 @@ namespace ViralTree
         private bool[] currentButtons;
         private bool[] prevButtons;
 
+        public uint index;
         public EStick currentLeftStick;
         public EStick prevLeftStick;
 
@@ -157,6 +158,7 @@ namespace ViralTree
             return -Joystick.GetAxisPosition(index, Joystick.Axis.Z);
         }
 
+        
 
     }
 }

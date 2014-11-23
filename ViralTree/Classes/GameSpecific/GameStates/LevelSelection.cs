@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViralTree.Classes.GameSpecific.Components.Drawables;
+using ViralTree.World;
 
 namespace ViralTree.GameStates
 {
@@ -20,8 +21,19 @@ namespace ViralTree.GameStates
         int curLevel = 0;
         int maxLevel;
 
-        public LevelSelection()
+        PlayerInfo info1;
+        PlayerInfo info2;
+
+        public LevelSelection(GInput playerOneInput, GInput playerTwoInput, PlayerCharacters playerOneType, PlayerCharacters playerTwoType, PlayerControls p1Controls, PlayerControls p2Controls)
         {
+            if (playerTwoType != PlayerCharacters.none)
+                MathUtil.Swap(ref playerOneInput, ref playerTwoInput);
+             
+            
+            info1 = new PlayerInfo(p1Controls, playerOneType, playerOneInput);
+            info2 = new PlayerInfo(p2Controls, playerTwoType, playerTwoInput);
+       
+
 
         }
 
@@ -77,7 +89,7 @@ namespace ViralTree.GameStates
 
             if (KInput.IsClicked(Keyboard.Key.Space))
             {
-                parent.SetGameState(new InGame(buttonList[curLevel].getLevel()));
+                parent.SetGameState(new InGame(buttonList[curLevel].getLevel(), info1, info2));
             }
                 
         }

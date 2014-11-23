@@ -174,7 +174,10 @@ namespace ViralTree
             List<T> result = new List<T>();
 
             for (int i = 0; i < objs.Length; i++)
+            {
                 result.Add(objs[i]);
+            }
+               
 
             return result;
         }
