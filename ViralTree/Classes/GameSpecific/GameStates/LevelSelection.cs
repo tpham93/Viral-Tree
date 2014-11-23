@@ -12,6 +12,9 @@ namespace ViralTree.GameStates
 {
     public sealed class LevelSelection : AGameState
     {
+
+        GInput pad;
+
         List<SelectButton> buttonList;
 
         Texture treeTexture;
@@ -39,6 +42,15 @@ namespace ViralTree.GameStates
 
         public override void Init(AGameState lastGameState)
         {
+            Joystick.Update();
+
+            List<uint> padlist = GInput.getConnectedGamepads();
+            if (padlist.Count > 0)
+                pad = new GInput(padlist[0]);
+
+            if (pad != null)
+                curLevel--;
+
             treeTexture = Game.content.Load<Texture>("gfx/awesome_tree.png");
 
             treeSprite = new Sprite(treeTexture, new IntRect(0, 0, (int)treeTexture.Size.X, (int)treeTexture.Size.Y));
@@ -65,14 +77,26 @@ namespace ViralTree.GameStates
 
         public override void Update()
         {
-            if (KInput.IsClicked(Keyboard.Key.Escape))
+            Joystick.Update();
+            if (pad != null)
+                pad.update();
+
+            if (KInput.IsClicked(Keyboard.Key.Escape) || (pad != null && pad.isClicked(GInput.EButton.B)))
                 this.parent.SetGameState(new MainMenu());
 
-            if (KInput.IsClicked(Keyboard.Key.Right))
+            if (KInput.IsClicked(Keyboard.Key.D) || KInput.IsClicked(Keyboard.Key.W))
                 curLevel++;
 
-            if (KInput.IsClicked(Keyboard.Key.Left))
+            if (KInput.IsClicked(Keyboard.Key.A)|| KInput.IsClicked(Keyboard.Key.S))
                 curLevel--;
+
+            if (pad != null)
+            {
+                if (pad.isClicked(GInput.EStick.LDown) || pad.isClicked(GInput.EStick.LLeft))
+                    curLevel--;
+                else if (pad.isClicked(GInput.EStick.LUp) || pad.isClicked(GInput.EStick.LRight))
+                    curLevel++;
+            }
 
             if (curLevel < 0)
                 curLevel = maxLevel;
@@ -87,7 +111,7 @@ namespace ViralTree.GameStates
             }
 
 
-            if (KInput.IsClicked(Keyboard.Key.Space))
+            if (KInput.IsClicked(Keyboard.Key.Space) || (pad != null && pad.isClicked(GInput.EButton.A)))
             {
                 parent.SetGameState(new InGame(buttonList[curLevel].getLevel(), info1, info2));
             }
