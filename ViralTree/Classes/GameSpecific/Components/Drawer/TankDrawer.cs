@@ -35,21 +35,19 @@ namespace ViralTree.Components
 
         public override void Draw(SFML.Graphics.RenderTarget target)
         {
-
-          
-
             target.Draw(bodySprite);
             target.Draw(hpSprite);
             target.Draw(specialSprite);
             
 
             //Owner.Collider.Draw(target);
-          
         }
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
             scale = (float)Math.Pow(Math.Sin(gameTime.TotalTime.TotalSeconds), 2) * 0.2f + 0.8f;
+
+           // float scale2 = (float)Math.Pow(Math.Sin(gameTime.TotalTime.TotalSeconds), 2) * 0.15f + 0.95f;
 
             UpdateSprites();
 
@@ -58,7 +56,10 @@ namespace ViralTree.Components
             Vector2f healthSpriteScale = new Vector2f(life * scale, life * scale);
             hpSprite.Scale = new Vector2f((float)Math.Min(healthSpriteScale.X, 1), (float)Math.Min(healthSpriteScale.Y, 1));
 
-          //  bodySprite.Scale = new Vector2f(0.1f + scale, 0.1f + scale);
+            /*
+            bodySprite.Scale = new Vector2f(scale2, scale2);
+            specialSprite.Scale = bodySprite.Scale;
+             */
         }
 
         private void UpdateSprites()

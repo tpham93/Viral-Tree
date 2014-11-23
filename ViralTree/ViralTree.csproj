@@ -133,6 +133,7 @@
     <Compile Include="Classes\GameSpecific\GameStates\LevelSelection.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\Credits.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\MainMenu.cs" />
+    <Compile Include="Classes\PlayerInfo.cs" />
     <Compile Include="Classes\Settings.cs" />
     <Compile Include="Classes\GameSpecific\World\Objects\Camera.cs" />
     <Compile Include="Classes\GameSpecific\World\Chunk.cs" />

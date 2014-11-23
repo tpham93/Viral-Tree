@@ -36,8 +36,8 @@ namespace ViralTree.GameStates
 
             buttonList.Add(new SelectButton("   Start",     "", new Vector2f(200, 100), 0, ButtonType.Single));
             buttonList.Add(new SelectButton("   Credits",    "", new Vector2f(200, 200), 1, ButtonType.Single));
-            buttonList.Add(new SelectButton("   Settings",   "", new Vector2f(200, 300), 2, ButtonType.Single));
-            buttonList.Add(new SelectButton("     Quit",     "", new Vector2f(200, 400), 3, ButtonType.Single));
+       //     buttonList.Add(new SelectButton("   Settings",   "", new Vector2f(200, 300), 2, ButtonType.Single));
+            buttonList.Add(new SelectButton("     Quit",     "", new Vector2f(200, 400), 2, ButtonType.Single));
 
             maxButton = buttonList.Count - 1;
 
@@ -87,10 +87,8 @@ namespace ViralTree.GameStates
                     this.parent.SetGameState(new Credits());
 
                 else if (curButton == 2)
-                    this.parent.SetGameState(new SettingsMenu());
-
-                else if (curButton == 3)
                     this.parent.SetGameState(null);
+
             }
                 
         }

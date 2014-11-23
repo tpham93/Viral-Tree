@@ -21,13 +21,11 @@ namespace ViralTree.GameStates
         Scout,
         Tank,
         none
-
     }
 
     public class CharacterSelection : AGameState
     {
         List<SelectButton> buttonList;
-
 
         GInput pad1;
         GInput pad2;
@@ -275,10 +273,10 @@ namespace ViralTree.GameStates
             if (player1LoggedIn == true)
             {
                 if (KInput.IsClicked(Keyboard.Key.Space))
-                    parent.SetGameState(new LevelSelection());
+                    parent.SetGameState(new LevelSelection(pad1, pad2, p1Character, p2Character, p1Controls, p2Controls));
 
                 else if (pad1 != null && pad1.isClicked(GInput.EButton.Start))
-                    parent.SetGameState(new LevelSelection());
+                    parent.SetGameState(new LevelSelection(pad1, pad2, p1Character, p2Character, p1Controls, p2Controls));
 
             }
             
