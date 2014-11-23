@@ -38,7 +38,6 @@ namespace ViralTree.Components
             target.Draw(bodySprite);
             target.Draw(hpSprite);
             target.Draw(specialSprite);
-
             //Owner.Collider.Draw(target);
 
             //Owner.Collider.Draw(target);
@@ -67,6 +66,7 @@ namespace ViralTree.Components
         {
            // hpSprite.Scale = new Vector2f(this.Owner.Collider.Scale, this.Owner.Collider.Scale);
           //  hpSprite.Scale = new Vector2f(scale, scale);
+
 
             bodySprite.Position = Owner.Collider.Position;
             hpSprite.Position = Owner.Collider.Position;
