@@ -20,9 +20,15 @@ namespace ViralTree.Components
         private float mitochondrionOffset;
         private float scale;
 
-        public ScoutDrawer()
+
+
+        private AWeapon specialWeapon;
+
+        public ScoutDrawer(AWeapon specialWeapon)
         {
-            mitochondrionsNum = 5.5f;
+            mitochondrionsNum = 0.0f;
+
+            this.specialWeapon = specialWeapon;
 
             Texture playerTexture = Game.content.Load<Texture>("gfx/Player/Scout/player.png");
             Texture nucleusTexture = Game.content.Load<Texture>("gfx/Player/Scout/nucleus.png");
@@ -40,7 +46,7 @@ namespace ViralTree.Components
             mitochondrionSprite.Origin = new Vector2f(mitochondrionSprite.TextureRect.Width, mitochondrionSprite.TextureRect.Height) / 2.0f;
         }
 
-        
+
 
         public override void Initialize()
         {
@@ -51,8 +57,10 @@ namespace ViralTree.Components
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
 
-             scale = (float)Math.Pow(Math.Sin(gameTime.TotalTime.TotalSeconds), 2) * 0.2f + 0.8f;
-          //  Console.WriteLine(this.Owner.Collider.Scale);
+            mitochondrionsNum = (float)(1 - specialWeapon.CoolDown.TotalSeconds / specialWeapon.MaxCoolDown.TotalSeconds) * 10;
+            
+            scale = (float)Math.Pow(Math.Sin(gameTime.TotalTime.TotalSeconds), 2) * 0.2f + 0.8f;
+            //  Console.WriteLine(this.Owner.Collider.Scale);
 
             playerSprite.Position = Owner.Collider.Position;
             playerSprite.Rotation = Owner.Collider.Rotation;
@@ -67,13 +75,13 @@ namespace ViralTree.Components
 
         public override void Draw(RenderTarget target)
         {
-            float directionAngle =  MathUtil.ToDegree(Vec2f.RotationFrom(Owner.Collider.Direction));
+            float directionAngle = MathUtil.ToDegree(Vec2f.RotationFrom(Owner.Collider.Direction));
 
-          //  playerSprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
-         //   nucleusSprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
-           // healthSprite.Scale = new Vector2f(scale, scale);
+            //  playerSprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
+            //   nucleusSprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
+            // healthSprite.Scale = new Vector2f(scale, scale);
 
-            playerSprite.Rotation =  directionAngle;
+            playerSprite.Rotation = directionAngle;
             nucleusSprite.Rotation = directionAngle;
             healthSprite.Rotation = directionAngle;
 
@@ -82,10 +90,10 @@ namespace ViralTree.Components
             target.Draw(healthSprite);
 
 
-            for (int i = 0; i < Math.Ceiling(mitochondrionsNum); ++i)
+            for (int i = 0; i < Math.Floor(mitochondrionsNum); ++i)
             {
-                float angle = MathUtil.ToDegree((i / (float)Math.Ceiling(mitochondrionsNum)) * MathUtil.PI * 2.0f + mitochondrionOffset);
-               // mitochondrionSprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
+                float angle = MathUtil.ToDegree((i / (float)Math.Floor(mitochondrionsNum)) * MathUtil.PI * 2.0f + mitochondrionOffset);
+                // mitochondrionSprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
                 mitochondrionSprite.Rotation = angle;
                 target.Draw(mitochondrionSprite);
             }
