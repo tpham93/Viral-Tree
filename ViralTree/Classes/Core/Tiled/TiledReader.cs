@@ -236,8 +236,26 @@ namespace ViralTree.Tiled
                                   new Vector2f(rect.Left + rect.Width, rect.Top + rect.Height),
                                   new Vector2f(rect.Left + rect.Width, rect.Top)};
 
+            double time = 0.0;
+
+            while (reader.Read() && !(reader.NodeType == XmlNodeType.EndElement && reader.Name.Equals("properties")))
+            {
+                if (reader.Name.Equals("property"))
+                {
+                    while (reader.MoveToNextAttribute())
+                    {
+                        if (reader.Name.Equals("value"))
+                        {
+ 
+                            time = double.Parse(reader.Value, Settings.cultureProvide);
+                        }
+                    }
+                }
+            }
+
             attribs.collider = new ConvexCollider(vertices, true);
             attribs.AddAttribute(exit);
+            attribs.AddAttribute(time);
 
 
             entityAttributs.Add(attribs);

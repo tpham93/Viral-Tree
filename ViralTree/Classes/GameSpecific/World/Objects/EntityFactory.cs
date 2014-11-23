@@ -102,7 +102,7 @@ namespace ViralTree.World
 
         private static Entity CreateKey(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            Entity result = new Entity(collider, position, 1.0f, Fraction.Neutral, CollidingFractions.None, EmptyThinker.Instance, new KeyResponse((ExitResponse)additionalInfos[0]), EmptyActivatable.Instance, new TextureDrawer("gfx/key.png"));
+            Entity result = new Entity(collider, position, 1.0f, Fraction.Neutral, CollidingFractions.None, EmptyThinker.Instance, new KeyResponse((ExitResponse)additionalInfos[0], (double)additionalInfos[1]), EmptyActivatable.Instance, new TextureDrawer("gfx/key.png"));
             return result;
         }
 
