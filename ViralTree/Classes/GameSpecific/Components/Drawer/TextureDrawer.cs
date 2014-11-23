@@ -30,7 +30,7 @@ namespace ViralTree.Components
             sprite.Position = Owner.Collider.Position;
 
             byte red = (byte)((Owner.Thinker.nextAttack()) * 255);
-            Console.WriteLine(red);
+            //Console.WriteLine(red);
 
             sprite.Color = new Color(255, red, red,255);
         }

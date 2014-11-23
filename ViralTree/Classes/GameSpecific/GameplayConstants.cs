@@ -14,8 +14,11 @@ namespace ViralTree
         public const float PLAYER_MAX_SPEED         = 400.0f;   //in use
         public const float PLAYER_SCALE             = 1.0f;     //in use
         public const float PLAYER_SHOOTER_DAMAGE    = 10.0f;    //in use
-        public const float PLAYER_SHOOTER_FREQ      = 500.0f;    //in use
-
+        public const float PLAYER_SHOOTER_FREQ      = 500.0f;   //in use
+        public const float PLAYER_SHOOTER_SPEED     = 2000.0f;  //in use
+        public const float SCOUT_SPECIAL_FREQ       = 60000.0f; //in use
+        public const float SCOUT_SPECIAL_DURATION   = 5000.0f;  //in use
+        public const float SCOUT_DECREASED_FREQ     = 100.0f;   //in use
         //____________________________ANORISM__________________________
          
         public const float ANORISM_LIFE             = 100.0f;   //inuse
@@ -33,8 +36,8 @@ namespace ViralTree
         public const float VEINBALL_CHASE_RADIUS    = 512.0f;   //in use
         public const float VEINBALL_SHOOT_RADIUS    = 1024.0f;  //in use
         public const float VEINBALL_SHOOTER_DAMAGE  = 2.0f;     //in use
-        public const float VEINBALL_SHOOTER_FREQ    = 3000.0f;     //in use
-
+        public const float VEINBALL_SHOOTER_FREQ    = 1000.0f;  //in use
+        public const float VEINBALL_SHOOTER_SPEED   = 1000.0f;  //in use
 
 
 
