@@ -28,7 +28,7 @@ namespace ViralTree.Components
 
         public override void Draw(SFML.Graphics.RenderTarget target)
         {
-            this.Owner.Collider.Draw(target);
+            //this.Owner.Collider.Draw(target);
             base.Draw(target);
         }
 
