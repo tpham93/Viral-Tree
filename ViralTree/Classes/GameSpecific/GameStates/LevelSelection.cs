@@ -26,9 +26,14 @@ namespace ViralTree.GameStates
 
         public LevelSelection(GInput playerOneInput, GInput playerTwoInput, PlayerCharacters playerOneType, PlayerCharacters playerTwoType, PlayerControls p1Controls, PlayerControls p2Controls)
         {
+            if (playerTwoType != PlayerCharacters.none)
+                MathUtil.Swap(ref playerOneInput, ref playerTwoInput);
+             
+            
             info1 = new PlayerInfo(p1Controls, playerOneType, playerOneInput);
-
             info2 = new PlayerInfo(p2Controls, playerTwoType, playerTwoInput);
+       
+
 
         }
 

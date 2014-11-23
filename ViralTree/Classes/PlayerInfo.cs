@@ -17,11 +17,17 @@ namespace ViralTree
 
         public PlayerInfo(PlayerControls control, PlayerCharacters character, GInput gInput)
         {
-            if (character == PlayerCharacters.Scout)
-            {
+           
+                Console.WriteLine(character);
                 Console.WriteLine(control);
-                Console.WriteLine(gInput);
-            }
+
+                if (gInput != null)
+                    Console.WriteLine(gInput);
+                else
+                    Console.WriteLine("nicht gesetzt");
+
+                Console.WriteLine();
+            
          
 
             if (character == PlayerCharacters.none)

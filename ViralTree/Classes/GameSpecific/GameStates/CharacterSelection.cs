@@ -193,12 +193,8 @@ namespace ViralTree.GameStates
                 {
                     if (pad1 != null && pad1.isClicked(GInput.EButton.A))
                     {
-                        p1Controls = PlayerControls.Gamepad1;
+                        p2Controls = PlayerControls.Gamepad1;
                         playCoop = true;
-
-                        if (p1Character == PlayerCharacters.Scout)
-                            p2Character = PlayerCharacters.Tank;
-                        else p2Character = PlayerCharacters.Scout;
                     }                 
                 }
                 else if (p1Controls == PlayerControls.Keyboard || (pad1 != null && p1Controls == PlayerControls.Gamepad1))
@@ -207,10 +203,6 @@ namespace ViralTree.GameStates
                     {
                         p2Controls = PlayerControls.Gamepad2;
                         playCoop = true;
-
-                        if (p1Character == PlayerCharacters.Scout)
-                            p2Character = PlayerCharacters.Tank;
-                        else p2Character = PlayerCharacters.Scout;
                     }
                 }
                
