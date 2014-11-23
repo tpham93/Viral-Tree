@@ -52,7 +52,6 @@ namespace ViralTree.GameStates
 
         Sprite checkButton1;
         Sprite checkButton2;
-        Sprite checkMark;
 
         Sprite buttonA1;
         Sprite buttonA2;
@@ -69,9 +68,6 @@ namespace ViralTree.GameStates
 
         Entity playerScout;
         Entity playerTank;
-
-        private int scoutPlayerId = 0;
-        private int tankPlayerId = 0;
 
         private Text scoutChoosenText;
         private Text tankChoosenText;
@@ -92,6 +88,9 @@ namespace ViralTree.GameStates
             List<uint> padlist =  GInput.getConnectedGamepads();
             if (padlist.Count > 0)
                 pad1 = new GInput(padlist[0]);
+
+            if (padlist.Count > 1)
+                pad2 = new GInput(padlist[1]);
 
             SelectButton startButton = new SelectButton("Start", "", new Vector2f(Settings.WindowSize.X * 0.5f, Settings.WindowSize.Y * 0.5f), 0, ButtonType.Single);
             startButton.Position -= new Vector2f(startButton.GetSize().X * 0.5f, -Settings.WindowSize.Y * 0.33f);
@@ -157,15 +156,19 @@ namespace ViralTree.GameStates
 
         public override void Update()
         {
+            if (pad1.isClicked(GInput.EButton.A))
+                Console.WriteLine("P1");
+
+            if (pad2.isClicked(GInput.EButton.A))
+                Console.WriteLine("P2");
             
             Joystick.Update();
             if (pad1 != null)
-            {
                 pad1.update();
 
-                if (pad2 != null)
-                    pad2.update();
-            }
+            if (pad2 != null)
+                pad2.update();
+            
 
             if (!player1LoggedIn)
             {
@@ -173,22 +176,20 @@ namespace ViralTree.GameStates
                 if (KInput.IsClicked(Keyboard.Key.W))
                 {
                     p1Controls = PlayerControls.Keyboard;
-                    p1Character = PlayerCharacters.Scout;
-                    scoutPlayerId = 1;                 
+                    p1Character = PlayerCharacters.Scout;               
                     player1LoggedIn = true;                    
                 }
                 else if (pad1 != null && pad1.isClicked(GInput.EButton.A))
                 {
                     p1Controls = PlayerControls.Gamepad1;
                     p1Character = PlayerCharacters.Scout;
-                    scoutPlayerId = 1;
                     player1LoggedIn = true;                    
                 }
                 else if (pad2 != null && pad2.isClicked(GInput.EButton.A))
-                {       
-                    p1Controls = PlayerControls.Gamepad2;
+                {
+                    Console.WriteLine("Hossa");
+                    p1Controls  = PlayerControls.Gamepad2;
                     p1Character = PlayerCharacters.Scout;
-                    scoutPlayerId = 1;
                     player1LoggedIn = true;                  
                 }
             }
@@ -280,6 +281,9 @@ namespace ViralTree.GameStates
                 else if (pad1 != null && pad1.isClicked(GInput.EButton.Start))
                     parent.SetGameState(new LevelSelection());
 
+                else if (pad2 != null && pad2.isClicked(GInput.EButton.Start))
+                    parent.SetGameState(new LevelSelection());
+
             }
             
 
@@ -287,6 +291,9 @@ namespace ViralTree.GameStates
                 parent.SetGameState(new MainMenu());
 
             if (pad1 != null && pad1.isClicked(GInput.EButton.B))
+                parent.SetGameState(new MainMenu());
+
+            if (pad2 != null && pad2.isClicked(GInput.EButton.B))
                 parent.SetGameState(new MainMenu());
 
             playerScout.Drawer.Update(parent.gameTime, null);
