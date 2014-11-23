@@ -72,7 +72,7 @@ namespace ViralTree.GameStates
 
             if (KInput.IsClicked(Keyboard.Key.Escape))
             {
-                parent.SetGameState(null);
+                parent.SetGameState(new MainMenu());
                 return;
             }
 
