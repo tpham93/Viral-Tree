@@ -11,7 +11,8 @@ namespace ViralTree.GameStates
 {
     public sealed class MainMenu : AGameState
     {
-        
+        GInput pad;
+
         List<SelectButton> buttonList;
 
         Texture backgroundTexture;
@@ -23,11 +24,20 @@ namespace ViralTree.GameStates
 
         public MainMenu()
         {
-
+            
         }
 
         public override void Init(AGameState lastGameState)
         {
+            Joystick.Update();
+
+            List<uint> padlist = GInput.getConnectedGamepads();
+            if (padlist.Count > 0)
+                pad = new GInput(padlist[0]);
+
+            if (pad != null)
+                curButton--;
+
             backgroundTexture = Game.content.Load<Texture>("gfx/menuscreen.png");
 
             backgroundSprite = new Sprite(backgroundTexture, new IntRect(0, 0, (int)backgroundTexture.Size.X, (int)backgroundTexture.Size.Y));
@@ -56,6 +66,11 @@ namespace ViralTree.GameStates
 
         public override void Update()
         {
+
+            Joystick.Update();
+            if (pad != null)
+                pad.update();
+
             if (KInput.IsClicked(Keyboard.Key.Escape))
                 this.parent.SetGameState(null);
 
@@ -64,6 +79,15 @@ namespace ViralTree.GameStates
 
             if (KInput.IsClicked(Keyboard.Key.Up) || KInput.IsClicked(Keyboard.Key.W))
                 curButton--;
+
+            if(pad != null)
+            {
+                if (pad.isClicked(GInput.EStick.LDown))
+                    curButton--;
+                else if (pad.isClicked(GInput.EStick.LUp))
+                    curButton++;
+            }
+            
 
             if (curButton < 0)
                 curButton = maxButton;
@@ -78,7 +102,7 @@ namespace ViralTree.GameStates
             }
 
 
-            if (KInput.IsClicked(Keyboard.Key.Space))
+            if (KInput.IsClicked(Keyboard.Key.Space) || (pad != null && pad.isReleased(GInput.EButton.A)))
             {
                 if (curButton == 0)
                     parent.SetGameState(new CharacterSelection());  
