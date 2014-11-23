@@ -11,6 +11,7 @@ namespace ViralTree
     public class GInput
     {
         public enum EButton { A, B, X, Y, LB, RB, Back, Start, L3, R3, ButtonCount };
+        public enum EStick { LUp, LDown, LLeft, LRight,LMiddle, RUp, RDown, RLeft, RRight,RMiddle, StickCount };
 
         private bool[] currentButtons;
         private bool[] prevButtons;
@@ -46,13 +47,22 @@ namespace ViralTree
             for (uint i = 0; i < currentButtons.Length; i++)
             {
                 prevButtons[i] = currentButtons[i];
-                currentButtons[i] = Joystick.IsButtonPressed(0, i);
+                currentButtons[i] = Joystick.IsButtonPressed(index, i);
             }
         }
 
         public bool isClicked(EButton button)
         {
             return currentButtons[(int)button] && !prevButtons[(int)button];
+        }
+
+        public bool isClicked(EStick stick)
+        {
+
+
+
+            return false;
+            //return currentButtons[(int)button] && !prevButtons[(int)button];
         }
 
         public bool isPressed(EButton button)
