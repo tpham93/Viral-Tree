@@ -25,7 +25,7 @@ namespace ViralTree.World
         Projectile,
         Melee,
         Key,
-        Exit,
+        LeavePoint,
     }
 
     public static class EntityFactory
@@ -38,6 +38,14 @@ namespace ViralTree.World
 
             switch (type)
             {
+                case EntityType.LeavePoint:
+                    entity = CreateExit(collider, position, additionalInfos);
+                    break;
+
+                case EntityType.Key:
+                    entity = CreateKey(collider, position, additionalInfos);
+                    break;
+
                 case EntityType.Scout:
                     entity = CreateNewScout(collider, position, additionalInfos);
                     break;
@@ -79,6 +87,18 @@ namespace ViralTree.World
             }
             
             return entity;
+        }
+
+        private static Entity CreateExit(ACollider collider, Vector2f position, object[] additionalInfos)
+        {
+            Entity result = new Entity(collider, position, float.PositiveInfinity, Fraction.Cell, CollidingFractions.VirusProjectile, EmptyThinker.Instance, new ExitResponse((int)additionalInfos[0], null, null), EmptyActivatable.Instance, new TextureDrawer("gfx/exit.png"));
+            return result;
+        }
+
+        private static Entity CreateKey(ACollider collider, Vector2f position, object[] additionalInfos)
+        {
+            Entity result = new Entity(collider, position, 1.0f, Fraction.Neutral, CollidingFractions.None, EmptyThinker.Instance, new KeyResponse((ExitResponse)additionalInfos[0]), EmptyActivatable.Instance, new TextureDrawer("gfx/key.png"));
+            return result;
         }
 
         private static Entity CreateMelee(ACollider collider, Vector2f position, object[] additionalInfos)

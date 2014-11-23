@@ -91,6 +91,7 @@
     <Compile Include="Classes\GameSpecific\GameplayConstants.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\CharacterSelection.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\SettingsMenu.cs" />
+    <Compile Include="Classes\GameSpecific\GameStates\WinScreen.cs" />
     <Compile Include="Classes\GameSpecific\World\Objects\EntityAttribs.cs" />
     <Compile Include="Classes\Core\Utilities\Vector3i.cs" />
     <Compile Include="Classes\GameSpecific\Components\AActivatable.cs" />
@@ -176,6 +177,9 @@
     <Content Include="Content\gfx\awesome_tree.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\gfx\exit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\gfx\GUI\AButton.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -186,6 +190,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\GUI\WKey.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\key.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\menuscreen.png">

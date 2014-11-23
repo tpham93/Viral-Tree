@@ -35,9 +35,12 @@ namespace ViralTree.GameStates
             
             info1 = new PlayerInfo(p1Controls, playerOneType, playerOneInput);
             info2 = new PlayerInfo(p2Controls, playerTwoType, playerTwoInput);
-       
+        }
 
-
+        public LevelSelection(PlayerInfo info1, PlayerInfo info2)
+        {
+            this.info1 = info1;
+            this.info2 = info2;
         }
 
         public override void Init(AGameState lastGameState)
@@ -57,15 +60,32 @@ namespace ViralTree.GameStates
 
             buttonList = new List<SelectButton>();
 
-            buttonList.Add(new SelectButton(" Testlevel", "lv1", new Vector2f(100, 100), 0, ButtonType.Single));
-            buttonList.Add(new SelectButton("      Aca", "testLevelAca", new Vector2f(300, 500), 1, ButtonType.Single));
+            int count = 0;
 
-            maxLevel = buttonList.Count - 1;
+            if (!info1.finishedLevels.Contains("lv1"))
+            {
+                buttonList.Add(new SelectButton(" Testlevel", "lv1", new Vector2f(100, 100), count, ButtonType.Single));
+                count++;
+            }
+
+
+            if (!info1.finishedLevels.Contains("testLevelAca"))
+            {
+                buttonList.Add(new SelectButton("      Aca", "testLevelAca", new Vector2f(300, 500), count, ButtonType.Single));
+                count++;
+            }
+           
+
+            maxLevel = buttonList.Count;
 
             foreach (SelectButton b in buttonList)
             {
                 b.Init();
+
+
             }
+
+            
 
         }
 
@@ -77,6 +97,12 @@ namespace ViralTree.GameStates
 
         public override void Update()
         {
+            if (maxLevel <= 0)
+            {
+                parent.SetGameState(new WinScreen());
+                return;
+            }
+
             Joystick.Update();
             if (pad != null)
                 pad.update();
@@ -104,7 +130,6 @@ namespace ViralTree.GameStates
                 curLevel = 0;
 
 
-
             foreach (SelectButton b in buttonList)
             {
                 b.Update(curLevel);
@@ -120,10 +145,8 @@ namespace ViralTree.GameStates
 
         public override void Draw()
         {
-            
 
             parent.window.Draw(treeSprite);
-
 
             foreach (SelectButton b in buttonList)
             {

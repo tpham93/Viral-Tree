@@ -82,6 +82,18 @@ namespace ViralTree.GameStates
 
             world.Update(parent.gameTime, worldTarget);
 
+            if (world.playerDied)
+            {
+                parent.SetGameState(new InGame(this.levelName, info1, info2));
+            }
+
+            if (world.finishedLevel)
+            {
+                info1.finishedLevels.Add(this.levelName); 
+                info2.finishedLevels.Add(this.levelName);
+                parent.SetGameState(new LevelSelection(info1, info2));
+            }
+
           //  worldTarget.SetView(world.Cam.currentView);
 
         }
@@ -89,8 +101,8 @@ namespace ViralTree.GameStates
         public override void Draw()
         {
             parent.window.Clear();
+
             worldTarget.Clear();
-        //    fogTexture.Clear();
 
             world.Draw(parent.gameTime, worldTarget);
 

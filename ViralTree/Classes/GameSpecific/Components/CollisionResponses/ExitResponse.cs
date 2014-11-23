@@ -26,7 +26,7 @@ namespace ViralTree.Components
         {
             if (numKeys <= 0 && (player1 != null && collidedEntity == player1 || player2 != null && collidedEntity == player2))
             {
-                
+                Owner.CurrentLife = 0.0f;
             }
         }
 

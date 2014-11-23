@@ -163,7 +163,7 @@ namespace ViralTree.Tiled
                     else if (reader.Value.Equals("Key"))
                         LoadKey(reader);
 
-                    else if (reader.Value.Equals("Exit"))
+                    else if (reader.Value.Equals("LeavePoint"))
                         LoadExit(reader);
                 }
 
@@ -175,7 +175,36 @@ namespace ViralTree.Tiled
 
         private void LoadExit(XmlReader reader)
         {
-           
+            FloatRect rect = new FloatRect();
+
+            while (reader.MoveToNextAttribute())
+            {
+                if (reader.Name.Equals("x"))
+                    rect.Left = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("y"))
+                    rect.Top = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("width"))
+                    rect.Width = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("height"))
+                    rect.Height = float.Parse(reader.Value, Settings.cultureProvide);
+            }
+
+
+            EntityAttribs attribs = new EntityAttribs(EntityType.LeavePoint, null, new Vector2f(rect.Left + rect.Width / 2, rect.Top + rect.Height / 2));
+            Vector2f[] vertices = {new Vector2f(rect.Left, rect.Top),
+                                  new Vector2f(rect.Left, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top)};
+
+            //Console.WriteLine(numKeys);
+            attribs.AddAttribute(numKeys);
+
+            attribs.collider = new ConvexCollider(vertices, true);
+            entityAttributs.Add(attribs);
+        
         }
 
         private void LoadKey(XmlReader reader)
@@ -209,6 +238,9 @@ namespace ViralTree.Tiled
 
             attribs.collider = new ConvexCollider(vertices, true);
             attribs.AddAttribute(exit);
+
+
+            entityAttributs.Add(attribs);
         }
 
         private void LoadPlayerSpawner(XmlReader reader)
