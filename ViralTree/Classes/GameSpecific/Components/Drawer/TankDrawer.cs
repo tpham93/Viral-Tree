@@ -55,7 +55,8 @@ namespace ViralTree.Components
 
             float life = Owner.CurrentLife / Owner.MaxLife;
 
-            hpSprite.Scale = new Vector2f(life * scale, life * scale);
+            Vector2f healthSpriteScale = new Vector2f(life * scale, life * scale);
+            hpSprite.Scale = new Vector2f((float)Math.Min(healthSpriteScale.X, 1), (float)Math.Min(healthSpriteScale.Y, 1));
 
           //  bodySprite.Scale = new Vector2f(0.1f + scale, 0.1f + scale);
         }

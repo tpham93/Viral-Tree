@@ -59,7 +59,8 @@ namespace ViralTree.Components
             nucleusSprite.Position = playerSprite.Position;
             float life = Owner.CurrentLife / Owner.MaxLife;
             healthSprite.Position = playerSprite.Position;
-            healthSprite.Scale = new Vector2f(life * scale, life * scale);
+            Vector2f healthSpriteScale = new Vector2f(life * scale, life * scale);
+            healthSprite.Scale = new Vector2f((float)Math.Min(healthSpriteScale.X, 1), (float)Math.Min(healthSpriteScale.Y, 1));
             mitochondrionSprite.Position = playerSprite.Position;
             mitochondrionOffset = (float)gameTime.TotalTime.TotalSeconds * 0.1f * (float)Math.PI;
         }

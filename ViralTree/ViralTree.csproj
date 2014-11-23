@@ -83,6 +83,7 @@
     <Compile Include="Classes\GameSpecific\Components\Thinker\Shooter.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Follower.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PierceThinker.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Weapons\MeeleSpecial.cs" />
     <Compile Include="Classes\GameSpecific\Components\Weapons\MeeleWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Components\Weapons\ScoutSpecial.cs" />
     <Compile Include="Classes\GameSpecific\GameplayConstants.cs" />

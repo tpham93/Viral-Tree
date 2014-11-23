@@ -127,7 +127,7 @@ namespace ViralTree.World
         private static Entity CreateNewScout(ACollider collider, Vector2f position, object[] additionalObjects)
         {
             collider.Scale = GameplayConstants.PLAYER_SCALE;
-            AWeapon weapon = weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.PLAYER_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.PLAYER_SHOOTER_DAMAGE, GameplayConstants.PLAYER_SHOOTER_SPEED);
+            AWeapon weapon = weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.SCOUT_SHOOTER_DAMAGE, GameplayConstants.SCOUT_SHOOTER_SPEED);
             AWeapon specialWeapon = new ScoutSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
       
             return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker(weapon, specialWeapon, (GInput)additionalObjects[0]), new BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.ScoutDrawer());
@@ -137,7 +137,7 @@ namespace ViralTree.World
         {
             collider.Scale = GameplayConstants.PLAYER_SCALE;
             AWeapon weapon = weapon = new MeeleWeapon(TimeSpan.FromSeconds(GameplayConstants.TANK_ATTACK_COOLDOWN), GameplayConstants.TANK_ATTACK_DURATION, 0, Fraction.CellProjectile, CollidingFractions.VirusProjectile, GameplayConstants.TANK_MIN_RANGE, GameplayConstants.TANK_MAX_RANGE, GameplayConstants.TANK_NUM_ATTACKS, GameplayConstants.TANK_ATTACK_SERIES_DURATION);
-            AWeapon specialWeapon = new ScoutSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
+            AWeapon specialWeapon = new MeleeSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
       
             return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker(weapon, specialWeapon, (GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.TankDrawer());
         }
