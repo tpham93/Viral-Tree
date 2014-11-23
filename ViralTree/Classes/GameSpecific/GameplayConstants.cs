@@ -10,18 +10,19 @@ namespace ViralTree
     {
         //____________________________Player__________________________
 
-        public const float PLAYER_START_LIFE        = 100.0f;   //in use
-        public const float PLAYER_MAX_SPEED         = 400.0f;   //in use
         public const float PLAYER_SCALE             = 1.0f;     //in use
 
+        public const float SCOUT_START_LIFE         = 100.0f;   //in use
         public const float SCOUT_SHOOTER_DAMAGE     = 10.0f;    //in use
         public const float SCOUT_SHOOTER_FREQ       = 250.0f;   //in use
         public const float SCOUT_SHOOTER_SPEED      = 2000.0f;  //in use
         public const float SCOUT_SPECIAL_FREQ       = 60000.0f; //in use
         public const float SCOUT_SPECIAL_DURATION   = 5000.0f;  //in use
         public const float SCOUT_DECREASED_FREQ     = 100.0f;   //in use
+        public const float SCOUT_MAX_SPEED          = 400.0f;   //in use
 
 
+        public const float  TANK_START_LIFE             = 200.0f;   //in use
         public const double TANK_ATTACK_COOLDOWN        = 1.0;
         public const double TANK_ATTACK_DURATION        = 0.5;
         public const double TANK_ATTACK_SERIES_DURATION = 0.15f;
@@ -31,6 +32,7 @@ namespace ViralTree
         public const int    TANK_NUM_ATTACKS            = 3;
         public const float  TANK_SPECIAL_FREQ           = 60000.0f; //in use
         public const float  TANK_SPECIAL_DURATION       = 5000.0f;  //in use
+        public const float  TANK_MAX_SPEED              = 600.0f;   //in use
 
 
         //____________________________ANORISM__________________________
@@ -38,7 +40,7 @@ namespace ViralTree
         public const float ANORISM_LIFE             = 100.0f;   //inuse
         public const float ANORISM_SPEED            = 55.0f;    //inuse
         public const float ANORISM_SCALE            = 1.0f;     //not in use
-        public const float ANORISM_TOUCH_DAMAGE     = 256.0f;   //in use
+        public const float ANORISM_TOUCH_DAMAGE     = 30.0f;   //in use
         public const float ANORISM_FOLLOW_RADIUS    = 256.0f;   //in use
 
 
