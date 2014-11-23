@@ -95,6 +95,7 @@ namespace ViralTree.Components
             input.Attacking = attacking;
             input.Direction = direction;
             input.Special = special;
+            Console.WriteLine(Owner.CurrentLife);
 
             return input;
         }

@@ -48,6 +48,12 @@ namespace ViralTree.Components
 
             else if (fraction == Fraction.Cell && collidedEntity.Fraction == Fraction.Virus)
                 collidedEntity.CurrentLife -= tmpDamage;
+
+            else if (fraction == Fraction.CellProjectile && collidedEntity.Fraction == Fraction.Virus)
+                collidedEntity.CurrentLife -= tmpDamage;
+
+            else if (fraction == Fraction.VirusProjectile && collidedEntity.Fraction == Fraction.Cell)
+                collidedEntity.CurrentLife -= tmpDamage;
         }
 
         public override void Update(GameTime gameTime, World.GameWorld world)

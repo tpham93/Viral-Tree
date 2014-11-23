@@ -16,7 +16,7 @@ namespace ViralTree.Components
         private TimeSpan duration;
         private float minRadius;
         private float maxRadius;
-        public AoeWeapon(TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage, TimeSpan duration, float maxRadius, float minRadius)
+        public AoeWeapon(TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage, TimeSpan duration, float minRadius, float maxRadius)
             : base(coolDown, ammo)
         {
             this.colliderPrototype = colliderPrototype;
@@ -36,7 +36,7 @@ namespace ViralTree.Components
             Fraction projectileFraction = Owner.Fraction == Fraction.Cell ? Fraction.CellProjectile : Fraction.VirusProjectile;
             CollidingFractions projectileCollidingFraction = Owner.Fraction == Fraction.Cell ? CollidingFractions.VirusProjectile : CollidingFractions.CellProjectile;
 
-            world.AddEntity(World.EntityFactory.Create(EntityType.Cloud, Owner.Collider.Position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, duration, minRadius, maxRadius, damage, "gfx/Projectiles/BasicProjectile.png" }));
+            world.AddEntity(World.EntityFactory.Create(EntityType.Cloud, Owner.Collider.Position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, duration, minRadius, maxRadius, damage, "gfx/Projectiles/cloud.png" }));
         }
 
         public override void Update(GameTime gameTime, GameWorld world)

@@ -27,7 +27,7 @@ namespace ViralTree.Components
         {
             leftDuration -= gameTime.ElapsedTime;
             Owner.CurrentLife = Owner.MaxLife * (float)(leftDuration.TotalMilliseconds / duration.TotalMilliseconds);
-            Owner.Collider.Scale = 1 + (Owner.CurrentLife/Owner.MaxLife) * (maxRadius - minRadius);
+            Owner.Collider.Scale = 1 + (1-(Owner.CurrentLife / Owner.MaxLife)) * (maxRadius - minRadius) / minRadius;
         }
     }
 }

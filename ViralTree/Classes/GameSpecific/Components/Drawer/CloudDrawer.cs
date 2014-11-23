@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SFML.Window;
+
 namespace ViralTree.Components
 {
     class CloudDrawer : TextureDrawer
@@ -20,11 +22,13 @@ namespace ViralTree.Components
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
             base.Update(gameTime, world);
-            Owner.Collider.Scale = 1 + (Owner.CurrentLife / Owner.MaxLife) * (maxRadius - minRadius);
+            //float scale = 1 + (Owner.CurrentLife / Owner.MaxLife) * (maxRadius - minRadius)/maxRadius;
+            //sprite.Scale = new Vector2f(scale, scale);
         }
 
         public override void Draw(SFML.Graphics.RenderTarget target)
         {
+            this.Owner.Collider.Draw(target);
             base.Draw(target);
         }
 

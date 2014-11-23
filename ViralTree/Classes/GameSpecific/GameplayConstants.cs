@@ -60,9 +60,9 @@ namespace ViralTree
         public const float FUNGUS_SPEED             = 55.0f;    //not in use
         public const float FUNGUS_SCALE             = 1.0f;     //in use
         public const float FUNGUS_AOE_FREQ          = 3000.0f;  //in use
-        public const float FUNGUS_AOE_DAMAGE        = 0.5f;     //in use
+        public const float FUNGUS_AOE_DAMAGE        = 10.0f;     //in use
         public const float FUNGUS_AOE_DURATION      = 1000.0f;  //in use
-        public const float FUNGUS_AOE_MIN           = 128.0f;   //in use
+        public const float FUNGUS_AOE_MIN           = 64.0f;   //in use
         public const float FUNGUS_AOE_MAX           = 256.0f;   //in use
         public const float FUNGUS_AOE_ATTACK_RADIUS = 512.0f;   //in use
         public const float FUNGUS_CHASE_RADIUS      = 512.0f;   //in use
