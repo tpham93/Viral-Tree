@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SFML.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,12 +15,20 @@ namespace ViralTree.Components
 
         public int numKeys;
 
+        private List<KeyResponse> keys = new List<KeyResponse>();
+
         public ExitResponse(int numKeys, Entity player1, Entity player2)
         {
             this.player1 = player1;
             this.player2 = player2;
 
             this.numKeys = numKeys;
+        }
+
+        public override void Initialize()
+        {
+            base.Initialize();
+     
         }
 
         public override void OnCollision(World.Entity collidedEntity, IntersectionData data, World.GameWorld world, bool firstCalled, GameTime gameTime)
@@ -32,6 +41,27 @@ namespace ViralTree.Components
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
+            (Owner.Drawer as TextureDrawer).useRed = false;
+
+            if (numKeys <= 0)
+            {
+                (Owner.Drawer as TextureDrawer).sprite.Color = Color.White;
+            }
+
+            else
+            {
+                (Owner.Drawer as TextureDrawer).sprite.Color = new Color(255, 255, 255, 0);
+            }
+        }
+
+        public void RemoveNumKey(KeyResponse res)
+        {
+            if (!keys.Contains(res))
+            {
+                keys.Add(res);
+                numKeys--;
+            }
+
             
         }
     }

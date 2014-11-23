@@ -11,7 +11,9 @@ namespace ViralTree.Components
 {
     public class TextureDrawer : ADrawer
     {
-        protected Sprite sprite;
+        public Sprite sprite;
+
+        public bool useRed = true;
 
         public TextureDrawer(String filePath)
         {
@@ -31,9 +33,12 @@ namespace ViralTree.Components
             sprite.Position = Owner.Collider.Position;
             sprite.Rotation = MathUtil.ToDegree(Owner.Collider.Rotation);
 
-            byte red = (byte)((Owner.Thinker.nextAttack()) * 255);
-
-            sprite.Color = new Color(255, red, red,255);
+            if (useRed)
+            {
+                byte red = (byte)((Owner.Thinker.nextAttack()) * 255);
+                sprite.Color = new Color(255, red, red, 255);
+            }
+ 
         }
 
         public override void Draw(SFML.Graphics.RenderTarget target)

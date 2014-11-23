@@ -74,6 +74,12 @@ namespace ViralTree.GameStates
                 buttonList.Add(new SelectButton("      Aca", "testLevelAca", new Vector2f(300, 500), count, ButtonType.Single));
                 count++;
             }
+
+            if (!info1.finishedLevels.Contains("lv2"))
+            {
+                buttonList.Add(new SelectButton("      Arena", "lv2", new Vector2f(200, 500), count, ButtonType.Single));
+                count++;
+            }
            
 
             maxLevel = buttonList.Count - 1;
