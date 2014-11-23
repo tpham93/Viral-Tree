@@ -39,6 +39,8 @@ namespace ViralTree.Components
             mitochondrionSprite.Origin = new Vector2f(mitochondrionSprite.TextureRect.Width, mitochondrionSprite.TextureRect.Height) / 2.0f;
         }
 
+        
+
         public override void Initialize()
         {
             base.Initialize();
