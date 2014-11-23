@@ -11,11 +11,19 @@ namespace ViralTree
     public class GInput
     {
         public enum EButton { A, B, X, Y, LB, RB, Back, Start, L3, R3, ButtonCount };
+        public enum EStick { LUp, LDown, LLeft, LRight,LMiddle, RUp, RDown, RLeft, RRight,RMiddle, StickCount };
 
         private bool[] currentButtons;
         private bool[] prevButtons;
 
-        uint index;
+        public uint index;
+        public EStick currentLeftStick;
+        public EStick prevLeftStick;
+
+        public EStick currentRightStick;
+        public EStick prevRightStick;
+
+        
         
         public static List<uint> getConnectedGamepads()
         {
@@ -48,11 +56,23 @@ namespace ViralTree
                 prevButtons[i] = currentButtons[i];
                 currentButtons[i] = Joystick.IsButtonPressed(index, i);
             }
+            prevLeftStick = currentLeftStick;
+            prevRightStick = currentRightStick;
+
+            currentLeftStick = updateLeftStick();
+            currentRightStick = updateRightStick();
+
+            
         }
 
         public bool isClicked(EButton button)
         {
             return currentButtons[(int)button] && !prevButtons[(int)button];
+        }
+
+        public bool isClicked(EStick stick)
+        {
+            return ((prevLeftStick == EStick.LLeft && currentLeftStick == EStick.LMiddle) || stick == currentLeftStick);
         }
 
         public bool isPressed(EButton button)
@@ -85,6 +105,50 @@ namespace ViralTree
             return getAxis(Joystick.Axis.X, Joystick.Axis.Y);
         }
 
+        public EStick updateLeftStick()
+        {
+            if (rightPad().X < -90)
+            {
+                return EStick.RLeft;
+            }
+            else if (rightPad().X > 90)
+            {
+                return EStick.RRight;
+            }
+            else if (rightPad().Y > 90)
+            {
+                return EStick.RUp;
+            }
+            else if (rightPad().Y < -90)
+            {
+                return EStick.RDown;
+            }
+            else
+                return EStick.RMiddle;
+        }
+
+        public EStick updateRightStick()
+        {
+            if (rightPad().X < -90)
+            {
+                return EStick.LLeft;
+            }
+            else if (leftPad().X > 90)
+            {
+                return EStick.LRight;
+            }
+            else if (leftPad().Y > 90)
+            {
+                return EStick.LUp;
+            }
+            else if (leftPad().Y < -90)
+            {
+                return EStick.LDown;
+            }
+            else
+                return EStick.LMiddle;
+        }
+
         /// <summary>
         /// Negative values for left bumper, positive values for right bumper.
         /// </summary>
@@ -94,6 +158,7 @@ namespace ViralTree
             return -Joystick.GetAxisPosition(index, Joystick.Axis.Z);
         }
 
+        
 
     }
 }
