@@ -2873,5 +2873,7 @@
    <polygon points="0,0 128,0 128,-512 0,-512"/>
   </object>
  </objectgroup>
- <objectgroup name="Stuff"/>
+ <objectgroup name="Stuff">
+  <object name="PlayerSpawner" x="440" y="264" width="672" height="496"/>
+ </objectgroup>
 </map>

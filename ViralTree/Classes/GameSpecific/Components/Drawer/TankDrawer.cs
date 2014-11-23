@@ -16,8 +16,12 @@ namespace ViralTree.Components
 
         private float scale;
 
-        public TankDrawer()
+        private AWeapon specialWeapon;
+
+        public TankDrawer(AWeapon specialWeapon)
         {
+            this.specialWeapon = specialWeapon;
+
             bodySprite = new Sprite(Game.content.Load<Texture>("gfx/Player/Tank/tankBody.png"));
             bodySprite.Origin = new Vector2f(bodySprite.Texture.Size.X * 0.5f, bodySprite.Texture.Size.Y * 0.5f);
 
@@ -45,6 +49,9 @@ namespace ViralTree.Components
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
+
+            specialSprite.Color = new Color(255,255,255,(byte)(255*(1-specialWeapon.CoolDown.TotalMilliseconds / specialWeapon.MaxCoolDown.TotalMilliseconds)));
+
             scale = (float)Math.Pow(Math.Sin(gameTime.TotalTime.TotalSeconds), 2) * 0.2f + 0.8f;
 
            // float scale2 = (float)Math.Pow(Math.Sin(gameTime.TotalTime.TotalSeconds), 2) * 0.15f + 0.95f;
