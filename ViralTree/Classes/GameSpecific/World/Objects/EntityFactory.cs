@@ -21,7 +21,7 @@ namespace ViralTree.World
         Fungus,
         Veinball,
         Anorism,
-        Projectile,    
+        Projectile,
     }
 
     public static class EntityFactory
@@ -69,26 +69,26 @@ namespace ViralTree.World
                 default:
                     break;
             }
-
+            
             return entity;
         }
 
         private static Entity CreateAnorism(ACollider collider, Vector2f position, object[] additionalInfos)
         {
             collider.Scale = GameplayConstants.ANORISM_SCALE;
-            return new Entity(collider, position, GameplayConstants.ANORISM_LIFE, Fraction.Virus, CollidingFractions.Cell, new Follower(GameplayConstants.ANORISM_FOLLOW_RADIUS, GameplayConstants.ANORISM_SPEED), new TouchDamageResponse(Fraction.Virus, GameplayConstants.ANORISM_TOUCH_DAMAGE, true, true), EmptyActivatable.Instance, new MultiTextureDrawer("gfx/anorism.png", "gfx/anorismShuriken.png"));
+            return new Entity(collider, position, GameplayConstants.ANORISM_LIFE, Fraction.Virus, CollidingFractions.Cell, new Follower(GameplayConstants.ANORISM_FOLLOW_RADIUS, GameplayConstants.ANORISM_SPEED), new TouchDamageResponse(Fraction.Virus, GameplayConstants.ANORISM_TOUCH_DAMAGE, true, true), EmptyActivatable.Instance, new MultiTextureDrawer("gfx/Enemies/anorism.png", "gfx/Enemies/anorismShuriken.png"));
         }
 
         private static Entity CreateFungus(ACollider collider, Vector2f position, object[] additionalInfos)
         {
             collider.Scale = GameplayConstants.FUNGUS_SCALE;
-            return new Entity(collider, position, GameplayConstants.FUNGUS_LIFE, Fraction.Virus, CollidingFractions.Cell, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/fungus.png"));
+            return new Entity(collider, position, GameplayConstants.FUNGUS_LIFE, Fraction.Virus, CollidingFractions.Cell, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/Enemies/fungus.png"));
         }
 
         private static Entity CreateVeinball(ACollider collider, Vector2f position, object[] additionalInfos)
         {
             collider.Scale = GameplayConstants.VEINBALL_SCALE;
-            return new Entity(collider, position, GameplayConstants.VEINBALL_LIFE, Fraction.Virus, CollidingFractions.Cell, new Shooter(GameplayConstants.VEINBALL_CHASE_RADIUS, GameplayConstants.VEINBALL_SPEED, GameplayConstants.VEINBALL_SHOOT_RADIUS), new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/veinball.png"));
+            return new Entity(collider, position, GameplayConstants.VEINBALL_LIFE, Fraction.Virus, CollidingFractions.Cell, new Shooter(GameplayConstants.VEINBALL_CHASE_RADIUS, GameplayConstants.VEINBALL_SPEED, GameplayConstants.VEINBALL_SHOOT_RADIUS), new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/Enemies/veinball.png"));
         }
 
         private static Entity CreateBlocker(ACollider collider, Vector2f position, object[] additionalInfos)
@@ -115,13 +115,19 @@ namespace ViralTree.World
         private static Entity CreateNewScout(ACollider collider, Vector2f position, object[] additionalObjects)
         {
             collider.Scale = GameplayConstants.PLAYER_SCALE;
-            return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker((GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.ScoutDrawer());
+            AWeapon weapon = weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.PLAYER_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.PLAYER_SHOOTER_DAMAGE, GameplayConstants.PLAYER_SHOOTER_SPEED);
+            AWeapon specialWeapon = new ScoutSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
+      
+            return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker(weapon, specialWeapon, (GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.ScoutDrawer());
         }
 
         private static Entity CreateNewTank(ACollider collider, Vector2f position, object[] additionalObjects)
         {
             collider.Scale = GameplayConstants.PLAYER_SCALE;
-            return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker((GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.TankDrawer());
+            AWeapon weapon = weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.PLAYER_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.PLAYER_SHOOTER_DAMAGE, GameplayConstants.PLAYER_SHOOTER_SPEED);
+            AWeapon specialWeapon = new ScoutSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
+      
+            return new Entity(collider, position, GameplayConstants.PLAYER_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker(weapon, specialWeapon, (GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.TankDrawer());
         }
     }
 }

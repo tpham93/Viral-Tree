@@ -13,10 +13,16 @@ namespace ViralTree.World
     //TODO: add possibility to follow an Entity OR follow a camera path or the like
     public class Camera
     {
+        const float MAX_RADIUS = 1000.0f;
+        const float MIN_RADIUS = 500.0f;
+
+        float currendRadius = 0.0f;
+
         private GameWorld world;
 
         /// <summary> The Entity that is focused (followed) by the camera.</summary>
-        public Entity entityOnCameraFocus;
+        public List<Entity> followingEntities = new List<Entity>();
+        
 
         /// <summary> The current view (camera) in the world.</summary>
         public View currentView;
@@ -31,17 +37,19 @@ namespace ViralTree.World
 
         public float allowedDist;
 
+        public Vector2f targetPos;
+
         public Vector2f Position
         {
             get { return currentView.Center; }
             set { currentView.Center = value; }
         }
        
-        public Camera(GameWorld world, Entity startEntity, RenderTarget target)
+        public Camera(GameWorld world, RenderTarget target, params Entity[] entities)
         {
             this.world = world;
 
-            this.entityOnCameraFocus = startEntity;
+            this.followingEntities = MathUtil.ToList<Entity>(entities);
 
             this.currentView = target.GetView();
 
@@ -50,11 +58,14 @@ namespace ViralTree.World
 
             allowedDist = 10.0f;
 
-            if (startEntity != null)
+            if (followingEntities.Count > 0)
             {
-                chunkIdCam = startEntity.ChunkId;
+                Vector2f center = ComputeCenterOfAllEntities();
+                Chunk chunk = world.GetChunkAt(center);
 
-                currentView.Center = startEntity.Collider.Position;
+                chunkIdCam = chunk.Id;
+
+                currentView.Center = center;
 
                 target.SetView(currentView);
             }
@@ -82,7 +93,7 @@ namespace ViralTree.World
 
             bool changed = false;
 
-            if (entityOnCameraFocus != null)
+            if (followingEntities.Count > 0)
                 changed = FollowEntity(gameTime);
 
 
@@ -109,7 +120,11 @@ namespace ViralTree.World
 
         private bool FollowEntity(GameTime gameTime)
         {
-            Vector2f direction = entityOnCameraFocus.Collider.Position - currentView.Center;
+            targetPos = ComputeCenterOfAllEntities();
+
+            Vector2f direction = targetPos - currentView.Center;
+
+
 
             if (Vec2f.Length(direction) > allowedDist)
             {
@@ -121,5 +136,41 @@ namespace ViralTree.World
 
             return false;
         }
+
+        private Vector2f ComputeCenterOfAllEntities()
+        {
+            Vector2f center = Vec2f.Zero;
+
+            currendRadius = float.NegativeInfinity;
+
+            for (int i = followingEntities.Count - 1; i >= 0 ; i--)
+            {
+                if (followingEntities[i].UniqueId == -1)
+                {
+                    followingEntities.RemoveAt(i);
+                    continue;
+                }
+                 
+                center += followingEntities[i].Collider.Position;
+            }
+
+            center /= followingEntities.Count;
+
+            for (int i = 0; i < followingEntities.Count; i++)
+            {
+                float tmpDist = Vec2f.EuclidianDistance(center, followingEntities[i].Collider.Position);
+
+                if (tmpDist > currendRadius)
+                    currendRadius = tmpDist;
+            }
+
+            
+
+
+
+
+            return center;
+        }
+
     }
 }

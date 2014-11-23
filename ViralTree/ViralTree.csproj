@@ -78,6 +78,7 @@
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\TouchDamageResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\MultiTextureDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\TankDrawer.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerSpawner.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Shooter.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Follower.cs" />
     <Compile Include="Classes\GameSpecific\Components\Weapons\ScoutSpecial.cs" />
@@ -156,13 +157,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\gfx\anorism.png">
+    <Content Include="Content\gfx\Enemies\anorism.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\gfx\anorismShuriken.png">
+    <Content Include="Content\gfx\Enemies\anorismShuriken.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\gfx\fungus.png">
+    <Content Include="Content\gfx\Enemies\fungus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\awesome_tree.png">
@@ -198,7 +199,7 @@
     <Content Include="Content\gfx\singletextbox.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\gfx\veinball.png">
+    <Content Include="Content\gfx\Enemies\veinball.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\other\level\tileSet.png">

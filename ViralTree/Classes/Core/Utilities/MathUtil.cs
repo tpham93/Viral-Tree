@@ -168,5 +168,15 @@ namespace ViralTree
             return result;
         }
 
+
+        public static List<T> ToList<T>(T[] objs)
+        {
+            List<T> result = new List<T>();
+
+            for (int i = 0; i < objs.Length; i++)
+                result.Add(objs[i]);
+
+            return result;
+        }
     }
 }

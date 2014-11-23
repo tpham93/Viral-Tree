@@ -46,6 +46,27 @@ namespace ViralTree
             return new ConcaveCollider(list, Vec2f.Zero, 4 * numEdges);
         }
 
+        public static ConvexCollider GetEllipse(int numEdges, float radiusX, float radiusY)
+        {
+            Vector2f[] vertices = new Vector2f[numEdges];
+
+            double delta = (Math.PI * 2.0) / numEdges;
+
+            for (int i = 0; i < vertices.Length; i++)
+            {
+                float xVal = (float)Math.Cos(i * delta) * radiusX;
+                float yVal = (float)Math.Sin(i * delta) * radiusY;
+
+                Vector2f current = new Vector2f(xVal, yVal);
+
+                vertices[i] = current;
+            }
+
+
+            //maybe remove redundantNormals:
+            return new ConvexCollider(vertices, numEdges % 2 == 0);
+        }
+
 
 
 

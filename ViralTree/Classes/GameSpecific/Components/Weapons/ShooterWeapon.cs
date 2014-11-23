@@ -43,7 +43,7 @@ namespace ViralTree.Components
         public override void Update(GameTime gameTime, GameWorld world)
         {
             base.Update(gameTime, world);
-            Console.WriteLine(MaxCoolDown);
+           // Console.WriteLine(MaxCoolDown);
         }
 
         public override void Attack(World.GameWorld world)

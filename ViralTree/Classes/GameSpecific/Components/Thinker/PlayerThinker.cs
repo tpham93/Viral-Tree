@@ -15,11 +15,15 @@ namespace ViralTree.Components
         private AWeapon weapon;
         private AWeapon specialWeapon;
 
-        public PlayerThinker(GInput controller = null)
+        public PlayerThinker(AWeapon weapon, AWeapon specialWeapon, GInput controller = null)
         {
             this.controller = controller;
-            weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.PLAYER_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.PLAYER_SHOOTER_DAMAGE, GameplayConstants.PLAYER_SHOOTER_SPEED);
-            specialWeapon = new ScoutSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
+
+            this.weapon = weapon;
+            this.specialWeapon = specialWeapon;
+
+        //    weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.PLAYER_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.PLAYER_SHOOTER_DAMAGE, GameplayConstants.PLAYER_SHOOTER_SPEED);
+         //   specialWeapon = new ScoutSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
         }
 
         public override void Initialize()
@@ -101,15 +105,14 @@ namespace ViralTree.Components
 
             PlayerInput input = GetInput(world);
             Owner.Collider.Move(speed * input.Movement);
-            Owner.Collider.Direction = input.Direction;
+            Owner.Collider.Direction += input.Direction;
 
+            /*
             if (KInput.IsPressed(SFML.Window.Keyboard.Key.Q))
                 Owner.Collider.Rotate(-0.1f);
 
             else if (KInput.IsPressed(SFML.Window.Keyboard.Key.E))
-                Owner.Collider.Rotate(0.1f);
-
-
+                Owner.Collider.Rotate(0.1f)*/
 
             weapon.Update(gameTime, world);
             specialWeapon.Update(gameTime, world);

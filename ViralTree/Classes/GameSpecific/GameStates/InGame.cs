@@ -35,14 +35,17 @@ namespace ViralTree.GameStates
           
             states.Shader.SetParameter("worldSize", new Vector2f(Settings.WindowSize.X, Settings.WindowSize.Y));
             states.BlendMode = BlendMode.Add;
-
-            world = new GameWorld(levelName);
-            
             worldTarget = new RenderTexture((uint)Settings.WindowSize.X, (uint)Settings.WindowSize.Y);
+            worldTarget.SetView(parent.window.GetView());
+
+
+            world = new GameWorld(levelName, worldTarget);
+            
+         
       //      fogTexture = new RenderTexture((uint)Settings.WindowSize.X, (uint)Settings.WindowSize.Y);
  
-            worldTarget.SetView(parent.window.GetView());
-            world.initCam(worldTarget);
+
+
          //   worldTarget = new RenderTexture()
 
         }
@@ -81,12 +84,12 @@ namespace ViralTree.GameStates
             world.Draw(parent.gameTime, worldTarget);
 
 
-            if (Settings.DrawFog && world.GetEntity(0) != null)
+            if (Settings.DrawFog && world.Cam.followingEntities.Count > 0)
             {
                 states.Shader.SetParameter("noise", noiseTexture);
                 states.Shader.SetParameter("offset", world.Cam.Position);
                 states.Shader.SetParameter("scale", (float)world.Cam.currentView.Size.X / (float)Settings.WindowSize.X);
-                states.Shader.SetParameter("playerPos", world.GetEntity(0).Collider.Position);
+                states.Shader.SetParameter("playerPos", world.Cam.targetPos);
             }
 
 

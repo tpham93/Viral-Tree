@@ -15,10 +15,10 @@ namespace ViralTree.Components
         TimeSpan maxDuration;
         AWeapon scoutWeapon;
 
-        public ScoutSpecial(TimeSpan coolDown, TimeSpan duration, TimeSpan decreasedShootFreq, AWeapon scoutWeapon)
+        public ScoutSpecial(TimeSpan coolDown, TimeSpan duration, TimeSpan increasedWeapongFreq, AWeapon scoutWeapon)
             : base(coolDown, float.PositiveInfinity)
         {
-            this.decreasedShootFreq = decreasedShootFreq;
+            this.decreasedShootFreq = increasedWeapongFreq;
             this.CoolDown = TimeSpan.Zero;
             this.duration = TimeSpan.Zero;
             this.maxDuration = duration;

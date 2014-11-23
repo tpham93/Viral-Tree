@@ -33,9 +33,13 @@ namespace ViralTree.Components
 
         public override void Draw(SFML.Graphics.RenderTarget target)
         {
+            
             target.Draw(bodySprite);
             target.Draw(hpSprite);
             target.Draw(specialSprite);
+            
+
+            //Owner.Collider.Draw(target);
           
         }
 

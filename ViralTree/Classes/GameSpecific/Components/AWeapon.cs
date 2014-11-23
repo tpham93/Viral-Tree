@@ -8,7 +8,7 @@ using ViralTree.World;
 
 namespace ViralTree.Components
 {
-    abstract class AWeapon
+    public abstract class AWeapon
     {
         Entity owner;
         public Entity Owner

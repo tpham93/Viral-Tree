@@ -34,6 +34,8 @@ namespace ViralTree.Tiled
         public int spatialSizeY = 0;
 
 
+        public Vector2f spawnPos;
+
 
         public TiledReader()
         {
@@ -149,12 +151,38 @@ namespace ViralTree.Tiled
 
                     else if (reader.Value.Equals("Collision"))
                         LoadCollision(reader);
+
+                    else if (reader.Value.Equals("PlayerSpawner"))
+                        LoadPlayerSpawner(reader);
                 }
 
 
             }
 
            // print("abort");
+        }
+
+        private void LoadPlayerSpawner(XmlReader reader)
+        {
+            FloatRect rect = new FloatRect();
+
+            while (reader.MoveToNextAttribute())
+            {
+                if(reader.Name.Equals("x"))
+                    rect.Left = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("y"))
+                    rect.Top = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("width"))
+                    rect.Width = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("height"))
+                    rect.Height = float.Parse(reader.Value, Settings.cultureProvide);
+            }
+
+            spawnPos.X = rect.Left;
+            spawnPos.Y = rect.Top;
         }
 
         private void LoadSpawner(XmlReader reader)

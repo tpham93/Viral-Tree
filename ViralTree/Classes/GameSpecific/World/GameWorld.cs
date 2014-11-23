@@ -25,7 +25,7 @@ namespace ViralTree.World
 
         private UniqueList<Entity> entities;
 
-        public void AddEntity(Entity e)
+        public Entity AddEntity(Entity e)
         {
             Debug.Assert(e.UniqueId == -1);
 
@@ -37,6 +37,8 @@ namespace ViralTree.World
             e.ChunkId = id;
 
             chunks[id.X, id.Y].AddEntity(e);
+
+            return e;
         }
 
         private void RemoveEntity(Entity e)
@@ -106,13 +108,9 @@ namespace ViralTree.World
 
         public Queue<EntityChunkLookup> collidableEntities;
 
-        public void initCam(RenderTarget target)
-        {
-            Cam = new Camera(this, entities[0], target);
-        }
 
 
-        public GameWorld(String levelName)
+        public GameWorld(String levelName, RenderTarget target)
         {
             TiledReader reader = new TiledReader();
             reader.Load("Content/other/level/" + levelName + ".tmx");
@@ -153,9 +151,12 @@ namespace ViralTree.World
             List<uint> connectedGamepads = GInput.getConnectedGamepads();
 
 
-            ACollider tankCollider = PolygonFactory.getRegularPolygon(5, 55);
+            ACollider tankCollider = PolygonFactory.GetEllipse(10, 53, 42);
             ACollider scoutCollider = new CircleCollider(64);
-            AddEntity(EntityFactory.Create(EntityType.Tank, new Vector2f(256, 256), tankCollider, new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
+
+            //Console.WriteLine(reader.spawnPos);
+            Entity scout = AddEntity(EntityFactory.Create(EntityType.Scout, reader.spawnPos, scoutCollider, new Object[] { (connectedGamepads.Count > 0 ? new GInput(connectedGamepads[0]) : null) }));
+            Entity tank = AddEntity(EntityFactory.Create(EntityType.Tank, reader.spawnPos, tankCollider, new Object[] { (connectedGamepads.Count > 1 ? new GInput(connectedGamepads[1]) : null) }));
 
 
             //////________________________________________ADD ENTITIES ____________________________
@@ -183,6 +184,8 @@ namespace ViralTree.World
                 AddSprite(tmp);
             }
 
+
+            Cam = new Camera(this, target, scout, tank);
         }
 
 

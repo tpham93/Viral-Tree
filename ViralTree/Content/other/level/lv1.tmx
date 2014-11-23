@@ -3185,7 +3185,9 @@
    <polygon points="0,0 128,0 128,-128 0,-128"/>
   </object>
  </objectgroup>
- <objectgroup name="Stuff"/>
+ <objectgroup name="Stuff">
+  <object type="PlayerSpawner" x="460.36" y="165.935" width="509.091" height="436.364"/>
+ </objectgroup>
  <objectgroup name="Enteties">
   <object type="Spawner" x="2487" y="1285" width="354" height="310">
    <properties>

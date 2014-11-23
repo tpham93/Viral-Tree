@@ -16,6 +16,7 @@ namespace ViralTree
         public const float PLAYER_SHOOTER_DAMAGE    = 10.0f;    //in use
         public const float PLAYER_SHOOTER_FREQ      = 500.0f;   //in use
         public const float PLAYER_SHOOTER_SPEED     = 2000.0f;  //in use
+
         public const float SCOUT_SPECIAL_FREQ       = 60000.0f; //in use
         public const float SCOUT_SPECIAL_DURATION   = 5000.0f;  //in use
         public const float SCOUT_DECREASED_FREQ     = 100.0f;   //in use
