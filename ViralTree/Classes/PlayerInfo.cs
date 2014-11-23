@@ -50,7 +50,7 @@ namespace ViralTree
             ACollider collider = null;
 
             if(character == EntityType.Tank)
-                collider = PolygonFactory.GetEllipse(10, 53, 42);
+                collider = PolygonFactory.GetHalfElipse(10,40, 80);
 
             else if(character == EntityType.Scout)
                   collider = new CircleCollider(64);

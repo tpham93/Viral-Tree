@@ -24,6 +24,8 @@ namespace ViralTree.World
         Anorism,
         Projectile,
         Melee,
+        Key,
+        Exit,
     }
 
     public static class EntityFactory
