@@ -110,7 +110,7 @@ namespace ViralTree.World
 
 
 
-        public GameWorld(String levelName, Entity _scout, Entity _tank, RenderTarget target)
+        public GameWorld(String levelName, Entity playerOne, Entity playerTwo, RenderTarget target)
         {
             TiledReader reader = new TiledReader();
             reader.Load("Content/other/level/" + levelName + ".tmx");
@@ -173,23 +173,21 @@ namespace ViralTree.World
                 AddSprite(tmp);
             }
 
-            Entity scout = _scout;
-            Entity tank = _tank;
 
             Cam = new Camera(this, target);
 
-            if (scout != null)
+            if (playerOne != null)
             {
-                scout.Collider.Position = reader.spawnPos;
-                Cam.followingEntities.Add(scout);
-                AddEntity(scout);
+                playerOne.Collider.Position = reader.spawnPos;
+                Cam.followingEntities.Add(playerOne);
+                AddEntity(playerOne);
             }
 
-            if (tank != null)
+            if (playerTwo != null)
             {
-                tank.Collider.Position = reader.spawnPos;
-                Cam.followingEntities.Add(tank);
-                AddEntity(tank);
+                playerTwo.Collider.Position = reader.spawnPos;
+                Cam.followingEntities.Add(playerTwo);
+                AddEntity(playerTwo);
             }
 
 

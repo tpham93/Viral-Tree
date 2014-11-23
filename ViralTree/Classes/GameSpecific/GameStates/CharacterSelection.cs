@@ -193,7 +193,7 @@ namespace ViralTree.GameStates
                 {
                     if (pad1 != null && pad1.isClicked(GInput.EButton.A))
                     {
-                        p2Controls = PlayerControls.Gamepad1;
+                        p1Controls = PlayerControls.Gamepad1;
                         playCoop = true;
                     }                 
                 }
@@ -277,7 +277,7 @@ namespace ViralTree.GameStates
                     parent.SetGameState(new LevelSelection(pad1, pad2, p1Character, p2Character, p1Controls, p2Controls));
 
                 else if (pad2 != null && pad2.isClicked(GInput.EButton.Start))
-                    parent.SetGameState(new LevelSelection());
+                    parent.SetGameState(new LevelSelection(pad1, pad2, p1Character, p2Character, p1Controls, p2Controls));
 
             }
             

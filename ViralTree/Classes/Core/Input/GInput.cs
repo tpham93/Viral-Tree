@@ -16,7 +16,7 @@ namespace ViralTree
         private bool[] currentButtons;
         private bool[] prevButtons;
 
-        uint index;
+        public uint index;
         
         public static List<uint> getConnectedGamepads()
         {
@@ -104,6 +104,7 @@ namespace ViralTree
             return -Joystick.GetAxisPosition(index, Joystick.Axis.Z);
         }
 
+        
 
     }
 }

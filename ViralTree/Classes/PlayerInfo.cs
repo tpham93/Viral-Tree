@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SFML.Window;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,18 @@ namespace ViralTree
 {
     public class PlayerInfo
     {
-        PlayerControls control;
         EntityType character;
 
         GInput gInput;
 
         public PlayerInfo(PlayerControls control, PlayerCharacters character, GInput gInput)
         {
-            this.control = control;
+            if (character == PlayerCharacters.Scout)
+            {
+                Console.WriteLine(control);
+                Console.WriteLine(gInput);
+            }
+         
 
             if (character == PlayerCharacters.none)
                 this.character = EntityType.None;
@@ -29,6 +34,9 @@ namespace ViralTree
                 this.character = EntityType.Tank;
 
             this.gInput = gInput;
+
+            if (control == PlayerControls.Keyboard)
+                this.gInput = null;
         }
 
         public Entity GetPlayer()
