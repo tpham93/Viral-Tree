@@ -2874,6 +2874,6 @@
   </object>
  </objectgroup>
  <objectgroup name="Stuff">
-  <object name="PlayerSpawner" x="440" y="264" width="672" height="496"/>
+  <object name="PlayerSpawner" type="PlayerSpawner" x="440" y="264" width="672" height="496"/>
  </objectgroup>
 </map>

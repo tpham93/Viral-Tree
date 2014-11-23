@@ -60,6 +60,10 @@ namespace ViralTree.Tiled
             {
                 result = new EntityAttribs(EntityType.Anorism, PolygonFactory.getRegularStar(4, 54), Vec2f.Zero);
             }
+            else if (type == EntityType.Health)
+            {
+                result = new EntityAttribs(EntityType.Health, PolygonFactory.getRegularPolygon(5, 52), Vec2f.Zero);
+            }
 
             return result;
         }

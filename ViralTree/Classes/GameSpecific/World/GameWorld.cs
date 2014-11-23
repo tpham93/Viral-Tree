@@ -312,7 +312,7 @@ namespace ViralTree.World
                 
             }
 
-            Console.WriteLine((exit.Response as ExitResponse).numKeys);
+            //Console.WriteLine((exit.Response as ExitResponse).numKeys);
 
             while (removeMe.Count > 0)
             {
