@@ -219,7 +219,7 @@ namespace ViralTree.GameStates
 
             if ((p1Controls == PlayerControls.Keyboard && (KInput.IsClicked(Keyboard.Key.D) || KInput.IsClicked(Keyboard.Key.A)))
                 || ((p1Controls == PlayerControls.Gamepad1) && (pad1.isClicked(GInput.EStick.LLeft) || pad1.isClicked(GInput.EStick.LRight)))
-                || ((p1Controls == PlayerControls.Gamepad2) && (pad2.leftPad().X < -99 || pad2.leftPad().X > 99)))
+                || ((p1Controls == PlayerControls.Gamepad2) && (pad2.isClicked(GInput.EStick.LLeft) || pad2.isClicked(GInput.EStick.LRight))))
             {               
                     if (p1Character == PlayerCharacters.Scout)
                     {

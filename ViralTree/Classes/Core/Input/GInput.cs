@@ -72,7 +72,8 @@ namespace ViralTree
 
         public bool isClicked(EStick stick)
         {
-            return ((prevLeftStick == EStick.LLeft && currentLeftStick == EStick.LMiddle) || stick == currentLeftStick);
+
+            return ((prevLeftStick == stick && currentLeftStick == EStick.LMiddle) || (prevRightStick == stick && currentRightStick == EStick.RMiddle));
         }
 
         public bool isPressed(EButton button)
@@ -105,7 +106,7 @@ namespace ViralTree
             return getAxis(Joystick.Axis.X, Joystick.Axis.Y);
         }
 
-        public EStick updateLeftStick()
+        public EStick updateRightStick()
         {
             if (rightPad().X < -90)
             {
@@ -127,9 +128,9 @@ namespace ViralTree
                 return EStick.RMiddle;
         }
 
-        public EStick updateRightStick()
+        public EStick updateLeftStick()
         {
-            if (rightPad().X < -90)
+            if (leftPad().X < -90)
             {
                 return EStick.LLeft;
             }
