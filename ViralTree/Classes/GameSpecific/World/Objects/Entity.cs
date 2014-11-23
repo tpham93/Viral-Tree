@@ -122,9 +122,10 @@ namespace ViralTree.World
 
             this.Collider.Position = position;
 
+            this.MaxLife = life;
+
             this.CurrentLife = life;
 
-            this.MaxLife = life;
 
             this.Fraction = fraction;
 

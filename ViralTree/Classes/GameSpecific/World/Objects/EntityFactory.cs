@@ -27,6 +27,7 @@ namespace ViralTree.World
         Melee,
         Key,
         LeavePoint,
+        Health,
     }
 
     public static class EntityFactory
@@ -87,16 +88,35 @@ namespace ViralTree.World
                     entity = CreateMelee(collider, position, additionalInfos);
                     break;
 
+                case EntityType.Health:
+                    entity = CreateHealth(collider, position, additionalInfos);
+                    break;
+
                 default:
                     break;
             }
              
             return entity;
         }
+        private static Entity CreateHealth(ACollider collider, Vector2f position, object[] additionalInfos)
+        {
+            if (additionalInfos[0] != null)
+            {
+                Entity result = new Entity(collider, position, float.PositiveInfinity, Fraction.CellProjectile, CollidingFractions.VirusProjectile, EmptyThinker.Instance, new CollectibleResponse(EntityType.Health, (float)additionalInfos[0]), EmptyActivatable.Instance, new TextureDrawer("gfx/Collectibles/healthpack.png"));
+                return result;
+            }
+            else
+            {
+                Entity result2 = new Entity(collider, position, float.PositiveInfinity, Fraction.CellProjectile, CollidingFractions.VirusProjectile, EmptyThinker.Instance, new CollectibleResponse(EntityType.Health, 100.0f), EmptyActivatable.Instance, new TextureDrawer("gfx/Collectibles/healthpack.png"));
+                return result2;
+            }
+
+            
+        }
 
         private static Entity CreateExit(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            Entity result = new Entity(collider, position, float.PositiveInfinity, Fraction.Cell, CollidingFractions.VirusProjectile, EmptyThinker.Instance, new ExitResponse((int)additionalInfos[0], null, null), EmptyActivatable.Instance, new TextureDrawer("gfx/exit.png"));
+            Entity result = new Entity(collider, position, float.PositiveInfinity, Fraction.Neutral, CollidingFractions.None, EmptyThinker.Instance, new ExitResponse((int)additionalInfos[0], null, null), EmptyActivatable.Instance, new TextureDrawer("gfx/exit.png"));
             return result;
         }
 

@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\GameSpecific\Components\AWeapon.cs" />
+    <Compile Include="Classes\GameSpecific\Components\CollisionResponses\CollectibleResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ExitResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\KeyResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ProjectileResponse.cs" />
@@ -163,6 +164,7 @@
     </None>
     <None Include="Content\other\level\lv1.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Content\other\level\lv5.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -175,6 +177,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\gfx\Collectibles\healthpack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\gfx\Enemies\anorism.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
