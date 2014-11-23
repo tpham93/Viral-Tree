@@ -3501,8 +3501,8 @@
   </object>
   <object type="Spawner" x="2783" y="5589" width="242" height="206">
    <properties>
-    <property name="cooldown" value="5"/>
-    <property name="entityType" value="anorism"/>
+    <property name="cooldown" value="3"/>
+    <property name="entityType" value="fungus"/>
     <property name="numSpawns" value="1"/>
     <property name="startTime" value="0"/>
    </properties>
@@ -3510,6 +3510,11 @@
   <object type="Health" x="3560" y="987" width="128" height="138">
    <properties>
     <property name="healedHP" value="100"/>
+   </properties>
+  </object>
+  <object type="Health" x="5321.15" y="2219.95" width="76" height="59.5">
+   <properties>
+    <property name="healedHP" value="50"/>
    </properties>
   </object>
  </objectgroup>

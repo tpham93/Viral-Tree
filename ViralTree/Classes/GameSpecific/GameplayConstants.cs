@@ -26,11 +26,11 @@ namespace ViralTree
         public const double TANK_ATTACK_COOLDOWN        = 1.0;
         public const double TANK_ATTACK_DURATION        = 0.5;
         public const double TANK_ATTACK_SERIES_DURATION = 0.15f;
-        public const float  TANK_DAMAGE                 = 0.5f;
+        public const float  TANK_DAMAGE                 = 0.7f;
         public const float  TANK_MAX_RANGE              = 128.0f;
         public const float  TANK_MIN_RANGE              = 64.0f;
         public const int    TANK_NUM_ATTACKS            = 3;
-        public const float  TANK_SPECIAL_FREQ           = 60000.0f; //in use
+        public const float  TANK_SPECIAL_FREQ           = 30000.0f; //in use
         public const float  TANK_SPECIAL_DURATION       = 10000.0f;  //in use
         public const float  TANK_MAX_SPEED              = 600.0f;   //in use
 

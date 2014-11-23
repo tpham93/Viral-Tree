@@ -100,7 +100,7 @@ namespace ViralTree.World
         }
         private static Entity CreateHealth(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            Entity result = new Entity(collider, position, float.PositiveInfinity, Fraction.Cell, CollidingFractions.VirusProjectile,EmptyThinker.Instance, new CollectibleResponse(EntityType.Health , (float)additionalInfos[0]), EmptyActivatable.Instance, new TextureDrawer("gfx/Collectibles/healthpack.png"));
+            Entity result = new Entity(collider, position, float.PositiveInfinity, Fraction.CellProjectile, CollidingFractions.VirusProjectile,EmptyThinker.Instance, new CollectibleResponse(EntityType.Health , (float)additionalInfos[0]), EmptyActivatable.Instance, new TextureDrawer("gfx/Collectibles/healthpack.png"));
             return result;
         }
 
