@@ -38,7 +38,8 @@ namespace ViralTree.Components
             target.Draw(bodySprite);
             target.Draw(hpSprite);
             target.Draw(specialSprite);
-            
+
+            //Owner.Collider.Draw(target);
 
             //Owner.Collider.Draw(target);
         }

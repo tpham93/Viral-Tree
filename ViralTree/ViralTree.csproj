@@ -74,6 +74,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\GameSpecific\Components\AWeapon.cs" />
+    <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ExitResponse.cs" />
+    <Compile Include="Classes\GameSpecific\Components\CollisionResponses\KeyResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ProjectileResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\TouchDamageResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\CloudDrawer.cs" />
@@ -211,6 +213,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\Projectiles\tankAttack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\Projectiles\tankShield.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\settingsscreen.png">

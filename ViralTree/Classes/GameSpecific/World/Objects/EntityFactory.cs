@@ -25,6 +25,8 @@ namespace ViralTree.World
         Projectile,
         Cloud,
         Melee,
+        Key,
+        Exit,
     }
 
     public static class EntityFactory
