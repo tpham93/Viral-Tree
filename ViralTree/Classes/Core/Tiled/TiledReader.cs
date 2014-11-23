@@ -154,12 +154,69 @@ namespace ViralTree.Tiled
 
                     else if (reader.Value.Equals("PlayerSpawner"))
                         LoadPlayerSpawner(reader);
+
+                    else if (reader.Value.Equals("Health"))
+                        LoadHealth(reader);
                 }
 
 
             }
 
            // print("abort");
+        }
+
+        private void LoadHealth(XmlReader reader)
+        {
+            FloatRect rect = new FloatRect();
+            float healthpoints = 0.0f;
+
+            EntityAttribs attribs = new EntityAttribs(EntityType.Health, null, Vec2f.Zero);
+
+            while (reader.MoveToNextAttribute())
+            {
+                if (reader.Name.Equals("x"))
+                    rect.Left = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("y"))
+                    rect.Top = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("width"))
+                    rect.Width = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("height"))
+                    rect.Height = float.Parse(reader.Value, Settings.cultureProvide);
+            }
+
+            attribs.pos = new Vector2f(rect.Left + rect.Width / 2, rect.Top + rect.Height / 2);
+            Vector2f[] vertices = {new Vector2f(rect.Left, rect.Top),
+                                  new Vector2f(rect.Left, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top)};
+
+            attribs.collider = new ConvexCollider(vertices, true);
+            reader.Read();
+            reader.Read();
+            if (reader.Name.Equals("properties"))
+            {
+
+                   printCurrent(reader);
+                   reader.Read();
+                   reader.Read();
+                while (reader.MoveToNextAttribute())
+                {
+                    //printCurrent(reader);
+
+                    if (reader.Value.Equals("healedHP"))
+                    {
+                        reader.MoveToNextAttribute();
+                        healthpoints = float.Parse(reader.Value);
+                    }
+                }
+            }
+
+            attribs.AddAttribute(healthpoints);
+
+            entityAttributs.Add(attribs);
         }
 
         private void LoadPlayerSpawner(XmlReader reader)
