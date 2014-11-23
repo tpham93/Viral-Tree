@@ -10,6 +10,20 @@ using ViralTree.World;
 
 namespace ViralTree.GameStates
 {
+    public enum PlayerControls
+    {
+        Keyboard,
+        Gamepad1,
+        Gamepad2
+    }
+    public enum PlayerCharacters
+    {
+        Scout,
+        Tank,
+        none
+
+    }
+
     public class CharacterSelection : AGameState
     {
         List<SelectButton> buttonList;
@@ -28,8 +42,11 @@ namespace ViralTree.GameStates
         Text player1CharacterText;
         Text player2CharacterText;
 
-        int player1CharacterID = 0;
-        int player2CharacterID = 0;
+        PlayerControls p1Controls;
+        PlayerControls p2Controls;
+
+        PlayerCharacters p1Character = PlayerCharacters.none;
+        PlayerCharacters p2Character = PlayerCharacters.none;
 
         Font font;
 
@@ -44,8 +61,6 @@ namespace ViralTree.GameStates
 
         bool player1LoggedIn = false;
 
-        bool keybordUsed = false;
-
         bool playCoop = false;
 
         const int START_NUM = 0;
@@ -55,8 +70,8 @@ namespace ViralTree.GameStates
         Entity playerScout;
         Entity playerTank;
 
-        private int scoutPlayerId = -1;
-        private int tankPlayerId = -1;
+        private int scoutPlayerId = 0;
+        private int tankPlayerId = 0;
 
         private Text scoutChoosenText;
         private Text tankChoosenText;
@@ -87,14 +102,11 @@ namespace ViralTree.GameStates
 
             checkButton1 = new Sprite(Game.content.Load<Texture>("gfx/GUI/checkButton.png"));
             checkButton1.Position = new Vector2f(Settings.WindowSize.X * 0.25f - checkButton1.Texture.Size.X * 0.5f, Settings.WindowSize.Y * 0.40f);
-            checkButton1.Color = new Color(255, 255, 255, 127);
+            checkButton1.Color = new Color(255, 255, 255, 255);
 
             checkButton2 = new Sprite(Game.content.Load<Texture>("gfx/GUI/checkButton.png"));
-            checkButton2.Position = new Vector2f(Settings.WindowSize.X * 0.75f - checkButton1.Texture.Size.X * 0.5f, Settings.WindowSize.Y * 0.40f);
+            checkButton2.Position = new Vector2f(Settings.WindowSize.X * 0.75f - checkButton2.Texture.Size.X * 0.5f, Settings.WindowSize.Y * 0.40f);
             checkButton2.Color = new Color(255, 255, 255, 127);
-
-            checkMark = new Sprite(Game.content.Load<Texture>("gfx/GUI/checkMark.png"));
-            checkMark.Position = checkButton1.Position;
 
             joinText1 = new Text("Press    or    to join", font);
             joinText1.Position = new Vector2f(checkButton1.Position.X - joinText1.GetLocalBounds().Width * 0.25f, checkButton1.Position.Y + checkButton1.Texture.Size.Y * 1.1f);
@@ -121,20 +133,21 @@ namespace ViralTree.GameStates
             tankChoosenText = new Text("", font);
 
             object[] arr = {null};
-            playerScout = EntityFactory.Create(EntityType.Scout, new Vector2f(Settings.WindowSize.X * 0.50f, Settings.WindowSize.Y * 0.5f), new CircleCollider(64), arr);
-            playerTank  = EntityFactory.Create(EntityType.Scout, new Vector2f(Settings.WindowSize.X * 0.75f, Settings.WindowSize.Y * 0.5f), new CircleCollider(64), arr);
+            playerScout = EntityFactory.Create(EntityType.Scout, new Vector2f(-1000, 0), new CircleCollider(64), arr);
+            playerTank = EntityFactory.Create(EntityType.Tank, new Vector2f(-1000, 0), new CircleCollider(64), arr);
 
             player1CharacterText = new Text("", font);
             player1CharacterText.Position = new Vector2f(checkButton1.Position.X + player1CharacterText.GetLocalBounds().Width * 0.3f, checkButton1.Position.Y - checkButton1.Texture.Size.Y * 0.5f);
 
-            scoutChoosenText.Position = playerScout.Collider.Position;
+            player2CharacterText = new Text("", font);
+            player2CharacterText.Position = new Vector2f(checkButton2.Position.X + player2CharacterText.GetLocalBounds().Width * 0.3f, checkButton2.Position.Y - checkButton2.Texture.Size.Y * 0.5f);
+
+            //scoutChoosenText.Position = playerScout.Collider.Position;
            // tankChoosenText.Position = playerTank.Collider.Position;
 
 
             //tankChoosenText.Position = 
 
-            playerScout.Collider.Position = new Vector2f(-1000, 0);
-            playerScout.Drawer.Initialize();
         }
 
         public override void ShutDown()
@@ -144,89 +157,120 @@ namespace ViralTree.GameStates
 
         public override void Update()
         {
+            
             Joystick.Update();
             if (pad1 != null)
+            {
                 pad1.update();
+
+                if (pad2 != null)
+                    pad2.update();
+            }
 
             if (!player1LoggedIn)
             {
+               
                 if (KInput.IsClicked(Keyboard.Key.W))
                 {
-                    scoutPlayerId = 1;
-                    playerScout.Collider.Position = new Vector2f(Settings.WindowSize.X * 0.25f, Settings.WindowSize.Y * 0.51f);
-                    playerScout.Drawer.Initialize();
-                    player1LoggedIn = true;
-                    keybordUsed = true;
-                    
+                    p1Controls = PlayerControls.Keyboard;
+                    p1Character = PlayerCharacters.Scout;
+                    scoutPlayerId = 1;                 
+                    player1LoggedIn = true;                    
                 }
                 else if (pad1 != null && pad1.isClicked(GInput.EButton.A))
-                {                    
+                {
+                    p1Controls = PlayerControls.Gamepad1;
+                    p1Character = PlayerCharacters.Scout;
                     scoutPlayerId = 1;
                     player1LoggedIn = true;                    
                 }
                 else if (pad2 != null && pad2.isClicked(GInput.EButton.A))
                 {       
+                    p1Controls = PlayerControls.Gamepad2;
+                    p1Character = PlayerCharacters.Scout;
                     scoutPlayerId = 1;
                     player1LoggedIn = true;                  
                 }
-
-            }
-
-            if (scoutPlayerId == 1)
-            {
-                playerScout.Collider.Position = new Vector2f(Settings.WindowSize.X * 0.25f, Settings.WindowSize.Y * 0.51f);
-                playerScout.Drawer.Initialize();
-            }
-            else if (scoutPlayerId == 2 && playCoop)
-            {
-                playerScout.Collider.Position = new Vector2f(Settings.WindowSize.X * 0.75f, Settings.WindowSize.Y * 0.51f);
-                playerScout.Drawer.Initialize();
             }
             else
             {
-                playerScout.Collider.Position = new Vector2f(-1000f, 0f);
+                player1CharacterText.DisplayedString = p1Character.ToString();
+                if (p1Controls == PlayerControls.Keyboard || (pad2 != null && p1Controls == PlayerControls.Gamepad2))
+                {
+                    if (pad1 != null && pad1.isClicked(GInput.EButton.A))
+                    {
+                        p2Controls = PlayerControls.Gamepad1;
+                        playCoop = true;
+                    }                 
+                }
+                else if (p1Controls == PlayerControls.Keyboard || (pad1 != null && p1Controls == PlayerControls.Gamepad1))
+                {
+                    if (pad2 != null && pad2.isClicked(GInput.EButton.A))
+                    {
+                        p2Controls = PlayerControls.Gamepad2;
+                        playCoop = true;
+                    }
+                }
+            }
+            if (playCoop)
+                player2CharacterText.DisplayedString = p2Character.ToString();
+
+            if ((p1Controls == PlayerControls.Keyboard && (KInput.IsClicked(Keyboard.Key.D) || KInput.IsClicked(Keyboard.Key.A)))
+                || (p1Controls == PlayerControls.Gamepad1) && (pad1.leftPad().X < -99 || pad1.leftPad().X > 99)
+                || (p2Controls == PlayerControls.Gamepad2) && (pad2.leftPad().X < -99 || pad2.leftPad().X > 99))
+            {               
+                    if (p1Character == PlayerCharacters.Scout)
+                    {
+                        p1Character = PlayerCharacters.Tank;
+                        if (playCoop)
+                            p2Character = PlayerCharacters.Scout;
+                    }
+                    else if (p1Character == PlayerCharacters.Tank)
+                    {
+                        p1Character = PlayerCharacters.Scout;
+                        if (playCoop)
+                            p2Character = PlayerCharacters.Tank;
+                    }               
+            }
+            
+
+            if (p1Character == PlayerCharacters.Scout)
+            {
+                playerScout.Collider.Position = new Vector2f(Settings.WindowSize.X * 0.25f, Settings.WindowSize.Y * 0.51f);
                 playerScout.Drawer.Initialize();
-            }
 
-            if (KInput.IsClicked(Keyboard.Key.D) || KInput.IsClicked(Keyboard.Key.A))
+                if (playCoop)
+                {
+                    playerTank.Collider.Position = new Vector2f(Settings.WindowSize.X * 0.75f, Settings.WindowSize.Y * 0.51f);
+                    playerTank.Drawer.Initialize();
+                }
+                else
+                {
+                    playerTank.Collider.Position = new Vector2f(-1000f, 0f);
+                    playerTank.Drawer.Initialize();
+                }
+            }
+            if (p1Character == PlayerCharacters.Tank)
             {
-                if (scoutPlayerId == 1)
+                playerTank.Collider.Position = new Vector2f(Settings.WindowSize.X * 0.25f, Settings.WindowSize.Y * 0.51f);
+                playerTank.Drawer.Initialize();
+
+                if (playCoop)
                 {
-                    scoutPlayerId = 0;
+                    playerScout.Collider.Position = new Vector2f(Settings.WindowSize.X * 0.75f, Settings.WindowSize.Y * 0.51f);
+                    playerScout.Drawer.Initialize();
                 }
-                else if (scoutPlayerId == 0)
+                else
                 {
-                    scoutPlayerId = 1;
+                    playerScout.Collider.Position = new Vector2f(-1000f, 0f);
+                    playerScout.Drawer.Initialize();
                 }
             }
-
-            else if (KInput.IsClicked(Keyboard.Key.Right) || KInput.IsClicked(Keyboard.Key.D))
-            {
-                if(tankPlayerId == -1)
-                {
-                    tankPlayerId = 0;;
-                    tankChoosenText.DisplayedString = "1";
-                }
-
-
-            }
-
-            if (curButton < 0)
-                curButton = MAX_BUTTON_NUM - 1;
-
-            else if (curButton >= MAX_BUTTON_NUM)
-                curButton = 0;
-
-
 
             foreach (SelectButton b in buttonList)
             {
                 b.Update(curButton);
             }
-
-            
-
-            ChooseOverCheckButton();
 
             if (player1LoggedIn == true)
             {
@@ -246,6 +290,7 @@ namespace ViralTree.GameStates
                 parent.SetGameState(new MainMenu());
 
             playerScout.Drawer.Update(parent.gameTime, null);
+            playerTank.Drawer.Update(parent.gameTime, null);
         }
 
         public override void Draw()
@@ -258,39 +303,24 @@ namespace ViralTree.GameStates
 
             parent.window.Draw(title);
 
-            parent.window.Draw(checkButton1);
-            parent.window.Draw(checkButton2);
-
-            parent.window.Draw(buttonA1);
-            parent.window.Draw(buttonA2);
-            parent.window.Draw(keyW);
-
-            parent.window.Draw(joinText1);
-            parent.window.Draw(joinText2);
-
+            if (!player1LoggedIn)
+            {
+                parent.window.Draw(checkButton1);
+                parent.window.Draw(joinText1);
+                parent.window.Draw(buttonA1);
+                parent.window.Draw(keyW);
+            }
+            if (!playCoop)
+            {
+                parent.window.Draw(checkButton2);
+                parent.window.Draw(joinText2);
+                parent.window.Draw(buttonA2);
+            }
             parent.window.Draw(player1CharacterText);
-
-            parent.window.Draw(scoutChoosenText);
-
-            parent.window.Draw(tankChoosenText);
-
-            if (playCoop)
-                parent.window.Draw(checkMark);
-
+            parent.window.Draw(player2CharacterText);
 
             playerScout.Draw(parent.gameTime, parent.window);
-        }
-
-        public void ChooseOverCheckButton()
-        {
-            if (curButton == CHECK_BUTTON_NUM)
-            {
-                checkButton1.Color = Color.White;
-            }
-            else
-            {
-                checkButton1.Color = new Color(255, 255, 255, 127);
-            }
+            playerTank.Draw(parent.gameTime, parent.window);
         }
     }
 }
