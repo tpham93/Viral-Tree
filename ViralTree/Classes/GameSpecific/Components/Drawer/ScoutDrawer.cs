@@ -18,6 +18,7 @@ namespace ViralTree.Components
         private float mitochondrionsNum;
 
         private float mitochondrionOffset;
+        private float scale;
 
         public ScoutDrawer()
         {
@@ -49,12 +50,16 @@ namespace ViralTree.Components
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
+
+             scale = (float)Math.Pow(Math.Sin(gameTime.TotalTime.TotalSeconds), 2) * 0.2f + 0.8f;
+          //  Console.WriteLine(this.Owner.Collider.Scale);
+
             playerSprite.Position = Owner.Collider.Position;
             playerSprite.Rotation = Owner.Collider.Rotation;
             nucleusSprite.Position = playerSprite.Position;
             float life = Owner.CurrentLife / Owner.MaxLife;
             healthSprite.Position = playerSprite.Position;
-            healthSprite.Scale = new Vector2f(life, life);
+            healthSprite.Scale = new Vector2f(life * scale, life * scale);
             mitochondrionSprite.Position = playerSprite.Position;
             mitochondrionOffset = (float)gameTime.TotalTime.TotalSeconds * 0.1f * (float)Math.PI;
         }
@@ -62,6 +67,10 @@ namespace ViralTree.Components
         public override void Draw(RenderTarget target)
         {
             float directionAngle =  MathUtil.ToDegree(Vec2f.RotationFrom(Owner.Collider.Direction));
+
+          //  playerSprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
+         //   nucleusSprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
+           // healthSprite.Scale = new Vector2f(scale, scale);
 
             playerSprite.Rotation =  directionAngle;
             nucleusSprite.Rotation = directionAngle;
@@ -75,6 +84,7 @@ namespace ViralTree.Components
             for (int i = 0; i < Math.Ceiling(mitochondrionsNum); ++i)
             {
                 float angle = MathUtil.ToDegree((i / (float)Math.Ceiling(mitochondrionsNum)) * MathUtil.PI * 2.0f + mitochondrionOffset);
+               // mitochondrionSprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
                 mitochondrionSprite.Rotation = angle;
                 target.Draw(mitochondrionSprite);
             }

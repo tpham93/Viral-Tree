@@ -14,6 +14,8 @@ namespace ViralTree.Components
         Sprite hpSprite;
         Sprite specialSprite;
 
+        private float scale;
+
         public TankDrawer()
         {
             bodySprite = new Sprite(Game.content.Load<Texture>("gfx/Player/Tank/tankBody.png"));
@@ -33,7 +35,9 @@ namespace ViralTree.Components
 
         public override void Draw(SFML.Graphics.RenderTarget target)
         {
-            
+
+          
+
             target.Draw(bodySprite);
             target.Draw(hpSprite);
             target.Draw(specialSprite);
@@ -45,15 +49,22 @@ namespace ViralTree.Components
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
+            scale = (float)Math.Pow(Math.Sin(gameTime.TotalTime.TotalSeconds), 2) * 0.2f + 0.8f;
+
             UpdateSprites();
 
             float life = Owner.CurrentLife / Owner.MaxLife;
 
-            hpSprite.Scale = new Vector2f(life, life);
+            hpSprite.Scale = new Vector2f(life * scale, life * scale);
+
+          //  bodySprite.Scale = new Vector2f(0.1f + scale, 0.1f + scale);
         }
 
         private void UpdateSprites()
         {
+           // hpSprite.Scale = new Vector2f(this.Owner.Collider.Scale, this.Owner.Collider.Scale);
+          //  hpSprite.Scale = new Vector2f(scale, scale);
+
             bodySprite.Position = Owner.Collider.Position;
             hpSprite.Position = Owner.Collider.Position;
             specialSprite.Position = Owner.Collider.Position;
