@@ -35,6 +35,13 @@ namespace ViralTree.Components
             {
                 connectedExit.RemoveNumKey(this);
                 Owner.CurrentLife = 0.0f;
+
+
+                if (connectedExit.player1 != null)
+                    connectedExit.player1.CurrentLife += 50.0f;
+
+                if (connectedExit.player2 != null)
+                    connectedExit.player2.CurrentLife += 50.0f;
             }
 
            

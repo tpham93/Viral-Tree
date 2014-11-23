@@ -52,8 +52,16 @@ namespace ViralTree.World
         private float currentLife;
         public float CurrentLife
         {
-            get { return currentLife; }
+            get { return currentLife;  }
             set { currentLife = value; }
+        }
+
+        private void helpFloat(float ding)
+        {
+            if (ding > maxLife)
+                ding = maxLife;
+
+            currentLife = ding;
         }
 
         private float maxLife;
