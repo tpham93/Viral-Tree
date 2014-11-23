@@ -33,7 +33,7 @@ namespace ViralTree.Components
            
             if (startTime <= 0 && connectedExit != null && (collidedEntity == connectedExit.player1 || collidedEntity == connectedExit.player2))
             {
-                connectedExit.numKeys--;
+                connectedExit.RemoveNumKey(this);
                 Owner.CurrentLife = 0.0f;
             }
 

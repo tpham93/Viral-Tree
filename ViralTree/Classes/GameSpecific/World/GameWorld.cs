@@ -311,6 +311,8 @@ namespace ViralTree.World
                 
             }
 
+            Console.WriteLine((exit.Response as ExitResponse).numKeys);
+
             while (removeMe.Count > 0)
             {
                 RemoveEntity(removeMe.Dequeue());
