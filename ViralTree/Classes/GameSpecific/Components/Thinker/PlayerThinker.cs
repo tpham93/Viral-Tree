@@ -57,7 +57,7 @@ namespace ViralTree.Components
                     ++movementVector.X;
 
                 attacking = MInput.LeftPressed();
-                special = MInput.RightClicked();
+                special = MInput.RightPressed();
 
                 Vector2f screenPos = Owner.Collider.Position - world.Cam.Position;
                 screenPos.X *= Settings.WindowSize.X / world.Cam.currentView.Size.X;
