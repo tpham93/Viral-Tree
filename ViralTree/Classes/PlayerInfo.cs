@@ -15,9 +15,11 @@ namespace ViralTree
 
         GInput gInput;
 
+        public List<String> finishedLevels = new List<string>();
+
         public PlayerInfo(PlayerControls control, PlayerCharacters character, GInput gInput)
         {
-           
+           /*
                 Console.WriteLine(character);
                 Console.WriteLine(control);
 
@@ -27,7 +29,7 @@ namespace ViralTree
                     Console.WriteLine("nicht gesetzt");
 
                 Console.WriteLine();
-            
+            */
          
 
             if (character == PlayerCharacters.none)
@@ -50,8 +52,7 @@ namespace ViralTree
             ACollider collider = null;
 
             if(character == EntityType.Tank)
-                collider = PolygonFactory.GetEllipse(10, 53, 42);
-
+                collider = PolygonFactory.GetElipse(10,55, 46);
             else if(character == EntityType.Scout)
                   collider = new CircleCollider(64);
 

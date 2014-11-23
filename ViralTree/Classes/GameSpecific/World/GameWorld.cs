@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ViralTree.Components;
 using ViralTree.Tiled;
 
 namespace ViralTree.World
@@ -108,10 +109,20 @@ namespace ViralTree.World
 
         public Queue<EntityChunkLookup> collidableEntities;
 
+        public bool playerDied      = false;
+        public bool finishedLevel   = false;
+
+
+        private Entity player1;
+        private Entity player2;
+        private Entity exit;
 
 
         public GameWorld(String levelName, Entity playerOne, Entity playerTwo, RenderTarget target)
         {
+            this.player1 = playerOne;
+            this.player2 = playerTwo;
+
             TiledReader reader = new TiledReader();
             reader.Load("Content/other/level/" + levelName + ".tmx");
             Texture tileSetTexture = Game.content.Load<Texture>("other/level/"+reader.tileSetName);
@@ -148,12 +159,7 @@ namespace ViralTree.World
                     chunks[i, j] = new Chunk(i, j, this);
 
 
-            //////________________________________________ADD ENTITIES ____________________________
-            for (int i = 0; i < reader.entityAttributs.Count; i++)
-            {
-                EntityAttribs tmpAttrib = reader.entityAttributs[i];
-                AddEntity(EntityFactory.Create(tmpAttrib.type, tmpAttrib.pos, tmpAttrib.collider, MathUtil.ToArray<object>(tmpAttrib.additionalAttribs)));
-            }
+
       
 
             //////________________________________________ADD SPRITES ____________________________
@@ -191,8 +197,42 @@ namespace ViralTree.World
             }
 
 
-        
+            ExitResponse exitReponse = null;
 
+            List<KeyResponse> keys = new List<KeyResponse>();
+
+            //////________________________________________ADD ENTITIES ____________________________
+            for (int i = 0; i < reader.entityAttributs.Count; i++)
+            {
+                EntityAttribs tmpAttrib = reader.entityAttributs[i];
+
+                Entity entity = EntityFactory.Create(tmpAttrib.type, tmpAttrib.pos, tmpAttrib.collider, MathUtil.ToArray<object>(tmpAttrib.additionalAttribs));
+
+                if (tmpAttrib.type == EntityType.LeavePoint)
+                {
+                    //Console.WriteLine("found exit");
+                    exitReponse = (entity.Response as ExitResponse);
+
+                    if (playerOne != null)
+                        (entity.Response as ExitResponse).player1 = playerOne;
+
+                    if (playerTwo != null)
+                        (entity.Response as ExitResponse).player1 = playerTwo;
+
+                    exit = entity;
+
+                }
+
+                else if (tmpAttrib.type == EntityType.Key)
+                    keys.Add(entity.Response as KeyResponse);
+
+                AddEntity(entity);
+            }
+
+            for (int i = 0; i < keys.Count; i++)
+            {
+                keys[i].connectedExit = exitReponse;
+            }
 
         }
 
@@ -274,6 +314,14 @@ namespace ViralTree.World
             while (removeMe.Count > 0)
             {
                 RemoveEntity(removeMe.Dequeue());
+
+                if ((player1 != null && player1.UniqueId == -1) || (player2 != null && player2.UniqueId == -1))
+                    playerDied = true;
+
+                else if (exit != null && exit.UniqueId == -1)
+                    finishedLevel = true;
+                
+                
             }
             
             Cam.Update(gameTime, target);

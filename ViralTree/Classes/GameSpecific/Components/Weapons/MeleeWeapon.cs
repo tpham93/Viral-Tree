@@ -61,7 +61,7 @@ namespace ViralTree.Weapons
         private void SpawnEntity(GameWorld world)
         {
             object[] additionalInfo = { this.Owner, fraction, colFraction, duration, minRange, maxRange, 1.0f, float.PositiveInfinity };
-            world.AddEntity(EntityFactory.Create(EntityType.Melee, Owner.Collider.Position, PolygonFactory.GetEllipse(4, 64, 32), additionalInfo));
+            world.AddEntity(EntityFactory.Create(EntityType.Melee, Owner.Collider.Position, PolygonFactory.GetElipse(4, 64, 32), additionalInfo));
         }
 
         public override void Update(GameTime gameTime, GameWorld world)

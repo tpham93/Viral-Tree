@@ -75,21 +75,28 @@
   <ItemGroup>
     <Compile Include="Classes\GameSpecific\Components\AWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\CollectibleResponse.cs" />
+    <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ExitResponse.cs" />
+    <Compile Include="Classes\GameSpecific\Components\CollisionResponses\KeyResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\ProjectileResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\TouchDamageResponse.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Drawer\CloudDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\MultiTextureDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\TankDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\AThink.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\CloudThinker.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerSpawner.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\ShieldThinker.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Shooter.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Follower.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PierceThinker.cs" />
-    <Compile Include="Classes\GameSpecific\Components\Weapons\MeeleSpecial.cs" />
-    <Compile Include="Classes\GameSpecific\Components\Weapons\MeeleWeapon.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Weapons\AoeWeapon.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Weapons\MeleeSpecial.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Weapons\MeleeWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Components\Weapons\ScoutSpecial.cs" />
     <Compile Include="Classes\GameSpecific\GameplayConstants.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\CharacterSelection.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\SettingsMenu.cs" />
+    <Compile Include="Classes\GameSpecific\GameStates\WinScreen.cs" />
     <Compile Include="Classes\GameSpecific\World\Objects\EntityAttribs.cs" />
     <Compile Include="Classes\Core\Utilities\Vector3i.cs" />
     <Compile Include="Classes\GameSpecific\Components\AActivatable.cs" />
@@ -179,6 +186,9 @@
     <Content Include="Content\gfx\awesome_tree.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\gfx\exit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\gfx\GUI\AButton.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -189,6 +199,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\GUI\WKey.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\key.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\menuscreen.png">
@@ -209,7 +222,13 @@
     <Content Include="Content\gfx\Projectiles\BasicProjectile.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\gfx\Projectiles\cloud.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\gfx\Projectiles\tankAttack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\Projectiles\tankShield.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\settingsscreen.png">

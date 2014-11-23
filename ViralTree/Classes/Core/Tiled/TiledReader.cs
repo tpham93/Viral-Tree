@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using ViralTree.Components;
 using ViralTree.Utilities;
 using ViralTree.World;
 
@@ -35,6 +36,10 @@ namespace ViralTree.Tiled
 
 
         public Vector2f spawnPos;
+
+        public int numKeys = 0;
+
+        ExitResponse exit;
 
 
         public TiledReader()
@@ -157,12 +162,88 @@ namespace ViralTree.Tiled
 
                     else if (reader.Value.Equals("Health"))
                         LoadHealth(reader);
+
+                    else if (reader.Value.Equals("Key"))
+                        LoadKey(reader);
+
+                    else if (reader.Value.Equals("LeavePoint"))
+                        LoadExit(reader);
                 }
 
 
             }
 
            // print("abort");
+        }
+
+        private void LoadExit(XmlReader reader)
+        {
+            FloatRect rect = new FloatRect();
+
+            while (reader.MoveToNextAttribute())
+            {
+                if (reader.Name.Equals("x"))
+                    rect.Left = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("y"))
+                    rect.Top = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("width"))
+                    rect.Width = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("height"))
+                    rect.Height = float.Parse(reader.Value, Settings.cultureProvide);
+            }
+
+
+            EntityAttribs attribs = new EntityAttribs(EntityType.LeavePoint, null, new Vector2f(rect.Left + rect.Width / 2, rect.Top + rect.Height / 2));
+            Vector2f[] vertices = {new Vector2f(rect.Left, rect.Top),
+                                  new Vector2f(rect.Left, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top)};
+
+            //Console.WriteLine(numKeys);
+            attribs.AddAttribute(numKeys);
+
+            attribs.collider = new ConvexCollider(vertices, true);
+            entityAttributs.Add(attribs);
+        
+        }
+
+        private void LoadKey(XmlReader reader)
+        {
+            numKeys++;
+
+            FloatRect rect = new FloatRect();
+
+            while (reader.MoveToNextAttribute())
+            {
+                if (reader.Name.Equals("x"))
+                    rect.Left = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("y"))
+                    rect.Top = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("width"))
+                    rect.Width = float.Parse(reader.Value, Settings.cultureProvide);
+
+                else if (reader.Name.Equals("height"))
+                    rect.Height = float.Parse(reader.Value, Settings.cultureProvide);
+            }
+
+            EntityAttribs attribs = new EntityAttribs(EntityType.Key, null, Vec2f.Zero);
+
+            attribs.pos = new Vector2f(rect.Left + rect.Width / 2, rect.Top + rect.Height / 2);
+            Vector2f[] vertices = {new Vector2f(rect.Left, rect.Top),
+                                  new Vector2f(rect.Left, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top + rect.Height),
+                                  new Vector2f(rect.Left + rect.Width, rect.Top)};
+
+            attribs.collider = new ConvexCollider(vertices, true);
+            attribs.AddAttribute(exit);
+
+
+            entityAttributs.Add(attribs);
         }
 
         private void LoadHealth(XmlReader reader)

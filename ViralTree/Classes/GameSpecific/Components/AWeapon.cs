@@ -53,7 +53,7 @@ namespace ViralTree.Components
         public AWeapon(TimeSpan coolDown, float ammo)
         {
             this.maxCoolDown = coolDown;
-            this.coolDown = coolDown;
+            this.coolDown = TimeSpan.Zero;
             this.ammo = ammo;
             this.maxAmmo = ammo;
         }

@@ -11,7 +11,8 @@ namespace ViralTree.Components
 {
     public class TextureDrawer : ADrawer
     {
-        Sprite sprite;
+        protected Sprite sprite;
+
         public TextureDrawer(String filePath)
         {
             Texture texture = Game.content.Load<Texture>(filePath);
@@ -31,7 +32,6 @@ namespace ViralTree.Components
             sprite.Rotation = MathUtil.ToDegree(Owner.Collider.Rotation);
 
             byte red = (byte)((Owner.Thinker.nextAttack()) * 255);
-            //Console.WriteLine(red);
 
             sprite.Color = new Color(255, red, red,255);
         }

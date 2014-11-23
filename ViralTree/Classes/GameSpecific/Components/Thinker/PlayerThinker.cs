@@ -14,14 +14,16 @@ namespace ViralTree.Components
         private GInput controller;
         private AWeapon weapon;
         private AWeapon specialWeapon;
+        private float movementSpeed;
 
-        public PlayerThinker(AWeapon weapon, AWeapon specialWeapon, GInput controller = null)
+        public PlayerThinker(AWeapon weapon, AWeapon specialWeapon, float movementSpeed, GInput controller = null)
         {
             this.controller = controller;
 
             this.weapon = weapon;
             this.specialWeapon = specialWeapon;
 
+            this.movementSpeed = movementSpeed;
         //    weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.PLAYER_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.PLAYER_SHOOTER_DAMAGE, GameplayConstants.PLAYER_SHOOTER_SPEED);
          //   specialWeapon = new ScoutSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
         }
@@ -95,13 +97,14 @@ namespace ViralTree.Components
             input.Attacking = attacking;
             input.Direction = direction;
             input.Special = special;
+            Console.WriteLine(Owner.CurrentLife);
 
             return input;
         }
 
         public override void Update(GameTime gameTime, GameWorld world)
         {
-            float speed = GameplayConstants.PLAYER_MAX_SPEED * (float)gameTime.ElapsedTime.TotalSeconds;
+            float speed = movementSpeed * (float)gameTime.ElapsedTime.TotalSeconds;
 
             PlayerInput input = GetInput(world);
             Owner.Collider.Move(speed * input.Movement);
