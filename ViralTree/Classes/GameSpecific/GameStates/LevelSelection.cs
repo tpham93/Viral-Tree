@@ -31,8 +31,8 @@ namespace ViralTree.GameStates
         {
             if (playerTwoType != PlayerCharacters.none)
                 MathUtil.Swap(ref playerOneInput, ref playerTwoInput);
-             
-            
+
+
             info1 = new PlayerInfo(p1Controls, playerOneType, playerOneInput);
             info2 = new PlayerInfo(p2Controls, playerTwoType, playerTwoInput);
         }
@@ -64,20 +64,27 @@ namespace ViralTree.GameStates
 
             if (!info1.finishedLevels.Contains("lv1"))
             {
-                buttonList.Add(new SelectButton(" Testlevel", "lv1", new Vector2f(100, 100), count, ButtonType.Single));
+                buttonList.Add(new SelectButton(" Level 01 ", "lv1", new Vector2f(100, 100), count, ButtonType.Single));
                 count++;
             }
 
 
             if (!info1.finishedLevels.Contains("testLevelAca"))
             {
-                buttonList.Add(new SelectButton("      Aca", "testLevelAca", new Vector2f(300, 500), count, ButtonType.Single));
+                buttonList.Add(new SelectButton("      Aca", "testLevelAca", new Vector2f(450, 500), count, ButtonType.Single));
                 count++;
             }
 
             if (!info1.finishedLevels.Contains("lv2"))
             {
-                buttonList.Add(new SelectButton("      Arena", "lv2", new Vector2f(200, 500), count, ButtonType.Single));
+                buttonList.Add(new SelectButton("      Arena", "lv2", new Vector2f(150, 450), count, ButtonType.Single));
+                count++;
+            }
+
+
+            if (!info1.finishedLevels.Contains("lv5"))
+            {
+                buttonList.Add(new SelectButton("   Level5", "lv5", new Vector2f(500, 150), count, ButtonType.Single));
                 count++;
             }
            
