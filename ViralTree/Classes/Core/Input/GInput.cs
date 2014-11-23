@@ -23,7 +23,7 @@ namespace ViralTree
         public EStick currentRightStick;
         public EStick prevRightStick;
 
-        uint index;
+        
         
         public static List<uint> getConnectedGamepads()
         {
