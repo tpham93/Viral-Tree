@@ -16,6 +16,12 @@ namespace ViralTree
         private bool[] currentButtons;
         private bool[] prevButtons;
 
+        public EStick currentLeftStick;
+        public EStick prevLeftStick;
+
+        public EStick currentRightStick;
+        public EStick prevRightStick;
+
         uint index;
         
         public static List<uint> getConnectedGamepads()
@@ -49,6 +55,13 @@ namespace ViralTree
                 prevButtons[i] = currentButtons[i];
                 currentButtons[i] = Joystick.IsButtonPressed(index, i);
             }
+            prevLeftStick = currentLeftStick;
+            prevRightStick = currentRightStick;
+
+            currentLeftStick = updateLeftStick();
+            currentRightStick = updateRightStick();
+
+            
         }
 
         public bool isClicked(EButton button)
@@ -58,11 +71,7 @@ namespace ViralTree
 
         public bool isClicked(EStick stick)
         {
-
-
-
-            return false;
-            //return currentButtons[(int)button] && !prevButtons[(int)button];
+            return ((prevLeftStick == EStick.LLeft && currentLeftStick == EStick.LMiddle) || stick == currentLeftStick);
         }
 
         public bool isPressed(EButton button)
@@ -93,6 +102,50 @@ namespace ViralTree
         public Vector2f leftPad()
         {
             return getAxis(Joystick.Axis.X, Joystick.Axis.Y);
+        }
+
+        public EStick updateLeftStick()
+        {
+            if (rightPad().X < -90)
+            {
+                return EStick.RLeft;
+            }
+            else if (rightPad().X > 90)
+            {
+                return EStick.RRight;
+            }
+            else if (rightPad().Y > 90)
+            {
+                return EStick.RUp;
+            }
+            else if (rightPad().Y < -90)
+            {
+                return EStick.RDown;
+            }
+            else
+                return EStick.RMiddle;
+        }
+
+        public EStick updateRightStick()
+        {
+            if (rightPad().X < -90)
+            {
+                return EStick.LLeft;
+            }
+            else if (leftPad().X > 90)
+            {
+                return EStick.LRight;
+            }
+            else if (leftPad().Y > 90)
+            {
+                return EStick.LUp;
+            }
+            else if (leftPad().Y < -90)
+            {
+                return EStick.LDown;
+            }
+            else
+                return EStick.LMiddle;
         }
 
         /// <summary>
