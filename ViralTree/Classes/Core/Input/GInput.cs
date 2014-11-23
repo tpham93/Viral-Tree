@@ -46,7 +46,7 @@ namespace ViralTree
             for (uint i = 0; i < currentButtons.Length; i++)
             {
                 prevButtons[i] = currentButtons[i];
-                currentButtons[i] = Joystick.IsButtonPressed(0, i);
+                currentButtons[i] = Joystick.IsButtonPressed(index, i);
             }
         }
 
