@@ -3192,7 +3192,7 @@
   <object type="Spawner" x="2487" y="1285" width="354" height="310">
    <properties>
     <property name="cooldown" value="5"/>
-    <property name="entityType" value="veinball"/>
+    <property name="entityType" value="fungus"/>
     <property name="numSpawns" value="10"/>
     <property name="startTime" value="0"/>
    </properties>

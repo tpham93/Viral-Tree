@@ -23,6 +23,7 @@ namespace ViralTree.World
         Veinball,
         Anorism,
         Projectile,
+        Cloud,
         Melee,
     }
 
@@ -68,6 +69,10 @@ namespace ViralTree.World
                     entity = CreateProjectile(collider, position, additionalInfos);
                     break;
 
+                case EntityType.Cloud:
+                    entity = CreateCloud(collider, position, additionalInfos);
+                    break;
+
                 case EntityType.Melee:
                     entity = CreateMelee(collider, position, additionalInfos);
                     break;
@@ -94,7 +99,11 @@ namespace ViralTree.World
         private static Entity CreateFungus(ACollider collider, Vector2f position, object[] additionalInfos)
         {
             collider.Scale = GameplayConstants.FUNGUS_SCALE;
-            return new Entity(collider, position, GameplayConstants.FUNGUS_LIFE, Fraction.Virus, CollidingFractions.Cell, EmptyThinker.Instance, new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/Enemies/fungus.png"));
+
+            AWeapon weapon = new AoeWeapon(TimeSpan.FromMilliseconds(GameplayConstants.FUNGUS_AOE_FREQ), collider, float.PositiveInfinity, GameplayConstants.FUNGUS_AOE_DAMAGE, TimeSpan.FromMilliseconds(GameplayConstants.FUNGUS_AOE_DURATION), GameplayConstants.FUNGUS_AOE_MIN, GameplayConstants.FUNGUS_AOE_MAX);
+            AThinker thinker = new Follower(GameplayConstants.FUNGUS_CHASE_RADIUS, GameplayConstants.FUNGUS_SPEED, weapon, GameplayConstants.FUNGUS_AOE_ATTACK_RADIUS);
+
+            return new Entity(collider, position, GameplayConstants.FUNGUS_LIFE, Fraction.Virus, CollidingFractions.Cell, thinker, new BasicPushResponse(true), EmptyActivatable.Instance, new TextureDrawer("gfx/Enemies/fungus.png"));
         }
 
         private static Entity CreateVeinball(ACollider collider, Vector2f position, object[] additionalInfos)
@@ -121,6 +130,14 @@ namespace ViralTree.World
         {
             Entity e = new Entity(collider, pos, float.PositiveInfinity, Fraction.Neutral, CollidingFractions.None, new SpawnerThinker((FloatRect)additionalInfos[0], (int)additionalInfos[3], (double)additionalInfos[1], (double)additionalInfos[4], (EntityAttribs)additionalInfos[5]), EmptyResponse.Instance, EmptyActivatable.Instance, null);
             e.Drawable = false;
+            return e;
+        }
+
+        private static Entity CreateCloud(ACollider collider, Vector2f position, object[] additionalInfos)
+        {
+            AThinker cloudThinker = new CloudThinker((TimeSpan)additionalInfos[2], (float)additionalInfos[3], (float)additionalInfos[4]);
+            ACollisionResponse response = new TouchDamageResponse((Fraction)additionalInfos[0], (float)additionalInfos[5],false, false);
+            Entity e = new Entity(collider, position, 1.0f, (Fraction)additionalInfos[0], (CollidingFractions)additionalInfos[1], cloudThinker, response, EmptyActivatable.Instance, null);
             return e;
         }
 

@@ -14,21 +14,31 @@ namespace ViralTree.Components
         Fraction enemyFraction;
         float followRadius;
         float speed;
+        AWeapon weapon;
+        float attackRadius;
 
-        public Follower(float followRadius, float speed)
+        public Follower(float followRadius, float speed, AWeapon weapon = null, float attackRadius = 0.0f)
         {
             this.followRadius = followRadius;
             this.speed = speed;
+            this.weapon = weapon;
+            this.attackRadius = attackRadius;
         }
 
         public override void Initialize()
         {
             enemyFraction = this.Owner.Fraction == Fraction.Virus ? Fraction.Cell : Fraction.Virus;
+            if(weapon != null)
+            {
+                weapon.Owner = Owner;
+            }
         }
 
         public override void Update(GameTime gameTime, GameWorld world)
         {
-          
+
+            if (weapon != null && MathUtil.Rand.NextDouble() < 0.5)
+                weapon.Update(gameTime, world);
 
             if(follower == null)
                 follower = world.GetClosestEntityInRadius(this.Owner, enemyFraction, followRadius);
@@ -47,6 +57,10 @@ namespace ViralTree.Components
                 {
                     dir = Vec2f.Normalized(dir, len) * speed * (float)gameTime.ElapsedTime.TotalSeconds;
                     this.Owner.Collider.Move(dir);
+                    if (weapon != null && attackRadius > len)
+                    {
+                        weapon.Attack(world, gameTime);
+                    }
                 }
 
            

@@ -11,18 +11,17 @@ namespace ViralTree.Components
 {
     class AoeWeapon : AWeapon
     {
-        private float spawnOffsetDistance;
         private ACollider colliderPrototype;
         private float damage;
-        private float speed;
+        private TimeSpan duration;
         private float minRadius;
         private float maxRadius;
-        public AoeWeapon(TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage, float speed, float maxRadius, float minRadius)
+        public AoeWeapon(TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage, TimeSpan duration, float maxRadius, float minRadius)
             : base(coolDown, ammo)
         {
             this.colliderPrototype = colliderPrototype;
             this.damage = damage;
-            this.speed = speed;
+            this.duration = duration;
             this.minRadius = minRadius;
             this.maxRadius = maxRadius;
         }
@@ -30,16 +29,14 @@ namespace ViralTree.Components
         public override float nextAttack()
         {
             return (float)(CoolDown.TotalSeconds / MaxCoolDown.TotalSeconds);
-
         }
 
         private void SpawnCloud(GameWorld world)
         {
-            Vector2f position = Owner.Collider.Position + spawnOffsetDistance * Owner.Collider.Direction;
             Fraction projectileFraction = Owner.Fraction == Fraction.Cell ? Fraction.CellProjectile : Fraction.VirusProjectile;
             CollidingFractions projectileCollidingFraction = Owner.Fraction == Fraction.Cell ? CollidingFractions.VirusProjectile : CollidingFractions.CellProjectile;
 
-            world.AddEntity(World.EntityFactory.Create(EntityType.Projectile, position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, Owner.Collider.Direction, speed, damage, "gfx/Projectiles/BasicProjectile.png" }));
+            world.AddEntity(World.EntityFactory.Create(EntityType.Cloud, Owner.Collider.Position, colliderPrototype.Copy(), new object[] { projectileFraction, projectileCollidingFraction, duration, minRadius, maxRadius, damage, "gfx/Projectiles/BasicProjectile.png" }));
         }
 
         public override void Update(GameTime gameTime, GameWorld world)
