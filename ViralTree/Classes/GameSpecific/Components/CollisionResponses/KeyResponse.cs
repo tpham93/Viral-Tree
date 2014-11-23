@@ -37,11 +37,29 @@ namespace ViralTree.Components
                 Owner.CurrentLife = 0.0f;
 
 
+
+
                 if (connectedExit.player1 != null)
-                    connectedExit.player1.CurrentLife += 50.0f;
+                {
+                    float tmp = connectedExit.player1.CurrentLife + 50.0f;
+
+                    if (tmp >= connectedExit.player1.MaxLife)
+                        tmp = connectedExit.player1.MaxLife;
+
+                    connectedExit.player1.CurrentLife = tmp;
+                }
+
 
                 if (connectedExit.player2 != null)
-                    connectedExit.player2.CurrentLife += 50.0f;
+                {
+                    float tmp = connectedExit.player2.CurrentLife + 50.0f;
+
+                    if (tmp >= connectedExit.player2.MaxLife)
+                        tmp = connectedExit.player2.MaxLife;
+
+                    connectedExit.player2.CurrentLife = tmp;
+                }
+                  
             }
 
            

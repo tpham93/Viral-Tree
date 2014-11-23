@@ -60,7 +60,7 @@ namespace ViralTree.Weapons
 
         private void SpawnEntity(GameWorld world)
         {
-            object[] additionalInfo = { this.Owner, fraction, colFraction, duration, minRange, maxRange, 1.0f, float.PositiveInfinity };
+            object[] additionalInfo = { this.Owner, fraction, colFraction, duration, minRange, maxRange, GameplayConstants.TANK_DAMAGE, float.PositiveInfinity };
             world.AddEntity(EntityFactory.Create(EntityType.Melee, Owner.Collider.Position, PolygonFactory.GetElipse(4, 64, 32), additionalInfo));
         }
 
