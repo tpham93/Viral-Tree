@@ -29,6 +29,8 @@ namespace ViralTree
         public const float  TANK_MAX_RANGE              = 128.0f;
         public const float  TANK_MIN_RANGE              = 64.0f;
         public const int    TANK_NUM_ATTACKS            = 3;
+        public const float  TANK_SPECIAL_FREQ           = 60000.0f; //in use
+        public const float  TANK_SPECIAL_DURATION       = 5000.0f;  //in use
 
 
         //____________________________ANORISM__________________________
@@ -64,7 +66,7 @@ namespace ViralTree
         public const float FUNGUS_AOE_DURATION      = 1000.0f;  //in use
         public const float FUNGUS_AOE_MIN           = 64.0f;   //in use
         public const float FUNGUS_AOE_MAX           = 256.0f;   //in use
-        public const float FUNGUS_AOE_ATTACK_RADIUS = 512.0f;   //in use
+        public const float FUNGUS_AOE_ATTACK_RADIUS = 256.0f;   //in use
         public const float FUNGUS_CHASE_RADIUS      = 512.0f;   //in use
 
 

@@ -84,12 +84,13 @@
     <Compile Include="Classes\GameSpecific\Components\Thinker\AThink.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\CloudThinker.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerSpawner.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\ShieldThinker.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Shooter.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Follower.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PierceThinker.cs" />
     <Compile Include="Classes\GameSpecific\Components\Weapons\AoeWeapon.cs" />
-    <Compile Include="Classes\GameSpecific\Components\Weapons\MeeleSpecial.cs" />
-    <Compile Include="Classes\GameSpecific\Components\Weapons\MeeleWeapon.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Weapons\MeleeSpecial.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Weapons\MeleeWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Components\Weapons\ScoutSpecial.cs" />
     <Compile Include="Classes\GameSpecific\GameplayConstants.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\CharacterSelection.cs" />
