@@ -106,7 +106,7 @@ namespace ViralTree.World
 
         private static Entity CreateExit(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            Entity result = new Entity(collider, position, float.PositiveInfinity, Fraction.Neutral, CollidingFractions.VirusProjectile, EmptyThinker.Instance, new ExitResponse((int)additionalInfos[0], null, null), EmptyActivatable.Instance, new TextureDrawer("gfx/exit.png"));
+            Entity result = new Entity(collider, position, float.PositiveInfinity, Fraction.Neutral, CollidingFractions.None, EmptyThinker.Instance, new ExitResponse((int)additionalInfos[0], null, null), EmptyActivatable.Instance, new TextureDrawer("gfx/exit.png"));
             return result;
         }
 

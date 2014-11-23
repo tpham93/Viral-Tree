@@ -41,7 +41,7 @@ namespace ViralTree
         public const float ANORISM_SPEED            = 300.0f;    //inuse
         public const float ANORISM_SCALE            = 1.0f;     //not in use
         public const float ANORISM_TOUCH_DAMAGE     = 30.0f;   //in use
-        public const float ANORISM_FOLLOW_RADIUS    = 400.0f;   //in use
+        public const float ANORISM_FOLLOW_RADIUS    = 512.0f;   //in use
 
 
         //____________________________VEINBALL__________________________
@@ -60,8 +60,8 @@ namespace ViralTree
 
         //____________________________FUNGUS__________________________
 
-        public const float FUNGUS_LIFE              = 100.0f;   //in use
-        public const float FUNGUS_SPEED             = 55.0f;    //not in use
+        public const float FUNGUS_LIFE              = 500.0f;   //in use
+        public const float FUNGUS_SPEED             = 100.0f;    //not in use
         public const float FUNGUS_SCALE             = 1.0f;     //in use
         public const float FUNGUS_AOE_FREQ          = 3000.0f;  //in use
         public const float FUNGUS_AOE_DAMAGE        = 10.0f;     //in use
