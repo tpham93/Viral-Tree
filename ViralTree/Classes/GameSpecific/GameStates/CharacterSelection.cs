@@ -156,11 +156,7 @@ namespace ViralTree.GameStates
 
         public override void Update()
         {
-            if (pad1.isClicked(GInput.EButton.A))
-                Console.WriteLine("P1");
-
-            if (pad2.isClicked(GInput.EButton.A))
-                Console.WriteLine("P2");
+           
             
             Joystick.Update();
             if (pad1 != null)
@@ -187,7 +183,6 @@ namespace ViralTree.GameStates
                 }
                 else if (pad2 != null && pad2.isClicked(GInput.EButton.A))
                 {
-                    Console.WriteLine("Hossa");
                     p1Controls  = PlayerControls.Gamepad2;
                     p1Character = PlayerCharacters.Scout;
                     player1LoggedIn = true;                  
@@ -212,13 +207,13 @@ namespace ViralTree.GameStates
                         playCoop = true;
                     }
                 }
+               
             }
-            if (playCoop)
-                player2CharacterText.DisplayedString = p2Character.ToString();
+            
 
             if ((p1Controls == PlayerControls.Keyboard && (KInput.IsClicked(Keyboard.Key.D) || KInput.IsClicked(Keyboard.Key.A)))
-                || (p1Controls == PlayerControls.Gamepad1) && (pad1.leftPad().X < -99 || pad1.leftPad().X > 99)
-                || (p2Controls == PlayerControls.Gamepad2) && (pad2.leftPad().X < -99 || pad2.leftPad().X > 99))
+                || ((p1Controls == PlayerControls.Gamepad1) && (pad1.leftPad().X < -99 || pad1.leftPad().X > 99))
+                || ((p1Controls == PlayerControls.Gamepad2) && (pad2.leftPad().X < -99 || pad2.leftPad().X > 99)))
             {               
                     if (p1Character == PlayerCharacters.Scout)
                     {
@@ -268,6 +263,8 @@ namespace ViralTree.GameStates
                 }
             }
 
+            
+
             foreach (SelectButton b in buttonList)
             {
                 b.Update(curButton);
@@ -298,6 +295,9 @@ namespace ViralTree.GameStates
 
             playerScout.Drawer.Update(parent.gameTime, null);
             playerTank.Drawer.Update(parent.gameTime, null);
+
+            if (playCoop)
+                player2CharacterText.DisplayedString = p2Character.ToString();
         }
 
         public override void Draw()
