@@ -31,17 +31,17 @@ namespace ViralTree
         public const float  TANK_MIN_RANGE              = 64.0f;
         public const int    TANK_NUM_ATTACKS            = 3;
         public const float  TANK_SPECIAL_FREQ           = 60000.0f; //in use
-        public const float  TANK_SPECIAL_DURATION       = 5000.0f;  //in use
+        public const float  TANK_SPECIAL_DURATION       = 10000.0f;  //in use
         public const float  TANK_MAX_SPEED              = 600.0f;   //in use
 
 
         //____________________________ANORISM__________________________
          
         public const float ANORISM_LIFE             = 100.0f;   //inuse
-        public const float ANORISM_SPEED            = 55.0f;    //inuse
+        public const float ANORISM_SPEED            = 300.0f;    //inuse
         public const float ANORISM_SCALE            = 1.0f;     //not in use
         public const float ANORISM_TOUCH_DAMAGE     = 30.0f;   //in use
-        public const float ANORISM_FOLLOW_RADIUS    = 256.0f;   //in use
+        public const float ANORISM_FOLLOW_RADIUS    = 400.0f;   //in use
 
 
         //____________________________VEINBALL__________________________

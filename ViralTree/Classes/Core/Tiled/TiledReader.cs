@@ -39,7 +39,7 @@ namespace ViralTree.Tiled
 
         public int numKeys = 0;
 
-        ExitResponse exit;
+        public ExitResponse exit;
 
 
         public TiledReader()

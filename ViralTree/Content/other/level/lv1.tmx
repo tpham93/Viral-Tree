@@ -3185,9 +3185,11 @@
    <polygon points="0,0 128,0 128,-128 0,-128"/>
   </object>
  </objectgroup>
+ <objectgroup name="Collectibles">
+  <object type="Key" x="3046.97" y="372.727" width="172.727" height="163.636"/>
+ </objectgroup>
  <objectgroup name="Stuff">
   <object type="PlayerSpawner" x="460.36" y="165.935" width="509.091" height="436.364"/>
-  <object type="Key" x="1161.64" y="178.182" width="172.727" height="163.636"/>
   <object type="LeavePoint" x="1482.73" y="169.333" width="342.424" height="327.273"/>
  </objectgroup>
  <objectgroup name="Enteties">
@@ -3203,7 +3205,7 @@
    <properties>
     <property name="cooldown" value="0"/>
     <property name="entityType" value="anorism"/>
-    <property name="numSpawns" value="1"/>
+    <property name="numSpawns" value="10"/>
     <property name="startTime" value="0"/>
    </properties>
   </object>
