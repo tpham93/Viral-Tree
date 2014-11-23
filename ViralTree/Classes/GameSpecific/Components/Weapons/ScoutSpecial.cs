@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ViralTree.Components;
 
-namespace ViralTree.Components
+namespace ViralTree.Weapons
 {
     class ScoutSpecial : AWeapon
     {
@@ -42,7 +43,7 @@ namespace ViralTree.Components
             }
         }
 
-        public override void Attack(World.GameWorld world)
+        public override void Attack(World.GameWorld world, GameTime gameTime)
         {
             if (CoolDown <= TimeSpan.Zero)
             {
@@ -53,5 +54,7 @@ namespace ViralTree.Components
                 duration = maxDuration;
             }
         }
+
+
     }
 }

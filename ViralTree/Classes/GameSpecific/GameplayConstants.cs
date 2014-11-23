@@ -14,12 +14,23 @@ namespace ViralTree
         public const float PLAYER_MAX_SPEED         = 400.0f;   //in use
         public const float PLAYER_SCALE             = 1.0f;     //in use
         public const float PLAYER_SHOOTER_DAMAGE    = 10.0f;    //in use
-        public const float PLAYER_SHOOTER_FREQ      = 500.0f;   //in use
+        public const float PLAYER_SHOOTER_FREQ      = 250.0f;   //in use
         public const float PLAYER_SHOOTER_SPEED     = 2000.0f;  //in use
 
         public const float SCOUT_SPECIAL_FREQ       = 60000.0f; //in use
         public const float SCOUT_SPECIAL_DURATION   = 5000.0f;  //in use
         public const float SCOUT_DECREASED_FREQ     = 100.0f;   //in use
+
+
+        public const double TANK_ATTACK_COOLDOWN    = 1.0;
+        public const double TANK_ATTACK_DURATION    = 0.5;
+        public const double TANK_ATTACK_SERIES_DURATION = 0.15f;
+        public const float  TANK_DAMAGE             = 0.5f;
+        public const float  TANK_MAX_RANGE              = 128.0f;
+        public const float  TANK_MIN_RANGE              = 64.0f;
+        public const int    TANK_NUM_ATTACKS        = 3;
+
+
         //____________________________ANORISM__________________________
          
         public const float ANORISM_LIFE             = 100.0f;   //inuse
@@ -48,6 +59,16 @@ namespace ViralTree
         public const float FUNGUS_LIFE              = 100.0f;   //in use
         public const float FUNGUS_SPEED             = 55.0f;    //not in use
         public const float FUNGUS_SCALE             = 1.0f;     //in use
+
+
+
+
+
+
+
+
+
+
 
 
 

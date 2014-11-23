@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ViralTree.Components;
 using ViralTree.World;
 
-namespace ViralTree.Components
+namespace ViralTree.Weapons
 {
     class ShooterWeapon : AWeapon
     {
@@ -46,7 +46,7 @@ namespace ViralTree.Components
            // Console.WriteLine(MaxCoolDown);
         }
 
-        public override void Attack(World.GameWorld world)
+        public override void Attack(World.GameWorld world, GameTime gameTime)
         {
             if (CoolDown <= TimeSpan.Zero && Ammo > 0)
             {
@@ -55,5 +55,7 @@ namespace ViralTree.Components
                 CoolDown = MaxCoolDown;
             }
         }
+
+
     }
 }

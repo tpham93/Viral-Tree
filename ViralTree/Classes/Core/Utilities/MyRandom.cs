@@ -51,17 +51,13 @@ namespace ViralTree
             return new Vector2f((float)Math.Cos(val), (float)Math.Sin(val));
         }
 
-        public Vector2f NextVec2fDir(float length)
+        public Vector2f NextVec2fDir(double radianAngle)
         {
-            double val = Math.PI * 2.0 * NextDouble();
-            return new Vector2f((float)Math.Cos(val) * length, (float)Math.Sin(val) * length);
+            double val = radianAngle * NextDouble() - radianAngle * 0.5f;
+            return Vec2f.DirectionFrom((float)val);
         }
 
-        public Vector2f NextVec2fDir(float minLength, float maxLength)
-        {
-            double val = Math.PI * 2.0 * NextDouble();
-            return new Vector2f((float)Math.Cos(val), (float)Math.Sin(val)) * NextFloat(minLength, maxLength);
-        }
+
 
         /// <summary>
         /// 

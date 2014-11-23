@@ -28,6 +28,7 @@ namespace ViralTree.Components
         {
             this.sprite.Scale = new Vector2f(Owner.Collider.Scale, Owner.Collider.Scale);
             sprite.Position = Owner.Collider.Position;
+            sprite.Rotation = MathUtil.ToDegree(Owner.Collider.Rotation);
 
             byte red = (byte)((Owner.Thinker.nextAttack()) * 255);
             //Console.WriteLine(red);

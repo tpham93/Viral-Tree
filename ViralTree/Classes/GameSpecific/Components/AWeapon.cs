@@ -65,6 +65,7 @@ namespace ViralTree.Components
             }
         }
 
-        public abstract void Attack(World.GameWorld world);
+
+        public abstract void Attack(World.GameWorld world, GameTime gameTime);
     }
 }

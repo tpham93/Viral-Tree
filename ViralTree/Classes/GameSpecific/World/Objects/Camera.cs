@@ -13,10 +13,14 @@ namespace ViralTree.World
     //TODO: add possibility to follow an Entity OR follow a camera path or the like
     public class Camera
     {
-        const float MAX_RADIUS = 1000.0f;
-        const float MIN_RADIUS = 500.0f;
+        const float MIN_RADIUS = 100.0f;
+        const float MAX_RADIUS = 500.0f;
 
-        float currendRadius = 0.0f;
+        const float MIN_SCALE = 2.5f;
+        const float MAX_SCALE = 3.0f;
+
+        float currentRadius = 0.0f;
+        float scale = 1.0f;
 
         private GameWorld world;
 
@@ -97,15 +101,37 @@ namespace ViralTree.World
                 changed = FollowEntity(gameTime);
 
 
-            //TODO: remove, only for debug purpose:
-            if (MInput.MouseWheelUp())
+
+            float percent = currentRadius / MAX_RADIUS;
+            percent = MathUtil.Smoothstep(MathUtil.Clamp(percent, 0.0f, 1.0f));
+
+            float desiredZoom = (1.0f - percent) * MIN_SCALE + percent * MAX_SCALE;
+
+
+            float zoomFactor = desiredZoom - scale;
+
+            if (desiredZoom < MAX_SCALE && desiredZoom > MIN_SCALE && !MathUtil.NearEqual(zoomFactor, 1.0f))
             {
+
+                currentView.Zoom(zoomFactor);
+                scale *= zoomFactor;
+                
+                changed = true;
+            }
+
+            //TODO: remove, only for debug purpose:
+            else if (MInput.MouseWheelUp())
+            {
+                scale *= 1.075f;
                 currentView.Zoom(1.075f);
                 changed = true;
             }
 
             else if (MInput.MouseWheelDown())
             {
+
+
+                scale *= 0.925f;
                 currentView.Zoom(0.925f);
                 changed = true;
             }
@@ -124,8 +150,6 @@ namespace ViralTree.World
 
             Vector2f direction = targetPos - currentView.Center;
 
-
-
             if (Vec2f.Length(direction) > allowedDist)
             {
                 currentView.Move((direction * 2.5f) * (float)gameTime.ElapsedTime.TotalSeconds);
@@ -141,7 +165,7 @@ namespace ViralTree.World
         {
             Vector2f center = Vec2f.Zero;
 
-            currendRadius = float.NegativeInfinity;
+            currentRadius = float.NegativeInfinity;
 
             for (int i = followingEntities.Count - 1; i >= 0 ; i--)
             {
@@ -160,14 +184,9 @@ namespace ViralTree.World
             {
                 float tmpDist = Vec2f.EuclidianDistance(center, followingEntities[i].Collider.Position);
 
-                if (tmpDist > currendRadius)
-                    currendRadius = tmpDist;
+                if (tmpDist > currentRadius)
+                    currentRadius = tmpDist;
             }
-
-            
-
-
-
 
             return center;
         }

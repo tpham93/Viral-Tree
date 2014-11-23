@@ -78,9 +78,12 @@
     <Compile Include="Classes\GameSpecific\Components\CollisionResponses\TouchDamageResponse.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\MultiTextureDrawer.cs" />
     <Compile Include="Classes\GameSpecific\Components\Drawer\TankDrawer.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\AThink.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\PlayerSpawner.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Shooter.cs" />
     <Compile Include="Classes\GameSpecific\Components\Thinker\Follower.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Thinker\PierceThinker.cs" />
+    <Compile Include="Classes\GameSpecific\Components\Weapons\MeeleWeapon.cs" />
     <Compile Include="Classes\GameSpecific\Components\Weapons\ScoutSpecial.cs" />
     <Compile Include="Classes\GameSpecific\GameplayConstants.cs" />
     <Compile Include="Classes\GameSpecific\GameStates\CharacterSelection.cs" />
@@ -197,6 +200,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\Projectiles\BasicProjectile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gfx\Projectiles\tankAttack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\gfx\settingsscreen.png">

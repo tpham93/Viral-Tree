@@ -10,7 +10,7 @@ namespace ViralTree.Components
     class ProjectileResponse : ACollisionResponse
     {
         float damage;
-        public ProjectileResponse(float damage)
+        public ProjectileResponse(float damage, float life)
         {
             this.damage = damage;
         }
@@ -20,7 +20,7 @@ namespace ViralTree.Components
             if (Entity.CanCollide(Owner.Fraction, collidedEntity.Fraction, Owner.CollidingFraction, collidedEntity.CollidingFraction))
             {
                 collidedEntity.CurrentLife -= this.damage;
-                this.Owner.CurrentLife = 0;
+                this.Owner.CurrentLife--;
             }
         }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ViralTree.Weapons;
 using ViralTree.World;
 
 namespace ViralTree.Components
@@ -102,7 +103,7 @@ namespace ViralTree.Components
                     Owner.Collider.Direction = shootDir;
                     
                    // if (MathUtil.Rand.NextDouble() < 0.001)
-                        weapon.Attack(world);
+                        weapon.Attack(world, gameTime);
                 }
                 
 

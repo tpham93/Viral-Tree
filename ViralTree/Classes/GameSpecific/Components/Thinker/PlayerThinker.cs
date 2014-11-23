@@ -117,10 +117,14 @@ namespace ViralTree.Components
             weapon.Update(gameTime, world);
             specialWeapon.Update(gameTime, world);
 
+
+
+
             if (input.Attacking)
-                weapon.Attack(world);
+                weapon.Attack(world, gameTime);
+
             if (input.Special)
-                specialWeapon.Attack(world);
+                specialWeapon.Attack(world, gameTime);
 
             /*
             Vector2f mousePos = MInput.GetMousePos(new Vector2f(world.Cam.Position.X - Settings.WindowSize.X * 0.5f, world.Cam.Position.Y - Settings.WindowSize.Y * 0.5f));
