@@ -1,37 +1,39 @@
-﻿using SFML.Graphics;
-using SFML.Window;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ViralTree.Components;
+
+using SFML.Window;
 using ViralTree.World;
 
-namespace ViralTree.Weapons
+namespace ViralTree.Components
 {
-    class ShooterWeapon : AWeapon
+    class AoeWeapon : AWeapon
     {
         private float spawnOffsetDistance;
         private ACollider colliderPrototype;
         private float damage;
         private float speed;
-        public ShooterWeapon(float spawnOffsetDistance, TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage, float speed)
-            :base(coolDown, ammo)
+        private float minRadius;
+        private float maxRadius;
+        public AoeWeapon(TimeSpan coolDown, ACollider colliderPrototype, float ammo, float damage, float speed, float maxRadius, float minRadius)
+            : base(coolDown, ammo)
         {
-            this.spawnOffsetDistance = spawnOffsetDistance;
             this.colliderPrototype = colliderPrototype;
             this.damage = damage;
             this.speed = speed;
+            this.minRadius = minRadius;
+            this.maxRadius = maxRadius;
         }
 
         public override float nextAttack()
         {
-             return (float)(CoolDown.TotalSeconds/MaxCoolDown.TotalSeconds); 
+            return (float)(CoolDown.TotalSeconds / MaxCoolDown.TotalSeconds);
 
         }
 
-        private void SpawnProjectile(World.GameWorld world)
+        private void SpawnCloud(GameWorld world)
         {
             Vector2f position = Owner.Collider.Position + spawnOffsetDistance * Owner.Collider.Direction;
             Fraction projectileFraction = Owner.Fraction == Fraction.Cell ? Fraction.CellProjectile : Fraction.VirusProjectile;
@@ -43,7 +45,6 @@ namespace ViralTree.Weapons
         public override void Update(GameTime gameTime, GameWorld world)
         {
             base.Update(gameTime, world);
-           // Console.WriteLine(MaxCoolDown);
         }
 
         public override void Attack(World.GameWorld world, GameTime gameTime)
@@ -51,7 +52,7 @@ namespace ViralTree.Weapons
             if (CoolDown <= TimeSpan.Zero && Ammo > 0)
             {
                 --Ammo;
-                SpawnProjectile(world);
+                SpawnCloud(world);
                 CoolDown = MaxCoolDown;
             }
         }
