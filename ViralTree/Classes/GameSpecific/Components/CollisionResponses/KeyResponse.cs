@@ -37,8 +37,6 @@ namespace ViralTree.Components
                 Owner.CurrentLife = 0.0f;
 
 
-
-
                 if (connectedExit.player1 != null)
                 {
                     float tmp = connectedExit.player1.CurrentLife + 50.0f;
