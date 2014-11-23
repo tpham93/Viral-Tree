@@ -223,14 +223,59 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -268,19 +313,21 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -320,15 +367,19 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -368,18 +419,19 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -387,11 +439,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -424,45 +471,76 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
    <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -476,8 +554,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -489,37 +565,34 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -528,8 +601,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -542,18 +613,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -563,25 +622,29 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -595,19 +658,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -624,43 +674,35 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -685,58 +727,84 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
-   <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -753,46 +821,43 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -804,22 +869,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -828,14 +877,17 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -847,31 +899,16 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -893,59 +930,43 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -958,129 +979,99 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="4"/>
    <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1089,60 +1080,49 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1153,59 +1133,49 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1214,41 +1184,34 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1256,14 +1219,14 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1274,27 +1237,17 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1303,12 +1256,13 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1319,6 +1273,7 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1326,22 +1281,14 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1351,6 +1298,7 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1367,6 +1315,7 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1376,16 +1325,9 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1398,11 +1340,17 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1414,31 +1362,27 @@
    <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1448,48 +1392,48 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1500,53 +1444,49 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1556,66 +1496,74 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1627,27 +1575,16 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1668,43 +1605,39 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1725,39 +1658,38 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1776,50 +1708,40 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
-   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1828,8 +1750,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1842,84 +1762,85 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1932,8 +1853,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1946,45 +1865,33 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -1999,20 +1906,6 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2029,23 +1922,29 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2075,25 +1974,29 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2123,36 +2026,76 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2193,14 +2136,18 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="3"/>
-   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2240,6 +2187,7 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2251,6 +2199,7 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2290,14 +2239,20 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -2336,14 +2291,59 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -3022,14 +3022,1044 @@
   <object type="Collision" x="0" y="4736">
    <polygon points="0,0 0,256 128,256 128,0"/>
   </object>
+  <object type="Collision" x="768" y="512">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="768">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="1024">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="1280">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="1536">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="1792">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="2048">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="2304">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="2560">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="2816">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="3072">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="3328">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="3584">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="3840">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="4096">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="4352">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="4608">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="4864">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="5120">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="768" y="5376">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="640">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="896">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="1152">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="3584">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="4864">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="4096">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="4608">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="3840">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="3328">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="4352">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="1664">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="2176">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="2688">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="1920">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="1408">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="2432">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="5120">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5888" y="5376">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1536" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2048" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2816" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="768" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2304" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2560" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3328" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="5376" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3072" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3584" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1024" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="5632" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3840" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4608" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1280" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4864" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4352" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1792" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="5120" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4096" y="5632">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="5888" y="5632">
+   <polygon points="0,0 0,128 128,128 128,0"/>
+  </object>
+  <object type="Collision" x="1152" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3456" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="896" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4992" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1664" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3712" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2176" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4224" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="5248" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2688" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4480" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="5760" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4736" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2944" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3200" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="5504" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3968" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1920" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2432" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1408" y="512">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="5120" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4096" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1792" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2560" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2816" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4608" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1536" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3328" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2048" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3840" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3584" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3072" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4352" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4864" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2304" y="1152">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4224" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1408" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1920" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2688" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2944" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4736" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="1664" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3456" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2176" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3968" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3712" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3200" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4480" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4992" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2432" y="4992">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="5248" y="4352">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="4864">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="4608">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="2816">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="3072">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="3840">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="3584">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="4096">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="3328">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="2560">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="2048">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="2304">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="1792">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="1536">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="5248" y="1280">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="1408">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="2176">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="1152">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="1664">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="2432">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="1920">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="2688">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="3712">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="4480">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="3456">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="3968">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="4736">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="4224">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="1408" y="3328">
+   <polygon points="0,0 0,128 128,128 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="2944">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="3712">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="4224">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="3968">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="3200">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="3456">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="2176">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="2432">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="1920">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2048" y="2688">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2560" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3328" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3072" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2304" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2816" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2048" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4096" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3840" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3584" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4352" y="1792">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4608" y="2048">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="4608" y="2560">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="4608" y="2304">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="4608" y="1792">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="4608" y="3456">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="4608" y="3968">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="4608" y="3712">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="4608" y="3200">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="3712" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4480" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3968" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2432" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4224" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2944" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2176" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3456" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3200" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2688" y="4352">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="4608" y="4224">
+   <polygon points="0,0 0,128 128,128 128,0"/>
+  </object>
+  <object type="Collision" x="3968" y="2688">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="3968" y="3456">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="3968" y="2432">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="3968" y="2944">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="3968" y="3200">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="3584" y="3712">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3328" y="3712">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3072" y="3712">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3840" y="3712">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2816" y="3712">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2688" y="3328">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2688" y="3584">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2688" y="2816">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2688" y="2560">
+   <polygon points="0,0 0,256 128,256 128,0"/>
+  </object>
+  <object type="Collision" x="2944" y="2432">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3456" y="2432">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="2688" y="2432">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3200" y="2432">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
+  <object type="Collision" x="3712" y="2432">
+   <polygon points="0,0 0,128 256,128 256,0"/>
+  </object>
  </objectgroup>
  <objectgroup name="Stuff">
-  <object type="PlayerSpawner" x="440" y="264" width="672" height="496"/>
-  <object type="Key" x="2496" y="1384" width="160" height="152">
+  <object type="PlayerSpawner" x="3328" y="2816" width="384" height="640"/>
+  <object type="Key" x="256" y="256" width="128" height="128">
    <properties>
-    <property name="startTime" value="10.0"/>
+    <property name="startTime" value="0.0"/>
    </properties>
   </object>
-  <object type="LeavePoint" x="2536" y="4360" width="280" height="232"/>
+  <object type="LeavePoint" x="6016" y="6016" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="Enteties">
+  <object type="Spawner" x="2304" y="2816" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="2304" y="2432" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="2304" y="3072" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="3968" y="1408" width="256" height="768" rotation="90">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="3584" y="1408" width="256" height="768" rotation="90">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="3328" y="1408" width="256" height="768" rotation="90">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="3968" y="4608" width="256" height="768" rotation="90">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="3584" y="4608" width="256" height="768" rotation="90">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+    <property name="numSpawns" value="20"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="3328" y="4608" width="256" height="768" rotation="90">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="4864" y="2432" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="4864" y="2816" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="4864" y="3072" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6144" y="2432" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6144" y="2816" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6144" y="3072" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="1024" y="2432" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="1024" y="2816" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="1024" y="3072" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="288" y="208" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="288" y="224" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="304" y="224" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="272" y="224" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="272" y="224" width="256">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="240" y="208" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="288" y="256" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="288" y="256" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="256" y="240" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6112" y="5624" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6144" y="5640" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6128" y="5608" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Key" x="6112" y="5640" width="128" height="128">
+   <properties>
+    <property name="startTime" value="0.0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6144" y="5608" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6096" y="5592" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6160" y="5608" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="5"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+    <property name="startTime" value="0"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6144" y="5640" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6128" y="5608" width="256">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="fungus"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6144" y="5592" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="1"/>
+    <property name="entityType" value="veinball"/>
+    <property name="numSpawns" value="5"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="384" y="5632" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5520" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5520" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5600" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="416" y="5616" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6144" y="368" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="336" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="256" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="352" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
+  <object type="Spawner" x="6176" y="256" width="256" height="768">
+   <properties>
+    <property name="cooldown" value="0"/>
+    <property name="entityType" value="anorism"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
