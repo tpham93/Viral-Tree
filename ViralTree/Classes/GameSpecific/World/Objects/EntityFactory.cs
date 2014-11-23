@@ -112,7 +112,7 @@ namespace ViralTree.World
 
         private static Entity CreateKey(ACollider collider, Vector2f position, object[] additionalInfos)
         {
-            Entity result = new Entity(collider, position, 1.0f, Fraction.Neutral, CollidingFractions.None, EmptyThinker.Instance, new KeyResponse((ExitResponse)additionalInfos[0]), EmptyActivatable.Instance, new TextureDrawer("gfx/key.png"));
+            Entity result = new Entity(collider, position, 1.0f, Fraction.Neutral, CollidingFractions.None, EmptyThinker.Instance, new KeyResponse((ExitResponse)additionalInfos[0], (double)additionalInfos[1]), EmptyActivatable.Instance, new TextureDrawer("gfx/key.png"));
             return result;
         }
 
@@ -180,7 +180,7 @@ namespace ViralTree.World
             AWeapon weapon = weapon = new ShooterWeapon(30, TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SHOOTER_FREQ), new CircleCollider(16), float.PositiveInfinity, GameplayConstants.SCOUT_SHOOTER_DAMAGE, GameplayConstants.SCOUT_SHOOTER_SPEED);
             AWeapon specialWeapon = new ScoutSpecial(TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_SPECIAL_DURATION), TimeSpan.FromMilliseconds(GameplayConstants.SCOUT_DECREASED_FREQ), weapon);
 
-            return new Entity(collider, position, GameplayConstants.SCOUT_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker(weapon, specialWeapon, GameplayConstants.TANK_MAX_SPEED, (GInput)additionalObjects[0]), new BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.ScoutDrawer());
+            return new Entity(collider, position, GameplayConstants.SCOUT_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker(weapon, specialWeapon, GameplayConstants.TANK_MAX_SPEED, (GInput)additionalObjects[0]), new BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.ScoutDrawer(specialWeapon));
         }
 
         private static Entity CreateNewTank(ACollider collider, Vector2f position, object[] additionalObjects)
@@ -189,7 +189,7 @@ namespace ViralTree.World
             AWeapon weapon = weapon = new MeeleWeapon(TimeSpan.FromSeconds(GameplayConstants.TANK_ATTACK_COOLDOWN), GameplayConstants.TANK_ATTACK_DURATION, 0, Fraction.CellProjectile, CollidingFractions.VirusProjectile, GameplayConstants.TANK_MIN_RANGE, GameplayConstants.TANK_MAX_RANGE, GameplayConstants.TANK_NUM_ATTACKS, GameplayConstants.TANK_ATTACK_SERIES_DURATION);
             AWeapon specialWeapon = new MeleeSpecial(TimeSpan.FromMilliseconds(GameplayConstants.TANK_SPECIAL_FREQ), TimeSpan.FromMilliseconds(GameplayConstants.TANK_SPECIAL_DURATION), 50);
 
-            return new Entity(collider, position, GameplayConstants.TANK_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker(weapon, specialWeapon, GameplayConstants.TANK_MAX_SPEED, (GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.TankDrawer());
+            return new Entity(collider, position, GameplayConstants.TANK_START_LIFE, Fraction.Cell, CollidingFractions.Virus, new Components.PlayerThinker(weapon, specialWeapon, GameplayConstants.TANK_MAX_SPEED, (GInput)additionalObjects[0]), new Components.BasicPushResponse(true), Components.EmptyActivatable.Instance, new Components.TankDrawer(specialWeapon));
         }
     }
 }

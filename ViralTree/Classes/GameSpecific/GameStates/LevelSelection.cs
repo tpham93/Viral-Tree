@@ -76,7 +76,7 @@ namespace ViralTree.GameStates
             }
            
 
-            maxLevel = buttonList.Count;
+            maxLevel = buttonList.Count - 1;
 
             foreach (SelectButton b in buttonList)
             {
@@ -97,7 +97,7 @@ namespace ViralTree.GameStates
 
         public override void Update()
         {
-            if (maxLevel <= 0)
+            if (maxLevel < 0)
             {
                 parent.SetGameState(new WinScreen());
                 return;

@@ -11,26 +11,46 @@ namespace ViralTree.Components
 
         public ExitResponse connectedExit;
 
-        public KeyResponse(ExitResponse response)
+        private double startTime;
+
+        public KeyResponse(ExitResponse response, double startTime)
         {
             this.connectedExit = response;
+
+            
+
+            this.startTime = startTime;
+        }
+
+        public override void Initialize()
+        {
+            base.Initialize();
+            this.Owner.Drawable = false;
         }
 
         public override void OnCollision(World.Entity collidedEntity, IntersectionData data, World.GameWorld world, bool firstCalled, GameTime gameTime)
         {
            
-            if (connectedExit != null && (collidedEntity == connectedExit.player1 || collidedEntity == connectedExit.player2))
+            if (startTime <= 0 && connectedExit != null && (collidedEntity == connectedExit.player1 || collidedEntity == connectedExit.player2))
             {
                 connectedExit.numKeys--;
                 Owner.CurrentLife = 0.0f;
             }
+
+           
 
             
         }
 
         public override void Update(GameTime gameTime, World.GameWorld world)
         {
-           
+            if (startTime >= 0)
+                startTime -= gameTime.ElapsedTime.TotalSeconds;
+
+            if (startTime <= 0)
+            {
+                Owner.Drawable = true;
+            }
         }
     }
 }
